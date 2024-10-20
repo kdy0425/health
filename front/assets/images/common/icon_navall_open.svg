@@ -1,0 +1,2 @@
+
+<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="a" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32"><path d="M32 0H0v32h32V0Z" fill="#fff" style="fill:#fff;fill-opacity:1"/></mask><g mask="url(#a)" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round"><path d="M6.999 8h18M6.999 16h18M6.999 24h18" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1"/></g></svg>

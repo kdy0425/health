@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+    <title>한국환경보건학회</title>
+    <link href="../../assets/css/normalize.css" rel="stylesheet"/>
+    <link href="../../assets/css/common.css" rel="stylesheet"/>
+    <link href="../../assets/css/layout.css" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet"/>
+    <link href="../../assets/css/content.css" rel="stylesheet"/>
+    <link href="../../assets/css/swiper.min.css" rel="stylesheet"/>
+    <link href="../../assets/css/slick.css" rel="stylesheet"/>
+    <link href="../../assets/css/simplebar.css" rel="stylesheet"/>
+    <link href="../../assets/css/choices.css" rel="stylesheet"/>
+
+    <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/swiper.min.js"></script>
+    <script src="../../assets/js/slick.min.js"></script>
+    <script src="../../assets/js/litepicker.js"></script>
+    <script src="../../assets/js/simplebar.min.js"></script>
+    <script src="../../assets/js/choices.min.js"></script>
+</head>
+<body>
+
+<div id="layout">
+
+    <!-- header -->
+    <div id="header">
+        <div class="hd_inner">
+            <h1 id="logo"><a href="javascript:;"><img src="../../assets/images/common/logo.png" alt="환경보건이용권"></a></h1>
+            <div id="nav">
+                <ul>
+                    <li><a href="javascript:;">환경보건이용권</a></li>
+                    <li><a href="javascript:;">알림마당</a></li>
+                    <li><a href="javascript:;">마이페이지</a></li>
+                </ul>
+            </div>
+
+            <div id="hd_btns">
+                <div class="hd_link">
+                    <a href="javascript:;" class="icon login">로그인</a>
+                </div>
+                <div class="hd_link"> 
+                    <a href="javascript:;" class="icon logout">로그아웃</a>
+                </div>
+                <div class="hd_search">
+                    <button type="button" class="search_btn search_open">검색 열기</button>
+                </div>
+                <div class="hd_navall">
+                    <button type="button" class="navall_btn navall_open">전체메뉴 열기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+
+    <!-- content -->
+    <div id="content" class="sub_content center_wrap">
+        <div class="container_sm">
+            <div class="center_title">
+                <h2>회원가입</h2>
+            </div>
+
+            <div class="sub_title">
+                <h3>회원정보 입력</h3>
+                <div class="page_step">
+                    <span>1</span>
+                    <span class="active">2</span>
+                    <span>3</span>
+                </div>
+            </div>
+
+            <form action="" id="">
+            <div class="form_caution red">
+                <div><span class="form_required">필수</span> 표시는 필수 입력입니다.</div>
+            </div>
+            
+            <div class="form form_type1">
+                <div class="form_content">
+                    <div class="form_item">
+                        <div class="form_tit">성별 <span class="form_required">필수</span></div>
+                        <div class="content">
+                            <label class="checkbox inline">
+                                <input type="radio" name="mb_gender">
+                                <span class="ck_icon"></span>
+                                남자
+                            </label>
+                            <label class="checkbox inline">
+                                <input type="radio" name="mb_gender">
+                                <span class="ck_icon"></span>
+                                여자
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <label for="mb_name" class="form_tit">이름 <span class="form_required">필수</span></label>
+                        <div class="content">
+                            <div class="input_group">
+                                <div class="input">
+                                    <input type="text" id="mb_name" placeholder="이름을 입력해주세요" value="홍길동" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <label for="mb_id" class="form_tit">아이디 <span class="form_required">필수</span></label>
+                        <div class="content">
+                            <div class="input_group">
+                                <div class="input">
+                                    <input type="text" id="mb_id" placeholder="6~12자의 소문자와 숫자만 사용 가능">
+                                </div>
+                                <button type="button" class="btn btn_lg btn_submit_line">중복확인</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <label for="mb_password" class="form_tit">비밀번호 <span class="form_required">필수</span></label>
+                        <div class="content">
+                            <div class="input_group">
+                                <div class="input">
+                                    <input type="text" id="mb_password" placeholder="영문, 숫자, 특수문자 9자리 이상의 조합">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <label for="mb_password_new" class="form_tit">비밀번호 확인 <span class="form_required">필수</span></label>
+                        <div class="content">
+                            <div class="input_group">
+                                <div class="input">
+                                    <input type="text" id="mb_password_new" placeholder="영문, 숫자, 특수문자 9자리 이상의 조합">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <label for="mb_birth" class="form_tit">생년월일 <span class="form_required">필수</span></label>
+                        <div class="content">
+                            <div class="input_group">
+                                <div class="input">
+                                    <input type="text" id="mb_birth" value="19900101" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <label for="adsInput" class="form_tit">주소 <span class="form_required">필수</span></label>
+                        <div class="content">
+                            <div class="input_group">
+                                <div class="input zip">
+                                    <input type="text" id="adsZip" class="white" placeholder="우편번호" readonly onclick="openLayer('#address_layer');sample2_execDaumPostcode()">
+                                </div>
+                                <div class="input">
+                                    <input type="text" id="adsInput" class="white" readonly onclick="openLayer('#address_layer');sample2_execDaumPostcode()">
+                                </div>
+                                <button type="button" class="btn btn_lg btn_submit_line" onclick="openLayer('#address_layer');sample2_execDaumPostcode()">주소검색</button>
+                            </div>
+                            <div class="input_group">
+                                <div class="input">
+                                    <input type="text" id="adsDetailInput" placeholder="상세주소">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <label for="mb_email" class="form_tit">이메일 <span class="form_required">필수</span></label>
+                        <div class="content">
+                            <div class="input_group">
+                                <div class="input">
+                                    <input type="email" id="mb_email" placeholder="이메일 주소를 입력해 주세요.">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <label for="mb_phone" class="form_tit">휴대폰번호 <span class="form_required">필수</span></label>
+                        <div class="content">
+                            <div class="input_group">
+                                <div class="input">
+                                    <input type="text" id="mb_phone" placeholder="-없이 휴대폰 번호 입력" maxlength="11">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <div class="form_tit">수신동의 <span class="form_required">필수</span></div>
+                        <div class="content">
+                            <label class="checkbox inline">
+                                <input type="checkbox">
+                                <span class="ck_icon"></span>
+                                SMS
+                            </label>
+                            <label class="checkbox inline">
+                                <input type="checkbox">
+                                <span class="ck_icon"></span>
+                                이메일
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form_btns btn_fit">
+                <button type="button" class="btn btn_xl btn_submit">가입</button>
+                <button type="button" class="btn btn_xl btn_gray_line">취소</button>
+            </div>
+            </form>
+           
+        </div>
+    </div>
+    <!-- //content -->
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="ft_inner">
+            <div class="ft_links">
+                <div class="item"><a href="javascript:;"><strong>개인정보처리방침</strong></a></div>
+                <div class="item"><a href="javascript:;">저작권정책</a></div>
+                <div class="item"><a href="javascript:;">이메일무단수집거부</a></div>
+                <div class="item"><a href="javascript:;">운영·관리 방침</a></div>
+            </div>
+            <div class="ft_info">
+                <div class="item address">(우)03367 서울시 은평구 진흥로 215 한국환경산업기술원</div>
+                <div class="item">대표연락처 TEL : <span class="v_pc">02-2284-1000</span><a href="tel:02-2284-1000" class="v_mobile">02-2284-1000</a></div>
+                <div class="item">FAX : 02-2284-1000</div>
+            </div>
+            <div class="ft_copy">COPYRIGHT ⓒ 2018 KEITI. ALL RIGHTS RESERVED.</div>
+            <div class="ft_family">
+                <select name="" id="" onchange="openSite(this)">
+                    <option value="">관련사이트 바로가기</option>
+                    <option value="https://naver.com">사이트명1</option>
+                    <option value="https://google.com">사이트명2</option>
+                    <option value="https://daum.net">사이트명3</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+</div>
+
+
+<!-- 주소 -->
+<div id="address_layer" class="layer_popup">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;">
+        <div class="layer_header">
+            <div class="layer_title">주소검색</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+            <div id="daumAdressLayer">
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //주소 -->
+
+
+
+<script src="../../assets/js/common.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+//주소 api
+var element_layer = document.getElementById('daumAdressLayer');
+function sample2_execDaumPostcode() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var addr = ''; // 주소 변수
+            var extraAddr = ''; // 참고항목 변수
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
+            if(data.userSelectedType === 'R'){
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraAddr += data.bname;
+                }
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                if(extraAddr !== ''){
+                    extraAddr = ' (' + extraAddr + ')';
+                }
+            }
+            document.querySelector('#adsZip').value = data.zonecode;
+            document.querySelector('#adsInput').value = addr;
+            document.querySelector("#adsDetailInput").focus();
+            document.querySelector("#address_layer").style.display = 'none';
+        },
+        width : '500px',
+        height : '500px',
+        maxSuggestItems : 5
+    }).embed(element_layer);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+    <title>한국환경보건학회</title>
+    <link href="../../assets/css/normalize.css" rel="stylesheet"/>
+    <link href="../../assets/css/common.css" rel="stylesheet"/>
+    <link href="../../assets/css/layout.css" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet"/>
+    <link href="../../assets/css/content.css" rel="stylesheet"/>
+    <link href="../../assets/css/swiper.min.css" rel="stylesheet"/>
+    <link href="../../assets/css/slick.css" rel="stylesheet"/>
+    <link href="../../assets/css/simplebar.css" rel="stylesheet"/>
+    <link href="../../assets/css/choices.css" rel="stylesheet"/>
+
+    <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/swiper.min.js"></script>
+    <script src="../../assets/js/slick.min.js"></script>
+    <script src="../../assets/js/litepicker.js"></script>
+    <script src="../../assets/js/simplebar.min.js"></script>
+    <script src="../../assets/js/choices.min.js"></script>
+</head>
+<body>
+
+<div id="layout">
+
+    <!-- header -->
+    <div id="header">
+        <div class="hd_inner">
+            <h1 id="logo"><a href="javascript:;"><img src="../../assets/images/common/logo.png" alt="환경보건이용권"></a></h1>
+            <div id="nav">
+                <ul>
+                    <li><a href="javascript:;">환경보건이용권</a>
+                        <div class="sub_nav">
+                            <div class="sub_nav_inner">
+                                <div class="nav_info">
+                                    <div class="title">환경보건이용권</div>
+                                    <div class="text">환경성질환 취약계층을 위한 실내환경개선, <br/>진료지원 서비스를 이용하세요.</div>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">물품·서비스</a>
+                                        <ul>
+                                            <li><a href="javascript:;">환경보건이용권 안내</a></li>
+                                            <li><a href="javascript:;">이용권 신청</a></li>
+                                            <li><a href="javascript:;">이용권 신청결과 조회</a></li>
+                                            <li><a href="javascript:;">환경보건이용권 환경성 질환 진료비 차감 안내</a></li>
+                                            <li><a href="javascript:;">진료비 지원 신청</a></li>
+                                            <li><a href="javascript:;">진료비 지원 신청결과 조회</a></li>
+                                            <li><a href="javascript:;">온라인몰 안내</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">실내 환경 진단·컨설팅</a>
+                                        <ul>
+                                            <li><a href="javascript:;">실내 환경 진단·컨설팅 안내</a></li>
+                                            <li><a href="javascript:;">실내 환경 진단·컨설팅 신청</a></li>
+                                            <li><a href="javascript:;">실내 환경 진단·컨설팅 신청결과 조회</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="javascript:;">알림마당</a>
+                        <div class="sub_nav">
+                            <div class="sub_nav_inner">
+                                <div class="nav_info">
+                                    <div class="title">환경보건이용권</div>
+                                    <div class="text">환경성질환 취약계층을 위한 실내환경개선, <br/>진료지원 서비스를 이용하세요.</div>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">공지사항</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">자주하는 질문</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="javascript:;">마이페이지</a>
+                        <div class="sub_nav">
+                            <div class="sub_nav_inner">
+                                <div class="nav_info">
+                                    <div class="title">환경보건이용권</div>
+                                    <div class="text">환경성질환 취약계층을 위한 실내환경개선, <br/>진료지원 서비스를 이용하세요.</div>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">회원정보수정</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">이용내역 조회</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">나의 문의내역</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">만족도 설문조사</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="hd_btns">
+                <div class="hd_link">
+                    <a href="javascript:;" class="icon login">로그인</a>
+                </div>
+                <div class="hd_link"> 
+                    <a href="javascript:;" class="icon logout">로그아웃</a>
+                </div>
+                <div class="hd_search">
+                    <button type="button" class="search_btn search_open">검색 열기</button>
+                    <div class="search_content">
+                        <div class="search_inner">
+                            <form action="">
+                                <div class="design_select lg">
+                                    <select name="" id="">
+                                        <option value="전체">전체</option>
+                                        <option value="옵션명1">옵션명1</option>
+                                        <option value="옵션명2">옵션명2</option>
+                                        <option value="ww">옵션명3</option>
+                                        <option value="ee">옵션명4</option>
+                                        <option value="qq">옵션명5</option>
+                                    </select>
+                                </div>
+                                <input type="text" class="lg" placeholder="검색어를 입력하세요.">
+                                <button type="button" class="search_submit">검색</button>
+                            </form>
+                        </div>
+                    </div>
+                    <button type="button" class="search_btn hd_btn_close">검색 닫기</button>
+                </div>
+                <div class="hd_navall">
+                    <button type="button" class="navall_btn navall_open">전체메뉴 열기</button>
+                    <div class="navall_content" data-simplebar>
+                        <div class="nav_links_mobile">
+                            <div class="item">
+                                <a href="javascript:;" class="background">로그인</a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:;" class="line">회원가입</a>
+                            </div>
+                            <!-- <div class="item">
+                                <a href="javascript:;" class="background">로그아웃</a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:;" class="line">마이페이지</a>
+                            </div> -->
+                        </div>
+                        <div class="navall_inner">
+                            <ul class="navall_ul">
+                                <li>
+                                    <a href="javascript:;">환경보건이용권</a>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;">물품·서비스</a>
+                                            <ul>
+                                                <li><a href="javascript:;">환경보건이용권 안내</a></li>
+                                                <li><a href="javascript:;">이용권 신청</a></li>
+                                                <li><a href="javascript:;">이용권 신청결과 조회</a></li>
+                                                <li><a href="javascript:;">환경보건이용권 환경성 질환 진료비 차감 안내</a></li>
+                                                <li><a href="javascript:;">진료비 지원 신청</a></li>
+                                                <li><a href="javascript:;">진료비 지원 신청결과 조회</a></li>
+                                                <li><a href="javascript:;">온라인몰 안내</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">실내 환경 진단·컨설팅</a>
+                                            <ul>
+                                                <li><a href="javascript:;">실내 환경 진단·컨설팅 안내</a></li>
+                                                <li><a href="javascript:;">실내 환경 진단·컨설팅 신청</a></li>
+                                                <li><a href="javascript:;">실내 환경 진단·컨설팅 신청결과 조회</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">알림마당</a>
+                                    <ul>
+                                        <li>
+                                            <ul>
+                                                <li><a href="javascript:;">공지사항</a></li>
+                                                <li><a href="javascript:;">자주하는 질문</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">마이페이지</a>
+                                    <ul>
+                                        <li>
+                                            <ul>
+                                                <li><a href="javascript:;">회원정보수정</a></li>
+                                                <li><a href="javascript:;">이용내역 조회</a></li>
+                                                <li><a href="javascript:;">나의 문의내역</a></li>
+                                                <li><a href="javascript:;">만족도 설문조사</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="button" class="navall_btn hd_btn_close">전체메뉴 닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+
+    <!-- content -->
+    <div id="content" class="sub_content center_wrap">
+        <div class="container">
+            
+            <div class="form_btns btn_fit">
+                <div style="width:100%;margin-bottom:10px;">좌우 자동 100%</div>
+                <button type="button" class="btn btn_xl btn_submit">로그인</button>
+            </div>
+
+            <div class="form_btns btn_fit">
+                <div style="width:100%;margin-bottom:10px;">좌우 자동 100%</div>
+                <button type="button" class="btn btn_xl btn_submit">로그인</button>
+                <button type="button" class="btn btn_xl btn_gray_line">로그인</button>
+            </div>
+
+            <div class="form_btns btn_fit">
+                <div style="width:100%;margin-bottom:10px;">좌우 자동 100%</div>
+                <button type="button" class="btn btn_xl btn_submit">로그인</button>
+                <button type="button" class="btn btn_xl btn_submit_line">로그인</button>
+                <button type="button" class="btn btn_xl btn_dark">로그인</button>
+                <button type="button" class="btn btn_xl btn_dark_line">로그인</button>
+                <button type="button" class="btn btn_xl btn_gray_line">로그인</button>
+            </div>
+
+            <div class="form_btns btn_fit">
+                <div style="width:100%;margin-bottom:10px;">Disabled 비활성화</div>
+                <button type="button" class="btn btn_xl btn_submit" disabled>로그인</button>
+                <button type="button" class="btn btn_xl btn_submit_line" disabled>로그인</button>
+                <button type="button" class="btn btn_xl btn_dark" disabled>로그인</button>
+                <button type="button" class="btn btn_xl btn_dark_line" disabled>로그인</button>
+                <button type="button" class="btn btn_xl btn_gray_line" disabled>로그인</button>
+            </div>
+
+            <div class="form_btns">
+                <div style="width:100%;margin-bottom:10px;">버튼 XL 200px</div>
+                <button type="button" class="btn btn_xl btn_submit">로그인</button>
+                <button type="button" class="btn btn_xl btn_submit_line">로그인</button>
+                <button type="button" class="btn btn_xl btn_dark">로그인</button>
+                <button type="button" class="btn btn_xl btn_dark_line">로그인</button>
+                <button type="button" class="btn btn_xl btn_gray_line">로그인</button>
+            </div>
+
+            <div class="form_btns">
+                <div style="width:100%;margin-bottom:10px;">버튼 L 180px</div>
+                <button type="button" class="btn btn_lg btn_submit">로그인</button>
+                <button type="button" class="btn btn_lg btn_submit_line">로그인</button>
+                <button type="button" class="btn btn_lg btn_dark">로그인</button>
+                <button type="button" class="btn btn_lg btn_dark_line">로그인</button>
+                <button type="button" class="btn btn_lg btn_gray_line">로그인</button>
+            </div>
+
+            <div class="form_btns">
+                <div style="width:100%;margin-bottom:10px;">버튼 M 150px</div>
+                <button type="button" class="btn btn_md btn_submit">로그인</button>
+                <button type="button" class="btn btn_md btn_submit_line">로그인</button>
+                <button type="button" class="btn btn_md btn_dark">로그인</button>
+                <button type="button" class="btn btn_md btn_dark_line">로그인</button>
+                <button type="button" class="btn btn_md btn_gray_line">로그인</button>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">글자수 대로 XL</div>
+                <button type="button" class="btn btn_xl btn_submit">로그인</button>
+                <button type="button" class="btn btn_xl btn_submit_line">로그인</button>
+                <button type="button" class="btn btn_xl btn_dark">로그인</button>
+                <button type="button" class="btn btn_xl btn_dark_line">로그인</button>
+                <button type="button" class="btn btn_xl btn_gray_line">로그인</button>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">글자수 대로 L</div>
+                <button type="button" class="btn btn_lg btn_submit">로그인</button>
+                <button type="button" class="btn btn_lg btn_submit_line">로그인</button>
+                <button type="button" class="btn btn_lg btn_dark">로그인</button>
+                <button type="button" class="btn btn_lg btn_dark_line">로그인</button>
+                <button type="button" class="btn btn_lg btn_gray_line">로그인</button>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">글자수 대로 L + 아이콘</div>
+                <button type="button" class="btn btn_lg btn_submit">
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.998 11.997a4.998 4.998 0 1 0 0-9.996 4.998 4.998 0 0 0 0 9.996ZM14 13.999 11.001 11" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_lg btn_submit_line">
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_lg btn_dark">
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_lg btn_dark_line">
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_lg btn_gray_line">
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">글자수 대로 M</div>
+                <button type="button" class="btn btn_md btn_submit">로그인</button>
+                <button type="button" class="btn btn_md btn_submit_line">로그인</button>
+                <button type="button" class="btn btn_md btn_dark">로그인</button>
+                <button type="button" class="btn btn_md btn_dark_line">로그인</button>
+                <button type="button" class="btn btn_md btn_gray_line">로그인</button>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">글자수 대로 M + 아이콘</div>
+                <button type="button" class="btn btn_md btn_submit">
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.998 11.997a4.998 4.998 0 1 0 0-9.996 4.998 4.998 0 0 0 0 9.996ZM14 13.999 11.001 11" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_md btn_submit_line">
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_md btn_dark">
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_md btn_dark_line">
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_md btn_gray_line">
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">글자수 대로 S</div>
+                <button type="button" class="btn btn_sm btn_submit">로그인</button>
+                <button type="button" class="btn btn_sm btn_submit_line">로그인</button>
+                <button type="button" class="btn btn_sm btn_dark">로그인</button>
+                <button type="button" class="btn btn_sm btn_dark_line">로그인</button>
+                <button type="button" class="btn btn_sm btn_gray_line">로그인</button>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">글자수 대로 S + 아이콘</div>
+                <button type="button" class="btn btn_sm btn_submit">
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4.5 9 3-3-3-3" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.121 8.363 3.878 4.121M8.121 4.121 3.878 8.364" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6.242H3M6 3.242v6" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_sm btn_submit_line">
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4.5 9 3-3-3-3" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.121 8.363 3.878 4.121M8.121 4.121 3.878 8.364" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6.242H3M6 3.242v6" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_sm btn_dark">
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4.5 9 3-3-3-3" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.121 8.363 3.878 4.121M8.121 4.121 3.878 8.364" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6.242H3M6 3.242v6" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_sm btn_dark_line">
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4.5 9 3-3-3-3" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.121 8.363 3.878 4.121M8.121 4.121 3.878 8.364" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6.242H3M6 3.242v6" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+                <button type="button" class="btn btn_sm btn_gray_line">
+                    <span>로그인</span>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4.5 9 3-3-3-3" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.121 8.363 3.878 4.121M8.121 4.121 3.878 8.364" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6.242H3M6 3.242v6" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">체크박스 싱글</div>
+                <label class="checkbox single">
+                    <input type="checkbox" checked>
+                    <span class="ck_icon"></span>
+                </label>
+
+                <label class="checkbox single">
+                    <input type="checkbox">
+                    <span class="ck_icon"></span>
+                </label>
+
+                <label class="checkbox single">
+                    <input type="checkbox" disabled checked>
+                    <span class="ck_icon"></span>
+                </label>
+
+                <label class="checkbox single">
+                    <input type="checkbox" disabled>
+                    <span class="ck_icon"></span>
+                </label>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">체크박스 텍스트</div>
+                <label class="checkbox inline">
+                    <input type="checkbox" checked>
+                    <span class="ck_icon"></span>
+                    체크 온
+                </label>
+
+                <label class="checkbox inline">
+                    <input type="checkbox">
+                    <span class="ck_icon"></span>
+                    체크 오프
+                </label>
+
+                <label class="checkbox inline">
+                    <input type="checkbox">
+                    <span class="ck_icon"></span>
+                    <strong>글자색 진함</strong>
+                </label>
+
+                <label class="checkbox inline">
+                    <input type="checkbox" disabled checked>
+                    <span class="ck_icon"></span>
+                    Disabled
+                </label>
+
+                <label class="checkbox inline">
+                    <input type="checkbox" disabled>
+                    <span class="ck_icon"></span>
+                    Disabled
+                </label>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">라디오 싱글</div>
+                <label class="checkbox single">
+                    <input type="radio" checked>
+                    <span class="ck_icon"></span>
+                </label>
+
+                <label class="checkbox single">
+                    <input type="radio">
+                    <span class="ck_icon"></span>
+                </label>
+
+                <label class="checkbox single">
+                    <input type="radio" disabled checked>
+                    <span class="ck_icon"></span>
+                </label>
+
+                <label class="checkbox single">
+                    <input type="radio" disabled>
+                    <span class="ck_icon"></span>
+                </label>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">라디오 텍스트</div>
+                <label class="checkbox inline">
+                    <input type="radio" checked>
+                    <span class="ck_icon"></span>
+                    체크 온
+                </label>
+
+                <label class="checkbox inline">
+                    <input type="radio">
+                    <span class="ck_icon"></span>
+                    체크 오프
+                </label>
+
+                <label class="checkbox inline">
+                    <input type="radio">
+                    <span class="ck_icon"></span>
+                    <strong>글자색 진함</strong>
+                </label>
+
+                <label class="checkbox inline">
+                    <input type="radio" disabled checked>
+                    <span class="ck_icon"></span>
+                    Disabled
+                </label>
+
+                <label class="checkbox inline">
+                    <input type="radio" disabled>
+                    <span class="ck_icon"></span>
+                    Disabled
+                </label>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">탭 Type1 </div>
+
+                <div class="tap_type1 tap_fit">
+                    <label>
+                        <input type="radio" name="radio_tap" checked>
+                        <strong><span>라디오 탭 좌우 자동 100%</span></strong>
+                    </label>
+                    <label>
+                        <input type="radio"name="radio_tap">
+                        <strong><span>라디오 탭 좌우 자동 100%</span></strong>
+                    </label>
+                </div>
+
+                <br/>
+
+                <div class="tap_type1">
+                    <label>
+                        <input type="radio" name="radio_tap2" checked>
+                        <strong><span>라디오 탭 글자수 대로</span></strong>
+                    </label>
+                    <label>
+                        <input type="radio"name="radio_tap2">
+                        <strong><span>라디오 탭 글자수 대로</span></strong>
+                    </label>
+                </div>
+
+                <br/>
+
+                <div class="tap_type1 tap_fit tap_control">
+                    <a href="javascript:;" class="on">
+                        <span>A태그 좌우 자동 100%</span>
+                    </a>
+                    <a href="javascript:;">
+                        <span>A태그 좌우 자동 100%</span>
+                    </a>
+                </div>
+
+                <br/>
+
+                <div class="tap_type1 tap_control">
+                    <a href="javascript:;" class="on">
+                        <span>A태그 글자수 대로</span>
+                    </a>
+                    <a href="javascript:;">
+                        <span>A태그 글자수 대로</span>
+                    </a>
+                </div>
+
+                <br/>
+
+                <div class="tap_type1 tap_fit tap_control">
+                    <button type="button" class="on">
+                        <span>BUTTON태그 좌우 자동 100%</span>
+                    </button>
+                    <button type="button">
+                        <span>BUTTON태그 좌우 자동 100%</span>
+                    </button>
+                </div>
+
+                <br/>
+
+                <div class="tap_type1 tap_control">
+                    <button type="button" class="on">
+                        <span>BUTTON태그 글자수 대로</span>
+                    </button>
+                    <button type="button">
+                        <span>BUTTON태그 글자수 대로</span>
+                    </button>
+                </div>
+            </div>
+
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">탭 Type2 </div>
+
+                <div class="tap_type2 tap_fit">
+                    <label>
+                        <input type="radio" name="radio_tap" checked>
+                        <strong><span>라디오 탭 좌우 자동 100%</span></strong>
+                    </label>
+                    <label>
+                        <input type="radio"name="radio_tap">
+                        <strong><span>라디오 탭 좌우 자동 100%</span></strong>
+                    </label>
+                </div>
+
+                <br/>
+
+                <div class="tap_type2">
+                    <label>
+                        <input type="radio" name="radio_tap2" checked>
+                        <strong><span>라디오 탭 글자수 대로</span></strong>
+                    </label>
+                    <label>
+                        <input type="radio"name="radio_tap2">
+                        <strong><span>라디오 탭 글자수 대로</span></strong>
+                    </label>
+                </div>
+
+                <br/>
+
+                <div class="tap_type2 tap_fit tap_control">
+                    <a href="javascript:;" class="on">
+                        <span>A태그 좌우 자동 100%</span>
+                    </a>
+                    <a href="javascript:;">
+                        <span>A태그 좌우 자동 100%</span>
+                    </a>
+                </div>
+
+                <br/>
+
+                <div class="tap_type2 tap_control">
+                    <a href="javascript:;" class="on">
+                        <span>A태그 글자수 대로</span>
+                    </a>
+                    <a href="javascript:;">
+                        <span>A태그 글자수 대로</span>
+                    </a>
+                </div>
+
+                <br/>
+
+                <div class="tap_type2 tap_fit tap_control">
+                    <button type="button" class="on">
+                        <span>BUTTON태그 좌우 자동 100%</span>
+                    </button>
+                    <button type="button">
+                        <span>BUTTON태그 좌우 자동 100%</span>
+                    </button>
+                </div>
+
+                <br/>
+
+                <div class="tap_type2 tap_control">
+                    <button type="button" class="on">
+                        <span>BUTTON태그 글자수 대로</span>
+                    </button>
+                    <button type="button">
+                        <span>BUTTON태그 글자수 대로</span>
+                    </button>
+                </div>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div style="width:100%;margin-bottom:10px;">뱃지 </div>
+
+                <span class="badge badge_submit">Label</span>
+                <span class="badge badge_submit_line">Label</span>
+                <span class="badge badge_dark">Label</span>
+                <span class="badge badge_dark_line">Label</span>
+                <span class="badge badge_gray">Label</span>
+                <span class="badge badge_gray_line">Label</span>
+            </div>
+
+            <div style="margin-top:30px;">
+                <div class="form_caution ">
+                    <div class="caution">만 19세 이상 성인만 회원가입이 가능합니다.</div>
+                </div>
+
+                <div class="form_caution red">
+                    <div class="caution">만 19세 이상 성인만 회원가입이 가능합니다.</div>
+                </div>
+                
+                <div class="form_caution blue">
+                    <div class="caution">만 19세 이상 성인만 회원가입이 가능합니다.</div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <!-- //content -->
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="ft_inner">
+            <div class="ft_links">
+                <div class="item"><a href="javascript:;"><strong>개인정보처리방침</strong></a></div>
+                <div class="item"><a href="javascript:;">저작권정책</a></div>
+                <div class="item"><a href="javascript:;">이메일무단수집거부</a></div>
+                <div class="item"><a href="javascript:;">운영·관리 방침</a></div>
+            </div>
+            <div class="ft_info">
+                <div class="item address">(우)03367 서울시 은평구 진흥로 215 한국환경산업기술원</div>
+                <div class="item">대표연락처 TEL : <span class="v_pc">02-2284-1000</span><a href="tel:02-2284-1000" class="v_mobile">02-2284-1000</a></div>
+                <div class="item">FAX : 02-2284-1000</div>
+            </div>
+            <div class="ft_copy">COPYRIGHT ⓒ 2018 KEITI. ALL RIGHTS RESERVED.</div>
+            <div class="ft_family">
+                <select name="" id="" onchange="openSite(this)">
+                    <option value="">관련사이트 바로가기</option>
+                    <option value="https://naver.com">사이트명1</option>
+                    <option value="https://google.com">사이트명2</option>
+                    <option value="https://daum.net">사이트명3</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+</div>
+
+<script src="../../assets/js/common.js"></script>
+</body>
+</html>
