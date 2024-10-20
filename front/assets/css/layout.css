@@ -213,6 +213,7 @@
 .ft_family .is-open .choices__list[aria-expanded] {border-color:#333;}
 .ft_family .is-focused .choices__inner,
 .ft_family .is-open .choices__inner {border-color:#333;}
+.ft_family .choices__placeholder{color:#fff;}
 .ft_family .choices__list--dropdown,
 .ft_family .choices__list[aria-expanded] {background-color: #555;}
 .ft_family .choices__list--dropdown .choices__item--selectable.is-highlighted,
