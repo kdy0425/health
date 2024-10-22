@@ -127,7 +127,7 @@ let slideToggle = (target, duration = 500) => {
 
 //커스텀 selectbox
 const applyChoicesToSelect = (element) => {
-if (!element.classList.contains('choices-applied')) {
+    if (!element.closest('.pika-single') && !element.classList.contains('choices-applied')) {
     const searchEnabled = element.hasAttribute('search-select');
     new Choices(element, {
         searchEnabled: searchEnabled, // search-select 이면 검색 활성화
@@ -247,6 +247,8 @@ document.querySelectorAll('input[type="tel"]').forEach(telInput => {
 document.querySelectorAll('.datepicker').forEach(function(pickerField) {
     var picker = new Pikaday({
         field: pickerField,
+        showDaysInNextAndPreviousMonths: true,
+        enableSelectionDaysInNextAndPreviousMonths: true, 
         onSelect: function() {
             var date = picker.getDate();
             var year = date.getFullYear();
@@ -290,137 +292,6 @@ function copyUrl(url) {
 	}
 	document.body.removeChild(textarea);
 }
-
-//드래그 && 멑티 파일 첨부
-document.addEventListener('DOMContentLoaded', () => {
-    const fileAreas = document.querySelectorAll('.file_area');
-    const inputFiles = document.querySelectorAll('.file_input');
-    const fileLists = document.querySelectorAll('.add_files');
-
-    if (!fileAreas && !inputFiles && !fileLists) return;
-
-    function updateFileCountMessage(fileList, inputFile) {
-        if (inputFile.files.length === 0) {
-            fileList.style.display = 'none';
-        } else {
-            fileList.style.display = 'block';
-        }
-    }
-
-    inputFiles.forEach((inputFile, index) => {
-        const allowedTypes = inputFile.getAttribute('file-type').split(' ');
-        const fileArea = fileAreas[index];
-        const fileList = fileLists[index];
-        const dataTransfer = new DataTransfer();
-
-        inputFile.addEventListener('change', (event) => {
-            const newFiles = Array.from(event.target.files);
-
-            newFiles.forEach((file) => {
-                const fileType = file.name.split('.').pop().toLowerCase();
-
-                if (allowedTypes.includes(fileType)) {
-                    dataTransfer.items.add(file);
-
-                    const fileItem = document.createElement('div');
-                    fileItem.className = 'file_item';
-
-                    const fileName = document.createElement('span');
-                    fileName.className = 'file_name';
-                    fileName.textContent = file.name;
-                    fileItem.appendChild(fileName);
-
-                    const deleteButton = document.createElement('button');
-                    deleteButton.type = 'button';
-                    deleteButton.textContent = '삭제';
-                    deleteButton.className = 'file_remove';
-
-                    deleteButton.addEventListener('click', () => {
-                        for (let i = 0; i < dataTransfer.items.length; i++) {
-                            if (dataTransfer.items[i].getAsFile() === file) {
-                                dataTransfer.items.remove(i);
-                                break;
-                            }
-                        }
-
-                        inputFile.files = dataTransfer.files;
-                        fileItem.remove();
-                        updateFileCountMessage(fileList, inputFile);
-                    });
-
-                    fileItem.appendChild(deleteButton);
-                    fileList.appendChild(fileItem);
-                }
-            });
-
-            inputFile.files = dataTransfer.files;
-            updateFileCountMessage(fileList, inputFile);
-        });
-
-        fileArea.addEventListener('dragenter', (event) => {
-            event.preventDefault();
-            fileArea.classList.add('file_dragover');
-        });
-
-        fileArea.addEventListener('dragover', (event) => {
-            event.preventDefault();
-            fileArea.classList.add('file_dragover');
-        });
-
-        fileArea.addEventListener('dragleave', (event) => {
-            event.preventDefault();
-            fileArea.classList.remove('file_dragover');
-        });
-
-        fileArea.addEventListener('drop', (event) => {
-            event.preventDefault();
-            fileArea.classList.remove('file_dragover');
-
-            const droppedFiles = event.dataTransfer.files;
-
-            Array.from(droppedFiles).forEach((file) => {
-                const fileType = file.name.split('.').pop().toLowerCase();
-
-                if (allowedTypes.includes(fileType)) {
-                    dataTransfer.items.add(file);
-
-                    const fileItem = document.createElement('div');
-                    fileItem.className = 'file_item';
-
-                    const fileName = document.createElement('span');
-                    fileName.className = 'file_name';
-                    fileName.textContent = file.name;
-                    fileItem.appendChild(fileName);
-
-                    const deleteButton = document.createElement('button');
-                    deleteButton.type = 'button';
-                    deleteButton.textContent = '삭제';
-                    deleteButton.className = 'file_remove';
-
-                    deleteButton.addEventListener('click', () => {
-                        for (let i = 0; i < dataTransfer.items.length; i++) {
-                            if (dataTransfer.items[i].getAsFile() === file) {
-                                dataTransfer.items.remove(i);
-                                break;
-                            }
-                        }
-
-                        inputFile.files = dataTransfer.files;
-                        fileItem.remove();
-                        updateFileCountMessage(fileList, inputFile);
-                    });
-
-                    fileItem.appendChild(deleteButton);
-                    fileList.appendChild(fileItem);
-                }
-            });
-
-            inputFile.files = dataTransfer.files;
-            updateFileCountMessage(fileList, inputFile);
-        });
-    });
-});
-
 
 //input url 추가
 document.addEventListener('DOMContentLoaded', () => {
@@ -554,3 +425,84 @@ function telFocus(){
     });
 }
 telFocus();
+
+
+
+//파일 첨부
+function fileUpload() {
+    const inputFiles = document.querySelectorAll('.file_input');
+    const fileLists = document.querySelectorAll('.add_files');
+    const fileCounts = document.querySelectorAll('.file_count');
+
+    if (!inputFiles && !fileLists && !fileCounts) return;
+
+    function updateFileCountMessage(fileList, inputFile, fileCountInput) {
+        const fileCount = inputFile.files.length;
+
+        if (fileCount === 0) {
+            fileList.style.display = 'none';
+            fileCountInput.value = "선택된 파일이 없습니다.";
+        } else {
+            fileList.style.display = 'block';
+            fileCountInput.value = `첨부된 파일 ${fileCount}개`;
+        }
+    }
+
+    inputFiles.forEach((inputFile, index) => {
+        const allowedTypes = inputFile.getAttribute('file-type').split(' ');
+        const fileList = fileLists[index];
+        const fileCountInput = fileCounts[index];
+
+        if (!inputFile.hasAttribute('data-listener-added')) {
+            const dataTransfer = new DataTransfer();
+
+            inputFile.addEventListener('change', (event) => {
+                const newFiles = Array.from(event.target.files);
+
+                newFiles.forEach((file) => {
+                    const fileType = file.name.split('.').pop().toLowerCase();
+
+                    if (allowedTypes.includes(fileType)) {
+                        dataTransfer.items.add(file);
+
+                        const fileItem = document.createElement('div');
+                        fileItem.className = 'file_item';
+
+                        const fileName = document.createElement('span');
+                        fileName.className = 'file_name';
+                        fileName.textContent = file.name;
+                        fileItem.appendChild(fileName);
+
+                        const deleteButton = document.createElement('button');
+                        deleteButton.type = 'button';
+                        deleteButton.textContent = '삭제';
+                        deleteButton.className = 'file_remove';
+
+                        deleteButton.addEventListener('click', () => {
+                            for (let i = 0; i < dataTransfer.items.length; i++) {
+                                if (dataTransfer.items[i].getAsFile() === file) {
+                                    dataTransfer.items.remove(i);
+                                    break;
+                                }
+                            }
+
+                            inputFile.files = dataTransfer.files;
+                            fileItem.remove();
+                            updateFileCountMessage(fileList, inputFile, fileCountInput);
+                        });
+
+                        fileItem.appendChild(deleteButton);
+                        fileList.appendChild(fileItem);
+                    }
+                });
+
+                inputFile.files = dataTransfer.files;
+                updateFileCountMessage(fileList, inputFile, fileCountInput);
+            });
+
+            inputFile.setAttribute('data-listener-added', 'true');
+        }
+    });
+}
+
+fileUpload();
