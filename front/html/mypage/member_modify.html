@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+    <title>환경보건이용권</title>
+    <link href="../../assets/css/normalize.css" rel="stylesheet"/>
+    <link href="../../assets/css/common.css" rel="stylesheet"/>
+    <link href="../../assets/css/layout.css" rel="stylesheet"/>
+    <link href="../../assets/css/main.css" rel="stylesheet"/>
+    <link href="../../assets/css/content.css" rel="stylesheet"/>
+    <link href="../../assets/css/swiper.min.css" rel="stylesheet"/>
+    <link href="../../assets/css/slick.css" rel="stylesheet"/>
+    <link href="../../assets/css/simplebar.css" rel="stylesheet"/>
+    <link href="../../assets/css/choices.css" rel="stylesheet"/>
+
+    <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/swiper.min.js"></script>
+    <script src="../../assets/js/slick.min.js"></script>
+    <script src="../../assets/js/litepicker.js"></script>
+    <script src="../../assets/js/simplebar.min.js"></script>
+    <script src="../../assets/js/choices.min.js"></script>
+</head>
+<body>
+
+<div id="layout">
+
+    <!-- header -->
+    <div id="header">
+        <div class="hd_inner">
+            <h1 id="logo"><a href="javascript:;"><img src="../../assets/images/common/logo.png" alt="환경보건이용권"></a></h1>
+            <div id="nav">
+                <ul>
+                    <li><a href="javascript:;">환경보건이용권</a></li>
+                    <li><a href="javascript:;">알림마당</a></li>
+                    <li><a href="javascript:;">마이페이지</a></li>
+                </ul>
+            </div>
+
+            <div id="hd_btns">
+                <div class="hd_link">
+                    <a href="javascript:;" class="icon login">로그인</a>
+                </div>
+                <div class="hd_link"> 
+                    <a href="javascript:;" class="icon logout">로그아웃</a>
+                </div>
+                <div class="hd_search">
+                    <button type="button" class="search_btn search_open">검색 열기</button>
+                </div>
+                <div class="hd_navall">
+                    <button type="button" class="navall_btn navall_open">전체메뉴 열기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+
+    <!-- content -->
+    <div id="content" class="sub_content">
+        <div id="aside_wrap">
+            <div id="aside">
+                <h2>마이페이지</h2>
+                <div class="aside_nav">
+                    <ul>
+                        <li class="item active">
+                            <a href="javascript:;" class="active">회원정보수정</a>
+                        </li>
+                        <li class="item">
+                            <a href="javascript:;">이용내역 조회</a>
+                        </li>
+                        <li class="item">
+                            <a href="javascript:;">나의 문의내역</a>
+                        </li>
+                        <li class="item">
+                            <a href="javascript:;">만족도 설문조사</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="aside_content">
+                <div class="location">
+                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
+                    <div class="item"><a href="javascript:;">마이페이지</a></div>
+                    <div class="item"><a href="javascript:;">회원정보수정</a></div>
+                </div>
+
+                <div class="page_title">
+                    <h3>회원정보수정</h3>
+                </div>
+
+                <form>
+                <div class="form form_type2">
+                    <div class="form_title">
+                        <h4>기본정보 수정</h4>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width:180px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>성별</th>
+                                    <td>
+                                        <label class="checkbox inline">
+                                            <input type="radio" name="mb_gender" checked>
+                                            <span class="ck_icon"></span>
+                                            남자
+                                        </label>
+                                        <label class="checkbox inline">
+                                            <input type="radio" name="mb_gender">
+                                            <span class="ck_icon"></span>
+                                            여자
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>이름</th>
+                                    <td>홍길동</td>
+                                </tr>
+                                <tr>
+                                    <th>아이디</th>
+                                    <td>test01</td>
+                                </tr>
+                                <tr>
+                                    <th>비밀번호</th>
+                                    <td>
+                                        <div class="input_group">
+                                            <button type="button" class="btn btn_md btn_submit_line" onclick="openLayer('#password_popup')">비밀번호 변경하기</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>생년월일</th>
+                                    <td>19551212</td>
+                                </tr>
+                                <tr>
+                                    <th><label for="adsZip">신청자 주소 <span class="form_required">필수</span></label></th>
+                                    <td>
+                                        <div class="input_group">
+                                            <div class="input size_lg">
+                                                <input type="text" id="adsZip" placeholder="우편번호 찾기" value="06052" readonly onclick="openLayer('#address_layer');sample2_execDaumPostcode()">
+                                            </div>
+                                            <button type="button" class="btn btn_md btn_submit_line" onclick="openLayer('#address_layer');sample2_execDaumPostcode()">주소검색</button>
+                                        </div>
+                                        <div class="input_group">
+                                            <div class="input">
+                                                <input type="text" id="adsInput" value="강남구 논현로 706 트라이언소프트" readonly onclick="openLayer('#address_layer');sample2_execDaumPostcode()">
+                                            </div>
+                                        </div>
+                                        <div class="input_group">
+                                            <div class="input">
+                                                <input type="text" id="adsDetailInput" value="아이캐슬빌딩" placeholder="나머지 주소를 입력해 주세요.">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="mb_email">이메일 <span class="form_required">필수</span></label></th>
+                                    <td>
+                                        <div class="input_group">
+                                            <div class="input">
+                                                <input type="email" id="mb_email" value="test@trionsoft.com">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="phone_first">휴대폰번호 <span class="form_required">필수</span></label></th>
+                                    <td>
+                                        <div class="input_group">
+                                            <div class="input size_sm">
+                                                <input type="tel" id="phone_first" class="tel_first" maxlength="3" value="010">
+                                            </div>
+                                            <span class="dash">-</span>
+                                            <div class="input size_sm">
+                                                <input type="tel" class="tel_second" maxlength="4" value="1234">
+                                            </div>
+                                            <span class="dash">-</span>
+                                            <div class="input size_sm">
+                                                <input type="tel" class="tel_third" maxlength="4" value="1234">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>수신동의</th>
+                                    <td>
+                                        <label class="checkbox inline">
+                                            <input type="checkbox" checked>
+                                            <span class="ck_icon"></span>
+                                            문자메시지(SMS)
+                                        </label>
+                                        <label class="checkbox inline">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                            전자우편주소(E-mail)
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>개인정보 수집 및 이용동의</th>
+                                    <td>
+                                        <div class="input_group group_row">
+                                            <div class="input_tit">개인정보 수집 및 이용동의(선택)</div>
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="term1_agree" checked>
+                                                <span class="ck_icon"></span>
+                                                동의함
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="term1_agree">
+                                                <span class="ck_icon"></span>
+                                                동의하지 않음
+                                            </label>
+                                        </div>
+                                        <div class="input_group group_row">
+                                            <div class="input_tit">홍보·설문조사 관련 개인정보 수집 및 이용 동의(선택)</div>
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="term2_agree" checked>
+                                                <span class="ck_icon"></span>
+                                                동의함
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="term2_agree">
+                                                <span class="ck_icon"></span>
+                                                동의하지 않음
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>회원탈퇴</th>
+                                    <td>
+                                        <div class="input_group">
+                                            <button type="button" class="btn btn_md btn_gray_line">회원탈퇴하기</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="form_btns">
+                    <button type="button" class="btn btn_xl btn_submit">수정</button>
+                </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- //content -->
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="ft_inner">
+            <div class="ft_links">
+                <div class="item"><a href="javascript:;"><strong>개인정보처리방침</strong></a></div>
+                <div class="item"><a href="javascript:;">저작권정책</a></div>
+                <div class="item"><a href="javascript:;">이메일무단수집거부</a></div>
+                <div class="item"><a href="javascript:;">운영·관리 방침</a></div>
+            </div>
+            <div class="ft_info">
+                <div class="item address">(우)03367 서울시 은평구 진흥로 215 한국환경산업기술원</div>
+                <div class="item">대표연락처 TEL : <span class="v_pc">02-2284-1000</span><a href="tel:02-2284-1000" class="v_mobile">02-2284-1000</a></div>
+                <div class="item">FAX : 02-2284-1000</div>
+            </div>
+            <div class="ft_copy">COPYRIGHT ⓒ 2018 KEITI. ALL RIGHTS RESERVED.</div>
+            <div class="ft_family">
+                <select name="" id="" onchange="openSite(this)">
+                    <option value="">관련사이트 바로가기</option>
+                    <option value="https://naver.com">사이트명1</option>
+                    <option value="https://google.com">사이트명2</option>
+                    <option value="https://daum.net">사이트명3</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+</div>
+
+
+
+<!-- 비밀번호 변경 -->
+<div id="password_change" class="layer_popup" style="display: flex;">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;">
+        <div class="layer_header">
+            <div class="layer_title">비밀번호 변경</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body">
+            <div class="layer_content">
+                <div class="form form_type1">
+                    <div class="form_content">
+                        <div class="form_item">
+                            <label for="new_password" class="form_tit">새 비빌번호</label>
+                            <div class="content">
+                                <div class="input_group">
+                                    <div class="input">
+                                        <input type="password" id="new_password" placeholder="비밀번호를 입력해주세요.">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_item">
+                            <label for="new_password_check" class="form_tit">새 비밀번호 확인</label>
+                            <div class="content">
+                                <div class="input_group">
+                                    <div class="input">
+                                        <input type="password" id="new_password_check" placeholder="비밀번호를 다시 입력해주세요.">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_caution_medium">
+                    <div class="dot"> 비밀번호는 9자 이상 20자 이내로, 영문, 숫자, 특수문자가  포함되어야 합니다.</div>
+                    <div class="dot"> 사용 가능 특수문자 - / : ; ( ) \ & @ . , ? ! [ ] { } # % ^ * + = _ | ~ $</div>
+                </div>
+            </div>
+            <div class="form_btns">
+                <button type="button" class="btn btn_md btn_submit">확인</button>
+                <button type="button" class="btn btn_md btn_gray_line">닫기</button>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //비밀번호 변경 -->
+
+<!-- 주소 -->
+<div id="address_layer" class="layer_popup">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;">
+        <div class="layer_header">
+            <div class="layer_title">주소검색</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+            <div id="daumAdressLayer">
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //주소 -->
+
+
+<script src="../../assets/js/common.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+//주소 api
+var element_layer = document.getElementById('daumAdressLayer');
+function sample2_execDaumPostcode() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var addr = ''; // 주소 변수
+            var extraAddr = ''; // 참고항목 변수
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
+            if(data.userSelectedType === 'R'){
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraAddr += data.bname;
+                }
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                if(extraAddr !== ''){
+                    extraAddr = ' (' + extraAddr + ')';
+                }
+            }
+            document.querySelector('#adsZip').value = data.zonecode;
+            document.querySelector('#adsInput').value = addr;
+            document.querySelector("#adsDetailInput").focus();
+            document.querySelector("#address_layer").style.display = 'none';
+        },
+        width : '500px',
+        height : '500px',
+        maxSuggestItems : 5
+    }).embed(element_layer);
+}
+</script>
+</body>
+</html>

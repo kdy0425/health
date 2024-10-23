@@ -95,8 +95,8 @@ input[type="email"].lg{height:48px;font-size:1.5rem;}
 input[type="text"]::placeholder,
 input[type="password"]::placeholder,
 input[type="tel"]::placeholder,
-input[type="email"]::placeholder{color:#8E8E8E;opacity: 1;}
-textarea::placeholder{color:#8E8E8E;}
+input[type="email"]::placeholder,
+textarea::placeholder{color:#8E8E8E;opacity: 1;}
 input[type="text"]:read-only,
 input[type="password"]:read-only,
 input[type="tel"]:read-only,
@@ -126,7 +126,7 @@ textarea::placeholder{color:#8E8E8E;}
 .btn * + *{margin-left:0.8rem;}
 .btn_xl{padding:1.55rem 2.3rem;font-size:1.7rem;font-weight:600;height: 5.6rem;}
 .btn_lg{padding:1.25rem 2.3rem;font-size:1.5rem;font-weight:600;height: 4.8rem;}
-.btn_md{padding:0.9rem 2.3rem;font-size:1.4rem;font-weight:600;height:4rem;}
+.btn_md{padding:0.9rem 2.2rem;font-size:1.4rem;font-weight:600;height:4rem;}
 .btn_sm{padding:0.35rem 1.2rem 0.35rem;font-size:1.4rem;font-weight:600;height:2.8rem;}
 @media screen and (max-width: 900px) {
   .btn * + *{margin-left:0.5rem;}
@@ -196,14 +196,27 @@ label{cursor: pointer;}
   .checkbox{font-size:1.4rem;padding-top:0.1rem;}
   .checkbox.inline{margin-right:1.5rem;}
 }
+.tap_type1 label,
+.tap_type1 a,
+.tap_type1 button{margin-right:0.5rem;margin-bottom:0.8rem;}
+.tap_type1 label:last-child,
+.tap_type1 a:last-child,
+.tap_type1 button:last-child{margin-right:0;}
+.tap_type2 label,
+.tap_type2 a,
+.tap_type2 button{margin-right:0.5rem;margin-bottom:0.8rem;}
+.tap_type2 label:last-child,
+.tap_type2 a:last-child,
+.tap_type2 button:last-child{margin-right:0;}
 .tap_fit{display: flex;flex-wrap: wrap;justify-content: center;}
 .tap_fit > label,
 .tap_fit > a,
-.tap_fit > button{flex:1 1;}
-.tap_type1 > * + *{margin-left:0.8rem;}
-.tap_type2 > * + *{margin-left:0.8rem;}
+.tap_fit > button{flex:1 1;margin-right:0;margin-bottom:0;}
+.tap_fit > label + label,
+.tap_fit > a + a,
+.tap_fit > button + button{margin-left:0.8rem;}
 
-.tap_type1{}
+.tap_type1{margin-bottom:2.4rem;}
 .tap_type1 label{overflow: hidden;position: relative;display: inline-block;}
 .tap_type1 label input{position: absolute;left:-9999em;}
 .tap_type1 label strong{display: block;border:1px solid #E4E4E4;background-color: #f8f8f8;color:#8E8E8E;font-size:1.5rem;font-weight:600;padding:1.3rem 2.4rem 1.2rem;text-align: center;border-radius:0.4rem;}
@@ -216,17 +229,28 @@ label{cursor: pointer;}
 .tap_type1 a.on span,
 .tap_type1 button.on span{color:#2D2D2D;display: inline-block;padding-left:2.4rem;background-position: left center;background-repeat: no-repeat;background-image: url("data:image/svg+xml,%0A%3Csvg width='17' height='16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m14.337 3.5-8 8L2.7 7.864' stroke='%232D2D2D' style='stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");}
 
-.tap_type2{}
+.tap_type2{margin-bottom:2.4rem;}
 .tap_type2 label{overflow: hidden;position: relative;display: inline-block;}
 .tap_type2 label input{position: absolute;left:-9999em;}
-.tap_type2 label strong{display: block;border:1px solid #D8D8D8;background-color: #fff;color:#8E8E8E;font-size:1.5rem;font-weight:600;padding:1.3rem 2.4rem 1.2rem;text-align: center;border-radius:3rem;}
+.tap_type2 label strong{display: block;border:1px solid #D8D8D8;background-color: #fff;color:#8E8E8E;font-size:1.5rem;font-weight:600;padding:1.3rem 2.3rem 1.2rem;text-align: center;border-radius:3rem;}
 .tap_type2 label input:checked + strong{background-color: #3486E7;color:#fff;}
 .tap_type2 a,
-.tap_type2 button{position: relative;display: inline-block;border:1px solid #D8D8D8;background-color: #fff;color:#8E8E8E;font-size:1.5rem;font-weight:600;padding:1.3rem 2.4rem 1.2rem;text-align: center;border-radius:3rem;}
+.tap_type2 button{position: relative;display: inline-block;border:1px solid #D8D8D8;background-color: #fff;color:#8E8E8E;font-size:1.5rem;font-weight:600;padding:1.3rem 2.3rem 1.2rem;text-align: center;border-radius:3rem;}
 .tap_type2 a.on,
 .tap_type2 button.on{background-color: #3486E7;color:#fff;}
 
 @media screen and (max-width: 900px) {
+  .tap_type1 label,
+  .tap_type1 a,
+  .tap_type1 button{margin-right:0.3rem;margin-bottom:0.6rem;}
+  .tap_type1 label:last-child,
+  .tap_type1 a:last-child,
+  .tap_type1 button:last-child{margin-right:0;}
+  .tap_type2 label,
+  .tap_type2 a,
+  .tap_type2 button{margin-right:0.3rem;margin-bottom:0.6rem;}
+
+  .tap_type1{margin-bottom:1.6rem;}
   .tap_type1 label strong{font-size:1.4rem;padding:1.1rem 1rem 1rem;}
   .tap_type1 label input:checked + strong{padding:1rem 1rem 0.9rem;}
   .tap_type1 label input:checked + strong span{padding-left:2rem;background-size: 1.6rem;}
@@ -236,9 +260,10 @@ label{cursor: pointer;}
   .tap_type1 button.on{padding:1rem 1rem 0.9rem;}
   .tap_type1 button.on span{padding-left:2rem;background-size: 1.6rem;}
 
-  .tap_type2 label strong{font-size:1.4rem;padding:1.1rem 1.3rem 1rem;}
+  .tap_type2{margin-bottom:1.6rem;}
+  .tap_type2 label strong{font-size:1.4rem;padding:0.7rem 1.1rem 0.6rem;}
   .tap_type2 a,
-  .tap_type2 button{font-size:1.4rem;padding:1.1rem 1.3rem 1rem;}
+  .tap_type2 button{font-size:1.4rem;padding:0.7rem 1.1rem 0.6rem;}
 }
 
 html .pika-single{border:1px solid #D8D8D8;border-radius:0.8rem;overflow: hidden;}
