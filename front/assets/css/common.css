@@ -66,9 +66,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .v_mobile_inline{display: none !important;}
 .v_mobile_inline_flex{display: none !important;}
 .v_mobile_inline_block{display: none !important;}
+.v_mobile_flex{display: none !important;}
 @media screen and (max-width:900px) {
   .v_pc{display: none !important;}
   .v_mobile{display: block !important;}
+  .v_mobile_flex{display: flex !important;}
   .v_mobile_inline{display: inline !important;}
   .v_mobile_inline_flex{display: inline-flex !important;}
   .v_mobile_inline_block{display: inline-block !important;}
@@ -124,6 +126,7 @@ textarea::placeholder{color:#8E8E8E;}
 .btn span{line-height:1;}
 .btn_lg svg{position: relative;top:-1px;}
 .btn * + *{margin-left:0.8rem;}
+.btn_sm * + *{margin-left:0.4rem;}
 .btn_xl{padding:1.55rem 2.3rem;font-size:1.7rem;font-weight:600;height: 5.6rem;}
 .btn_lg{padding:1.25rem 2.3rem;font-size:1.5rem;font-weight:600;height: 4.8rem;}
 .btn_md{padding:0.9rem 2.2rem;font-size:1.4rem;font-weight:600;height:4rem;}
@@ -237,7 +240,7 @@ label{cursor: pointer;}
 .tap_type2 a,
 .tap_type2 button{position: relative;display: inline-block;border:1px solid #D8D8D8;background-color: #fff;color:#8E8E8E;font-size:1.5rem;font-weight:600;padding:1.3rem 2.3rem 1.2rem;text-align: center;border-radius:3rem;}
 .tap_type2 a.on,
-.tap_type2 button.on{background-color: #3486E7;color:#fff;}
+.tap_type2 button.on{background-color: #3486E7;color:#fff;border-color:#3486E7;}
 
 @media screen and (max-width: 900px) {
   .tap_type1 label,
@@ -261,9 +264,9 @@ label{cursor: pointer;}
   .tap_type1 button.on span{padding-left:2rem;background-size: 1.6rem;}
 
   .tap_type2{margin-bottom:1.6rem;}
-  .tap_type2 label strong{font-size:1.4rem;padding:0.7rem 1.1rem 0.6rem;}
+  .tap_type2 label strong{font-size:1.3rem;padding:0.5rem 1rem 0.4rem;}
   .tap_type2 a,
-  .tap_type2 button{font-size:1.4rem;padding:0.7rem 1.1rem 0.6rem;}
+  .tap_type2 button{font-size:1.3rem;padding:0.5rem 1rem 0.4rem;}
 }
 
 html .pika-single{border:1px solid #D8D8D8;border-radius:0.8rem;overflow: hidden;}
