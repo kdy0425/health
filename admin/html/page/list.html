@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=1200"/>
+<link rel="canonical" href="">
+<link rel="shortcut icon" type="image/x-icon" href="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta property="og:title" content=""/>
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content=""/>
+<meta property="og:description" content="" />
+<title>환경보건이용권 관리자</title>
+<link rel="stylesheet" type="text/css" href="../../assets/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/common.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/content.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/swiper.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/toastify.min.css" />
+<link href="../../assets/css/pikaday.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+<script src="../../assets/js/jquery-3.4.1.min.js"></script>
+<script src="../../assets/js/jquery-ui.min.js"></script>
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="../../assets/js/swiper.js"></script>
+<script src="../../assets/js/common.js"></script>
+<script src="../../assets/js/pikaday.js"></script>
+<script src="../../assets/js/inputmask.js"></script>
+<script src="../../assets/js/toastify-js.js"></script>
+</head>
+<body>
+
+<!-- wrap -->
+<div id="layout">
+	<h1 id="header_h1">환경보건이용권 관리자</h1>
+	<div id="skip_to_container">
+		<!-- skip navigation -->
+		<a href="#content">내용 바로가기</a>
+		<a href="#nav">서비스메뉴 바로가기</a>
+	</div>
+	<hr class="hide" />	
+
+	<!-- header -->
+	<div id="aside" class="active">
+        <script>
+            
+        </script>
+		<div id="logo">
+            <a href="../main/main.html"><img src="../../assets/images/hd_logo.svg" alt="환경보건이용권 관리자"></a>
+        </div>
+        <button id="menu_toggle" type="button" class="active" onclick="asideActive();">메뉴열기</button>
+        <script>
+            //자바스크립트로 쿠키확인 후 처리하기때문에 약간의 딜레이가 있을수 있음. 딜레이 없이 하려면 회원db에 상태값 저장해서 로드시 클래스 출력해서 사용하면 됨.  쿠키 딜레이 최소화 하기위해 태그 바로밑에서 스크립트 실행
+            const menuState = getCookie('menuState');
+            const asideElement = document.getElementById('aside');
+            const menuToggle = document.getElementById('menu_toggle');
+            if (menuState === 'open') {
+                asideElement.classList.add('active');
+                asideElement.classList.remove('closed');
+                menuToggle.classList.add('active');
+            }else if (menuState === 'closed') {
+                asideElement.classList.remove('active');
+                asideElement.classList.add('closed');
+                menuToggle.classList.remove('active');
+            } 
+            //메뉴 토글 & 쿠키저장
+            function asideActive(){
+                const menuToggle = document.getElementById('menu_toggle');
+                const asideElement = document.getElementById('aside');
+                //메뉴 닫기
+                if(menuToggle.classList.contains('active')){
+                    menuToggle.classList.remove('active');
+                    asideElement.classList.remove('active');
+                    asideElement.classList.add('closed');
+                    setCookie('menuState', 'closed', 0);//쿠키저장
+                }else{//메뉴 열기
+                    menuToggle.classList.add('active');
+                    asideElement.classList.add('active');
+                    asideElement.classList.remove('closed');
+                    setCookie('menuState', 'open', 0); //쿠키저장
+                }
+            }
+        </script>
+        <div class="nav_wrap" data-simplebar>
+            <div id="nav">
+                <ul>
+                    <li><div class="tit">사업관리</span></div>
+                        <ul>
+                            <li class="active open"><a href="javascript:;"><img src="../../assets/images/nav_icon1_1.svg" class="nav_icon"><span>사업 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;" class="active">사업 목록</a></li>
+                                    <li><a href="javascript:;">만족도 조사</a></li>
+                                    <li><a href="javascript:;">설문지 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon1_2.svg" class="nav_icon"><span>상단 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">상담 내역 관리</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><div class="tit">컨설팅 서비스</div>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_1.svg" class="nav_icon"><span>컨설팅사업 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">컨설팅사업 총괄 관리</a></li>
+                                    <li><a href="javascript:;">컨설팅사업 신청 관리</a></li>
+                                    <li><a href="javascript:;">수혜자 선정 관리</a></li>
+                                    <li><a href="javascript:;">진단·컨설팅사업 운영 관리</a></li>
+                                    <li><a href="javascript:;">실내환경 개선대상 선정 관리</a></li>
+                                    <li><a href="javascript:;">실내환경 개선사업 운영 관리</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_2.svg" class="nav_icon"><span>2025년 이전 사업</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">접수관리-가구</a></li>
+                                    <li><a href="javascript:;">결과관리-가구</a></li>
+                                    <li><a href="javascript:;">접수관리-시설</a></li>
+                                    <li><a href="javascript:;">결과관리-시설</a></li>
+                                    <li><a href="javascript:;">통계관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_3.svg" class="nav_icon"><span>후원물품 입출고 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">후원물품 관리</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><div class="tit">환경보건이용권 서비스</div>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_1.svg" class="nav_icon"><span>환경보건이용권 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">환경보건이용권 신청 관리</a></li>
+                                    <li><a href="javascript:;">수혜자 선정 관리</a></li>
+                                    <li><a href="javascript:;">회원별 포인트 현황</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_2.svg" class="nav_icon"><span>진료 지원 신청 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">진료비 지원 관리</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_3.svg" class="nav_icon"><span>온라인몰 연계 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">포인트 지급 사용 정산 내역</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><div class="tit">시스템 관리</div>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_1.svg" class="nav_icon"><span>게시판 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">게시판 관리</a></li>
+                                    <li><a href="javascript:;">문의사항 관리</a></li>
+                                    <li><a href="javascript:;">자주하는 질문 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_2.svg" class="nav_icon"><span>시스템 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">공통코드 관리</a></li>
+                                    <li><a href="javascript:;">관련법령·약관 관리</a></li>
+                                    <li><a href="javascript:;">개인정보처리내역</a></li>
+                                    <li><a href="javascript:;">프로그램 관리</a></li>
+                                    <li><a href="javascript:;">프로그램 권한 부여 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_3.svg" class="nav_icon"><span>사용자 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">사용자 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_4.svg" class="nav_icon"><span>통계 및 이력 모니터링</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">컨설팅 사업 통계</a></li>
+                                    <li><a href="javascript:;">컨설팅 사업 통계 (2025년 이전)</a></li>
+                                    <li><a href="javascript:;">환경보건이용권 신청 통계</a></li>
+                                    <li><a href="javascript:;">진료 지원 통계</a></li>
+                                    <li><a href="javascript:;">나누리캠프 이용 통계</a></li>
+                                    <li><a href="javascript:;">후원 물품 입출고 모니터링</a></li>
+                                    <li><a href="javascript:;">온라인몰 연계 모니터링</a></li>
+                                    <li><a href="javascript:;">알림 발송 내역 모니터링</a></li>
+                                    <li><a href="javascript:;">접속 로그</a></li>
+                                    <li><a href="javascript:;">권한 변경 이력</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	</div>
+	<!-- //header -->	
+
+    <div id="content_wrap">
+        <div id="header">
+            <div class="l">
+                <div class="location">
+                    <div class="item"><a href="javascript:;" class="home">Home</a></div>
+                    <div class="item"><a href="javascript:;">category</a></div>
+                    <div class="item"><a href="javascript:;">1depth</a></div>
+                    <div class="item"><a href="javascript:;">2depth</a></div>
+                </div>
+            </div>
+            <div class="r">
+                <div class="header_links">
+                    <div class="item">
+                        <a href="javascript:;" class="password">
+                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.781" cy="5.156" r="3.406" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5"/><path d="M1 15c0-.438 1.75-5.25 7-5.25s7 4.375 7 5.25" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            <span>마이페이지</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:;" class="logout">
+                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.788 1H1.5a.5.5 0 0 0-.5.5v12.576a.5.5 0 0 0 .5.5h6.288" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/><path d="M11.182 3.546 15 7.788l-3.818 4.242m-5.94-4.242h9.334" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span>로그아웃</span>
+                        </a>
+                    </div>
+                    <div class="item"><a href="javascript:;" class="session"><strong>00:00:00</strong><span>연장</span></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+        <div id="content">
+            <div class="page_title">
+                <h2>검색 UI, Table Style</h2>
+            </div>
+            
+            <div class="page">
+
+                <!-- 검색 -->
+                <div class="search_form row">
+                    <div class="search_inner">
+                        <div class="search_item">
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">년도</option>
+                                        </select>
+                                    </div>
+                    
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">지역구분</option>
+                                        </select>
+                                    </div>
+                        
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">시설구분</option>
+                                        </select>
+                                    </div>
+                        
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">다운로드 여부</option>
+                                        </select>
+                                    </div>
+                        
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">이름</option>
+                                        </select>
+                                    </div>
+                            
+                                    <div class="input size_30">
+                                        <input type="text" placeholder="검색어를 입력하세요.">
+                                    </div>
+                                    <div class="input">
+                                        <button type="button" class="btn btn_md btn_submit">
+                                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.077" cy="7.077" r="4.327" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5"/><path d="M10.308 10.308 14 14" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                            <span>검색</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search_form row">
+                    <div class="search_inner">
+                        <div class="search_item">
+                            <div class="tit">시설구분</div>
+                            <div class="cnt">
+                                <div class="check_list">
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        노인여가복지시설
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        노인주거복지시설
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        한부모가족복지시설
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        장애인복지시설
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        아동복지시설
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        기타
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_item">
+                            <div class="tit">지역구분</div>
+                            <div class="cnt">
+                                <div class="check_list">
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        강원
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        경기
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        경남
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        경북
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        전남
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        전북
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        충남
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        충북
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        제주
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        서울
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        광주
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        대구
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        대전
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        부산
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        세종
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        울산
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        인천
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_item">
+                            <div class="tit">지역구분</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">지역구분</option>
+                                        </select>
+                                    </div>
+                    
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">시·군·구</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_item">
+                            <div class="tit">검색조건</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">년도</option>
+                                        </select>
+                                    </div>
+                    
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">신청구분</option>
+                                        </select>
+                                    </div>
+                            
+                                    <div class="input size_30">
+                                        <input type="text" placeholder="검색어를 입력하세요.">
+                                    </div>
+                                    <div class="input">
+                                        <button type="button" class="btn btn_md btn_submit">
+                                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.077" cy="7.077" r="4.327" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5"/><path d="M10.308 10.308 14 14" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                            <span>검색</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search_form col">
+                    <div class="search_inner">
+                        <div class="search_item">
+                            <div class="tit">사업분류</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">2024</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit">진행상태</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">선정</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit">지역</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">서울</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">강남구</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit">검색조건</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">신청인ID</option>
+                                        </select>
+                                    </div>
+                                    <div class="input size_30">
+                                        <input type="text" placeholder="검색어를 입력하세요.">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit"></div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input">
+                                        <button type="button" class="btn btn_md btn_submit">
+                                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.077" cy="7.077" r="4.327" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5"/><path d="M10.308 10.308 14 14" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                            <span>검색</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="search_form col">
+                    <div class="search_inner">
+                        <div class="search_item">
+                            <div class="tit">사업분류</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">2024</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit">지역</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">서울</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">강남구</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit">검색조건</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">신청인ID</option>
+                                        </select>
+                                    </div>
+                                    <div class="input size_30">
+                                        <input type="text" placeholder="검색어를 입력하세요.">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search_inner">
+                        <div class="search_item">
+                            <div class="tit">진단·컨설팅</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">승인</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit">실내환경 개선대상 선정평가</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">승인</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit">실내환경 개선 선정결과</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">승인</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit">실내환경 개선공사</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">승인</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit"></div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input">
+                                        <button type="button" class="btn btn_md btn_submit">
+                                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.077" cy="7.077" r="4.327" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5"/><path d="M10.308 10.308 14 14" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                            <span>검색</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="search_form col">
+                    <div class="search_inner">
+                        <div class="search_item">
+                            <div class="tit">사업분류</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">2024</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit">진행상태</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">선정</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit">지역</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">서울</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">강남구</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit">검색조건</div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input size_18">
+                                        <select name="" id="">
+                                            <option value="">신청인ID</option>
+                                        </select>
+                                    </div>
+                                    <div class="input size_30">
+                                        <input type="text" placeholder="검색어를 입력하세요.">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item">
+                            <div class="tit"></div>
+                            <div class="cnt">
+                                <div class="input_group">
+                                    <div class="input">
+                                        <button type="button" class="btn btn_md btn_submit">
+                                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.077" cy="7.077" r="4.327" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5"/><path d="M10.308 10.308 14 14" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                            <span>검색</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item size_xl">
+                            <div class="tit">지역구분</div>
+                            <div class="cnt">
+                                <div class="check_list">
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        강원
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        경기
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        경남
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        경북
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        전남
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        전북
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        충남
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        충북
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        제주
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        서울
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        광주
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        대구
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        대전
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        부산
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        세종
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        울산
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        인천
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item size_xl">
+                            <div class="tit">상병코드</div>
+                            <div class="cnt">
+                                <div class="check_list">
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        아토피
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        천식
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        비염
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search_item size_xl">
+                            <div class="tit">증빙자료</div>
+                            <div class="cnt">
+                                <div class="check_list">
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        처방전/확인서
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        진료비영수증
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        세부내역서
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        약제비영수증
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 검색끝 -->
+
+                <!-- 리스트 -->
+                <div class="list_table">
+                    <div class="list_top">
+                        <div class="l">
+                            <div class="total">처리 대기 건수 : <strong>2</strong>건</div>
+                            <div>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="ck_icon"></span>
+                                    목록 간소화
+                                </label>
+                            </div>
+                        </div>
+                        <div class="r">
+                            <div class="btn_list left">
+                                <button class="btn btn_md btn_green">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 14h8.727M8.364 10.727 4.545 7.455M8.364 10.727l3.818-3.272M8.364 10.727V2" stroke="#10937B" style="stroke:color(display-p3 .0647 .575 .4811);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                    <span>엑셀파일다운로드</span>
+                                </button>
+                                <button class="btn btn_md btn_green">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 14h8.727M8.364 10.727 4.545 7.455M8.364 10.727l3.818-3.272M8.364 10.727V2" stroke="#10937B" style="stroke:color(display-p3 .0647 .575 .4811);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                    <span>PDF다운로드</span>
+                                </button>
+                                <button class="btn btn_md btn_green">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 14h8.727M8.364 10.727 4.545 7.455M8.364 10.727l3.818-3.272M8.364 10.727V2" stroke="#10937B" style="stroke:color(display-p3 .0647 .575 .4811);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                    <span>평가표 다운로드</span>
+                                </button>
+                                <button class="btn btn_md btn_green">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.727 14H4M8.364 2l3.818 3.273M8.363 2 4.545 5.273M8.364 2v8.727" stroke="#10937B" style="stroke:color(display-p3 .0647 .575 .4811);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                    <span>진단 측정값 업로드</span>
+                                </button>
+                                <button class="btn btn_md btn_green">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.727 14H4M8.364 2l3.818 3.273M8.363 2 4.545 5.273M8.364 2v8.727" stroke="#10937B" style="stroke:color(display-p3 .0647 .575 .4811);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                    <span>평가 결과 업로드</span>
+                                </button>
+                                <button class="btn btn_md btn_blue">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M8 13V3" stroke="#437EE7" style="stroke:color(display-p3 .2627 .4941 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                    <span>컨설턴트 등록</span>
+                                </button>
+                                <button class="btn btn_md btn_blue">
+                                    평가차수 지정
+                                </button>
+                                <button class="btn btn_md btn_blue">
+                                    상담 작성
+                                </button>
+                                <button class="btn btn_md btn_blue">
+                                    물품 등록
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table label_control">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="min-width:50px;max-width:50px;">
+                                        <label class="checkbox single">
+                                            <input type="checkbox" class="check_all">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </th>
+                                    <th>텍스트스타일1</th>
+                                    <th>텍스트스타일2</th>
+                                    <th>버튼디자인_활성화</th>
+                                    <th>버튼디자인_비활성화</th>
+                                    <th>컨설턴트</th>
+                                    <th>여부</th>
+                                    <th>셀렉박스</th>
+                                    <th>인풋박스</th>
+                                    <th>건수입력</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </td>
+                                    <td><a href="javascript:;" class="link">202454541111</a></td>
+                                    <td>텍스트스타일2</td>
+                                    <td>
+                                        <div class="td_btn_list">
+                                            <button class="btn btn_sm" type="button">입고</button>
+                                            <button class="btn btn_sm" type="button">출고</button>
+                                            <button class="btn btn_sm" type="button">승인</button>
+                                            <button class="btn btn_sm" type="button">반려</button>
+                                            <button class="btn btn_sm" type="button">상세보기</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="td_btn_list">
+                                            <button class="btn btn_sm" type="button" disabled>승인</button>
+                                            <button class="btn btn_sm" type="button" disabled>반려</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        이*정
+                                        <button type="button" class="btn_icon">
+                                            <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.269h12" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/><path d="M5.73 4.27V2a.5.5 0 0 1 .5-.5h4.54a.5.5 0 0 1 .5.5v2.27" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5"/><path d="M3.885 4.269v9.654a.5.5 0 0 0 .5.5h8.23a.5.5 0 0 0 .5-.5V4.269" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5"/><path d="M6.654 6.577v5.538M10.346 6.577v5.538" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                            <span class="sound_only">삭제</span>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <span class="icon_status status_o">O</span><span class="icon_status status_x">X</span>
+                                    </td>
+                                    <td>
+                                        <div class="input_group">
+                                            <div class="input size_15">
+                                                <select name="" id="">
+                                                    <option value="">옵션1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input_group">
+                                            <div class="input size_15">
+                                                <input type="text" value="옵션1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input_group">
+                                            <div class="input size_8">
+                                                <input type="text" value="123" class="align_right">
+                                            </div>
+                                            <div class="input_text">
+                                                건
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="list_table">
+                    <div class="list_top">
+                        <div class="l">
+                            <div class="total">총 등록 계정 : <strong>521</strong>개</div>
+                        </div>
+                        <div class="r">
+                            <div class="btn_list left">
+                                <button class="btn btn_md btn_default">
+                                    수혜자 선정
+                                </button>
+                                <button class="btn btn_md btn_blue">
+                                    수혜자 확정
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    승인
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    반려
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    사용 중지 해제
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    선택 발송
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    전체 발송
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M8 13V3" stroke="#1C283D" style="stroke:color(display-p3 .1098 .1569 .2392);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                    <span>행추가</span>
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10" stroke="#1C283D" style="stroke:color(display-p3 .1098 .1569 .2392);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                    <span>행삭제</span>
+                                </button>
+                                <button class="btn btn_md btn_submit_line">
+                                    사업 등록
+                                </button>
+                                <button class="btn btn_md btn_submit_line">
+                                    등록
+                                </button>
+                                <button class="btn btn_md btn_blue">
+                                    완료
+                                </button>
+                                <button class="btn btn_md btn_blue">
+                                    저장
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    삭제
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    설문지 복사
+                                </button>
+                                <button class="btn btn_md btn_submit_line">
+                                    설문지 등록
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    목록
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table label_control">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" style="min-width:50px;max-width:50px;">
+                                        <label class="checkbox single">
+                                            <input type="checkbox" class="check_all">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </th>
+                                    <th rowspan="2">관리번호</th>
+                                    <th rowspan="2" style="width:27%;">관리번호</th>
+                                    <th colspan="3">가구인원</th>
+                                    <th rowspan="2">첨부파일</th>
+                                    <th rowspan="2">보고서 다운로드</th>
+                                    <th rowspan="2">수기 입력</th>
+                                    <th rowspan="2">상태</th>
+                                </tr>
+                                <tr>
+                                    <th>총</th>
+                                    <th>65세이상</th>
+                                    <th>13세미만</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox single">
+                                            <input type="checkbox" class="check_all">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </td>
+                                    <td>텍스트가 2줄<br/>텍스트가 2줄</td>
+                                    <td>텍스트가 2줄 텍스트가 2줄 텍스트가 2줄 텍스트가 2줄 텍스트가 2줄 텍스트가 2줄텍스트가 2줄 텍스트가 2줄 텍스트가 2줄텍스트가 2줄 텍스트가 2줄 텍스트가 2줄텍스트가 2줄 텍스트가 2줄 텍스트가 2줄텍스트가 2줄 텍스트가 2줄 텍스트가 2줄텍스트가 2줄 텍스트가 2줄 텍스트가 2줄</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>
+                                        <button type="button" class="btn_icon">
+                                            <svg width="16" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 12.2a1.4 1.4 0 0 1-1.4 1.4H2.4A1.4 1.4 0 0 1 1 12.2V2.4A1.4 1.4 0 0 1 2.4 1h3.5l1.4 2.1h6.3A1.4 1.4 0 0 1 15 4.5v7.7Z" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <span class="sound_only">첨푸파일</span>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_icon">
+                                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15h10.182M8.09 11.182 3.637 7.364M8.091 11.182l4.455-3.818M8.09 11.182V1" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                            <span class="sound_only">보고서 다운로드</span>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_icon">
+                                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.262 2.476h-4.87A1.392 1.392 0 0 0 1 3.867v9.741A1.391 1.391 0 0 0 2.392 15h9.74a1.391 1.391 0 0 0 1.392-1.392v-4.87" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.48 1.432a1.476 1.476 0 1 1 2.088 2.088l-6.61 6.61-2.783.695.696-2.783 6.61-6.61Z" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <span class="sound_only">수기 입력</span>
+                                        </button>
+                                    </td> 
+                                    <td>
+                                        <div class="td_btn_list">
+                                            <span class="badge badge_blue">승인</span>
+                                            <span class="badge badge_green">확정</span>
+                                            <span class="badge badge_dark">대기</span>
+                                            <span class="badge badge_red">반려</span>
+                                            <span class="badge badge_blue">성공</span>
+                                            <span class="badge badge_red">실패</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 리스트 끝 -->
+
+               
+
+            </div>
+        </div>
+        <!-- //content -->
+        <div id="footer">
+            <div class="copy">Ⓒ<strong>KEITI</strong> ALL RIGHTS RESERVED.</div>
+            <div class="ver">Version 1.0.0</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>	 

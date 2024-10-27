@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=1200"/>
+<link rel="canonical" href="">
+<link rel="shortcut icon" type="image/x-icon" href="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta property="og:title" content=""/>
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content=""/>
+<meta property="og:description" content="" />
+<title>환경보건이용권 관리자</title>
+<link rel="stylesheet" type="text/css" href="../../assets/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/common.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/content.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/swiper.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/toastify.min.css" />
+<link href="../../assets/css/pikaday.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+<script src="../../assets/js/jquery-3.4.1.min.js"></script>
+<script src="../../assets/js/jquery-ui.min.js"></script>
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="../../assets/js/swiper.js"></script>
+<script src="../../assets/js/common.js"></script>
+<script src="../../assets/js/pikaday.js"></script>
+<script src="../../assets/js/inputmask.js"></script>
+<script src="../../assets/js/toastify-js.js"></script>
+</head>
+<body>
+
+<!-- wrap -->
+<div id="layout">
+	<h1 id="header_h1">환경보건이용권 관리자</h1>
+	<div id="skip_to_container">
+		<!-- skip navigation -->
+		<a href="#content">내용 바로가기</a>
+		<a href="#nav">서비스메뉴 바로가기</a>
+	</div>
+	<hr class="hide" />	
+
+	<!-- header -->
+	<div id="aside" class="active">
+        <script>
+            
+        </script>
+		<div id="logo">
+            <a href="../main/main.html"><img src="../../assets/images/hd_logo.svg" alt="환경보건이용권 관리자"></a>
+        </div>
+        <button id="menu_toggle" type="button" class="active" onclick="asideActive();">메뉴열기</button>
+        <script>
+            //자바스크립트로 쿠키확인 후 처리하기때문에 약간의 딜레이가 있을수 있음. 딜레이 없이 하려면 회원db에 상태값 저장해서 로드시 클래스 출력해서 사용하면 됨.  쿠키 딜레이 최소화 하기위해 태그 바로밑에서 스크립트 실행
+            const menuState = getCookie('menuState');
+            const asideElement = document.getElementById('aside');
+            const menuToggle = document.getElementById('menu_toggle');
+            if (menuState === 'open') {
+                asideElement.classList.add('active');
+                asideElement.classList.remove('closed');
+                menuToggle.classList.add('active');
+            }else if (menuState === 'closed') {
+                asideElement.classList.remove('active');
+                asideElement.classList.add('closed');
+                menuToggle.classList.remove('active');
+            } 
+            //메뉴 토글 & 쿠키저장
+            function asideActive(){
+                const menuToggle = document.getElementById('menu_toggle');
+                const asideElement = document.getElementById('aside');
+                //메뉴 닫기
+                if(menuToggle.classList.contains('active')){
+                    menuToggle.classList.remove('active');
+                    asideElement.classList.remove('active');
+                    asideElement.classList.add('closed');
+                    setCookie('menuState', 'closed', 0);//쿠키저장
+                }else{//메뉴 열기
+                    menuToggle.classList.add('active');
+                    asideElement.classList.add('active');
+                    asideElement.classList.remove('closed');
+                    setCookie('menuState', 'open', 0); //쿠키저장
+                }
+            }
+        </script>
+        <div class="nav_wrap" data-simplebar>
+            <div id="nav">
+                <ul>
+                    <li><a href="javascript:;" class="tit">사업관리</span></a>
+                        <ul>
+                            <li class="active open"><a href="javascript:;"><img src="../../assets/images/nav_icon1_1.svg" class="nav_icon"><span>사업 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;" class="active">사업 목록</a></li>
+                                    <li><a href="javascript:;">만족도 조사</a></li>
+                                    <li><a href="javascript:;">설문지 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon1_2.svg" class="nav_icon"><span>상단 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">상담 내역 관리</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;" class="tit">컨설팅 서비스</a>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_1.svg" class="nav_icon"><span>컨설팅사업 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">컨설팅사업 총괄 관리</a></li>
+                                    <li><a href="javascript:;">컨설팅사업 신청 관리</a></li>
+                                    <li><a href="javascript:;">수혜자 선정 관리</a></li>
+                                    <li><a href="javascript:;">진단·컨설팅사업 운영 관리</a></li>
+                                    <li><a href="javascript:;">실내환경 개선대상 선정 관리</a></li>
+                                    <li><a href="javascript:;">실내환경 개선사업 운영 관리</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_2.svg" class="nav_icon"><span>2025년 이전 사업</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">접수관리-가구</a></li>
+                                    <li><a href="javascript:;">결과관리-가구</a></li>
+                                    <li><a href="javascript:;">접수관리-시설</a></li>
+                                    <li><a href="javascript:;">결과관리-시설</a></li>
+                                    <li><a href="javascript:;">통계관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_3.svg" class="nav_icon"><span>후원물품 입출고 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">후원물품 관리</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;" class="tit">환경보건이용권 서비스</a>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_1.svg" class="nav_icon"><span>환경보건이용권 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">환경보건이용권 신청 관리</a></li>
+                                    <li><a href="javascript:;">수혜자 선정 관리</a></li>
+                                    <li><a href="javascript:;">회원별 포인트 현황</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_2.svg" class="nav_icon"><span>진료 지원 신청 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">진료비 지원 관리</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_3.svg" class="nav_icon"><span>온라인몰 연계 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">포인트 지급 사용 정산 내역</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;" class="tit">시스템 관리</a>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_1.svg" class="nav_icon"><span>게시판 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">게시판 관리</a></li>
+                                    <li><a href="javascript:;">문의사항 관리</a></li>
+                                    <li><a href="javascript:;">자주하는 질문 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_2.svg" class="nav_icon"><span>시스템 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">공통코드 관리</a></li>
+                                    <li><a href="javascript:;">관련법령·약관 관리</a></li>
+                                    <li><a href="javascript:;">개인정보처리내역</a></li>
+                                    <li><a href="javascript:;">프로그램 관리</a></li>
+                                    <li><a href="javascript:;">프로그램 권한 부여 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_3.svg" class="nav_icon"><span>사용자 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">사용자 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_4.svg" class="nav_icon"><span>통계 및 이력 모니터링</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">컨설팅 사업 통계</a></li>
+                                    <li><a href="javascript:;">컨설팅 사업 통계 (2025년 이전)</a></li>
+                                    <li><a href="javascript:;">환경보건이용권 신청 통계</a></li>
+                                    <li><a href="javascript:;">진료 지원 통계</a></li>
+                                    <li><a href="javascript:;">나누리캠프 이용 통계</a></li>
+                                    <li><a href="javascript:;">후원 물품 입출고 모니터링</a></li>
+                                    <li><a href="javascript:;">온라인몰 연계 모니터링</a></li>
+                                    <li><a href="javascript:;">알림 발송 내역 모니터링</a></li>
+                                    <li><a href="javascript:;">접속 로그</a></li>
+                                    <li><a href="javascript:;">권한 변경 이력</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	</div>
+	<!-- //header -->	
+
+    <div id="content_wrap">
+        <div id="header">
+            <div class="l">
+                <div class="location">
+                    <div class="item"><a href="javascript:;" class="home">Home</a></div>
+                    <div class="item"><a href="javascript:;">category</a></div>
+                    <div class="item"><a href="javascript:;">1depth</a></div>
+                    <div class="item"><a href="javascript:;">2depth</a></div>
+                </div>
+            </div>
+            <div class="r">
+                <div class="header_links">
+                    <div class="item">
+                        <a href="javascript:;" class="password">
+                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.781" cy="5.156" r="3.406" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5"/><path d="M1 15c0-.438 1.75-5.25 7-5.25s7 4.375 7 5.25" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            <span>마이페이지</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:;" class="logout">
+                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.788 1H1.5a.5.5 0 0 0-.5.5v12.576a.5.5 0 0 0 .5.5h6.288" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/><path d="M11.182 3.546 15 7.788l-3.818 4.242m-5.94-4.242h9.334" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span>로그아웃</span>
+                        </a>
+                    </div>
+                    <div class="item"><a href="javascript:;" class="session"><strong>00:00:00</strong><span>연장</span></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+        <div id="content">
+            <div class="page_title">
+                <h2>프로그램 관리</h2>
+            </div>
+            
+            <div class="page">
+                <div class="list_top">
+                    <div class="l">
+                        <div class="input_group">
+                            <div class="input size_24">
+                                <select name="" id="">
+                                    <option value="">컨설턴트</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="r">
+                        <div class="btn_list left">
+                            <button class="btn btn_md btn_default" type="button">초기화</button>
+                            <button class="btn btn_md btn_submit" type="button">저장</button>
+                            <button class="btn btn_md btn_submit_line" type="button">수정</button>
+                            <button class="btn btn_md btn_default" type="button">삭제</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code_wrap">
+                    <div class="code_tree">
+                        <div class="tree_title">전체메뉴</div>
+                        <div class="tree_list">
+                            <ul>
+                                <li class="open">
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">사업관리</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">사업 목록</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">만족도 조사</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">설문지 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">상담 관리</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">상담 내역 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">컨설팅사업 관리</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">컨설팅사업 총괄 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">컨설팅사업 신청 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">수혜자 선정 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">진단·컨설팅사업 운영 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">실내환경 개선대상 선정 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">실내환경 개선사업 운영 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">알림발송</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">2025년 이전 사업</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">접수관리-가구</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">결과관리-가구</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">접수관리-시설</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">결과관리-시설</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">통계관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">후원물품 입출고 관리</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">후원물품 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">환경보건이용권 관리</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">환경보건이용권 신청 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">수혜자 선정 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">회원별 포인트 현황</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">알림발송</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">진료 지원 신청 관리</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">진료비 지원 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">알림발송</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">온라인몰 연계 관리</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">포인트 지급 사용 정산 내역</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">게시판 관리</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">게시판 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">문의사항 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">자주하는 질문 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">시스템 관리</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">공통코드 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">관련법령·약관 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">개인정보처리내역</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">프로그램 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">프로그램 권한 부여 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">사용자 관리</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">사용자 관리</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <button type="button" class="toggle_btn">토글버튼</button>
+                                        <a href="javascript:;" class="tit">통계 및 이력 모니터링</a>
+                                        <label class="checkbox single">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">컨설팅 사업 통계</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">컨설팅 사업 통계 (2025년 이전)</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">환경보건이용권 신청 통계</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">진료 지원 통계</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">나누리캠프 이용 통계</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">후원 물품 입출고 모니터링</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">온라인몰 연계 모니터링</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">알림 발송 내역 모니터링</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">접속 로그</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="javascript:;" class="tit">권한 변경 이력</a>
+                                                <label class="checkbox single">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', () => {
+                                    const toggleButtons = document.querySelectorAll('.toggle_btn');
+
+                                    toggleButtons.forEach((button) => {
+                                        button.addEventListener('click', () => {
+                                            const listItem = button.closest('li');
+                                            
+                                            if (listItem) {
+                                                listItem.classList.toggle('open');
+                                            }
+                                        });
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="code_detail">
+                        <div class="form form_table">
+                            <div class="table">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:20rem;">
+                                        <col style="width:calc(100% - 20rem);";>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>메뉴No <span class="required">필수</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input">
+                                                        <input type="text" value="1">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>메뉴순서 <span class="required">필수</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input">
+                                                        <input type="text" value="1">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>메뉴명 <span class="required">필수</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input">
+                                                        <input type="text" value="2depth Menu">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상위메뉴 <span class="required">필수</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input">
+                                                        <input type="text" value="0">
+                                                    </div>
+                                                    <button class="btn btn_md btn_blue" type="button">상위 메뉴 검색</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>파일명 <span class="required">필수</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input">
+                                                        <input type="text" value="2depth Menu">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>관련이미지명</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input">
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>관련이미지 경로</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input">
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>url</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input">
+                                                        <input type="text" value="http://www.trionsoft.com">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>메뉴출력여부</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input size_24">
+                                                        <select name="" id="">
+                                                            <option value="">출력</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>타입</th>
+                                            <td>
+                                                <label class="checkbox inline">
+                                                    <input type="radio" name="radio1">
+                                                    <span class="ck_icon"></span>
+                                                    메뉴
+                                                </label>
+                                                <label class="checkbox inline">
+                                                    <input type="radio" name="radio1">
+                                                    <span class="ck_icon"></span>
+                                                    기능
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>메뉴설명</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input">
+                                                        <textarea name="" id="" style="height: 6.4rem;">사업관리에 컨설팅 총괄관리 페이지 입니다.</textarea>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //content -->
+        <div id="footer">
+            <div class="copy">Ⓒ<strong>KEITI</strong> ALL RIGHTS RESERVED.</div>
+            <div class="ver">Version 1.0.0</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>	 

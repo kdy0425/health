@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=1200"/>
+<link rel="canonical" href="">
+<link rel="shortcut icon" type="image/x-icon" href="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta property="og:title" content=""/>
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content=""/>
+<meta property="og:description" content="" />
+<title>환경보건이용권 관리자</title>
+<link rel="stylesheet" type="text/css" href="../../assets/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/common.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/content.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/swiper.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/toastify.min.css" />
+<link href="../../assets/css/pikaday.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+<script src="../../assets/js/jquery-3.4.1.min.js"></script>
+<script src="../../assets/js/jquery-ui.min.js"></script>
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="../../assets/js/swiper.js"></script>
+<script src="../../assets/js/common.js"></script>
+<script src="../../assets/js/pikaday.js"></script>
+<script src="../../assets/js/inputmask.js"></script>
+<script src="../../assets/js/toastify-js.js"></script>
+</head>
+<body>
+
+<!-- wrap -->
+<div id="layout">
+	<h1 id="header_h1">환경보건이용권 관리자</h1>
+	<div id="skip_to_container">
+		<!-- skip navigation -->
+		<a href="#content">내용 바로가기</a>
+		<a href="#nav">서비스메뉴 바로가기</a>
+	</div>
+	<hr class="hide" />	
+
+	<!-- header -->
+	<div id="aside" class="active">
+        <script>
+            
+        </script>
+		<div id="logo">
+            <a href="../main/main.html"><img src="../../assets/images/hd_logo.svg" alt="환경보건이용권 관리자"></a>
+        </div>
+        <button id="menu_toggle" type="button" class="active" onclick="asideActive();">메뉴열기</button>
+        <script>
+            //자바스크립트로 쿠키확인 후 처리하기때문에 약간의 딜레이가 있을수 있음. 딜레이 없이 하려면 회원db에 상태값 저장해서 로드시 클래스 출력해서 사용하면 됨.  쿠키 딜레이 최소화 하기위해 태그 바로밑에서 스크립트 실행
+            const menuState = getCookie('menuState');
+            const asideElement = document.getElementById('aside');
+            const menuToggle = document.getElementById('menu_toggle');
+            if (menuState === 'open') {
+                asideElement.classList.add('active');
+                asideElement.classList.remove('closed');
+                menuToggle.classList.add('active');
+            }else if (menuState === 'closed') {
+                asideElement.classList.remove('active');
+                asideElement.classList.add('closed');
+                menuToggle.classList.remove('active');
+            } 
+            //메뉴 토글 & 쿠키저장
+            function asideActive(){
+                const menuToggle = document.getElementById('menu_toggle');
+                const asideElement = document.getElementById('aside');
+                //메뉴 닫기
+                if(menuToggle.classList.contains('active')){
+                    menuToggle.classList.remove('active');
+                    asideElement.classList.remove('active');
+                    asideElement.classList.add('closed');
+                    setCookie('menuState', 'closed', 0);//쿠키저장
+                }else{//메뉴 열기
+                    menuToggle.classList.add('active');
+                    asideElement.classList.add('active');
+                    asideElement.classList.remove('closed');
+                    setCookie('menuState', 'open', 0); //쿠키저장
+                }
+            }
+        </script>
+        <div class="nav_wrap" data-simplebar>
+            <div id="nav">
+                <ul>
+                    <li><div class="tit">사업관리</span></div>
+                        <ul>
+                            <li class="active open"><a href="javascript:;"><img src="../../assets/images/nav_icon1_1.svg" class="nav_icon"><span>사업 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;" class="active">사업 목록</a></li>
+                                    <li><a href="javascript:;">만족도 조사</a></li>
+                                    <li><a href="javascript:;">설문지 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon1_2.svg" class="nav_icon"><span>상단 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">상담 내역 관리</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><div class="tit">컨설팅 서비스</div>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_1.svg" class="nav_icon"><span>컨설팅사업 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">컨설팅사업 총괄 관리</a></li>
+                                    <li><a href="javascript:;">컨설팅사업 신청 관리</a></li>
+                                    <li><a href="javascript:;">수혜자 선정 관리</a></li>
+                                    <li><a href="javascript:;">진단·컨설팅사업 운영 관리</a></li>
+                                    <li><a href="javascript:;">실내환경 개선대상 선정 관리</a></li>
+                                    <li><a href="javascript:;">실내환경 개선사업 운영 관리</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_2.svg" class="nav_icon"><span>2025년 이전 사업</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">접수관리-가구</a></li>
+                                    <li><a href="javascript:;">결과관리-가구</a></li>
+                                    <li><a href="javascript:;">접수관리-시설</a></li>
+                                    <li><a href="javascript:;">결과관리-시설</a></li>
+                                    <li><a href="javascript:;">통계관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_3.svg" class="nav_icon"><span>후원물품 입출고 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">후원물품 관리</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><div class="tit">환경보건이용권 서비스</div>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_1.svg" class="nav_icon"><span>환경보건이용권 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">환경보건이용권 신청 관리</a></li>
+                                    <li><a href="javascript:;">수혜자 선정 관리</a></li>
+                                    <li><a href="javascript:;">회원별 포인트 현황</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_2.svg" class="nav_icon"><span>진료 지원 신청 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">진료비 지원 관리</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_3.svg" class="nav_icon"><span>온라인몰 연계 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">포인트 지급 사용 정산 내역</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><div class="tit">시스템 관리</div>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_1.svg" class="nav_icon"><span>게시판 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">게시판 관리</a></li>
+                                    <li><a href="javascript:;">문의사항 관리</a></li>
+                                    <li><a href="javascript:;">자주하는 질문 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_2.svg" class="nav_icon"><span>시스템 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">공통코드 관리</a></li>
+                                    <li><a href="javascript:;">관련법령·약관 관리</a></li>
+                                    <li><a href="javascript:;">개인정보처리내역</a></li>
+                                    <li><a href="javascript:;">프로그램 관리</a></li>
+                                    <li><a href="javascript:;">프로그램 권한 부여 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_3.svg" class="nav_icon"><span>사용자 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">사용자 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_4.svg" class="nav_icon"><span>통계 및 이력 모니터링</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">컨설팅 사업 통계</a></li>
+                                    <li><a href="javascript:;">컨설팅 사업 통계 (2025년 이전)</a></li>
+                                    <li><a href="javascript:;">환경보건이용권 신청 통계</a></li>
+                                    <li><a href="javascript:;">진료 지원 통계</a></li>
+                                    <li><a href="javascript:;">나누리캠프 이용 통계</a></li>
+                                    <li><a href="javascript:;">후원 물품 입출고 모니터링</a></li>
+                                    <li><a href="javascript:;">온라인몰 연계 모니터링</a></li>
+                                    <li><a href="javascript:;">알림 발송 내역 모니터링</a></li>
+                                    <li><a href="javascript:;">접속 로그</a></li>
+                                    <li><a href="javascript:;">권한 변경 이력</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	</div>
+	<!-- //header -->	
+
+    <div id="content_wrap">
+        <div id="header">
+            <div class="l">
+                <div class="location">
+                    <div class="item"><a href="javascript:;" class="home">Home</a></div>
+                    <div class="item"><a href="javascript:;">category</a></div>
+                    <div class="item"><a href="javascript:;">1depth</a></div>
+                    <div class="item"><a href="javascript:;">2depth</a></div>
+                </div>
+            </div>
+            <div class="r">
+                <div class="header_links">
+                    <div class="item">
+                        <a href="javascript:;" class="password">
+                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.781" cy="5.156" r="3.406" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5"/><path d="M1 15c0-.438 1.75-5.25 7-5.25s7 4.375 7 5.25" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            <span>마이페이지</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:;" class="logout">
+                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.788 1H1.5a.5.5 0 0 0-.5.5v12.576a.5.5 0 0 0 .5.5h6.288" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/><path d="M11.182 3.546 15 7.788l-3.818 4.242m-5.94-4.242h9.334" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span>로그아웃</span>
+                        </a>
+                    </div>
+                    <div class="item"><a href="javascript:;" class="session"><strong>00:00:00</strong><span>연장</span></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+        <div id="content">
+            <div class="page_title">
+                <h2>신청 현황(가구)</h2>
+            </div>
+            
+            <div class="page">
+                <div class="tap_btn tap_type1">
+                    <a href="javascript:;" class="active">가구점검 설문지 작성</a>
+                    <a href="javascript:;">현장점검표 작성</a>
+                    <a href="javascript:;">만족도 설문지 작성</a>
+                    <a href="javascript:;">사진 관리</a>
+                    <a href="javascript:;">실내환경 개선결과 작성</a>
+                    <a href="javascript:;">환경성질환 사전 체크리스트 작성</a>
+                </div>
+
+                <div class="tap_btn tap_type2">
+                    <a href="javascript:;" class="active">천식의 유병상태</a>
+                    <a href="javascript:;">아토피피부염의 유병 상태</a>
+                    <a href="javascript:;">알레르기성 비염의 유병 상태</a>
+                </div>
+
+
+                <div class="btn_box btn_list left">
+                    <button class="btn btn_md btn_blue">
+                        홍길동1
+                    </button>
+                    <button class="btn btn_md btn_gray">
+                        홍길동2
+                    </button>
+                    <button class="btn btn_md btn_submit_line">
+                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M8 13V3" stroke="#437EE7" style="stroke:color(display-p3 .2627 .4941 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        <span>인원추가</span>
+                    </button>
+                </div>
+
+                <form>
+                <div class="section_box">
+                    <div class="form form_table">
+                        <div class="form_tit">신청자 기본 정보</div>
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:20rem;">
+                                    <col style="width:calc(50% - 20rem);">
+                                    <col style="width:20rem;">
+                                    <col style="width:calc(50% - 20rem);">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>관리번호</th>
+                                        <td>202411280072</td>
+                                        <th>컨설턴트</th>
+                                        <td>이*정</td>
+                                    </tr>
+                                    <tr>
+                                        <th>대상가구 구분</th>
+                                        <td colspan="3">
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="radio1">
+                                                <span class="ck_icon"></span>
+                                                저소득
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="radio1">
+                                                <span class="ck_icon"></span>
+                                                결손
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="radio1">
+                                                <span class="ck_icon"></span>
+                                                장애인
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="radio1">
+                                                <span class="ck_icon"></span>
+                                                다문화가족
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="radio1">
+                                                <span class="ck_icon"></span>
+                                                환경성질환
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="radio1">
+                                                <span class="ck_icon"></span>
+                                                홀로어르신
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="radio1">
+                                                <span class="ck_icon"></span>
+                                                기타
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>방문여부</th>
+                                        <td colspan="3">
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="radio2">
+                                                <span class="ck_icon"></span>
+                                                방문
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="radio" name="radio2">
+                                                <span class="ck_icon"></span>
+                                                미방문
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_btns">
+                    <button type="button" class="btn btn_lg btn_submit">등록</button>
+                    <button type="button" class="btn btn_lg btn_default">목록</button>
+                </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- //content -->
+        <div id="footer">
+            <div class="copy">Ⓒ<strong>KEITI</strong> ALL RIGHTS RESERVED.</div>
+            <div class="ver">Version 1.0.0</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>	 

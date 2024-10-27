@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=1160"/>
+<link rel="canonical" href="">
+<link rel="shortcut icon" type="image/x-icon" href="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta property="og:title" content=""/>
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content=""/>
+<meta property="og:description" content="" />
+<title>환경보건이용권 관리자</title>
+<link rel="stylesheet" type="text/css" href="../../assets/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/common.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/content.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/swiper.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/toastify.min.css" />
+<link href="../../assets/css/pikaday.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+<script src="../../assets/js/jquery-3.4.1.min.js"></script>
+<script src="../../assets/js/jquery-ui.min.js"></script>
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="../../assets/js/swiper.js"></script>
+<script src="../../assets/js/common.js"></script>
+<script src="../../assets/js/pikaday.js"></script>
+<script src="../../assets/js/inputmask.js"></script>
+<script src="../../assets/js/toastify-js.js"></script>
+</head>
+<body>
+
+<script>
+//로딩 화면 예제
+function showLoading(){
+    loading('show');
+    //ajax db loading...
+    setTimeout(() => {
+        //loaded
+        loading('hide');
+    }, "3000");
+}
+document.addEventListener("DOMContentLoaded", function() {
+    showLoading()
+});
+</script>
+<!-- wrap -->
+<div id="layout" class="center login">
+	<h1 id="header_h1">환경보건이용권 관리자</h1>
+	
+	<hr class="hide" />	
+
+    <div class="center_box">
+        <div class="center_body">
+            <form action="">
+                <h2>환경보건이용권 관리자 로그인</h2>
+                <div class="form_row size_lg">
+                    <div class="form_item">
+                        <div class="cnt">
+                            <div class="input_group">
+                                <div class="input">
+                                    <input type="text" id="login_id" placeholder="아이디를 입력하세요.">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_item">
+                        <div class="cnt">
+                            <div class="input_group">
+                                <div class="input">
+                                    <input type="password" id="login_password" placeholder="비밀번호를 입력하세요.">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="save_id">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="ck_icon"></span>
+                        아이디 저장
+                    </label>
+                </div>
+                <div class="login_btn">
+                    <button type="submit">로그인</button>
+                </div>
+            </form>
+        </div>
+    </div> 
+    <div class="copy">Ⓒ<strong>KEITI</strong> ALL RIGHTS RESERVED.</div>
+    <div class="ver">Version 1.0.0</div>
+</div>
+
+</body>
+</html>	 

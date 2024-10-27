@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=1200"/>
+<link rel="canonical" href="">
+<link rel="shortcut icon" type="image/x-icon" href="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta property="og:title" content=""/>
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content=""/>
+<meta property="og:description" content="" />
+<title>환경보건이용권 관리자</title>
+<link rel="stylesheet" type="text/css" href="../../assets/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/common.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/content.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/swiper.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/toastify.min.css" />
+<link href="../../assets/css/pikaday.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+<script src="../../assets/js/jquery-3.4.1.min.js"></script>
+<script src="../../assets/js/jquery-ui.min.js"></script>
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="../../assets/js/swiper.js"></script>
+<script src="../../assets/js/common.js"></script>
+<script src="../../assets/js/pikaday.js"></script>
+<script src="../../assets/js/inputmask.js"></script>
+<script src="../../assets/js/toastify-js.js"></script>
+</head>
+<body>
+
+<!-- wrap -->
+<div id="layout">
+	<h1 id="header_h1">환경보건이용권 관리자</h1>
+	<div id="skip_to_container">
+		<!-- skip navigation -->
+		<a href="#content">내용 바로가기</a>
+		<a href="#nav">서비스메뉴 바로가기</a>
+	</div>
+	<hr class="hide" />	
+
+	<!-- header -->
+	<div id="aside" class="active">
+        <script>
+            
+        </script>
+		<div id="logo">
+            <a href="../main/main.html"><img src="../../assets/images/hd_logo.svg" alt="환경보건이용권 관리자"></a>
+        </div>
+        <button id="menu_toggle" type="button" class="active" onclick="asideActive();">메뉴열기</button>
+        <script>
+            //자바스크립트로 쿠키확인 후 처리하기때문에 약간의 딜레이가 있을수 있음. 딜레이 없이 하려면 회원db에 상태값 저장해서 로드시 클래스 출력해서 사용하면 됨.  쿠키 딜레이 최소화 하기위해 태그 바로밑에서 스크립트 실행
+            const menuState = getCookie('menuState');
+            const asideElement = document.getElementById('aside');
+            const menuToggle = document.getElementById('menu_toggle');
+            if (menuState === 'open') {
+                asideElement.classList.add('active');
+                asideElement.classList.remove('closed');
+                menuToggle.classList.add('active');
+            }else if (menuState === 'closed') {
+                asideElement.classList.remove('active');
+                asideElement.classList.add('closed');
+                menuToggle.classList.remove('active');
+            } 
+            //메뉴 토글 & 쿠키저장
+            function asideActive(){
+                const menuToggle = document.getElementById('menu_toggle');
+                const asideElement = document.getElementById('aside');
+                //메뉴 닫기
+                if(menuToggle.classList.contains('active')){
+                    menuToggle.classList.remove('active');
+                    asideElement.classList.remove('active');
+                    asideElement.classList.add('closed');
+                    setCookie('menuState', 'closed', 0);//쿠키저장
+                }else{//메뉴 열기
+                    menuToggle.classList.add('active');
+                    asideElement.classList.add('active');
+                    asideElement.classList.remove('closed');
+                    setCookie('menuState', 'open', 0); //쿠키저장
+                }
+            }
+        </script>
+        <div class="nav_wrap" data-simplebar>
+            <div id="nav">
+                <ul>
+                    <li><div class="tit">사업관리</span></div>
+                        <ul>
+                            <li class="active open"><a href="javascript:;"><img src="../../assets/images/nav_icon1_1.svg" class="nav_icon"><span>사업 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;" class="active">사업 목록</a></li>
+                                    <li><a href="javascript:;">만족도 조사</a></li>
+                                    <li><a href="javascript:;">설문지 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon1_2.svg" class="nav_icon"><span>상단 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">상담 내역 관리</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><div class="tit">컨설팅 서비스</div>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_1.svg" class="nav_icon"><span>컨설팅사업 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">컨설팅사업 총괄 관리</a></li>
+                                    <li><a href="javascript:;">컨설팅사업 신청 관리</a></li>
+                                    <li><a href="javascript:;">수혜자 선정 관리</a></li>
+                                    <li><a href="javascript:;">진단·컨설팅사업 운영 관리</a></li>
+                                    <li><a href="javascript:;">실내환경 개선대상 선정 관리</a></li>
+                                    <li><a href="javascript:;">실내환경 개선사업 운영 관리</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_2.svg" class="nav_icon"><span>2025년 이전 사업</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">접수관리-가구</a></li>
+                                    <li><a href="javascript:;">결과관리-가구</a></li>
+                                    <li><a href="javascript:;">접수관리-시설</a></li>
+                                    <li><a href="javascript:;">결과관리-시설</a></li>
+                                    <li><a href="javascript:;">통계관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon2_3.svg" class="nav_icon"><span>후원물품 입출고 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">후원물품 관리</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><div class="tit">환경보건이용권 서비스</div>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_1.svg" class="nav_icon"><span>환경보건이용권 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">환경보건이용권 신청 관리</a></li>
+                                    <li><a href="javascript:;">수혜자 선정 관리</a></li>
+                                    <li><a href="javascript:;">회원별 포인트 현황</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_2.svg" class="nav_icon"><span>진료 지원 신청 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">진료비 지원 관리</a></li>
+                                    <li><a href="javascript:;">알림발송</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon3_3.svg" class="nav_icon"><span>온라인몰 연계 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">포인트 지급 사용 정산 내역</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li><div class="tit">시스템 관리</div>
+                        <ul>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_1.svg" class="nav_icon"><span>게시판 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">게시판 관리</a></li>
+                                    <li><a href="javascript:;">문의사항 관리</a></li>
+                                    <li><a href="javascript:;">자주하는 질문 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_2.svg" class="nav_icon"><span>시스템 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">공통코드 관리</a></li>
+                                    <li><a href="javascript:;">관련법령·약관 관리</a></li>
+                                    <li><a href="javascript:;">개인정보처리내역</a></li>
+                                    <li><a href="javascript:;">프로그램 관리</a></li>
+                                    <li><a href="javascript:;">프로그램 권한 부여 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_3.svg" class="nav_icon"><span>사용자 관리</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">사용자 관리</a></li>
+                                </ul>
+                            </li> 
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon4_4.svg" class="nav_icon"><span>통계 및 이력 모니터링</span></a>
+                                <ul>
+                                    <li><a href="javascript:;">컨설팅 사업 통계</a></li>
+                                    <li><a href="javascript:;">컨설팅 사업 통계 (2025년 이전)</a></li>
+                                    <li><a href="javascript:;">환경보건이용권 신청 통계</a></li>
+                                    <li><a href="javascript:;">진료 지원 통계</a></li>
+                                    <li><a href="javascript:;">나누리캠프 이용 통계</a></li>
+                                    <li><a href="javascript:;">후원 물품 입출고 모니터링</a></li>
+                                    <li><a href="javascript:;">온라인몰 연계 모니터링</a></li>
+                                    <li><a href="javascript:;">알림 발송 내역 모니터링</a></li>
+                                    <li><a href="javascript:;">접속 로그</a></li>
+                                    <li><a href="javascript:;">권한 변경 이력</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	</div>
+	<!-- //header -->	
+
+    <div id="content_wrap">
+        <div id="header">
+            <div class="l">
+                <div class="location">
+                    <div class="item"><a href="javascript:;" class="home">Home</a></div>
+                    <div class="item"><a href="javascript:;">category</a></div>
+                    <div class="item"><a href="javascript:;">1depth</a></div>
+                    <div class="item"><a href="javascript:;">2depth</a></div>
+                </div>
+            </div>
+            <div class="r">
+                <div class="header_links">
+                    <div class="item">
+                        <a href="javascript:;" class="password">
+                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.781" cy="5.156" r="3.406" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5"/><path d="M1 15c0-.438 1.75-5.25 7-5.25s7 4.375 7 5.25" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            <span>마이페이지</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:;" class="logout">
+                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.788 1H1.5a.5.5 0 0 0-.5.5v12.576a.5.5 0 0 0 .5.5h6.288" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/><path d="M11.182 3.546 15 7.788l-3.818 4.242m-5.94-4.242h9.334" stroke="#868FA7" style="stroke:color(display-p3 .5255 .5608 .6549);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span>로그아웃</span>
+                        </a>
+                    </div>
+                    <div class="item"><a href="javascript:;" class="session"><strong>00:00:00</strong><span>연장</span></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+        <div id="content">
+            <div class="page_title">
+                <h2>팝업</h2>
+            </div>
+
+            <script>
+            showToast("info", "에러가 발생했습니다.", 3000);
+            showToast("success", "저장되었습니다.", 3000);
+            </script>
+
+            <div class="page">
+                <button class="btn btn_md btn_default mr_5 mb_10" type="button" onclick="openLayer('#return_reason')">반려사유 입력</button>
+                <button class="btn btn_md btn_default mr_5 mb_10" type="button" onclick="openLayer('#survey_preview')">설문지 미리보기</button>
+                <button class="btn btn_md btn_default mr_5 mb_10" type="button" onclick="openLayer('#send_sms')">문자 발송</button>
+                <button class="btn btn_md btn_default mr_5 mb_10" type="button" onclick="openLayer('#selection_beneficiaries')">수혜자 선정</button>
+                <button class="btn btn_md btn_default mr_5 mb_10" type="button" onclick="openLayer('#measurements_upload')">진단 측정값 업로드</button>
+                <button class="btn btn_md btn_default mr_5 mb_10" type="button" onclick="openLayer('#send_history')">발송이력</button>
+                <button class="btn btn_md btn_default mr_5 mb_10" type="button" onclick="openLayer('#sponsored_apply')">후원물품 입고</button>
+                <button class="btn btn_md btn_default mr_5 mb_10" type="button" onclick="openLayer('#sponsored_items')">후원물품</button>
+                <button class="btn btn_md btn_default mr_5 mb_10" type="button" onclick="openLayer('#expenses_apply')">진료비 지원 수기 입력</button> 
+                <button class="btn btn_md btn_default mr_5 mb_10" type="button" onclick="openLayer('#return_apply')">반려</button>
+                <button class="btn btn_md btn_default mr_5 mb_10" type="button" onclick="openLayer('#search_member')">사용자 검색</button>
+            </div>
+        </div>
+        <!-- //content -->
+        <div id="footer">
+            <div class="copy">Ⓒ<strong>KEITI</strong> ALL RIGHTS RESERVED.</div>
+            <div class="ver">Version 1.0.0</div>
+        </div>
+    </div>
+</div>
+
+<!-- 반려사유 입력 -->
+<div id="return_reason" class="layer_popup">
+    <div class="layer_box design_scroll" style="width:35rem;">
+        <div class="layer_header">
+            <div class="layer_title">반려 사유 입력</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+            <div class="form form_row">
+                <div class="form_item">
+                    <div class="tit">접수번호</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="tit">반려사유</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer_btns">
+            <button type="button" class="btn btn_lg btn_submit">반려</button>
+            <button type="button" class="btn btn_lg btn_default" onclick="closeLayer(this)">취소</button>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //반려사유 입력 -->
+
+
+<!-- 설문지 미리보기 -->
+<div id="survey_preview" class="layer_popup">
+    <div class="layer_box design_scroll" style="width:100rem;">
+        <div class="layer_header">
+            <div class="layer_title">설문지 미리보기</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body">
+            <div class="scroll_box_wrap">
+                <div class="form_tit">2025 상반기 환경보건이용권 설문조사</div>
+                <div class="scroll_box" data-simplebar>
+                    <div class="survey_form">
+                        <div class="item">
+                            <div class="question"><span class="num">01</span><span class="subject">환경보건이용권 사업에 대해 어떻게 평가하십니까?</span></div>
+                            <div class="answer">
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio1">
+                                    <span class="ck_icon"></span>
+                                    매우 좋음
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio1">
+                                    <span class="ck_icon"></span>
+                                    좋음
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio1">
+                                    <span class="ck_icon"></span>
+                                    보통
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio1">
+                                    <span class="ck_icon"></span>
+                                    나쁨
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio1">
+                                    <span class="ck_icon"></span>
+                                    매우 나쁨
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="question"><span class="num">02</span><span class="subject">환경보건이용권 신청 접근성에 대해 어떻게 평가하십니까?</span></div>
+                            <div class="answer">
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio2">
+                                    <span class="ck_icon"></span>
+                                    매우 좋음
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio2">
+                                    <span class="ck_icon"></span>
+                                    좋음
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio2">
+                                    <span class="ck_icon"></span>
+                                    보통
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio2">
+                                    <span class="ck_icon"></span>
+                                    나쁨
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio2">
+                                    <span class="ck_icon"></span>
+                                    매우 나쁨
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="question"><span class="num">03</span><span class="subject">환경보건이용권 홈페이지에 대해 어떻게 평가하십니까?</span></div>
+                            <div class="answer">
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio3">
+                                    <span class="ck_icon"></span>
+                                    매우 좋음
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio3">
+                                    <span class="ck_icon"></span>
+                                    좋음
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio3">
+                                    <span class="ck_icon"></span>
+                                    보통
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio3">
+                                    <span class="ck_icon"></span>
+                                    나쁨
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="answer_radio3">
+                                    <span class="ck_icon"></span>
+                                    매우 나쁨
+                                </label>
+                                <div class="input_group etc">
+                                    <label class="checkbox">
+                                        <input type="radio" name="answer_radio3">
+                                        <span class="ck_icon"></span>
+                                        기타
+                                    </label>
+                                    <div class="input size_lg">
+                                        <input type="text" placeholder="기타 의견을 작성해 주세요.">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="question"><span class="num">04</span><span class="subject">추가로 요청 할 내용이 있다면 적어주세요.</span></div>
+                            <div class="answer">
+                                <div class="input_group">
+                                    <div class="input answer_textarea">
+                                        <textarea name="" id="" placeholder="홈페이지에 대한 의견을 편하게 작성해 주세요."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer_btns">
+            <button type="button" class="btn btn_lg btn_default" onclick="closeLayer(this)">닫기</button>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //반려사유 입력 -->
+
+<!-- 문자 발송 -->
+<div id="send_sms" class="layer_popup">
+    <div class="layer_box design_scroll" style="width:35rem;">
+        <div class="layer_header">
+            <div class="layer_title">문자 발송</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+            <div class="form form_row">
+                <div class="form_item">
+                    <div class="form_tit">알림내용</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <textarea name="" id="">[실내 환경 진단·컨설팅 대상자 선정 안내]
+
+실내 환경 진단·컨설팅 대상자로 선정되셨습니다.
+컨설턴트가 곧 연락 드릴 예정입니다.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer_btns">
+            <button type="button" class="btn btn_lg btn_submit">발송</button>
+            <button type="button" class="btn btn_lg btn_default" onclick="closeLayer(this)">닫기</button>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //문자 발송 -->
+
+
+<!-- 수혜자 선정 -->
+<div id="selection_beneficiaries" class="layer_popup">
+    <div class="layer_box design_scroll" style="width:35rem;">
+        <div class="layer_header">
+            <div class="layer_title">수혜자 선정</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+            <div class="form form_row">
+                <div class="form_item">
+                    <div class="tit">선정대상</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <select name="" id="">
+                                    <option value="">전체</option>
+                                    <option value="">후보</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="tit">선정기준</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <select name="" id="">
+                                    <option value="">무작위</option>
+                                    <option value="">선정기준1</option>
+                                    <option value="">선정기준2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="tit">선정인원</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="1500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="tit">후보인원</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="300">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer_btns">
+            <button type="button" class="btn btn_lg btn_submit">선정</button>
+            <button type="button" class="btn btn_lg btn_default" onclick="closeLayer(this)">닫기</button>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //수혜자 선정 -->
+
+<!-- 진단 측정값 업로드 -->
+<div id="measurements_upload" class="layer_popup">
+    <div class="layer_box design_scroll" style="width:35rem;">
+        <div class="layer_header">
+            <div class="layer_title">진단 측정값 업로드</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+            <div class="form form_row">
+                <div class="form_item">
+                    <div class="tit">엑셀파일</div>
+                    <div class="cnt">
+                        <div class="file_single">
+                            <div class="input">
+                                <input type="text" class="file_name" readonly placeholder="파일을 선택해주세요.">
+                                <button type="button" class="remove_btn" style="display:none;">파일삭제</button>
+                            </div>
+                            <label>
+                                <input type="file">
+                                <span>파일선택</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="tit">엑셀샘플</div>
+                    <div class="cnt">
+                        <div class="file_list">
+                            <div class="item"><a href="javascript:;" class="file_down">진단 측정값 엑셀 샘플.xlxs</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer_btns">
+            <button type="button" class="btn btn_lg btn_submit">저장</button>
+            <button type="button" class="btn btn_lg btn_default" onclick="closeLayer(this)">닫기</button>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //진단 측정값 업로드 -->
+
+
+<!-- 발송이력 -->
+<div id="send_history" class="layer_popup">
+    <div class="layer_box design_scroll" style="width:70rem;">
+        <div class="layer_header">
+            <div class="layer_title">발송이력</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+            <div class="list_table">
+                <div class="table">
+                    <table class="table_sm">
+                        <thead>
+                            <tr>
+                                <th>순번</th>
+                                <th>발송구분</th>
+                                <th>내용</th>
+                                <th>발송일시</th>
+                                <th>발송결과</th>
+                                <th>발송자</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                               <td>2</td>
+                               <td>문자</td>
+                               <td class="align_left">[환경개선 대상자 선정 안내]<br/>
+                                환경개선 대상자로 선정되셨습니다.<br/>컨설턴트가 곧 연락 드릴 예정입니다.</td>
+                                <td>2025.02.02<br/>12:00:21</td>
+                                <td><span class="badge badge_blue">성공</span></td>
+                                <td>담당자1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>이메일</td>
+                                <td class="align_left">[환경개선 대상자 선정 안내]</td>
+                                 <td>2025.02.02<br/>12:00:21</td>
+                                 <td><span class="badge badge_red">실패</span></td>
+                                 <td>담당자1</td>
+                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="layer_btns">
+             <button type="button" class="btn btn_lg btn_default" onclick="closeLayer(this)">닫기</button>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //발송이력 -->
+
+
+<!-- 후원물품 입고 -->
+<div id="sponsored_apply" class="layer_popup">
+    <div class="layer_box design_scroll" style="width:50rem;">
+        <div class="layer_header">
+            <div class="layer_title">후원물품 입고</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+
+            <!-- 
+            form_grid 그리드 사용시 적용,
+            grid_col2 그리드 2줄씩 
+            ...
+            grid_col5 그리드 5줄씩 
+            -->
+            <div class="form form_row form_grid grid_col2">
+                <div class="form_item">
+                    <div class="tit">후원물품</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="장판" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="tit">입고일자</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" class="datepicker">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="tit">후원업체</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="tit">적재장소</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <select name="" id="">
+                                    <option value="">전체</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="tit">입고수량</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer_btns">
+            <button type="button" class="btn btn_lg btn_submit">입고</button>
+            <button type="button" class="btn btn_lg btn_default" onclick="closeLayer(this)">취소</button>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //후원물품 입고 -->
+
+
+<!-- 후원물품 -->
+<div id="sponsored_items" class="layer_popup">
+    <div class="layer_box design_scroll" style="width:80rem;">
+        <div class="layer_header">
+            <div class="layer_title">후원물품</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+            <div class="form_col">
+                <div class="form_item">
+                    <div class="tit">후원물품</div>
+                    <div class="cnt">
+                        <div class="input_group">
+                            <div class="input size_24">
+                                <input type="text" value="장판" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="devide_line">
+
+            <div class="list_table">
+                <div class="table">
+                    <table class="table_sm">
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>입/출고 구분</th>
+                                <th>입/출고 일자</th>
+                                <th>적재장소</th>
+                                <th>후원업체/후원대상자</th>
+                                <th>입/출고수량</th>
+                                <th>등록일시</th>
+                                <th>등록자</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td><span class="badge badge_blue">입고</span></td>
+                                <td>2024-09-30</td>
+                                <td>적재장소1</td>
+                                <td>후원 대상 테스트</td>
+                                <td>10</td>
+                                <td>2024-09-30</td>
+                                <td>홍길동</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><span class="badge badge_red">입고</span></td>
+                                <td>2024-09-30</td>
+                                <td>적재장소1</td>
+                                <td>후원 대상 테스트</td>
+                                <td>10</td>
+                                <td>2024-09-30</td>
+                                <td>홍길동</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //후원물품 -->
+
+
+<!-- 진료비 지원 수기 입력 -->
+<div id="expenses_apply" class="layer_popup">
+    <div class="layer_box design_scroll" style="width:120rem;">
+        <div class="layer_header">
+            <div class="layer_title">진료비 지원 수기 입력</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+            <div class="btn_list left">
+                <button class="btn btn_md btn_blue" type="button">1. 처방전/진료확인서</button>
+                <button class="btn btn_md btn_gray" type="button">2. 진료비 영수증</button>
+                <button class="btn btn_md btn_gray" type="button">3. 세부 내역서</button>
+                <button class="btn btn_md btn_gray" type="button">4. 약제비 영수증</button>
+            </div>
+
+            <div class="preview_wrap">
+                <div class="preview_box">
+                    <div class="preview_thums">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="thum_box">
+                                    <span class="num">1</span>
+                                    <div class="thum" style="background-image:url(../../assets/images/dummy/preview_slider1.jpg);"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:;" class="thum_box" onclick="alert('pdf뷰어 실행 이벤트')">
+                                    <span class="num">2</span>
+                                    <div class="pdf_view">PDF뷰어로<br/>확인</div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="thum_box">
+                                    <span class="num">3</span>
+                                    <div class="thum" style="background-image:url(../../assets/images/dummy/preview_slider2.jpg);"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="thum_box">
+                                    <span class="num">4</span>
+                                    <div class="thum" style="background-image:url(../../assets/images/dummy/preview_slider3.jpg);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview_slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="zoom_area">
+                                    <img src="../../assets/images/dummy/preview_slider1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="pdf_view">
+                                    <a href="javascript:;" class="file_thum" onclick="alert('pdf뷰어 실행 이벤트')">
+                                        PDF뷰어로 확인
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="zoom_area">
+                                    <img src="../../assets/images/dummy/preview_slider2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="zoom_area">
+                                    <img src="../../assets/images/dummy/preview_slider3.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="magnifier-container">
+                        <div class="magnifier-image" style="background-size: auto 250%;">
+                            <!-- background-size:  이미지 확대 사이즈 조정 -->
+                        </div>
+                    </div>
+                    <script>
+                     var swiperThumbs = new Swiper(".preview_thums", {
+                        direction: 'vertical',
+                        spaceBetween: 10,
+                        slidesPerView: 4,
+                        freeMode: true,
+                        watchSlidesProgress: true,
+                        scrollbar: {
+                            el: '.swiper-scrollbar',
+                            draggable: true,
+                        },
+                    });
+
+                    var swiper = new Swiper(".preview_slider", {
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                        thumbs: {
+                            swiper: swiperThumbs,
+                        },
+                    });
+
+                    const swiperContainer = document.querySelector('.preview_slider');
+                    const magnifierContainer = document.querySelector('.magnifier-container');
+                    const magnifierImage = document.querySelector('.magnifier-image');
+
+                    function initMagnifier() {
+                    const slides = document.querySelectorAll('.zoom_area');
+                    
+                    slides.forEach(slide => {
+                        const img = slide.querySelector('img');
+                        
+                        img.addEventListener('mouseenter', function() {
+                        magnifierContainer.style.display = 'block';
+                        updateMagnifierImage(this);
+                        });
+
+                        img.addEventListener('mouseleave', function() {
+                        magnifierContainer.style.display = 'none';
+                        });
+
+                        img.addEventListener('mousemove', function(e) {
+                        handleMouseMove(e, this);
+                        });
+                    });
+                    }
+                    function updateMagnifierImage(img) {
+                    magnifierImage.style.backgroundImage = `url(${img.src})`;
+                    }
+                    function handleMouseMove(e, img) {
+                    const { left, top, width, height } = img.getBoundingClientRect();
+                    const x = ((e.pageX - left) / width) * 100;
+                    const y = ((e.pageY - top) / height) * 100;
+                    magnifierImage.style.backgroundPosition = `${x}% ${y}%`;
+                    }
+                    swiper.on('slideChange', function() {
+                    magnifierContainer.style.display = 'none';
+                    });
+
+                    // 초기화
+                    document.addEventListener('DOMContentLoaded', initMagnifier);
+                    </script>
+                </div>
+                <div class="preview_detail">
+                    <div class="form form_table">
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:12.6rem;">
+                                    <col style="width:calc(50% - 12.6rem);">
+                                    <col style="width:12.6rem;">
+                                    <col style="width:calc(50% - 12.6rem);">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>접수번호</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="123456" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>신청인</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="홍길동" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>신청 진료비</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="60,000" class="align_right" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>잔여 포인트(D)</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="12,000" class="align_right" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>질병코드</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="">천식(J45~j46)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>진료일자</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="" class="datepicker" placeholder="YYYY-MM-DD">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>진료비(A)</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="60,000" class="align_right">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>약제비(B)</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="12,000" class="align_right">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_blue">총액(A+B)</th>
+                                        <td colspan="3">
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="72,000" class="align_right" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>제외금액(C)</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="65,000" class="align_right">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>제외사유</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="">제증명료</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_blue">지원금액(A+B-C)</th>
+                                        <td colspan="3">
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="12,000" class="align_right" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer_btns">
+            <button type="button" class="btn btn_lg btn_submit">등록</button>
+            <button type="button" class="btn btn_lg btn_default" onclick="closeLayer(this)">취소</button>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //후원물품 -->
+
+<!-- 반려 -->
+<div id="return_apply" class="layer_popup">
+    <div class="layer_box design_scroll" style="width:50rem;">
+        <div class="layer_header">
+            <div class="layer_title">반려</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+            <div class="form form_table">
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width:12.6rem;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>접수번호</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <input type="text" value="123456" readonly>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>이름</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <input type="text" value="" readonly>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>반려 사유</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <select name="" id="">
+                                                <option value="">서류미비·보완</option>
+                                                <option value="">코드불일치</option>
+                                                <option value="">기타</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>미비서류</th>
+                                <td>
+                                    <div class="check_list row">
+                                        <div class="item">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                처방전/확인서
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                진료비영수증
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                세부내역서
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                약제비영수증
+                                            </label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>비고</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="layer_btns">
+            <button type="button" class="btn btn_lg btn_submit">등록</button>
+            <button type="button" class="btn btn_lg btn_default" onclick="closeLayer(this)">취소</button>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //반려 -->
+
+
+<!-- 사용자 검색 -->
+<div id="search_member" class="layer_popup">
+    <div class="layer_box design_scroll" style="width:80rem;">
+        <div class="layer_header">
+            <div class="layer_title">사용자 검색</div>
+            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+        </div>
+        <div class="layer_body" data-simplebar>
+            <div class="form form_table">
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width:12.6rem;">
+                            <col style="width:calc(50% - 12.6rem);">
+                            <col style="width:12.6rem;">
+                            <col style="width:calc(50% - 12.6rem);">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>사업분류</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <select name="" id="">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>접수번호</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>신청인</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>신청ID</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>대리인</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>지역</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>전화번호</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>주민등록번호</th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="input">
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form_btns">
+                    <button type="button" class="btn btn_md btn_submit">
+                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="7.077" cy="7.077" r="4.327" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5"/>
+                            <path d="M10.307 10.308 14 14" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg><span>검색</span>
+                    </button>
+                </div>
+            </div>
+
+            <hr class="devide_line">
+
+            <div class="list_table">
+                <div class="list_top">
+                    <div class="l">
+                        <div class="total">검색결과 <strong>5</strong>건이 검색되었습니다.</div>
+                    </div>
+                </div>
+                <div class="table">
+                    <table class="table_sm">
+                        <thead>
+                            <tr>
+                                <th>사업분류</th>
+                                <th>접수번호</th>
+                                <th>신청인</th>
+                                <th>신청ID</th>
+                                <th>대리인</th>
+                                <th>지역</th>
+                                <th>전화번호</th>
+                                <th>주민등록번호</th>
+                                <th>선택</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>-</td>
+                                <td>1231213</td>
+                                <td>홍길동</td>
+                                <td>abcdsdf213</td>
+                                <td>홍길동</td>
+                                <td>서울시<br/>강남구</td>
+                                <td>010-1234-5678</td>
+                                <td>787777-1245678</td>
+                                <td><button class="btn btn_sm" type="button">선택</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //사용자 검색 -->
+
+</body>
+</html>	 
