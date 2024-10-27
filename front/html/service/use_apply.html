@@ -101,13 +101,9 @@
                 <div class="page_title">
                     <h3>이용권 신청</h3>
                     <div class="r">
-                        <button type="button" class="btn btn_md btn_dark v_pc">
+                        <button type="button" class="btn btn_md btn_dark">
                                 <span>자주하는 질문</span>
                             <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                        </button>
-                        <button type="button" class="btn btn_sm btn_dark v_mobile_inline_flex">
-                            <span>자주하는 질문</span>
-                            <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4.5 9 3-3-3-3" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                         </button>
                     </div>
                 </div>
@@ -155,7 +151,7 @@
                                             <div class="input size_lg">
                                                 <input type="text" id="adsZip" class="white" placeholder="우편번호 찾기" readonly onclick="openLayer('#address_layer');sample2_execDaumPostcode()">
                                             </div>
-                                            <button type="button" class="btn btn_md btn_submit_line" onclick="openLayer('#address_layer');sample2_execDaumPostcode()">주소검색</button>
+                                            <button type="button" class="btn btn_md btn_submit_line" onclick="openLayer('#address_layer');sample2_execDaumPostcode()">주소 검색</button>
                                         </div>
                                         <div class="input_group">
                                             <div class="input">
@@ -239,13 +235,17 @@
                     <div class="form_title">
                         <h4>신청자 목록</h4>
                         <div class="r">
-                            <button type="button" class="btn btn_md btn_dark_line v_pc" onclick="addApplicant();">
+                            <!-- <button type="button" class="btn btn_md btn_dark_line v_pc" onclick="addApplicant();">
                                 <svg width="12" height="12" fill="none" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
                                 <span>신청자 추가</span>
                             </button>
                             <button type="button" class="btn btn_sm btn_dark_line v_mobile_inline_flex" onclick="addApplicant();">
                                 <span>신청자 추가</span>
                                 <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 6h-7M6 2.5v7" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                            </button> -->
+                            <button type="button" class="btn btn_md btn_dark_line" onclick="addApplicant();">
+                                <svg width="12" height="12" fill="none" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                                <span>신청자 추가</span>
                             </button>
                         </div>
                     </div>
@@ -374,7 +374,7 @@
 <div id="address_layer" class="layer_popup">
     <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;">
         <div class="layer_header">
-            <div class="layer_title">주소검색</div>
+            <div class="layer_title">주소 검색</div>
             <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
         </div>
         <div class="layer_body" data-simplebar>

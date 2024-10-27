@@ -16,12 +16,14 @@
     <link href="../../assets/css/slick.css" rel="stylesheet"/>
     <link href="../../assets/css/simplebar.css" rel="stylesheet"/>
     <link href="../../assets/css/choices.css" rel="stylesheet"/>
+    <link href="../../assets/css/pikaday.css" rel="stylesheet"/>
 
     <script src="../../assets/js/jquery-3.7.1.min.js"></script>
     <script src="../../assets/js/jquery-ui.js"></script>
     <script src="../../assets/js/swiper.min.js"></script>
     <script src="../../assets/js/slick.min.js"></script>
     <script src="../../assets/js/litepicker.js"></script>
+    <script src="../../assets/js/pikaday.js"></script>
     <script src="../../assets/js/simplebar.min.js"></script>
     <script src="../../assets/js/choices.min.js"></script>
 </head>
@@ -131,10 +133,6 @@
                                 <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.998 11.997a4.998 4.998 0 1 0 0-9.996 4.998 4.998 0 0 0 0 9.996ZM14 13.999 11.001 11" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                                 <span>조회하기</span>
                             </button>
-                            <button type="button" class="btn btn_sm btn_submit v_mobile_inline_flex">
-                                <svg width="14" height="14" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.998 11.997a4.998 4.998 0 1 0 0-9.996 4.998 4.998 0 0 0 0 9.996ZM14 13.999 11.001 11" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                <span>조회하기</span>
-                            </button>
                         </div>
                     </div>
                     <div class="table">
@@ -149,10 +147,10 @@
                                     <td>
                                         <div class="input_group search_date">
                                             <div class="search_inputs">
-                                                <div class="input">
+                                                <div class="input size_md">
                                                     <input type="text" id="history_date_start" class="datepicker" placeholder="YYYY-MM-DD">
                                                 </div>
-                                                <div class="input">
+                                                <div class="input size_md">
                                                     <input type="text" id="history_date_end" class="datepicker" placeholder="YYYY-MM-DD">
                                                 </div>
                                             </div>
@@ -208,11 +206,17 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="form_btns file_btn">
+                        <button type="button" class="btn btn_md btn_submit">
+                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.998 11.997a4.998 4.998 0 1 0 0-9.996 4.998 4.998 0 0 0 0 9.996ZM14 13.999 11.001 11" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>조회하기</span>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="form list_wrap">
                     <div class="list_top">
-                        <div class="total">총 <strong>521</strong>건</div>
+                        <div class="total">총 <strong>5</strong>건</div>
                     </div>
                     <div class="list_table">
                         <div class="table table_lg">
@@ -234,25 +238,25 @@
                                 <tbody>
                                     <tr>
                                         <td><span class="mb_tit" style="min-width:11rem;">포인트 사용일자</span><span class="mb_cnt">2024-09-02</span></td>
-                                        <td><span class="mb_tit" style="min-width:11rem;">세부내용</span><span class="mb_cnt">진료비 차감</span></td>
+                                        <td class="align_left"><span class="mb_tit" style="min-width:11rem;">세부내용</span><span class="mb_cnt">진료비 차감</span></td>
                                         <td class="align_right"><span class="mb_tit" style="min-width:11rem;">사용 포인트</span><span class="mb_cnt"><span class="point"><strong>20,000</strong> P</span></span></td>
                                         <td class="align_right"><span class="mb_tit" style="min-width:11rem;">잔여 포인트</span><span class="mb_cnt"><span class="point"><strong>20,000</strong> P</span></span></td>
                                     </tr>
                                     <tr>
                                         <td><span class="mb_tit" style="min-width:11rem;">포인트 사용일자</span><span class="mb_cnt">2024-09-02</span></td>
-                                        <td><span class="mb_tit" style="min-width:11rem;">세부내용</span><span class="mb_cnt">서비스 이용</span></td>
+                                        <td class="align_left"><span class="mb_tit" style="min-width:11rem;">세부내용</span><span class="mb_cnt">서비스 이용</span></td>
                                         <td class="align_right"><span class="mb_tit" style="min-width:11rem;">사용 포인트</span><span class="mb_cnt"><span class="point"><strong>20,000</strong> P</span></span></td>
                                         <td class="align_right"><span class="mb_tit" style="min-width:11rem;">잔여 포인트</span><span class="mb_cnt"><span class="point"><strong>20,000</strong> P</span></span></td>
                                     </tr>
                                     <tr>
                                         <td><span class="mb_tit" style="min-width:11rem;">포인트 사용일자</span><span class="mb_cnt">2024-09-02</span></td>
-                                        <td><span class="mb_tit" style="min-width:11rem;">세부내용</span><span class="mb_cnt">물품구매</span></td>
+                                        <td class="align_left"><span class="mb_tit" style="min-width:11rem;">세부내용</span><span class="mb_cnt">물품구매</span></td>
                                         <td class="align_right"><span class="mb_tit" style="min-width:11rem;">사용 포인트</span><span class="mb_cnt"><span class="point"><strong>20,000</strong> P</span></span></td>
                                         <td class="align_right"><span class="mb_tit" style="min-width:11rem;">잔여 포인트</span><span class="mb_cnt"><span class="point"><strong>20,000</strong> P</span></span></td>
                                     </tr>
                                     <tr>
                                         <td><span class="mb_tit" style="min-width:11rem;">포인트 사용일자</span><span class="mb_cnt">2024-09-02</span></td>
-                                        <td><span class="mb_tit" style="min-width:11rem;">세부내용</span><span class="mb_cnt">진료비 차감</span></td>
+                                        <td class="align_left"><span class="mb_tit" style="min-width:11rem;">세부내용</span><span class="mb_cnt">진료비 차감</span></td>
                                         <td class="align_right"><span class="mb_tit" style="min-width:11rem;">사용 포인트</span><span class="mb_cnt"><span class="point"><strong>20,000</strong> P</span></span></td>
                                         <td class="align_right"><span class="mb_tit" style="min-width:11rem;">잔여 포인트</span><span class="mb_cnt"><span class="point"><strong>20,000</strong> P</span></span></td>
                                     </tr>

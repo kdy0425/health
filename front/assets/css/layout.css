@@ -18,15 +18,15 @@
 #header #nav > ul > li > a:before{content:"";width:calc(100% - 13.2rem);height:0.4rem;position: absolute;z-index:20;left:50%;bottom:-7px;transform: translate(-50%,0);border-radius:1rem;opacity:0;transition: all 0.3s;background-color: #3486E7;}
 #header #nav > ul > li:hover > a:before{bottom:-1px;opacity:1;} 
 #header #nav .sub_nav{display:none;position: absolute;left:50%;top:10rem;transform: translate(-50%,0);width:100vw;background-color: #fff;border-top:1px solid #E4E4E4;box-shadow:0 2rem 4rem rgba(128, 134, 152, 0.15);}
-#header #nav .sub_nav:before{content:"";position: absolute;left:0;top:0;height: 100%;width:50%;z-index: 1;background: linear-gradient(147.63deg, #FFFFFF -7.84%, #F1FAFF 96.65%);}
+#header #nav .sub_nav:before{content:"";position: absolute;left:0;top:0;height: 100%;z-index: 1;background: linear-gradient(147.63deg, #FFFFFF -7.84%, #F1FAFF 96.65%);width: calc(((100% - 1400px) / 2) + 400px);background-image:url('../images/common/nav_bg.jpg');background-repeat: no-repeat;background-position: right bottom;background-size:66rem;}
 
 #header #nav > ul > li:hover .sub_nav{display:block;}
-#header #nav .sub_nav .sub_nav_inner{display: flex;overflow: hidden;max-width:140rem;margin:0 auto;position: relative;z-index: 10;background-color: #fff;}
-#header #nav .sub_nav .nav_info{width:40rem;background: linear-gradient(147.63deg, #FFFFFF -7.84%, #F1FAFF 96.65%);padding:6.4rem 10rem 6.4rem 0;}
+#header #nav .sub_nav .sub_nav_inner{display: flex;overflow: hidden;max-width:140rem;margin:0 auto;position: relative;z-index: 10;min-height:28rem;}
+#header #nav .sub_nav .nav_info{width:40rem;padding:6.4rem 10rem 6.4rem 0;}
 #header #nav .sub_nav .nav_info .title{font-size:2.8rem;font-weight:700;margin-bottom:2.5rem;color:#3486E7;}
 #header #nav .sub_nav .nav_info .text{font-size:1.6rem;font-weight:500;color:#7E8B9A;}
 
-#header #nav .sub_nav_inner > ul{flex:1 1 auto;display: grid;grid-template-columns: repeat(2,1fr);gap:4.8rem 6.4rem;padding:4rem 0 8rem 8rem;word-break: keep-all;}
+#header #nav .sub_nav_inner > ul{background-color: #fff;flex:1 1 auto;display: grid;grid-template-columns: repeat(2,1fr);gap:4.8rem 6.4rem;padding:4rem 0 8rem 8rem;word-break: keep-all;}
 #header #nav .sub_nav_inner > ul > li{}
 #header #nav .sub_nav_inner > ul > li > a{display: block;padding:2.4rem 2rem 2.4rem 0;font-size:1.7rem;color:#2D2D2D;border-bottom:1px solid #D8D8D8;position: relative;transition: all 0.4s;font-weight:600;}
 #header #nav .sub_nav_inner > ul > li > a:after{content:"";position: absolute;right:0;top:2.8rem;width:1.2rem;height:1.2rem;transition: all 0.3s;background-position: center center;background-repeat: no-repeat;background-image: url('../images/common/sub_nav_inner_arrow.svg');}
