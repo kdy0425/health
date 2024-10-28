@@ -96,7 +96,7 @@
                                     <li><a href="javascript:;">설문지 관리</a></li>
                                 </ul>
                             </li> 
-                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon1_2.svg" class="nav_icon"><span>상단 관리</span></a>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon1_2.svg" class="nav_icon"><span>상담 관리</span></a>
                                 <ul>
                                     <li><a href="javascript:;">상담 내역 관리</a></li>
                                 </ul>
@@ -927,17 +927,17 @@
                                     <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.727 14H4M8.364 2l3.818 3.273M8.363 2 4.545 5.273M8.364 2v8.727" stroke="#10937B" style="stroke:color(display-p3 .0647 .575 .4811);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
                                     <span>평가 결과 업로드</span>
                                 </button>
-                                <button class="btn btn_md btn_blue">
+                                <button class="btn btn_md btn_submit_line">
                                     <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M8 13V3" stroke="#437EE7" style="stroke:color(display-p3 .2627 .4941 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
                                     <span>컨설턴트 등록</span>
                                 </button>
-                                <button class="btn btn_md btn_blue">
+                                <button class="btn btn_md btn_submit_line">
                                     평가차수 지정
                                 </button>
-                                <button class="btn btn_md btn_blue">
+                                <button class="btn btn_md btn_submit_line">
                                     상담 작성
                                 </button>
-                                <button class="btn btn_md btn_blue">
+                                <button class="btn btn_md btn_submit_line">
                                     물품 등록
                                 </button>
                             </div>
@@ -947,7 +947,7 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th style="min-width:50px;max-width:50px;">
+                                    <th style="min-width:50px;width:50px;max-width:50px;">
                                         <label class="checkbox single">
                                             <input type="checkbox" class="check_all">
                                             <span class="ck_icon"></span>
@@ -959,9 +959,9 @@
                                     <th>버튼디자인_비활성화</th>
                                     <th>컨설턴트</th>
                                     <th>여부</th>
-                                    <th>셀렉박스</th>
-                                    <th>인풋박스</th>
-                                    <th>건수입력</th>
+                                    <th style="width:12%;">셀렉박스</th>
+                                    <th style="width:12%;">인풋박스</th>
+                                    <th style="min-width:124px;width:124px;max-width:124px;">건수입력</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1001,7 +1001,7 @@
                                     </td>
                                     <td>
                                         <div class="input_group">
-                                            <div class="input size_15">
+                                            <div class="input">
                                                 <select name="" id="">
                                                     <option value="">옵션1</option>
                                                 </select>
@@ -1010,14 +1010,14 @@
                                     </td>
                                     <td>
                                         <div class="input_group">
-                                            <div class="input size_15">
+                                            <div class="input">
                                                 <input type="text" value="옵션1">
                                             </div>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input_group">
-                                            <div class="input size_8">
+                                            <div class="input">
                                                 <input type="text" value="123" class="align_right">
                                             </div>
                                             <div class="input_text">
@@ -1098,7 +1098,7 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th rowspan="2" style="min-width:50px;max-width:50px;">
+                                    <th rowspan="2" style="min-width:50px;width:50px;max-width:50px;">
                                         <label class="checkbox single">
                                             <input type="checkbox" class="check_all">
                                             <span class="ck_icon"></span>
@@ -1163,10 +1163,147 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="paging">
+                        <a href="javascript:;" class="pg prev disabled"></a>
+                        <a href="javascript:;" class="pg prev "></a>
+                        <a href="javascript:;">1</a>
+                        <a href="javascript:;" class="active">2</a>
+                        <a href="javascript:;">3</a>
+                        <a href="javascript:;">4</a>
+                        <a href="javascript:;">5</a>
+                        <a href="javascript:;" class="dot"></a>
+                        <a href="javascript:;">53</a>
+                        <a href="javascript:;" class="pg next"></a>
+                        <a href="javascript:;" class="pg next disabled"></a>
+                    </div>
+                </div>
+
+                <div class="list_table">
+                    <div class="list_top">
+                        <div class="l">
+                            <div class="total">가로스크롤 테이블 : <strong>521</strong>개</div>
+                        </div>
+                        <div class="r">
+                            <div class="btn_list left">
+                                <button class="btn btn_md btn_default">
+                                    수혜자 선정
+                                </button>
+                                <button class="btn btn_md btn_blue">
+                                    수혜자 확정
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    승인
+                                </button>
+                                <button class="btn btn_md btn_submit_line">
+                                    등록
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    설문지 복사
+                                </button>
+                                <button class="btn btn_md btn_submit_line">
+                                    설문지 등록
+                                </button>
+                                <button class="btn btn_md btn_default">
+                                    목록
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table label_control table_scroll_horizontal" data-simplebar="">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="min-width:50px;width:50px;max-width:50px;">
+                                        <label class="checkbox single">
+                                            <input type="checkbox" class="check_all">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                    <th>항목명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox single">
+                                            <input type="checkbox" class="check_all">
+                                            <span class="ck_icon"></span>
+                                        </label>
+                                    </td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>텍스트가 텍스트가 텍스트가 텍스트가</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>
+                                        <button type="button" class="btn_icon">
+                                            <svg width="16" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 12.2a1.4 1.4 0 0 1-1.4 1.4H2.4A1.4 1.4 0 0 1 1 12.2V2.4A1.4 1.4 0 0 1 2.4 1h3.5l1.4 2.1h6.3A1.4 1.4 0 0 1 15 4.5v7.7Z" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <span class="sound_only">첨푸파일</span>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_icon">
+                                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15h10.182M8.09 11.182 3.637 7.364M8.091 11.182l4.455-3.818M8.09 11.182V1" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                            <span class="sound_only">보고서 다운로드</span>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_icon">
+                                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.262 2.476h-4.87A1.392 1.392 0 0 0 1 3.867v9.741A1.391 1.391 0 0 0 2.392 15h9.74a1.391 1.391 0 0 0 1.392-1.392v-4.87" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.48 1.432a1.476 1.476 0 1 1 2.088 2.088l-6.61 6.61-2.783.695.696-2.783 6.61-6.61Z" stroke="#555C6C" style="stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <span class="sound_only">수기 입력</span>
+                                        </button>
+                                    </td> 
+                                    <td>
+                                        <span class="badge badge_blue">승인</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="paging">
+                        <a href="javascript:;" class="pg prev disabled"></a>
+                        <a href="javascript:;" class="pg prev "></a>
+                        <a href="javascript:;">1</a>
+                        <a href="javascript:;" class="active">2</a>
+                        <a href="javascript:;">3</a>
+                        <a href="javascript:;">4</a>
+                        <a href="javascript:;">5</a>
+                        <a href="javascript:;" class="dot"></a>
+                        <a href="javascript:;">53</a>
+                        <a href="javascript:;" class="pg next"></a>
+                        <a href="javascript:;" class="pg next disabled"></a>
+                    </div>
                 </div>
                 <!-- 리스트 끝 -->
 
-               
 
             </div>
         </div>

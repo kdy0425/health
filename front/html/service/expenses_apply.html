@@ -127,6 +127,7 @@
                         <div class="r">
                             <button type="button" class="btn btn_md btn_dark_line">
                                 <span>본인계좌 인증</span>
+                                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             </button>
                         </div>
                     </div>
@@ -240,8 +241,8 @@
                                             <th><label for="file_multiple1_1">처방전 또는 진료확인서</label></th>
                                             <td>
                                                 <div class="input_group">
-                                                    <div class="input size_lg">
-                                                        <input type="text" class="white file_count" readonly placeholder="선택된 파일이 없습니다.">
+                                                    <div class="input size_lg file_area">
+                                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                                     </div>
                                                     <label class="btn btn_md btn_dark_line file_btn">
                                                         <!-- 추가된 파일들 input file multiple로 저장 -->
@@ -256,8 +257,8 @@
                                             <th><label for="file_multiple1_2">진료비 영수증</label></th>
                                             <td>
                                                 <div class="input_group">
-                                                    <div class="input size_lg">
-                                                        <input type="text" class="white file_count" readonly placeholder="선택된 파일이 없습니다.">
+                                                    <div class="input size_lg file_area">
+                                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                                     </div>
                                                     <label class="btn btn_md btn_dark_line file_btn">
                                                         <!-- 추가된 파일들 input file multiple로 저장 -->
@@ -272,8 +273,8 @@
                                             <th><label for="file_multiple1_3">진료비 세부내역서</label></th>
                                             <td>
                                                 <div class="input_group">
-                                                    <div class="input size_lg">
-                                                        <input type="text" class="white file_count" readonly placeholder="선택된 파일이 없습니다.">
+                                                    <div class="input size_lg file_area">
+                                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                                     </div>
                                                     <label class="btn btn_md btn_dark_line file_btn">
                                                         <!-- 추가된 파일들 input file multiple로 저장 -->
@@ -288,8 +289,8 @@
                                             <th><label for="file_multiple1_4">악제비 영수증</label></th>
                                             <td>
                                                 <div class="input_group">
-                                                    <div class="input size_lg">
-                                                        <input type="text" class="white file_count" readonly placeholder="선택된 파일이 없습니다.">
+                                                    <div class="input size_lg file_area">
+                                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                                     </div>
                                                     <label class="btn btn_md btn_dark_line file_btn">
                                                         <!-- 추가된 파일들 input file multiple로 저장 -->
@@ -520,8 +521,8 @@ function addApplicant() {
                             <th><label for="file_multiple${applicantCount}_1">처방전 또는 진료확인서</label></th>
                             <td>
                                 <div class="input_group">
-                                    <div class="input size_lg">
-                                        <input type="text" class="white file_count" readonly placeholder="선택된 파일이 없습니다.">
+                                    <div class="input size_lg file_area">
+                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                     </div>
                                     <label class="btn btn_md btn_dark_line file_btn">
                                         <!-- 추가된 파일들 input file multiple로 저장 -->
@@ -536,12 +537,12 @@ function addApplicant() {
                             <th><label for="file_multiple${applicantCount}_2">진료비 영수증</label></th>
                             <td>
                                 <div class="input_group">
-                                    <div class="input size_lg">
-                                        <input type="text" class="white file_count" readonly placeholder="선택된 파일이 없습니다.">
+                                    <div class="input size_lg file_area">
+                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                     </div>
                                     <label class="btn btn_md btn_dark_line file_btn">
                                         <!-- 추가된 파일들 input file multiple로 저장 -->
-                                        <input type="file" id="file_multiple${applicantCount}_2" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
+                                        <input type="file" id="file_multiple${applicantCount}_1" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
                                         파일업로드
                                     </label>
                                 </div>
@@ -552,12 +553,12 @@ function addApplicant() {
                             <th><label for="file_multiple${applicantCount}_3">진료비 세부내역서</label></th>
                             <td>
                                 <div class="input_group">
-                                    <div class="input size_lg">
-                                        <input type="text" class="white file_count" readonly placeholder="선택된 파일이 없습니다.">
+                                    <div class="input size_lg file_area">
+                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                     </div>
                                     <label class="btn btn_md btn_dark_line file_btn">
                                         <!-- 추가된 파일들 input file multiple로 저장 -->
-                                        <input type="file" id="file_multiple${applicantCount}_3" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
+                                        <input type="file" id="file_multiple${applicantCount}_1" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
                                         파일업로드
                                     </label>
                                 </div>
@@ -568,12 +569,12 @@ function addApplicant() {
                             <th><label for="file_multiple${applicantCount}_4">악제비 영수증</label></th>
                             <td>
                                 <div class="input_group">
-                                    <div class="input size_lg">
-                                        <input type="text" class="white file_count" readonly placeholder="선택된 파일이 없습니다.">
+                                    <div class="input size_lg file_area">
+                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                     </div>
                                     <label class="btn btn_md btn_dark_line file_btn">
                                         <!-- 추가된 파일들 input file multiple로 저장 -->
-                                        <input type="file" id="file_multiple${applicantCount}_4" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
+                                        <input type="file" id="file_multiple${applicantCount}_1" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
                                         파일업로드
                                     </label>
                                 </div>

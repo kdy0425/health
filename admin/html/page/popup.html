@@ -96,7 +96,7 @@
                                     <li><a href="javascript:;">설문지 관리</a></li>
                                 </ul>
                             </li> 
-                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon1_2.svg" class="nav_icon"><span>상단 관리</span></a>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon1_2.svg" class="nav_icon"><span>상담 관리</span></a>
                                 <ul>
                                     <li><a href="javascript:;">상담 내역 관리</a></li>
                                 </ul>
@@ -709,7 +709,7 @@
         </div>
         <div class="layer_btns">
             <button type="button" class="btn btn_lg btn_submit">입고</button>
-            <button type="button" class="btn btn_lg btn_default" onclick="closeLayer(this)">취소</button>
+            <button type="button" class="btn btn_lg btn_default" onclick="closeLayer(this)">닫기</button>
         </div>
     </div>
     <span class="layer_bg" onclick="closeLayer(this)"></span>
@@ -795,7 +795,7 @@
             <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
         </div>
         <div class="layer_body" data-simplebar>
-            <div class="btn_list left">
+            <div class="preview_slider_tap btn_list left">
                 <button class="btn btn_md btn_blue" type="button">1. 처방전/진료확인서</button>
                 <button class="btn btn_md btn_gray" type="button">2. 진료비 영수증</button>
                 <button class="btn btn_md btn_gray" type="button">3. 세부 내역서</button>
@@ -866,7 +866,7 @@
                         </div>
                     </div>
                     <script>
-                     var swiperThumbs = new Swiper(".preview_thums", {
+                    var swiperThumbs = new Swiper(".preview_thums", {
                         direction: 'vertical',
                         spaceBetween: 10,
                         slidesPerView: 4,
@@ -888,45 +888,77 @@
                         },
                     });
 
-                    const swiperContainer = document.querySelector('.preview_slider');
-                    const magnifierContainer = document.querySelector('.magnifier-container');
-                    const magnifierImage = document.querySelector('.magnifier-image');
-
-                    function initMagnifier() {
-                    const slides = document.querySelectorAll('.zoom_area');
-                    
-                    slides.forEach(slide => {
-                        const img = slide.querySelector('img');
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const tapButtons = document.querySelectorAll('.preview_slider_tap button');
                         
-                        img.addEventListener('mouseenter', function() {
-                        magnifierContainer.style.display = 'block';
-                        updateMagnifierImage(this);
+                        tapButtons.forEach((button, index) => {
+                            button.addEventListener('click', function() {
+                                tapButtons.forEach(btn => {
+                                    btn.classList.remove('btn_blue');
+                                    btn.classList.add('btn_gray');
+                                });
+                                this.classList.remove('btn_gray');
+                                this.classList.add('btn_blue');
+                                swiper.slideTo(index);
+                            });
+                        });
+                        
+                        swiper.on('slideChange', function() {
+                            tapButtons.forEach((btn, idx) => {
+                                if (idx === swiper.activeIndex) {
+                                    btn.classList.remove('btn_gray');
+                                    btn.classList.add('btn_blue');
+                                } else {
+                                    btn.classList.remove('btn_blue');
+                                    btn.classList.add('btn_gray');
+                                }
+                            });
+                        });
+                        
+                        const swiperContainer = document.querySelector('.preview_slider');
+                        const magnifierContainer = document.querySelector('.magnifier-container');
+                        const magnifierImage = document.querySelector('.magnifier-image');
+
+                        function initMagnifier() {
+                            const slides = document.querySelectorAll('.zoom_area');
+                            
+                            slides.forEach(slide => {
+                                const img = slide.querySelector('img');
+                                
+                                if (img) {
+                                    img.addEventListener('mouseenter', function() {
+                                        magnifierContainer.style.display = 'block';
+                                        updateMagnifierImage(this);
+                                    });
+
+                                    img.addEventListener('mouseleave', function() {
+                                        magnifierContainer.style.display = 'none';
+                                    });
+
+                                    img.addEventListener('mousemove', function(e) {
+                                        handleMouseMove(e, this);
+                                    });
+                                }
+                            });
+                        }
+
+                        function updateMagnifierImage(img) {
+                            magnifierImage.style.backgroundImage = `url(${img.src})`;
+                        }
+
+                        function handleMouseMove(e, img) {
+                            const { left, top, width, height } = img.getBoundingClientRect();
+                            const x = ((e.pageX - left) / width) * 100;
+                            const y = ((e.pageY - top) / height) * 100;
+                            magnifierImage.style.backgroundPosition = `${x}% ${y}%`;
+                        }
+
+                        swiper.on('slideChange', function() {
+                            magnifierContainer.style.display = 'none';
                         });
 
-                        img.addEventListener('mouseleave', function() {
-                        magnifierContainer.style.display = 'none';
-                        });
-
-                        img.addEventListener('mousemove', function(e) {
-                        handleMouseMove(e, this);
-                        });
+                        initMagnifier();
                     });
-                    }
-                    function updateMagnifierImage(img) {
-                    magnifierImage.style.backgroundImage = `url(${img.src})`;
-                    }
-                    function handleMouseMove(e, img) {
-                    const { left, top, width, height } = img.getBoundingClientRect();
-                    const x = ((e.pageX - left) / width) * 100;
-                    const y = ((e.pageY - top) / height) * 100;
-                    magnifierImage.style.backgroundPosition = `${x}% ${y}%`;
-                    }
-                    swiper.on('slideChange', function() {
-                    magnifierContainer.style.display = 'none';
-                    });
-
-                    // 초기화
-                    document.addEventListener('DOMContentLoaded', initMagnifier);
                     </script>
                 </div>
                 <div class="preview_detail">

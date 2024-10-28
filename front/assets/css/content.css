@@ -19,6 +19,7 @@
 .form .input_group textarea{flex:1 1 auto;width:1%;resize: none;}
 .form .input_group textarea{height:22rem;padding:1.6rem;}
 .form .datepicker{background-position: right 1.6rem center;background-repeat: no-repeat;background-image: url('../images/content/icon_datepicker.svg');}
+.form .input_group .input.file_dragover input[type="text"]{border:1px dashed #555;}
 .form small{color:#808698;font-size:1.4rem;margin-top:0.8rem;display: block;}
 .form small.ok{color:#1EB793;}
 .form small.error{color:#FF576B;}
@@ -71,7 +72,7 @@
 .input.size_lg{max-width:28.8rem;width:28.8rem;}
 
 .form_type2{}
-.form_type2 .form_title{padding-bottom:1.6rem;word-break: keep-all;border-bottom:1px solid #555;display: flex;align-items: center;flex-wrap: wrap;}
+.form_type2 .form_title{padding-bottom:1.6rem;word-break: keep-all;border-bottom:1px solid #555;display: flex;align-items: end;flex-wrap: wrap;}
 .form_type2 .form_title h3,
 .form_type2 .form_title h4{color:#2d2d2d;font-size:2.1rem;font-weight:600;}
 .form_type2 .form_title p{color:#555;font-size:1.4rem;margin-left:1.6rem;margin-top:0.2rem;display: inline-block;}
@@ -152,7 +153,11 @@
     .input.size_md,
     .input.size_lg{max-width:100%;width: auto;}
 
-    .form_type2 .table{border-bottom:1px solid #555;}
+    .add_item:before,
+    .add_item:after{content:"";display: table;}
+    .add_item + .add_item{border-top:1px solid #d8d8d8;padding-top:1.6rem;}
+
+    .form_type2{border-bottom:1px solid #555;}
     .form_type2 .form_title{padding-bottom:0.9rem;margin-bottom:1.6rem;}
     .form_type2 .form_title h3,
     .form_type2 .form_title h4{font-size:1.9rem;}
@@ -164,8 +169,7 @@
     .form_type2 .table th,
     .form_type2 .table td{display: block;width:100%;}
     .form_type2 .table tr{}
-    .form_type2 .table tr + tr{margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid #d8d8d8;}
-
+    .form_type2 .table tr + tr{margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid #e4e4e4;}
     .form_type2 .table:before,
     .form_type2 .table:after{display: none;}
 
@@ -175,8 +179,9 @@
     .form_type2 .table table tbody tr + tr{margin-top:1.6rem;}
     .form_type2 .table table tbody th{background-color: #fff;padding:0;height: auto;margin-bottom:0.8rem;}
     .form_type2 .table table tbody td{background-color: #fff;padding:0;height: auto;}
+    .form_type2 .table.no_line_mobile table tbody tr + tr{padding-top:0;border-top:0;}
     
-    .form_intitle{align-items: center;margin-top:1.6rem;margin-bottom:1.6rem;}
+    .form_intitle{align-items: center;margin-top:0;margin-bottom:1.6rem;}
 
     .form_type2 .search_date{flex-wrap: wrap;}
     .form_type2 .search_date .search_inputs,
@@ -676,7 +681,7 @@
 @media screen and (max-width:900px) {
     .board_view .bv_top{padding:1.6rem 0;display: block;}
     .board_view .bv_top .type{margin-bottom:0.5rem;margin-top:0;}
-    .board_view .bv_top .subject{width:100%;padding-left:0.8rem;}
+    .board_view .bv_top .subject{width:100%;padding-left:1.6rem;}
     .board_view .bv_top .subject h4{font-size:1.9rem;}
     .board_view .bv_top .subject .info{margin-top:0.5rem;font-size:1.3rem;}
     .board_view .bv_top .subject span{margin-right:1.6rem;}

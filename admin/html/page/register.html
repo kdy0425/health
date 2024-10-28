@@ -96,7 +96,7 @@
                                     <li><a href="javascript:;">설문지 관리</a></li>
                                 </ul>
                             </li> 
-                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon1_2.svg" class="nav_icon"><span>상단 관리</span></a>
+                            <li class="close"><a href="javascript:;"><img src="../../assets/images/nav_icon1_2.svg" class="nav_icon"><span>상담 관리</span></a>
                                 <ul>
                                     <li><a href="javascript:;">상담 내역 관리</a></li>
                                 </ul>
@@ -272,70 +272,1017 @@
                             <table>
                                 <colgroup>
                                     <col style="width:20rem;">
-                                    <col style="width:calc(50% - 20rem);">
+                                    <col style="width:20rem;">
+                                    <col style="width:calc(50% - 40rem);">
                                     <col style="width:20rem;">
                                     <col style="width:calc(50% - 20rem);">
                                 </colgroup>
                                 <tbody>
                                     <tr>
                                         <th>관리번호</th>
-                                        <td>202411280072</td>
+                                        <td colspan="2">202411280072</td>
                                         <th>컨설턴트</th>
                                         <td>이*정</td>
                                     </tr>
                                     <tr>
                                         <th>대상가구 구분</th>
-                                        <td colspan="3">
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="radio1">
-                                                <span class="ck_icon"></span>
-                                                저소득
-                                            </label>
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="radio1">
-                                                <span class="ck_icon"></span>
-                                                결손
-                                            </label>
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="radio1">
-                                                <span class="ck_icon"></span>
-                                                장애인
-                                            </label>
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="radio1">
-                                                <span class="ck_icon"></span>
-                                                다문화가족
-                                            </label>
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="radio1">
-                                                <span class="ck_icon"></span>
-                                                환경성질환
-                                            </label>
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="radio1">
-                                                <span class="ck_icon"></span>
-                                                홀로어르신
-                                            </label>
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="radio1">
-                                                <span class="ck_icon"></span>
-                                                기타
-                                            </label>
+                                        <td colspan="4">
+                                            <div class="item_inline_list">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio1">
+                                                        <span class="ck_icon"></span>
+                                                        저소득
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio1">
+                                                        <span class="ck_icon"></span>
+                                                        결손
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio1">
+                                                        <span class="ck_icon"></span>
+                                                        장애인
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio1">
+                                                        <span class="ck_icon"></span>
+                                                        다문화가족
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio1">
+                                                        <span class="ck_icon"></span>
+                                                        환경성질환
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio1">
+                                                        <span class="ck_icon"></span>
+                                                        홀로어르신
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio1">
+                                                        <span class="ck_icon"></span>
+                                                        기타
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>방문여부</th>
+                                        <td colspan="4">
+                                            <div class="item_inline_list">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio2">
+                                                        <span class="ck_icon"></span>
+                                                        방문
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio2">
+                                                        <span class="ck_icon"></span>
+                                                        미방문
+                                                    </label>
+                                                </div>
+                                                <div class="item input_item">
+                                                    <div class="input_group">
+                                                        <div class="input_text">사유:</div>
+                                                        <div class="input">
+                                                            <input type="text" placeholder="사유를 입력하세요.">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>방문일시</th>
+                                        <td colspan="2">
+                                            <div class="input_group">
+                                                <div class="input size_24">
+                                                    <input type="text" placeholder="YYYY-MM-DD" class="datepicker">
+                                                </div>
+                                                <div class="input size_12">
+                                                    <input type="text" placeholder="hh:mm" class="input_time">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>대상가구 구분</th>
+                                        <td>
+                                            <div class="item_inline_list">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio3">
+                                                        <span class="ck_icon"></span>
+                                                        수급자 어린이
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio3">
+                                                        <span class="ck_icon"></span>
+                                                        차상위 어린이
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>성별</th>
+                                        <td colspan="2">
+                                            <div class="item_inline_list">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio4">
+                                                        <span class="ck_icon"></span>
+                                                        남
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio4">
+                                                        <span class="ck_icon"></span>
+                                                        여
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>신청자이름</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" placeholder="이름을 입력하세요.">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>생년월일</th>
+                                        <td colspan="2">2023-02-03</td>
+                                        <th>만나이</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input size_8">
+                                                    <input type="text" placeholder="나이">
+                                                </div>
+                                                <span class="input_text">세</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>주소</th>
+                                        <td colspan="2">
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="">특별시·광역시 ·특별자치도</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="">시·군·구</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>개선협력지역</th>
+                                        <td>
+                                            <div class="item_inline_list">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio5">
+                                                        <span class="ck_icon"></span>
+                                                        예
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio5">
+                                                        <span class="ck_icon"></span>
+                                                        아니오
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>연락처</th>
+                                        <th class="bg_blue">집전화</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th class="bg_blue">핸드폰</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="010-1234-1234">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>응답자정보1)</th>
+                                        <th class="bg_blue">이름</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th class="bg_blue">신청자와의관계</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" value="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <small class="text_red">1) 신청자와 설문 응답자가 다를 경우만 작성</small>
+                    </div>
+                </div>
+
+                <div class="section_box">
+                    <div class="form form_table">
+                        <div class="form_tit">Ⅰ.가구정보</div>
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:20rem;">
+                                    <col style="width:calc(50% - 20rem);">
+                                    <col style="width:20rem;">
+                                    <col style="width:calc(50% - 20rem);">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>거주자</th>
                                         <td colspan="3">
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="radio2">
-                                                <span class="ck_icon"></span>
-                                                방문
-                                            </label>
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="radio2">
-                                                <span class="ck_icon"></span>
-                                                미방문
-                                            </label>
+                                            <div class="item_inline_list">
+                                                <div class="item input_item">
+                                                    <div class="input_group">
+                                                        <span class="input_tit">총 거주자</span>
+                                                        <div class="input size_8">
+                                                            <select name="" id="">
+                                                                <option value="">2</option>
+                                                            </select>
+                                                        </div>
+                                                        <span class="input_text">명</span>
+                                                    </div>
+                                                </div>
+                                                <div class="item input_item">
+                                                    <div class="input_group">
+                                                        <span class="input_tit">65세 이상 어르신</span>
+                                                        <div class="input size_8">
+                                                            <select name="" id="">
+                                                                <option value="">0</option>
+                                                            </select>
+                                                        </div>
+                                                        <span class="input_text">명</span>
+                                                    </div>
+                                                </div>
+                                                <div class="item input_item">
+                                                    <div class="input_group">
+                                                        <span class="input_tit">13세 미만 어린이</span>
+                                                        <div class="input size_8">
+                                                            <select name="" id="">
+                                                                <option value="">0</option>
+                                                            </select>
+                                                        </div>
+                                                        <span class="input_text">명</span>
+                                                    </div>
+                                                </div>
+                                                <div class="item input_item">
+                                                    <div class="input_group">
+                                                        <span class="input_tit">임산부 거주 여부</span>
+                                                        <label class="checkbox single">
+                                                            <input type="checkbox">
+                                                            <span class="ck_icon"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>대상가구 구분</th>
+                                        <td colspan="3">
+                                            <div class="item_inline_list">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio6">
+                                                        <span class="ck_icon"></span>
+                                                        단독
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio6">
+                                                        <span class="ck_icon"></span>
+                                                        다가구
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio6">
+                                                        <span class="ck_icon"></span>
+                                                        아파트
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio6">
+                                                        <span class="ck_icon"></span>
+                                                        다세대∙연립
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio6">
+                                                        <span class="ck_icon"></span>
+                                                        상가건물
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio6">
+                                                        <span class="ck_icon"></span>
+                                                        오피스텔
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio6" id="radio6_etc">
+                                                        <span class="ck_icon"></span>
+                                                        기타(유형기입)
+                                                    </label>
+                                                    <div class="input_group">
+                                                        <div class="input size_18">
+                                                            <input type="text" id="radio6_input" placeholder="기타 유형을 입력하세요." readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                const radio6All = document.querySelectorAll('[name="radio6"]');
+                                                const radio6Input = document.getElementById('radio6_input');
+                                                radio6All.forEach(radio => {
+                                                    radio.addEventListener('change', function() {
+                                                        const isEtcChecked = document.getElementById('radio6_etc').checked;
+                                                        radio6Input.readOnly = !isEtcChecked;
+                                                        if (!isEtcChecked) radio6Input.value = '';
+                                                    });
+                                                });
+                                            </script>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>난방유형</th>
+                                        <td>
+                                            <div class="item_inline_list">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="ck_icon"></span>
+                                                        도시가스 보일러
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="ck_icon"></span>
+                                                        기름보일러
+                                                    </label>
+                                                </div>
+                                                <div class="item input_item">
+                                                    <div class="input_group">
+                                                        <span class="input_tit">보일러 설치년도</span>
+                                                        <div class="input size_8">
+                                                            <select name="" id="">
+                                                                <option value="">2</option>
+                                                            </select>
+                                                        </div>
+                                                        <span class="input_text">년</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item_inline_list">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="ck_icon"></span>
+                                                        연탄
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="ck_icon"></span>
+                                                        중앙/지역난방
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="ck_icon"></span>
+                                                        전기패널/필름
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" id="check_hot">
+                                                        <span class="ck_icon"></span>
+                                                        기타
+                                                    </label>
+                                                    <div class="input_group">
+                                                        <div class="input size_18">
+                                                            <input type="text" id="check_hot_input" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    document.addEventListener('DOMContentLoaded', function() {
+                                                        const checkHot = document.getElementById('check_hot');
+                                                        const checkHotInput = document.getElementById('check_hot_input');
+
+                                                        checkHot.addEventListener('change', function() {
+                                                            const isChecked = checkHot.checked;
+                                                            checkHotInput.readOnly = !isChecked;
+                                                            if (!isChecked) {
+                                                                checkHotInput.value = '';
+                                                            }
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </td>
+                                        <th>냉방유형</th>
+                                        <td>
+                                            <div class="item_inline_list">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="ck_icon"></span>
+                                                        에어컨
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="ck_icon"></span>
+                                                        선풍기
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" id="check_cool">
+                                                        <span class="ck_icon"></span>
+                                                        기타(유형기입)
+                                                    </label>
+                                                    <div class="input_group">
+                                                        <div class="input size_18">
+                                                            <input type="text" id="check_cool_input" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    document.addEventListener('DOMContentLoaded', function() {
+                                                        const checkCool = document.getElementById('check_cool');
+                                                        const checkCoolInput = document.getElementById('check_cool_input');
+
+                                                        checkCool.addEventListener('change', function() {
+                                                            const isChecked = checkCool.checked;
+                                                            checkCoolInput.readOnly = !isChecked;
+                                                            if (!isChecked) {
+                                                                checkCoolInput.value = '';
+                                                            }
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>건축연도</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input size_24">
+                                                    <select name="" id="">
+                                                        <option value="">1990년대</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>거주기간</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input size_24">
+                                                    <select name="" id="">
+                                                        <option value="">1년 미만</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>거주층수</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input size_24">
+                                                    <select name="" id="">
+                                                        <option value="">4층</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>실내면적(전용)</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input size_8">
+                                                    <input type="text" value="2">
+                                                </div>
+                                                <span class="input_text">평</span>
+                                                <span class="input_text">(주생활공간:</span>
+                                                <div class="input size_8">
+                                                    <input type="text" value="2">
+                                                </div>
+                                                <span class="input_text">평)</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:20rem;">
+                                    <col style="width:12rem;">
+                                    <col style="width:calc((100% - 52rem)/3);">
+                                    <col style="width:calc((100% - 52rem)/3);">
+                                    <col style="width:calc((100% - 52rem)/3);">
+                                    <col style="width:20rem;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">주택실내구조</th>
+                                        <th colspan="4">사용 마감자재</th>
+                                    </tr>
+                                    <tr>
+                                        <td>구분</td>
+                                        <td>개수</td>
+                                        <td>바닥면</td>
+                                        <td>벽면</td>
+                                        <td>천장</td>
+                                        <td>기타</td>
+                                    </tr>
+                                </thead> 
+                                <tbody>
+                                    <tr>
+                                        <th class="bg_blue normal">방</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="2">2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="강화마루">강화마루</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="합지벽지">합지벽지</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="합지벽지">합지벽지</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" placeholder="기타">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_blue normal">화장실 (실외화장실 기타 표기)</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="2">2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="타일류">타일류</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="타일류">타일류</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="플라스틱PVC">플라스틱PVC</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" placeholder="기타">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_blue normal">거실</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="2">2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="강화마루">강화마루</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="합지벽지">합지벽지</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="합지벽지">합지벽지</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" placeholder="기타">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_blue normal">주방</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="2">2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="강화마루">강화마루</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="합지벽지">합지벽지</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <select name="" id="">
+                                                        <option value="합지벽지">합지벽지</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input">
+                                                    <input type="text" readonly>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" placeholder="기타">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:20rem;">
+                                    <col style="width:20rem;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="3">사용 마감자재<br/>작성 보기</th>
+                                        <th class="bg_white">바닥면</th>
+                                        <td>
+                                            <div class="dot_info">
+                                                <div class="tit">방, 거실, 주방</div>
+                                                <div class="cnt">1) PVC 장판   2) 데코타일   3) 원목마루   4) 강화마루   5) 대리석류   6) 타일류   7) 황토마루   8) 천연종이마루   9)기타</div>
+                                            </div>
+                                            <div class="dot_info">
+                                                <div class="tit">화장실</div>
+                                                <div class="cnt">1) 타일류   2) 마루   3) 시멘트   4) PVC장판   5) 기타</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_white">벽면</th>
+                                        <td>
+                                            <div class="dot_info">
+                                                <div class="tit">방, 거실, 주방</div>
+                                                <div class="cnt">1) 합지벽지   2) 천연벽지   3)   실크벽지   4) 페인트   5) 타일류   6) 기타</div>
+                                            </div>
+                                            <div class="dot_info">
+                                                <div class="tit">화장실</div>
+                                                <div class="cnt">1) 페인트   2) 타일류   3) 시멘트   4) 판넬   5) 기타</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_white">천장</th>
+                                        <td>
+                                            <div class="dot_info">
+                                                <div class="tit">방, 거실, 주방</div>
+                                                <div class="cnt">1) 합지벽지   2) 천연벽지   3) 실크벽지   4) 페인트   5) 기타</div>
+                                            </div>
+                                            <div class="dot_info">
+                                                <div class="tit">화장실</div>
+                                                <div class="cnt">1) 플라스틱PVC   2) 페인트   3) 타일류   4) 벽지   5) 기타</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section_box">
+                    <div class="form form_table">
+                        <div class="form_tit">Ⅱ. 가구 주변 환경 특징</div>
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:20rem;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>1. 주택 주변 (100m 이내) 특성</th>
+                                        <td>
+                                            <div class="item_inline_list">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio7">
+                                                        <span class="ck_icon"></span>
+                                                        번화가<span class="rt_text">1)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio7">
+                                                        <span class="ck_icon"></span>
+                                                        주택가<span class="rt_text">2)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio7">
+                                                        <span class="ck_icon"></span>
+                                                        농지인근
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio7">
+                                                        <span class="ck_icon"></span>
+                                                        공장(공단)지역
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio7" id="radio7_etc">
+                                                        <span class="ck_icon"></span>
+                                                        기타
+                                                    </label>
+                                                    <div class="input_group">
+                                                        <div class="input size_18">
+                                                            <input type="text" id="radio7_input" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                const radio7All = document.querySelectorAll('[name="radio7"]');
+                                                const radio7Input = document.getElementById('radio7_input');
+                                                radio7All.forEach(radio => {
+                                                    radio.addEventListener('change', function() {
+                                                        const isEtcChecked = document.getElementById('radio7_etc').checked;
+                                                        radio7Input.readOnly = !isEtcChecked;
+                                                        if (!isEtcChecked) radio7Input.value = '';
+                                                    });
+                                                });
+                                            </script>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>2. 주택 주변 (100m이내) 내 시설</th>
+                                        <td>
+                                            <div class="item_inline_list">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio8">
+                                                        <span class="ck_icon"></span>
+                                                        공장시설
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio8">
+                                                        <span class="ck_icon"></span>
+                                                        폐기물 처리시설
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio8">
+                                                        <span class="ck_icon"></span>
+                                                        상업시설<span class="rt_text">3)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio8">
+                                                        <span class="ck_icon"></span>
+                                                        분뇨 등 처리시설
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio8">
+                                                        <span class="ck_icon"></span>
+                                                        차량이동이 많은 시설<span class="rt_text">4)</span>
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="radio" name="radio8" id="radio8_etc">
+                                                        <span class="ck_icon"></span>
+                                                        기타
+                                                    </label>
+                                                    <div class="input_group">
+                                                        <div class="input size_18">
+                                                            <input type="text" id="radio8_input" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                const radio8All = document.querySelectorAll('[name="radio8"]');
+                                                const radio8Input = document.getElementById('radio8_input');
+                                                radio8All.forEach(radio => {
+                                                    radio.addEventListener('change', function() {
+                                                        const isEtcChecked = document.getElementById('radio8_etc').checked;
+                                                        radio8Input.readOnly = !isEtcChecked;
+                                                        if (!isEtcChecked) radio8Input.value = '';
+                                                    });
+                                                });
+                                            </script>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="ol_table">
+                                                <div class="ot_row">
+                                                    <div class="ot_item">1) 백화점, 복합주거상가, 마트 등과 복합적인 주거지 해당</div>
+                                                    <div class="ot_item">3) 상가, 백화점, 대형쇼핑센터 등</div>
+                                                </div>
+                                                <div class="ot_row">
+                                                    <div class="ot_item">2) 주거전용 주거지 해당</div>
+                                                    <div class="ot_item">4) 버스, 택시 등의 차고지, 도매시설, 택배 물류창고 및 중간 운반 운송 시설 등</div>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>

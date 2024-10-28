@@ -875,10 +875,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // input hh:mm:ss 마스크
 document.addEventListener('DOMContentLoaded', () => {
-    const timeInputs = document.querySelectorAll('.input-time');
+    const timeInputs = document.querySelectorAll('.input_time');
     const im = new Inputmask({
-        mask: "99:99:99",
-        placeholder: "hh:mm:ss",
+        mask: "99:99",
+        placeholder: "hh:mm",
         insertMode: false,
         showMaskOnHover: false,
         hourFormat: "24"
@@ -892,7 +892,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     function validateTime(input) {
-        const timePattern = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/;
+        const timePattern = /^([01]\d|2[0-3]):([0-5]\d)$/;
         if (!timePattern.test(input.value)) {
             //유효하지 않은 시간
         } else {

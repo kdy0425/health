@@ -238,7 +238,7 @@ label{cursor: pointer;}
 .tap_type2 label strong{display: block;border:1px solid #D8D8D8;background-color: #fff;color:#8E8E8E;font-size:1.5rem;font-weight:600;padding:1.3rem 2.4rem 1.2rem;text-align: center;border-radius:3rem;}
 .tap_type2 label input:checked + strong{background-color: #3486E7;color:#fff;border-color:#3486E7;}
 .tap_type2 a,
-.tap_type2 button{position: relative;display: inline-block;border:1px solid #D8D8D8;background-color: #fff;color:#8E8E8E;font-size:1.5rem;font-weight:600;padding:1.3rem 2.4rem 1.2rem;text-align: center;border-radius:3rem;}
+.tap_type2 button{position: relative;display: inline-block;border:1px solid #D8D8D8;background-color: #fff;color:#8E8E8E;font-size:1.5rem;font-weight:600;padding:0.9rem 2.4rem 0.8rem;text-align: center;border-radius:3rem;}
 .tap_type2 a.on,
 .tap_type2 button.on{background-color: #3486E7;color:#fff;border-color:#3486E7;}
 

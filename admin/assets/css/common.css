@@ -151,6 +151,8 @@ html .simplebar-horizontal .simplebar-scrollbar:before {background-color: rgba(0
 .ml_25{margin-left:2.5rem;}
 .ml_30{margin-left:3rem;}
 
+.text_red{color:#E14A4A}
+.text_submit{color:#437EE7}
 
 html .pika-single{border:1px solid #D8D8D8;border-radius:0.8rem;overflow: hidden;}
 html .pika-single.bottom-aligned{margin-top:0.5rem;}
