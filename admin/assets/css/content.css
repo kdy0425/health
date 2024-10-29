@@ -17,6 +17,7 @@ background: linear-gradient(90deg, color(display-p3 0.235 0.412 0.867) 0%, color
 .section_box .form_table .table + .table{margin-top:1.6rem;}
 
 .form_tit{color:#1C283D;font-size:1.5rem;font-weight: 600;margin-bottom:1.2rem;}
+.form_tit_sub{color:#437EE7;font-size:1.4rem;font-weight: 600;margin-bottom:1.2rem;}
 .form_item .form_tit{margin-bottom:0.8rem;}
 .form_row{}
 .form_row .form_item{}
@@ -53,8 +54,12 @@ background: linear-gradient(90deg, color(display-p3 0.235 0.412 0.867) 0%, color
 .form_table .table table tbody th{background-color: #F3F4F8;vertical-align: middle;color:#1C283D;font-size:1.3rem;font-weight:600;padding:1rem 1.2rem;}
 .form_table .table table tbody th.bg_blue{background-color: #F3FAFF;}
 .form_table .table table tbody th.bg_white{background-color: #fff;}
-.form_table .table table tbody td{background-color: #fff;padding:1rem 1.2rem;vertical-align: middle;color:#555C6C;font-size:1.3rem;height: 4.5rem;}
+.form_table .table table tbody td{background-color: #fff;padding:1rem 1.2rem;vertical-align: middle;color:#555C6C;font-size:1.3rem;height: 5.6rem;}
+.form_table .table table tbody td.bg_blue{background-color: #F3FAFF;}
+.form_table .table table tbody td.bg_white{background-color: #fff;}
 .form_table .table table tbody th.normal{color:#555C6C;}
+.form_table .table table tbody th.h40,
+.form_table .table table tbody td.h40{height:4rem;}
 .btn_list + .preview_wrap{margin-top:2rem;}
 .preview_wrap{display: flex;}
 .preview_wrap .preview_box{width:53.8rem;margin-right:1.6rem;position: relative;display:flex;}
@@ -245,6 +250,7 @@ background: linear-gradient(91.18deg, color(display-p3 0.235 0.412 0.867) -1.89%
 .size_xl{width: 100%;}
 .input.size_8{width:8rem;max-width:8rem;}
 .input.size_12{width:12rem;max-width:12rem;}
+.input.size_14_7{width:14.7rem;max-width:14.7rem;}
 .input.size_15{width:15rem;max-width:15rem;}
 .input.size_18{width:18rem;max-width:18rem;}
 .input.size_24{width:24rem;max-width:24rem;}
@@ -522,11 +528,36 @@ button:disabled{cursor:default;}
 .item_inline_list + .item_inline_list{margin-top:0;}
 .item_inline_list{margin-top:-1.6rem;display:flex;align-items: center;flex-wrap: wrap;}
 .item_inline_list .item{margin-top:1.6rem;margin-right:2.4rem;display: flex;align-items: center;}
+.item_inline_list .item.item_wrap{flex-wrap: wrap;}
 .item_inline_list .input_item{}
 .item_inline_list .item + .input_item{margin-left:0.8rem;}
 .item_inline_list .item:last-child{margin-right:0;}
 .item_inline_list .item .input_tit{position:relative;color:#555C6C;font-size:1.3rem;font-weight:600;padding-left:1rem;}
 .item_inline_list .item .input_tit:before{content:"";position: absolute;left:0;top:50%;margin-top:-2px;width:2px;height:2px;border-radius: 50%;background-color: #555C6C;}
+.item_inline_list .item .check_sub{width: 100%;font-size:1.3rem;font-weight:400;margin-top:0.4rem;}
+
+.item_row_list{}
+.item_row_list .item{display: flex;align-items: center;}
+.item_row_list .item + .item{margin-top:1.6rem;}
+.item_row_list.sm .item + .item{margin-top:0.8rem;}
+.item_row_list .input_item{}
+.item_row_list .item .input_tit{position:relative;color:#555C6C;font-size:1.3rem;font-weight:600;padding-left:1rem;}
+.item_row_list .item .input_tit:before{content:"";position: absolute;left:0;top:50%;margin-top:-2px;width:2px;height:2px;border-radius: 50%;background-color: #555C6C;}
+.item_row_list .item .check_sub{width: 100%;font-size:1.3rem;font-weight:400;margin-top:0.4rem;}
+.item_row_list.inline{display: inline-block;}
+
+.item_grid_list{display:inline-grid;grid-template-columns: repeat(5,1fr);margin-top:-1.6rem;}
+.item_grid_list .item{margin-top:1.6rem;padding-right:2.4rem;display: flex;align-items: center;}
+.item_grid_list .item .input_tit{position:relative;color:#555C6C;font-size:1.3rem;font-weight:600;padding-left:1rem;}
+.item_grid_list .item .input_tit:before{content:"";position: absolute;left:0;top:50%;margin-top:-2px;width:2px;height:2px;border-radius: 50%;background-color: #555C6C;}
+.item_grid_list .item .check_sub{width: 100%;font-size:1.3rem;font-weight:400;margin-top:0.4rem;}
+.item_grid_list .checkbox{white-space: nowrap;}
+.item_grid_list.grid2{grid-template-columns: repeat(2,1fr);}
+.item_grid_list.grid3{grid-template-columns: repeat(3,1fr);}
+.item_grid_list.grid4{grid-template-columns: repeat(4,1fr);}
+.item_grid_list.grid5{grid-template-columns: repeat(5,1fr);}
+.item_grid_list.grid6{grid-template-columns: repeat(6,1fr);}
+.item_grid_list.grid7{grid-template-columns: repeat(7,1fr);}
 
 .dot_item_list_col{margin-top:-2.4rem;display:flex;align-items: center;flex-wrap: wrap;}
 .dot_item_list_col .item{margin-top:2.4rem;margin-right:2.4rem;}
@@ -548,39 +579,158 @@ button:disabled{cursor:default;}
 .ol_table .ot_row .ot_item + .ot_item{padding-left:4.8rem;}
 .ol_table .ot_row + .ot_row .ot_item{padding-top:0.8rem;}
 
-<div class="ol_table">
-                                                <div class="ot_row">
-                                                    <div class="ot_item">1) 백화점, 복합주거상가, 마트 등과 복합적인 주거지 해당</div>
-                                                    <div class="ot_item">3) 상가, 백화점, 대형쇼핑센터 등</div>
-                                                </div>
-                                                <div class="ot_row">
-                                                    <div class="ot_item">2) 주거전용 주거지 해당</div>
-                                                    <div class="ot_item">4) 버스, 택시 등의 차고지, 도매시설, 택배 물류창고 및 중간 운반 운송 시설 등</div>
-                                                </div>
-                                            </div>
+.qna_wrap{border-top:1px solid #555C6C;}
+.qna_wrap .qna_group_title{color:#437EE7;font-size:1.4rem;font-weight:600;margin-bottom:1.6rem;}
+.qna_wrap .qna_item{padding:3.2rem 0;position: relative;border-bottom:1px solid #DEE0E9;}
+.qna_wrap .qna_item .type{position:absolute;left:0;top:0;width:3.2rem;height:2.4rem;line-height: 2.4rem;text-align: center;border-radius:3rem;background-color: #E1EFFF;color:#437EE7;font-size:1.6rem;font-weight:700;}
+.qna_wrap .qna_item .title{padding-left:4.2rem;padding-top:0.3rem;color:#1C283D;font-size:1.5rem;font-weight:600;position:relative;}
+.qna_wrap .qna_item .title strong{color:#437EE7;font-size:1.5rem;font-weight:700;padding-right:0.4rem;}
+.qna_wrap .qna_item .title_sub{padding-left:4.2rem;margin-top:0.7rem;color:#526692;font-size:1.3rem;font-weight:600;}
+.qna_wrap .qna_item .title .tit_desc{font-size:1.3rem;font-weight:600;color:#555C6C;margin-left:0.4rem;vertical-align: baseline;}
+.qna_wrap .qna_item .content{padding-left:4.2rem;margin-top:1.6rem;}
+.qna_wrap .qna_item:first-child{padding-top:2.4rem;}
+.qna_item .in_item{padding:2.4rem;border-radius: 0.8rem;background-color: #F3F4F8;}
+.qna_item .in_item + .in_item{margin-top:1.2rem;}
+.qna_item .in_item .title{font-size:1.4rem;margin-bottom:0.8rem;padding-top:0;padding-left:0;}
+.qna_item .in_item .title strong{font-size:1.4rem;}
 
-<!-- grid_2, grid_3, grid_4, grid_5  -->
-                                            <div class="ol_grid grid_2">
-                                                <div class="grid_item">1) 백화점, 복합주거상가, 마트 등과 복합적인 주거지 해당</div>
-                                                <div class="grid_item">2) 주거전용 주거지 해당</div>
-                                                <div class="grid_item">3) 상가, 백화점, 대형쇼핑센터 등</div>
-                                                <div class="grid_item">4) 버스, 택시 등의 차고지, 도매시설, 택배 물류창고 및 중간 운반 운송 시설 등</div>
-                                            </div>
+.qna_form_item{}
+.qna_form_item + .qna_form_item{margin-top:1.6rem;}
+.qna_form_item textarea{height:8rem;}
+.qna_form_item .qfi_tit{font-size:1.3rem;font-weight:600;color:#555C6C;margin-bottom:0.8rem;}
+.qna_form_item .qfi_tit .tit_desc{margin-left:800;font-weight:400;}
 
-<div class="dot_item">
-                                                <div class="tit">방, 거실, 주방</div>
-                                                <div class="tit">1) 합지벽지   2) 천연벽지   3) 실크벽지   4) 페인트   5) 기타</div>
-                                            </div>
+.item_inline_list + .dot_grid_table{margin-top:0.8rem;}
+.dot_grid_table{color:#555C6C;font-size:1.3rem;display: table;margin-top:0.2rem;margin-bottom:0.2rem;}
+.dot_grid_table .gt_row{display: table-row;}
+.dot_grid_table .gt_item{display: table-cell;}
+.dot_grid_table .gt_item + .gt_item{padding-left:6.4rem;}
+.dot_grid_table .gt_row + .gt_row .gt_item{padding-top:2.4rem;}
+.dot_grid_table .gt_item .tit{color:#1C283D;font-size:1.4rem;font-weight:600;position: relative;display: flex;padding-left:1rem;margin-bottom:0.8rem;}
+.dot_grid_table .gt_item .tit:before{content:"";position: absolute;left:0;top:50%;margin-top:-2px;border-radius: 50%;background-color: #1C283D;width:2px;height:2px;}
+.dot_grid_table .gt_item .tit_sub{color:#526692;font-size:1.3rem;font-weight:600;margin-left:0.8rem;}
+.dot_grid_table .gt_item .cnt{padding:0.4rem 0 0.4rem 1rem;}
+.dot_grid_table.between_48 .gt_item + .gt_item{padding-left:4.8rem;}
 
-<div class="dot_item_list_col">
-                                                <div class="item">
-                                                    <div class="input_group">
-                                                        <span class="input_tit">총 거주자</span>
-                                                        <div class="input">
-                                                            <select name="" id="">
-                                                                <option value="">2</option>
-                                                            </select>
-                                                        </div>
-                                                        <span class="input_text">명</span>
-                                                    </div>
-                                                </div>
+.dot_grid_form{display: table;}
+.dot_grid_form .gf_row{display: table-row;}
+.dot_grid_form .gf_item{display: table-cell;}
+.dot_grid_form .gf_item + .gf_item{padding-left:6.4rem;}
+.dot_grid_form .gf_item .gf_tit{position:relative;color:#1C283D;font-size:1.4rem;font-weight:600;padding-left:1rem;margin-right:0.8rem;white-space: nowrap;}
+.dot_grid_form .gf_item .gf_tit:before{content:"";position: absolute;left:0;top:50%;margin-top:-2px;width:2px;height:2px;border-radius: 50%;background-color: #1C283D;}
+.dot_grid_form .gf_item .item{margin-right:2.4rem;}
+.dot_grid_form .gf_item .item:last-child{margin-right:0;}
+.dot_grid_form .gf_row + .gf_row .gf_item{padding-top:2.4rem;}
+.dot_grid_form .gf_item .gf_flex{display: flex;align-items: center}
+
+
+<div class="dot_grid_form">
+<div class="gf_row">
+    <div class="gf_item">
+        <div class="gf_tit">남자</div>
+        <div class="item input_item">
+            <div class="input_group">
+                <div class="input size_8">
+                    <input type="text">
+                </div>
+                <span class="input_text">명</span>
+            </div>
+        </div>
+
+
+<div class="in_item">
+<div class="title"><strong>8-1.</strong>현재 환기방법</div>
+<div class="item_inline_list">
+    <div class="item check_item input_group">
+        <label class="checkbox">
+            <input type="checkbox">
+            <span class="ck_icon"></span>
+            창∙문 개방
+        </label>
+    </div>
+    <div class="item check_item input_group">
+        <label class="checkbox">
+            <input type="checkbox">
+            <span class="ck_icon"></span>
+            국소배기설비
+        </label>
+    </div>
+    <div class="item check_item input_group">
+        <label class="checkbox">
+            <input type="checkbox">
+            <span class="ck_icon"></span>
+            중앙환기장치
+        </label>
+    </div>
+    <div class="item check_item input_group">
+        <label class="checkbox">
+            <input type="checkbox" id="qna8_1">
+            <span class="ck_icon"></span>
+            기타
+        </label>
+        <div class="input_group">
+            <div class="input size_18">
+                <input type="text" id="qna8_1_input" readonly>
+            </div>
+        </div>
+    </div>
+    <div class="item check_item input_group">
+        <label class="checkbox">
+            <input type="checkbox">
+            <span class="ck_icon"></span>
+            없음
+        </label>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const qna8_1 = document.getElementById('qna8_1');
+            const qna8_1Input = document.getElementById('qna8_1_input');
+
+            qna8_1.addEventListener('change', function() {
+                const isChecked = qna8_1.checked;
+                qna8_1Input.readOnly = !isChecked;
+                if (!isChecked) {
+                    qna8_1Input.value = '';
+                }
+            });
+        });
+    </script>
+</div>
+<div class="dot_grid_table between_48"> <!-- 아이템간격 48px -->
+    <div class="dg_row">
+
+
+<div class="dot_grid_table">
+<div class="dg_row">
+    <div class="dg_item">
+        <div class="tit">곰팡이 발생 정도</div>
+        <div class="cnt">
+<div class="dot_grid_list">
+                                        <div class="dg_item">
+                                            <div class="tit">곰팡이 발생 정도</div>
+                                            <div class="cnt">
+                                                <div class="item_inline_list">
+
+<div class="qna_wrap">
+                            <div class="qna_item">
+                                <span class="type">Q</span>
+                                <div class="title"><strong>1.</strong>최근(2년 이내) 주거 내 인테리어 공사 및 리모델링을 하신 적이 있으십니까?</div>
+                                <div class="title_sub">⇒ 리모델링 여부에 따른 오염물질 농도 영향 파악</div>
+                                <div class="item_inline_list">
+                                    <div class="item check_item input_group">
+                                        <label class="checkbox">
+                                            <input type="radio" name="radio9">
+                                            <span class="ck_icon"></span>
+                                            있다
+                                        </label>
+                                    </div>
+                                    <div class="item check_item input_group">
+                                        <label class="checkbox">
+                                            <input type="radio" name="radio9">
+                                            <span class="ck_icon"></span>
+                                            없다
+                                        </label>
+                                        <a href="javascript:;" class="link_move">(☞Q2로 이동)</a>
+                                    </div>
+                                </div>
+                            </div>

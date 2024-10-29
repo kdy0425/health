@@ -1291,9 +1291,1954 @@
                     </div>
                 </div>
 
+                <div class="section_box">
+                    <div class="form form_table">
+                        <div class="form_tit">Ⅲ. 주거환경에 관한 설문</div>
+                        <div class="qna_wrap">
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>1.</strong>최근(2년 이내) 주거 내 인테리어 공사 및 리모델링을 하신 적이 있으십니까?</div>
+                                <div class="title_sub">⇒ 리모델링 여부에 따른 오염물질 농도 영향 파악</div>
+                                <div class="content">
+                                    <div class="item_inline_list">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio9">
+                                                <span class="ck_icon"></span>
+                                                있다
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio9">
+                                                <span class="ck_icon"></span>
+                                                없다
+                                            </label>
+                                            <a href="#qna_item2" class="link_move">(☞Q2로 이동)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>1-1.</strong>인테리어 공사 및 리모델링을 하시었을 때는 언제입니까?</div>
+                                <div class="title_sub">⇒ 유해물질(특히 폼알데하이드) 반감기 파악 (예 : 폼알데하이드 2~4.4년)</div>
+                                <div class="content">
+                                    <div class="item_inline_list">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio10">
+                                                <span class="ck_icon"></span>
+                                                0~6개월 전
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio10">
+                                                <span class="ck_icon"></span>
+                                                7개월~1년 전
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio10">
+                                                <span class="ck_icon"></span>
+                                                1년~ 1년 6개월 전
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio10">
+                                                <span class="ck_icon"></span>
+                                                1년 6개월 ~ 2년 전
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>1-2.</strong>인테리어 공사 및 리모델링을 하신 공간은 어디입니까? (복수응답 가능)</div>
+                                <div class="content">
+                                    <div class="item_inline_list">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio11">
+                                                <span class="ck_icon"></span>
+                                                방
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio11">
+                                                <span class="ck_icon"></span>
+                                                거실
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio11">
+                                                <span class="ck_icon"></span>
+                                                욕실(화장실)
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio11">
+                                                <span class="ck_icon"></span>
+                                                주방
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio11">
+                                                <span class="ck_icon"></span>
+                                                발코니, 창고등
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio11" id="radio11_etc">
+                                                <span class="ck_icon"></span>
+                                                기타
+                                            </label>
+                                            <div class="input_group">
+                                                <div class="input size_18">
+                                                    <input type="text" id="radio11_input" placeholder="" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        const radio11All = document.querySelectorAll('[name="radio11"]');
+                                        const radio11Input = document.getElementById('radio11_input');
+                                        radio11All.forEach(radio => {
+                                            radio.addEventListener('change', function() {
+                                                const isEtcChecked = document.getElementById('radio11_etc').checked;
+                                                radio11Input.readOnly = !isEtcChecked;
+                                                if (!isEtcChecked) radio11Input.value = '';
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>1-3.</strong>인테리어 공사 및 리모델링을 하신 해당 항목은 무엇입니까? (복수응답 가능)</div>
+                                <div class="content">
+                                    <div class="item_inline_list">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio12">
+                                                <span class="ck_icon"></span>
+                                                도장(페인트) 공사
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio12">
+                                                <span class="ck_icon"></span>
+                                                도배(벽지) 교체
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio12">
+                                                <span class="ck_icon"></span>
+                                                바닥재(장판 등) 교체
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio12">
+                                                <span class="ck_icon"></span>
+                                                욕실(화장실) 공사
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio12">
+                                                <span class="ck_icon"></span>
+                                                주방(싱크) 공사
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio12">
+                                                <span class="ck_icon"></span>
+                                                전기∙조명공사
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio12">
+                                                <span class="ck_icon"></span>
+                                                확장(발코니 등) 공사
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio12" id="radio12_etc">
+                                                <span class="ck_icon"></span>
+                                                기타
+                                            </label>
+                                            <div class="input_group">
+                                                <div class="input size_18">
+                                                    <input type="text" id="radio12_input" placeholder="" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        const radio12All = document.querySelectorAll('[name="radio12"]');
+                                        const radio12Input = document.getElementById('radio21_input');
+                                        radio12All.forEach(radio => {
+                                            radio.addEventListener('change', function() {
+                                                const isEtcChecked = document.getElementById('radio12_etc').checked;
+                                                radio12Input.readOnly = !isEtcChecked;
+                                                if (!isEtcChecked) radio12Input.value = '';
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="qna_item" id="qna_item2">
+                                <div class="title"><span class="type">Q</span><strong>2.</strong>최근 1년 이내에 구매하신 가구가 있으시면 모두 표시하여 주십시오.</div>
+                                <div class="title_sub">⇒ 새 가구의 구입과 TVOC∙폼알데하이드 검출량 비교</div>
+                                <div class="content">
+                                    <div class="item_inline_list">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio13">
+                                                <span class="ck_icon"></span>
+                                                침대, 매트리스 등
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio13">
+                                                <span class="ck_icon"></span>
+                                                수납가구(붙박이장, 옷장, 각종 서랍장)
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio13">
+                                                <span class="ck_icon"></span>
+                                                거실가구 (소파, 거실장)
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio13">
+                                                <span class="ck_icon"></span>
+                                                주방가구(식탁, 싱크)
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio13">
+                                                <span class="ck_icon"></span>
+                                                책상, 책장 등
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio13">
+                                                <span class="ck_icon"></span>
+                                                해당사항 없음
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>3.</strong>귀댁의 실내 개선 지원과 관련하여, 아래 항목에 해당하는 경우 모두 표시하여 주십시오.</div>
+                                <div class="content">
+                                    <div class="item_inline_list">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio14">
+                                                <span class="ck_icon"></span>
+                                                이사 계획 있음
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio14">
+                                                <span class="ck_icon"></span>
+                                                타 사업 지원 예정
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio14">
+                                                <span class="ck_icon"></span>
+                                                개선 거부
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio14">
+                                                <span class="ck_icon"></span>
+                                                개선지원 필요
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio14">
+                                                <span class="ck_icon"></span>
+                                                해당사항없음
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>4.</strong>귀댁에서는 맨눈으로 곰팡이 또는 누수(벽, 천장 등) 흔적이 관찰되십니까?</div>
+                                <div class="title_sub">⇒ 벽지 내 습기, 벽 안에 피는 곰팡이 및 실내 누구 등이 헌집증후군을 일으키는 만큼, 곰팡이, 누수발생 정도를 알아보고자 함</div>
+                                <div class="content">
+                                    <div class="dot_grid_table">
+                                        <div class="gt_row">
+                                            <div class="gt_item">
+                                                <div class="tit">곰팡이 발생 정도</div>
+                                                <div class="cnt">
+                                                    <div class="item_inline_list">
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="radio15">
+                                                                <span class="ck_icon"></span>
+                                                                없음
+                                                            </label>
+                                                        </div>
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="radio15">
+                                                                <span class="ck_icon"></span>
+                                                                경미
+                                                            </label>
+                                                        </div>
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="radio15">
+                                                                <span class="ck_icon"></span>
+                                                                심각
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gt_item">
+                                                <div class="tit">곰팡이 발생 위치</div>
+                                                <div class="cnt">
+                                                    <div class="item_inline_list">
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="checkbox">
+                                                                <span class="ck_icon"></span>
+                                                                천장
+                                                            </label>
+                                                        </div>
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="checkbox">
+                                                                <span class="ck_icon"></span>
+                                                                벽면
+                                                            </label>
+                                                        </div>
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="checkbox">
+                                                                <span class="ck_icon"></span>
+                                                                바닥
+                                                            </label>
+                                                        </div>
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="checkbox">
+                                                                <span class="ck_icon"></span>
+                                                                기타
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gt_row">
+                                            <div class="gt_item">
+                                                <div class="tit">누수(결로) 흔적</div>
+                                                <div class="cnt">
+                                                    <div class="item_inline_list">
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="radio16">
+                                                                <span class="ck_icon"></span>
+                                                                있다
+                                                            </label>
+                                                        </div>
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="radio16">
+                                                                <span class="ck_icon"></span>
+                                                                없다
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gt_item">
+                                                <div class="tit">누수 수리 여부 <div class="tit_sub">누수(결로) 흔적 "있다"에 체크한 경우에 답변</div></div>
+                                                <div class="cnt">
+                                                    <div class="item_inline_list">
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="radio17">
+                                                                <span class="ck_icon"></span>
+                                                                있다
+                                                            </label>
+                                                        </div>
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="radio17">
+                                                                <span class="ck_icon"></span>
+                                                                없다
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>5.</strong>귀댁에서 맨눈으로 해충(바퀴벌레, 좀벌레, 개미, 쥐 등)이 관찰되십니까?</div>
+                                <div class="content">
+                                    <div class="item_inline_list">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio18">
+                                                <span class="ck_icon"></span>
+                                                있다
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio18">
+                                                <span class="ck_icon"></span>
+                                                없다
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>5-1.</strong>해충에 대해 주기적으로 관리하고 있습니까?</div>
+                                <div class="title_sub">⇒ 방문 가구의 주거환경에 대한 특이사항 파악</div>
+                                <div class="content">
+                                    <div class="item_inline_list">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio19">
+                                                <span class="ck_icon"></span>
+                                                방역서비스 이용
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio19">
+                                                <span class="ck_icon"></span>
+                                                살충제 사용
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio19">
+                                                <span class="ck_icon"></span>
+                                                방역 기구 사용
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio19">
+                                                <span class="ck_icon"></span>
+                                                하지 않음
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>6.</strong>가구의 주거환경에 대한 특이사항을 작성해 주십시오. <span class="tit_desc text_red">(*필수 작성)</span></div>
+                                <div class="content">
+                                    <div class="qna_form_item">
+                                        <div class="input_group">
+                                            <div class="input">
+                                                <textarea name="" id="" placeholder="1. 구청에서(한국에너지사업단)다열벽지시공예정"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="qna_form_item">
+                                        <div class="qfi_tit">* 추가 확인 사항 <span class="text_red">(경기도 지역만 해당)</span> <span class="tit_desc">(중문 설치 희망 및 가능 여부 정보 기입)</span></div>
+                                        <div class="input_group">
+                                            <div class="input">
+                                                <textarea name="" id="" placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>8.</strong>현재 살고 계신 집의 환기 방법은 무엇입니까? (계절별 해당 부분 체크)</div>
+                                <div class="title_sub">⇒ 실내의 유해물질 농도(폼알데하이드 등)는 환기에 따라 좌우될 수 있으며, 최소 30분 이상 환기하는 것이 효과적임(환기 시간에 따른 유해물질 노출량 파악)</div>
+                                <div class="content">
+                                    <div class="in_item">
+                                        <div class="title"><strong>8-1.</strong>현재 환기방법</div>
+                                        <div class="item_inline_list">
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    창∙문 개방
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    국소배기설비
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    중앙환기장치
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    기타
+                                                </label>
+                                                <div class="input_group">
+                                                    <div class="input size_18">
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    없음
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="dot_grid_table between_48"> <!-- 아이템간격 48px -->
+                                            <div class="gt_row">
+                                                <div class="gt_item">
+                                                    <div class="tit">하루평균 환기시간</div>
+                                                    <div class="cnt">
+                                                        <div class="item_inline_list">
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio20">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 30분 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio20">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 30분~1시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio20">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 1시간~3시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio20">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 3시간~5시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio20">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 5시간 이상
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="gt_item">
+                                                    <div class="tit">일주일 평균 환기빈도</div>
+                                                    <div class="cnt">
+                                                        <div class="item_inline_list">
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio21">
+                                                                    <span class="ck_icon"></span>
+                                                                    0~3회
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio21">
+                                                                    <span class="ck_icon"></span>
+                                                                    4~5회
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio21">
+                                                                    <span class="ck_icon"></span>
+                                                                    5회 초과
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="in_item">
+                                        <div class="title"><strong>8-2.</strong>무더울 때 (여름)</div>
+                                        <div class="item_inline_list">
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    창∙문 개방
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    국소배기설비
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    중앙환기장치
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    기타
+                                                </label>
+                                                <div class="input_group">
+                                                    <div class="input size_18">
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    없음
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="dot_grid_table between_48"> <!-- 아이템간격 48px -->
+                                            <div class="gt_row">
+                                                <div class="gt_item">
+                                                    <div class="tit">하루평균 환기시간</div>
+                                                    <div class="cnt">
+                                                        <div class="item_inline_list">
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio22">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 30분 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio22">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 30분~1시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio22">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 1시간~3시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio22">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 3시간~5시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio22">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 5시간 이상
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="gt_item">
+                                                    <div class="tit">일주일 평균 환기빈도</div>
+                                                    <div class="cnt">
+                                                        <div class="item_inline_list">
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio23">
+                                                                    <span class="ck_icon"></span>
+                                                                    0~3회
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio23">
+                                                                    <span class="ck_icon"></span>
+                                                                    4~5회
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio23">
+                                                                    <span class="ck_icon"></span>
+                                                                    5회 초과
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="in_item">
+                                        <div class="title"><strong>8-3.</strong>추울 때 (겨울)</div>
+                                        <div class="item_inline_list">
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    창∙문 개방
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    국소배기설비
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    중앙환기장치
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    기타
+                                                </label>
+                                                <div class="input_group">
+                                                    <div class="input size_18">
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    없음
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="dot_grid_table between_48"> <!-- 아이템간격 48px -->
+                                            <div class="gt_row">
+                                                <div class="gt_item">
+                                                    <div class="tit">하루평균 환기시간</div>
+                                                    <div class="cnt">
+                                                        <div class="item_inline_list">
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio24">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 30분 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio24">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 30분~1시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio24">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 1시간~3시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio24">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 3시간~5시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio24">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 5시간 이상
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="gt_item">
+                                                    <div class="tit">일주일 평균 환기빈도</div>
+                                                    <div class="cnt">
+                                                        <div class="item_inline_list">
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio25">
+                                                                    <span class="ck_icon"></span>
+                                                                    0~3회
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio25">
+                                                                    <span class="ck_icon"></span>
+                                                                    4~5회
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio25">
+                                                                    <span class="ck_icon"></span>
+                                                                    5회 초과
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="in_item">
+                                        <div class="title"><strong>8-4.</strong>환절기 때 (봄∙가을)</div>
+                                        <div class="item_inline_list">
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    창∙문 개방
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    국소배기설비
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    중앙환기장치
+                                                </label>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    기타
+                                                </label>
+                                                <div class="input_group">
+                                                    <div class="input size_18">
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item check_item input_group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    없음
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="dot_grid_table between_48"> <!-- 아이템간격 48px -->
+                                            <div class="gt_row">
+                                                <div class="gt_item">
+                                                    <div class="tit">하루평균 환기시간</div>
+                                                    <div class="cnt">
+                                                        <div class="item_inline_list">
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio26">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 30분 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio26">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 30분~1시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio26">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 1시간~3시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio26">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 3시간~5시간 이하
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio26">
+                                                                    <span class="ck_icon"></span>
+                                                                    일 5시간 이상
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="gt_item">
+                                                    <div class="tit">일주일 평균 환기빈도</div>
+                                                    <div class="cnt">
+                                                        <div class="item_inline_list">
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio27">
+                                                                    <span class="ck_icon"></span>
+                                                                    0~3회
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio27">
+                                                                    <span class="ck_icon"></span>
+                                                                    4~5회
+                                                                </label>
+                                                            </div>
+                                                            <div class="item check_item input_group">
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="radio27">
+                                                                    <span class="ck_icon"></span>
+                                                                    5회 초과
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>14-1.</strong>‘Q14’에서 응답한 대상자의 성별과 출생연도를 적어주십시오</div>
+                                <div class="content">
+                                    <div class="dot_grid_form">
+                                        <div class="gf_row">
+                                            <div class="gf_item">
+                                                <div class="gf_flex">
+                                                    <div class="gf_tit">남자</div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">a. (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">년생)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">b. (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">년생)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">c. (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">년생)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">d. (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">년생)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">e. (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">년생)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gf_row">
+                                            <div class="gf_item">
+                                                <div class="gf_flex">
+                                                    <div class="gf_tit">여자</div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">a. (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">년생)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">b. (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">년생)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">c. (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">년생)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">d. (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">년생)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">e. (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">년생)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>14-2.</strong>‘Q14’에서 응답한 인원의 증상은 다음중 어디에 해당하나요? (복수응답 가능)</div>
+                                <div class="content">
+                                    <div class="dot_grid_form">
+                                        <div class="gf_row">
+                                            <div class="gf_item">
+                                                <div class="gf_flex">
+                                                    <div class="gf_tit">아토피</div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">a.의사진단 (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">b.자각증상 (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gf_item">
+                                                <div class="gf_flex">
+                                                    <div class="gf_tit">알러지성 비염</div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">a.의사진단 (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">b.자각증상 (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gf_row">
+                                            <div class="gf_item">
+                                                <div class="gf_flex">
+                                                    <div class="gf_tit">천식</div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">a.의사진단 (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">b.자각증상 (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gf_item">
+                                                <div class="gf_flex">
+                                                    <div class="gf_tit">기타</div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <div class="input size_14_7">
+                                                                <input type="text">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">(</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">a.의사진단 (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item input_item">
+                                                        <div class="input_group">
+                                                            <span class="input_text">b.자각증상 (</span>
+                                                            <div class="input size_8">
+                                                                <input type="text">
+                                                            </div>
+                                                            <span class="input_text">명)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>14-4.</strong>환경설질환 무료 진료를 받을 수 있다면 치료받기를 희망하는 병원유형은 어디입니까?</div>
+                                <div class="content mgt_24">
+                                    <div class="dot_grid_table">
+                                        <div class="gt_row">
+                                            <div class="gt_item">
+                                                <div class="tit">진료 희망 여부</div>
+                                                <div class="cnt">
+                                                    <div class="item_inline_list">
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="radio28">
+                                                                <span class="ck_icon"></span>
+                                                                <strong>진료 희망</strong>
+                                                                <div class="check_sub">(진료 희망하는 병원유형 답변)</div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="radio28">
+                                                                <span class="ck_icon"></span>
+                                                                <strong>진료 거부</strong>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gt_item">
+                                                <div class="tit">진료 희망하는 병원 유형</div>
+                                                <div class="cnt">
+                                                    <div class="item_inline_list">
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="radio29">
+                                                                <span class="ck_icon"></span>
+                                                                <strong>지역병원</strong>
+                                                                <div class="check_sub">기존 내원하던 병원 또는 인근에 위치한 지역병원<br/>예) 개인병원 등</div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="item check_item input_group">
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="radio29">
+                                                                <span class="ck_icon"></span>
+                                                                <strong>거점병원</strong>
+                                                                <div class="check_sub">본 사업에서 지정한 지역별 주요 거점병원<br/>예) 상급종합병원, 대학병원 등</div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section_box">
+                    <div class="form form_table">
+                        <div class="form_tit">Ⅵ. 사후관리 관련 설문</div>
+                        <div class="table">
+                            <table class="align_center">
+                                <colgroup>
+                                    <col >
+                                    <col style="width:20rem;">
+                                    <col style="width:20rem;">
+                                    <col style="width:20rem;">
+                                    <col style="width:20rem;">
+                                    <col style="width:20rem;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>사후관리를 위한 주거 심각도 조사</th>
+                                        <th>좋음</th>
+                                        <th>양호</th>
+                                        <th>보통</th>
+                                        <th>심각</th>
+                                        <th>매우심각</th>
+                                    </tr>
+                                </thead> 
+                                <tbody>
+                                    <tr>
+                                        <th class="bg_blue normal align_left">1. 주거환경 열악도</th>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio30">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio30">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio30">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio30">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio30">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_blue normal align_left">2. 생활환경 심각도</th>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio31">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio31">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio31">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio31">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio31">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_blue normal align_left">3. 정리정돈 심각도</th>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio32">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio32">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio32">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio32">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox single">
+                                                <input type="radio" name="radio32">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section_box">
+                    <div class="form form_table">
+                        <div class="form_tit">Ⅱ. 사후관리 관련 설문</div>
+                        <div class="qna_wrap">
+                            <div class="qna_item">
+                                <div class="qna_group_title">현재 주거환경 진단</div>
+                                <div class="title"><span class="type">Q</span><strong>1.</strong>대상 가구의 주거 공간에서 곰팡이 제거가 필요한 곳은 어디입니까? (중복선택 가능)</div>
+                                <div class="content">
+                                    <div class="item_grid_list grid5">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                방
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                거실
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                주방
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                베란다/다용도실
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                화장실/욕실
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                가구 (침대/옷장 등)
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                의료 (이불/매트리스 등)
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox" id="check_clean1">
+                                                <span class="ck_icon"></span>
+                                                기타
+                                            </label>
+                                            <div class="input_group">
+                                                <div class="input size_18">
+                                                    <input type="text" id="check_clean1_input" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                없음
+                                            </label>
+                                        </div>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                const checkClean1 = document.getElementById('check_clean1');
+                                                const checkClean1Input = document.getElementById('check_clean1_input');
+
+                                                checkClean1.addEventListener('change', function() {
+                                                    const isChecked = checkClean1.checked;
+                                                    checkClean1Input.readOnly = !isChecked;
+                                                    if (!isChecked) {
+                                                        checkClean1Input.value = '';
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>1-1.</strong>관찰되는 곰팡이의 심각도는 어느 정도입니까?</div>
+                                <div class="content">
+                                    <div class="item_row_list">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio33">
+                                                <span class="ck_icon"></span>
+                                                일부 곰팡이가 관측되나 전반적으로 양호함
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio33">
+                                                <span class="ck_icon"></span>
+                                                곰팡이가 비교적 넓은 범위로 관측됨
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio33">
+                                                <span class="ck_icon"></span>
+                                                곰팡이가 광범위하게 관측됨
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio33" id="radio33_etc">
+                                                <span class="ck_icon"></span>
+                                                기타
+                                            </label>
+                                            <div class="input size_18">
+                                                <input type="text" id="radio33_input" readonly>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            const radio33All = document.querySelectorAll('[name="radio33"]');
+                                            const radio33Input = document.getElementById('radio33_input');
+                                            radio33All.forEach(radio => {
+                                                radio.addEventListener('change', function() {
+                                                    const isEtcChecked = document.getElementById('radio33_etc').checked;
+                                                    radio33Input.readOnly = !isEtcChecked;
+                                                    if (!isEtcChecked) radio33Input.value = '';
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qna_item">
+                                <div class="qna_group_title">현재 정리정돈 진단</div>
+                                <div class="title"><span class="type">Q</span><strong>8.</strong>대상 가구의 주거 공간에서 정리정돈(청소)이 필요한 곳은 어디입니까? (중복선택 가능)</div>
+                                <div class="content">
+                                    <div class="item_inline_list">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                방
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                거실
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                주방(냉장고)
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                화장실/욕실
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                가구 (침대/옷장 등)
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                베란다/다용도실
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox" id="check_clean2">
+                                                <span class="ck_icon"></span>
+                                                기타
+                                            </label>
+                                            <div class="input_group">
+                                                <div class="input size_18">
+                                                    <input type="text" id="check_clean2_input" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                없음
+                                            </label>
+                                        </div>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                const checkClean2 = document.getElementById('check_clean2');
+                                                const checkClean2Input = document.getElementById('check_clean2_input');
+
+                                                checkClean2.addEventListener('change', function() {
+                                                    const isChecked = checkClean2.checked;
+                                                    checkClean2Input.readOnly = !isChecked;
+                                                    if (!isChecked) {
+                                                        checkClean2Input.value = '';
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qna_item">
+                                <div class="title"><span class="type">Q</span><strong>9.</strong>‘Q8’에서 응답한 장소의 정리정돈 청결도는 어느 정도입니까?</div>
+                                <div class="content">
+                                    <div class="item_row_list">
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio34">
+                                                <span class="ck_icon"></span>
+                                                정리정돈 및 청결도가 일반적임
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio34">
+                                                <span class="ck_icon"></span>
+                                                정리정돈 및 청결도가 종지 않음
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio34">
+                                                <span class="ck_icon"></span>
+                                                청결도가 거주하기 어려울 정도로 매우 심각함
+                                            </label>
+                                        </div>
+                                        <div class="item check_item input_group">
+                                            <label class="checkbox">
+                                                <input type="radio" name="radio34" id="radio34_etc">
+                                                <span class="ck_icon"></span>
+                                                기타
+                                            </label>
+                                            <div class="input size_18">
+                                                <input type="text" id="radio34_input" readonly>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            const radio34All = document.querySelectorAll('[name="radio34"]');
+                                            const radio34Input = document.getElementById('radio34_input');
+                                            radio34All.forEach(radio => {
+                                                radio.addEventListener('change', function() {
+                                                    const isEtcChecked = document.getElementById('radio34_etc').checked;
+                                                    radio34Input.readOnly = !isEtcChecked;
+                                                    if (!isEtcChecked) radio34Input.value = '';
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section_box">
+                    <div class="form form_table">
+                        <div class="form_tit">Ⅲ. 사후지원 방안</div>
+                        <div class="form_tit_sub">대상 가구 진단 결과에 따른 사후지원 해당 항목(빈칸)에 체크해주세요.</div>
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:200px;">
+                                    <col style="width:200px;">
+                                    <col style="width:150px;">
+                                    <col style="width:calc((100% - 550px) * 0.21);">
+                                    <col style="width:calc((100% - 550px) * 0.12);">
+                                    <col style="width:calc((100% - 550px) * 0.24);">
+                                    <col style="width:calc((100% - 550px) * 0.19);">
+                                    <col style="width:calc((100% - 550px) * 0.24);">
+                                </colgroup>
+                                <tbody>
+                                    <!-- lg -> th td 높이 65-->
+                                    <tr>
+                                        <th rowspan="10">주거환경 지원</th>
+                                        <th class="lg">곰팡이</th>
+                                        <td colspan="5">개선 가구 선정위원회 추천</td>
+                                        <td class="align_center">
+                                            <label class="checkbox single">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="lg">누수/결로</th>
+                                        <td colspan="5">개선 가구 선정위원회 추천</td>
+                                        <td class="align_center">
+                                            <label class="checkbox single">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="lg">해충</th>
+                                        <td colspan="5">방역서비스 지원</td>
+                                        <td class="align_center">
+                                            <label class="checkbox single">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="lg" rowspan="7">곰팡이</th>
+                                        <td colspan="3" class="bg_blue align_center semibold h40">방충망</td>
+                                        <td class="bg_blue align_center semibold h40">해충 퇴치제</td>
+                                        <td class="bg_blue align_center semibold h40">에어컨 청소</td>
+                                        <td class="bg_blue align_center semibold h40">에어컨 청소</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_white">설치 위치</th>
+                                        <td colspan="2">
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="align_center">해충 종류 등 정보</td>
+                                        <td rowspan="6" class="align_center">
+                                            <div class="item_row_list inline sm">
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="ck_icon"></span>
+                                                        벽걸이형
+                                                    </label>
+                                                </div>
+                                                <div class="item check_item input_group">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="ck_icon"></span>
+                                                        스텐드형
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="align_center">구체적 기입</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_white">상태정보</th>
+                                        <td colspan="2">
+                                            <label class="checkbox inline">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                벽걸이형
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                방충망만 교체
+                                            </label>
+                                        </td>
+                                        <td rowspan="5">
+                                            <div class="input_group" style="height: 100%;">
+                                                <div class="input" style="height: 100%;">
+                                                    <textarea name="" id="" style="height: 100%;">1. 바퀴벌레
+2. 개미</textarea>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td rowspan="5">
+                                            <div class="input_group" style="height: 100%;">
+                                                <div class="input" style="height: 100%;">
+                                                    <textarea name="" id="" style="height: 100%;">1. 바퀴벌레
+2. 개미</textarea>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_white">설치 위치</th>
+                                        <td colspan="2">
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_white">상태정보</th>
+                                        <td colspan="2">
+                                            <label class="checkbox inline">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                벽걸이형
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                방충망만 교체
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_white">설치 위치</th>
+                                        <td colspan="2">
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg_white">상태정보</th>
+                                        <td colspan="2">
+                                            <label class="checkbox inline">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                벽걸이형
+                                            </label>
+                                            <label class="checkbox inline">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                                방충망만 교체
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="4">환경성질환 지원</th>
+                                        <td colspan="3" rowspan="2">환경성 질환자 관련 물품 지원</td>
+                                        <td colspan="3">샤워기 필터</td>
+                                        <td class="align_center">
+                                            <label class="checkbox single">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">마스크</td>
+                                        <td class="align_center">
+                                            <label class="checkbox single">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" rowspan="2">병원비 지원</td>
+                                        <td colspan="3">거점병원</td>
+                                        <td class="align_center">
+                                            <label class="checkbox single">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">지역병원</td>
+                                        <td class="align_center">
+                                            <label class="checkbox single">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>보호자 부재 및 관리 지원</th>
+                                        <td colspan="6">차년도 사후관리 우선순위 추천 (가점 부여)</td>
+                                        <td class="align_center">
+                                            <label class="checkbox single">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="form_btns">
                     <button type="button" class="btn btn_lg btn_submit">등록</button>
                     <button type="button" class="btn btn_lg btn_default">목록</button>
+                    <button type="button" class="btn btn_lg btn_default">삭제</button>
                 </div>
                 </form>
 

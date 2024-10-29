@@ -98,9 +98,9 @@ input:read-only:focus{outline: none;}
 .container {max-width:1000px;margin-left:auto;margin-right:auto;}
 .container:after{clear: both;display: table;content: "";*display: block;*overflow: hidden}
 .container:before{display: table;content: "";*display: block;*overflow: hidden}
-
+.semibold{font-weight:500 !important}
 .checkbox{position: relative;overflow: hidden;display: inline-block;color:#555C6C;font-size:1.3rem;padding-left:2rem;min-height: 1.6rem;}
-.checkbox strong{color:#2d2d2d;font-weight:400;}
+.checkbox strong{color:#555C6C;font-weight:600;}
 .checkbox input{position:absolute;left:-999em;}
 .checkbox .ck_icon{background-position: center center;background-repeat: no-repeat;position:absolute;left:0;top:0;width:1.6rem;height:1.6rem;background-color: #fff;}
 .checkbox input[type="checkbox"] + .ck_icon{border-radius:0.3rem;border:1px solid #C9CCDA;}
@@ -150,9 +150,10 @@ html .simplebar-horizontal .simplebar-scrollbar:before {background-color: rgba(0
 .ml_20{margin-left:2rem;}
 .ml_25{margin-left:2.5rem;}
 .ml_30{margin-left:3rem;}
+.mgt_24{margin-top:2.4rem !important;}
 
-.text_red{color:#E14A4A}
-.text_submit{color:#437EE7}
+.text_red{color:#E14A4A !important}
+.text_submit{color:#437EE7 !important}
 
 html .pika-single{border:1px solid #D8D8D8;border-radius:0.8rem;overflow: hidden;}
 html .pika-single.bottom-aligned{margin-top:0.5rem;}
