@@ -985,3 +985,232 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+//파일 첨부
+document.addEventListener('DOMContentLoaded', () => {
+	function fileUpload() {
+		const fileAreas = document.querySelectorAll('.drag_file_area');
+		const inputFiles = document.querySelectorAll('.drag_file_input');
+		const fileLists = document.querySelectorAll('.drag_add_files');
+
+		if (!inputFiles && !fileLists) return;
+
+		function updateFileCountMessage(fileList, inputFile) {
+			const fileCount = inputFile.files.length;
+
+			if (fileCount === 0) {
+				fileList.style.display = 'none';
+			} else {
+				fileList.style.display = 'block';
+			}
+		}
+
+		inputFiles.forEach((inputFile, index) => {
+			const allowedTypes = inputFile.getAttribute('file-type').split(' ');
+			const fileArea = fileAreas[index];
+			const fileList = fileLists[index];
+
+			if (!inputFile.hasAttribute('data-listener-added')) {
+				const dataTransfer = new DataTransfer();
+
+				inputFile.addEventListener('change', (event) => {
+					const newFiles = Array.from(event.target.files);
+
+					newFiles.forEach((file) => {
+						const fileType = file.name.split('.').pop().toLowerCase();
+
+						if (allowedTypes.includes(fileType)) {
+							dataTransfer.items.add(file);
+
+							const fileItem = document.createElement('div');
+							fileItem.className = 'file_item';
+
+							const fileName = document.createElement('span');
+							fileName.className = 'file_name';
+							let fileSizeText;
+
+							if (file.size < 1024 * 1024) {
+								const fileSizeKB = (file.size / 1024).toFixed(2);
+								fileSizeText = `${fileSizeKB} KB`;
+							} else {
+								const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2);
+								fileSizeText = `${fileSizeMB} MB`;
+							}
+
+							fileName.textContent = `${file.name} (${fileSizeText})`;
+							fileItem.appendChild(fileName);
+
+							const uploadButton = document.createElement('button');
+							uploadButton.type = 'button';
+							uploadButton.textContent = '업로드';
+							uploadButton.className = 'upload_btn';
+
+							const deleteButton = document.createElement('button');
+							deleteButton.type = 'button';
+							deleteButton.textContent = '삭제';
+							deleteButton.className = 'file_remove';
+
+							deleteButton.addEventListener('click', () => {
+								for (let i = 0; i < dataTransfer.items.length; i++) {
+									if (dataTransfer.items[i].getAsFile() === file) {
+										dataTransfer.items.remove(i);
+										break;
+									}
+								}
+
+								inputFile.files = dataTransfer.files;
+								fileItem.remove();
+								updateFileCountMessage(fileList, inputFile);
+							});
+
+							fileItem.appendChild(uploadButton);
+							fileItem.appendChild(deleteButton);
+							fileList.appendChild(fileItem);
+						}
+					});
+
+					inputFile.files = dataTransfer.files;
+					updateFileCountMessage(fileList, inputFile);
+				});
+
+				fileArea.addEventListener('dragenter', (event) => {
+					event.preventDefault();
+					fileArea.classList.add('file_dragover');
+				});
+		
+				fileArea.addEventListener('dragover', (event) => {
+					event.preventDefault();
+					fileArea.classList.add('file_dragover');
+				});
+		
+				fileArea.addEventListener('dragleave', (event) => {
+					event.preventDefault();
+					fileArea.classList.remove('file_dragover');
+				});
+		
+				fileArea.addEventListener('drop', (event) => {
+					event.preventDefault();
+					fileArea.classList.remove('file_dragover');
+		
+					const droppedFiles = event.dataTransfer.files;
+		
+					Array.from(droppedFiles).forEach((file) => {
+						const fileType = file.name.split('.').pop().toLowerCase();
+		
+						if (allowedTypes.includes(fileType)) {
+							dataTransfer.items.add(file);
+		
+							const fileItem = document.createElement('div');
+							fileItem.className = 'file_item';
+		
+							const fileName = document.createElement('span');
+							fileName.className = 'file_name';
+							let fileSizeText;
+
+							if (file.size < 1024 * 1024) {
+								const fileSizeKB = (file.size / 1024).toFixed(2);
+								fileSizeText = `${fileSizeKB} KB`;
+							} else {
+								const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2);
+								fileSizeText = `${fileSizeMB} MB`;
+							}
+
+							fileName.textContent = `${file.name} (${fileSizeText})`;
+							fileItem.appendChild(fileName);
+		
+							const uploadButton = document.createElement('button');
+							uploadButton.type = 'button';
+							uploadButton.textContent = '업로드';
+							uploadButton.className = 'upload_btn';
+
+							const deleteButton = document.createElement('button');
+							deleteButton.type = 'button';
+							deleteButton.textContent = '삭제';
+							deleteButton.className = 'file_remove';
+		
+							deleteButton.addEventListener('click', () => {
+								for (let i = 0; i < dataTransfer.items.length; i++) {
+									if (dataTransfer.items[i].getAsFile() === file) {
+										dataTransfer.items.remove(i);
+										break;
+									}
+								}
+		
+								inputFile.files = dataTransfer.files;
+								fileItem.remove();
+								updateFileCountMessage(fileList, inputFile);
+							});
+		
+							fileItem.appendChild(uploadButton);
+							fileItem.appendChild(deleteButton);
+							fileList.appendChild(fileItem);
+						}
+					});
+					inputFile.files = dataTransfer.files;
+					updateFileCountMessage(fileList, inputFile);
+				});
+
+				inputFile.setAttribute('data-listener-added', 'true');
+			}
+		});
+	}
+	fileUpload();
+});
+
+
+
+//사진첨부
+function previewImage(input) {
+    const file = input.files[0];
+    if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        const photoContainer = input.closest('.file_photo');
+        const photoPreview = photoContainer.querySelector('.preview');
+
+        reader.onload = function(e) {
+            photoPreview.style.display = 'block';
+            photoPreview.style.backgroundImage = `url(${e.target.result})`;
+        };
+        reader.readAsDataURL(file);
+
+        const existingFileItem = photoContainer.querySelector('.file_item');
+        if (existingFileItem) {
+            existingFileItem.remove();
+        }
+
+        const fileItem = document.createElement('div');
+        fileItem.className = 'file_item';
+        
+        const fileNameContainer = document.createElement('div');
+        fileNameContainer.className = 'file_name';
+        fileNameContainer.textContent = file.name;
+        
+        const removeButton = document.createElement('button');
+        removeButton.className = 'file_remove';
+        removeButton.type = 'button';
+        removeButton.textContent = '삭제';
+        removeButton.onclick = function() {
+            removeFile(photoContainer);
+        };
+
+        fileItem.appendChild(fileNameContainer);
+        fileItem.appendChild(removeButton);
+
+        photoContainer.querySelector('.photo_upload').appendChild(fileItem);
+    } else {
+        alert("이미지 파일만 업로드 가능합니다.");
+        input.value = "";
+    }
+}
+
+function removeFile(photoContainer) {
+    const photoPreview = photoContainer.querySelector('.preview');
+    const fileInput = photoContainer.querySelector('input[type="file"]');
+    const fileItem = photoContainer.querySelector('.file_item');
+    photoPreview.style.backgroundImage = '';
+    photoPreview.style.display = 'none';
+    fileInput.value = '';
+    if (fileItem) {
+        fileItem.remove();
+    }
+}
