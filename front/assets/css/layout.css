@@ -13,7 +13,7 @@
 #header #nav{margin-left:auto;margin-right:auto;}
 #header #nav > ul{display: flex;align-items: center;}
 #header #nav > ul > li{}
-#header #nav > ul > li > a{display: flex;align-items: center;justify-content: center;padding:0 6.6rem;height: 10rem;color:#2D2D2D;font-size:1.7rem;font-weight:500;position: relative;}
+#header #nav > ul > li > a{display: flex;align-items: center;justify-content: center;padding:0 6.6rem;height: 10rem;color:#2D2D2D;font-size:1.7rem;font-weight:600;position: relative;}
 #header #nav > ul > li + li > a:after{content:"";position: absolute;left:-0.2rem;top:50%;margin-top:-0.2rem;width:0.4rem;height:0.4rem;border-radius: 50%;background-color: #D8D8D8;}
 #header #nav > ul > li > a:before{content:"";width:calc(100% - 13.2rem);height:0.4rem;position: absolute;z-index:20;left:50%;bottom:-7px;transform: translate(-50%,0);border-radius:1rem;opacity:0;transition: all 0.3s;background-color: #3486E7;}
 #header #nav > ul > li:hover > a:before{bottom:-1px;opacity:1;} 
@@ -221,11 +221,15 @@
 .ft_family .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
     background-color: #353535;
 }
+.ft_company{position: absolute;right:0;bottom:0;display: flex;}
+.ft_company .item{}
+.ft_company .item + .item{margin-left:4rem;}
 
 @media screen and (max-width:1440px) {
     #footer{padding:3rem 0 5.4rem;}
     #footer .ft_inner{padding:0 1.6rem;}
     .ft_family{width:25rem;right:1.6rem;}
+    .ft_company{right:1.6rem;}
 }
 @media screen and (max-width:900px) {
     #footer{padding:3.2rem 0;}
@@ -235,9 +239,12 @@
     .ft_info .item{margin-right:2rem;margin-bottom:0.6rem;}
     .ft_info .item:after{display: none;}
     .ft_info .item.address{margin-right:0;width: 100%;}
-    .ft_copy{margin-top:2rem;font-size:1.2rem;}
+    .ft_copy{margin-top:0;font-size:1.2rem;}
     .ft_family{width:100%;position: relative;right:0;margin-top:1.8rem;}
     .ft_family .choices__inner{font-size:14px;}
+    .ft_company{position: relative;margin:1.8rem 0 0 0;right:0;}
+    .ft_company .item + .item{margin-left:2rem;}
+    .ft_company .item img{height:3rem;}
 }
 @media screen and (max-width: 900px) {
     #cate_all_mobile.show{display:block;}

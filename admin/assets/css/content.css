@@ -47,29 +47,29 @@ background: linear-gradient(90deg, color(display-p3 0.235 0.412 0.867) 0%, color
 .form_table + .form_table{margin-top:1.2rem;}
 .form_table .table{}
 .form_table .table + .table{margin-top:1.2rem;}
-.form_table .table table{width:100%;border-collapse:separate;border-spacing: 1px;background-color: #DEE0E9;table-layout: fixed;}
-.form_table .table table + table{position:relative;top:-1px;}
-.form_table .table table thead th{background-color: #F3F4F8;vertical-align: middle;color:#1C283D;font-size:1.3rem;font-weight:600;padding:1rem 1.2rem;text-align: center;}
-.form_table .table table thead td{background-color: #fff;vertical-align: middle;color:#1C283D;font-size:1.3rem;font-weight:600;padding:1rem 1.2rem;text-align: center;}
-.form_table .table table tbody{}
-.form_table .table table tbody th{background-color: #F3F4F8;vertical-align: middle;color:#1C283D;font-size:1.3rem;font-weight:600;padding:1rem 1.2rem;}
-.form_table .table table tbody th.bg_blue{background-color: #F3FAFF;}
-.form_table .table table tbody th.bg_white{background-color: #fff;}
-.form_table .table table tbody td{background-color: #fff;padding:1rem 1.2rem;vertical-align: middle;color:#555C6C;font-size:1.3rem;height: 5.6rem;}
-.form_table .table table tbody td.bg_blue{background-color: #F3FAFF;}
-.form_table .table table tbody td.bg_white{background-color: #fff;}
-.form_table .table table tbody th.normal{color:#555C6C;}
-.form_table .table table tbody th.thin{font-weight:400;}
-.form_table .table table tbody th.h40,
-.form_table .table table tbody td.h40{height:4rem;}
-.form_table .table table thead th.h56,
-.form_table .table table thead td.h56{height:5.6rem;}
-.form_table .table table tbody th.h56,
-.form_table .table table tbody td.h56{height:5.6rem;}
-.form_table .table table tbody th.size_lg,
-.form_table .table table tbody td.size_lg{padding-top:2.4rem;padding-bottom:2.4rem;}
-.form_table .table table tbody th.sub,
-.form_table .table table tbody td.sub{padding-left:2.4rem;}
+.form_table .table > table{width:100%;border-collapse:separate;border-spacing: 1px;background-color: #DEE0E9;table-layout: fixed;}
+.form_table .table > table + table{position:relative;top:-1px;}
+.form_table .table > table > thead th{background-color: #F3F4F8;vertical-align: middle;color:#1C283D;font-size:1.3rem;font-weight:600;padding:1rem 1.2rem;text-align: center;}
+.form_table .table > table > thead td{background-color: #fff;vertical-align: middle;color:#1C283D;font-size:1.3rem;font-weight:600;padding:1rem 1.2rem;text-align: center;}
+.form_table .table > table > tbody{}
+.form_table .table > table > tbody > tr > th{background-color: #F3F4F8;vertical-align: middle;color:#1C283D;font-size:1.3rem;font-weight:600;padding:1rem 1.2rem;}
+.form_table .table > table > tbody > tr > th.bg_blue{background-color: #F3FAFF;}
+.form_table .table > table > tbody > tr > th.bg_white{background-color: #fff;}
+.form_table .table > table > tbody > tr > td{background-color: #fff;padding:1rem 1.2rem;vertical-align: middle;color:#555C6C;font-size:1.3rem;height: 5.6rem;}
+.form_table .table > table > tbody td.bg_blue{background-color: #F3FAFF;}
+.form_table .table > table > tbody td.bg_white{background-color: #fff;}
+.form_table .table > table > tbody th.normal{color:#555C6C;}
+.form_table .table > table > tbody th.thin{font-weight:400;}
+.form_table .table > table > tbody th.h40,
+.form_table .table > table > tbody td.h40{height:4rem;}
+.form_table .table > table > thead th.h56,
+.form_table .table > table > thead td.h56{height:5.6rem;}
+.form_table .table > table > tbody th.h56,
+.form_table .table > table > tbody td.h56{height:5.6rem;}
+.form_table .table > table > tbody th.size_lg,
+.form_table .table > table > tbody td.size_lg{padding-top:2.4rem;padding-bottom:2.4rem;}
+.form_table .table > table > tbody th.sub,
+.form_table .table > table > tbody td.sub{padding-left:2.4rem;}
 .btn_list + .preview_wrap{margin-top:2rem;}
 .preview_wrap{display: flex;}
 .preview_wrap .preview_box{width:53.8rem;margin-right:1.6rem;position: relative;display:flex;}
@@ -438,11 +438,11 @@ label.btn{overflow:hidden;}
 .list_table .table table{width: 100%;border-collapse: separate;background-color: #DEE0E9;border-spacing: 1px;text-align: center;}
 .list_table .table table thead{}
 .list_table .table table thead th{background-color: #F3F4F8;color:#1C283D;font-size:1.3rem;font-weight:600;padding:0.9rem 1.2rem;height:3.8rem;vertical-align: middle;}
-.list_table .table table tbody td{background-color: #fff;color:#555C6C;font-size:1.3rem;padding:1rem 1.2rem;vertical-align: middle;}
+.list_table .table > table > tbody td{background-color: #fff;color:#555C6C;font-size:1.3rem;padding:1rem 1.2rem;vertical-align: middle;}
 .list_table .table table.table_sm{}
-.list_table .table table tbody td .td_btn_list{display:flex;flex-wrap:wrap;justify-content: center;}
-.list_table .table table tbody td .td_btn_list > *{margin:0.4rem;}
-.list_table .table table tbody button{vertical-align: middle;}
+.list_table .table > table > tbody td .td_btn_list{display:flex;flex-wrap:wrap;justify-content: center;}
+.list_table .table > table > tbody td .td_btn_list > *{margin:0.4rem;}
+.list_table .table > table > tbody button{vertical-align: middle;}
 .list_table .table.table_scroll_horizontal{white-space: nowrap;overflow-x:auto;}
 .list_table .table.table_scroll_horizontal .simplebar-content-wrapper:before{content:"";position: absolute;left:0;top:0;width:1px;height: 100%;background-color: #fff;z-index: 10;}
 
@@ -693,3 +693,31 @@ label.btn{overflow:hidden;}
 .file_photo .photo_upload .file_item{margin-left:0.8rem;flex:1 1 auto;width: 1%;display: flex;align-items: center;}
 .file_photo .photo_upload .file_item .file_name{color:#555C6C;font-size:1.3rem;flex:1 1 auto;flex:1 1 auto;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 .file_photo .photo_upload .file_item .file_remove{margin-left:0.8rem;min-width:1.6rem;;width:1.6rem;height:1.6rem;text-indent: -999em;overflow:hidden;border:0;background-color: transparent;background-position: center center;background-repeat: no-repeat;background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 4.269h12' stroke='%23555C6C' style='stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M5.231 4.27V2a.5.5 0 0 1 .5-.5h4.538a.5.5 0 0 1 .5.5v2.27' stroke='%23555C6C' style='stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1' stroke-width='1.5'/%3E%3Cpath d='M3.385 4.269v9.654a.5.5 0 0 0 .5.5h8.23a.5.5 0 0 0 .5-.5V4.269' stroke='%23555C6C' style='stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1' stroke-width='1.5'/%3E%3Cpath d='M6.154 6.577v5.538M9.846 6.577v5.538' stroke='%23555C6C' style='stroke:color(display-p3 .3333 .3608 .4235);stroke-opacity:1' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");}
+
+html .bootstrap-datetimepicker-widget.dropdown-menu{position: absolute;left:0;z-index: 100;border:1px solid #D8D8D8;padding:0;margin:4px 0;border-radius:0.8rem;background-color: #fff;}
+html .bootstrap-datetimepicker-widget .timepicker-picker{padding:0;margin:0;}
+html .bootstrap-datetimepicker-widget table td{width:45px;height:40px;line-height:40px;}
+html .bootstrap-datetimepicker-widget table td.separator{width:20px;}
+html .bootstrap-datetimepicker-widget a[data-action="incrementHours"],
+html .bootstrap-datetimepicker-widget a[data-action="incrementMinutes"],
+html .bootstrap-datetimepicker-widget a[data-action="decrementHours"],
+html .bootstrap-datetimepicker-widget a[data-action="decrementMinutes"]{display: block;margin:10px auto;position: relative;width:54px;height:54px;line-height:54px;border-radius:0.4rem;background-color: transparent;background-position: center center;background-repeat: no-repeat;}
+html .bootstrap-datetimepicker-widget a[data-action="incrementHours"]:hover,
+html .bootstrap-datetimepicker-widget a[data-action="incrementMinutes"]:hover,
+html .bootstrap-datetimepicker-widget a[data-action="decrementHours"]:hover,
+html .bootstrap-datetimepicker-widget a[data-action="decrementMinutes"]:hover{background-color: transparent;}
+
+html .bootstrap-datetimepicker-widget a[data-action="incrementHours"],
+html .bootstrap-datetimepicker-widget a[data-action="incrementMinutes"]{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='icon icon-tabler icons-tabler-outline icon-tabler-chevron-up'%3E%3Cpath d='M0 0h24v24H0z' stroke='none'/%3E%3Cpath d='m6 15 6-6 6 6'/%3E%3C/svg%3E");}
+html .bootstrap-datetimepicker-widget a[data-action="decrementHours"],
+html .bootstrap-datetimepicker-widget a[data-action="decrementMinutes"]{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='icon icon-tabler icons-tabler-outline icon-tabler-chevron-down'%3E%3Cpath d='M0 0h24v24H0z' stroke='none'/%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");}
+html .bootstrap-datetimepicker-widget a[data-action] span{display: none;}
+html .bootstrap-datetimepicker-widget.dropdown-menu.bottom:before,
+html .bootstrap-datetimepicker-widget.dropdown-menu.bottom:after{display: none;}
+html .bootstrap-datetimepicker-widget table td span:hover{background-color: #f1f1f1;}
+html .bootstrap-datetimepicker-widget.usetwentyfour td.hour,
+html .bootstrap-datetimepicker-widget.usetwentyfour td.minute{height:40px;line-height:40px;}
+html .timepicker-hours,
+html .timepicker-minutes{padding:15px;}
+
+

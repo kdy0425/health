@@ -118,6 +118,7 @@ input:read-only:focus{outline: none;}
 .checkbox.inline.between_sm + .checkbox.inline.between_sm{margin-left:0;}
 .checkbox.single{padding-left:1.6rem;}
 .checkbox .circle_num{color:#868FA7;font-size:1.7rem;padding-left:0.4rem;position: relative;height:1.6rem;line-height:1.6rem;}
+.checkbox .ox{color:#555C6C;font-size:1.5rem;padding-left:0.4rem;position: relative;height:1.8rem;line-height:1.8rem;display: inline-block;}m
 .checkbox .text{color:#555C6C;font-size:1.7rem;padding-left:0.4rem;position: relative;height:1.6rem;line-height:1.6rem;}
 .l{margin-right:auto;}
 .r{margin-left:auto;}
@@ -162,7 +163,7 @@ html .simplebar-horizontal .simplebar-scrollbar:before {background-color: rgba(0
 html .pika-single{border:1px solid #D8D8D8;border-radius:0.8rem;overflow: hidden;}
 html .pika-single.bottom-aligned{margin-top:0.5rem;}
 html .pika-single.top-aligned{margin-top:-0.5rem;}
-html .pika-single.is-bound{/* box-shadow:none; */}
+html .pika-single.is-bound{box-shadow:none;}
 html .pika-label{padding-top:0;padding-bottom:0;margin:0 0.2rem;text-align:left;width:102px;height:40px;line-height:40px;font-weight:400;font-size:17px;color:#1d1d1d;background-color: transparent;background-position: right center;background-repeat: no-repeat;background-size:1.2rem;background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m2 4 4 4 4-4' stroke='%23555' style='stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");}
 html .pika-label{padding-left:13px;background-position:right 13px center;}
 html .pika-label + .pika-label{padding-left:24.5px;background-position:right 24.5px center;}

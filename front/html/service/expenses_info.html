@@ -207,7 +207,7 @@
                             <div class="item">
                                 <div class="tit">처방전</div>
                                 <button class="thumb" type="button" 
-                                onclick="openSample(this,'처방전', '../../assets/images/content/info_images1_origin.png');">
+                                onclick="openSample(this,'처방전', '../../assets/images/content/info_images1_origin.jpg');">
                                     <img src="../../assets/images/content/info_images1.jpg" alt="">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
@@ -215,7 +215,7 @@
                             <div class="item">
                                 <div class="tit">진료확인서</div>
                                 <button class="thumb" type="button" 
-                                onclick="openSample(this,'진료확인서', '../../assets/images/content/info_images2_origin.png');">
+                                onclick="openSample(this,'진료확인서', '../../assets/images/content/info_images2_origin.jpg');">
                                     <img src="../../assets/images/content/info_images2.jpg" alt="">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
@@ -223,7 +223,7 @@
                             <div class="item">
                                 <div class="tit">진료비영수증</div>
                                 <button class="thumb" type="button" 
-                                onclick="openSample(this,'진료비영수증', '../../assets/images/content/info_images3_origin.png');">
+                                onclick="openSample(this,'진료비영수증', '../../assets/images/content/info_images3_origin.jpg');">
                                     <img src="../../assets/images/content/info_images3.jpg" alt="">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
@@ -231,7 +231,7 @@
                             <div class="item">
                                 <div class="tit">진료비 납입확인서</div>
                                 <button class="thumb" type="button" 
-                                onclick="openSample(this,'진료비 납입확인서', '../../assets/images/content/info_images4_origin.png');">
+                                onclick="openSample(this,'진료비 납입확인서', '../../assets/images/content/info_images4_origin.jpg');">
                                     <img src="../../assets/images/content/info_images4.jpg" alt="">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
@@ -257,10 +257,18 @@
             </div>
             <div class="ft_info">
                 <div class="item address">(우)03367 서울시 은평구 진흥로 215 한국환경산업기술원</div>
-                <div class="item">대표연락처 TEL : <span class="v_pc">02-2284-1000</span><a href="tel:02-2284-1000" class="v_mobile">02-2284-1000</a></div>
+                <div class="item">대표연락처 TEL : <span class="v_pc">02-2284-1000</span><a href="tel:02-2284-1000" class="v_mobile_inline">02-2284-1000</a></div>
                 <div class="item">FAX : 02-2284-1000</div>
             </div>
             <div class="ft_copy">COPYRIGHT ⓒ 2018 KEITI. ALL RIGHTS RESERVED.</div>
+            <div class="ft_company">
+                <div class="item">
+                    <img src="../../assets/images/common/me.svg" alt="환경부">
+                </div>
+                <div class="item">
+                    <img src="../../assets/images/common/keiti.svg" alt="KEITI">
+                </div>
+            </div>
             <div class="ft_family">
                 <select name="" id="" onchange="openSite(this)">
                     <option value="">관련사이트 바로가기</option>
@@ -342,7 +350,8 @@ async function openSample(button, titleValue, imageUrl) {
     const popup = document.getElementById('sample_popup');
     const previewImage = popup.querySelector('.preview_image img');
     const layerBox = popup.querySelector('.layer_box');
-    
+    const layerBodyScroll = popup.querySelector('.layer_body .simplebar-content-wrapper');
+
     popupTitle.textContent = titleValue + ' 증빙자료 예시';
     const originalSize = await getOriginalImageSize(imageUrl);
     
@@ -355,6 +364,7 @@ async function openSample(button, titleValue, imageUrl) {
     document.querySelector('html').classList.add('scroll_hidden');
 	const windowHeight = window.innerHeight;
 
+    layerBodyScroll.scrollTop = 0;//스크롤 상단으로 초기화
 	if (layerBox.offsetHeight >= (windowHeight - 25)) {
 		layerBox.setAttribute('data-simplebar', '');
 		new SimpleBar(layerBox);

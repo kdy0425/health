@@ -30,6 +30,12 @@
 <script src="../../assets/js/pikaday.js"></script>
 <script src="../../assets/js/inputmask.js"></script>
 <script src="../../assets/js/toastify-js.js"></script>
+
+<!-- timepicker -->
+<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap-datetimepicker.min.css" />
+<script src="../../assets/js/moment.min.js"></script>
+<script src="../../assets/js/bootstrap-datetimepicker.min.js"></script>
+<!-- //timepicker -->
 </head>
 <body>
 
@@ -374,9 +380,17 @@
                                                 <div class="input size_24">
                                                     <input type="text" placeholder="YYYY-MM-DD" class="datepicker">
                                                 </div>
-                                                <div class="input size_12">
+                                               <div class="input size_12">
                                                     <input type="text" placeholder="hh:mm" class="input_time">
                                                 </div>
+                                                <script>
+                                                $(document).ready(function() {
+                                                    $('.input_time').datetimepicker({
+                                                        format: 'HH:mm',    // 24시간 형식
+                                                        ignoreReadonly: true, // readonly여도 피커 표시
+                                                    });
+                                                });
+                                                </script>
                                             </div>
                                         </td>
                                         <th>대상가구 구분</th>
@@ -2565,7 +2579,7 @@
                                             <div class="gt_item">
                                                 <div class="tit">진료 희망 여부</div>
                                                 <div class="cnt">
-                                                    <div class="item_inline_list">
+                                                    <div class="item_inline_list align_top">
                                                         <div class="item check_item input_group">
                                                             <label class="checkbox">
                                                                 <input type="radio" name="radio28">
@@ -3383,16 +3397,22 @@
                                         <tr>
                                             <th rowspan="2">벽지시공</th>
                                             <td rowspan="2">
-                                                <label class="checkbox inline">
-                                                    <input type="radio" name="radio41">
-                                                    <span class="ck_icon"></span>
-                                                    <span class="circle_num">O</span>
-                                                </label>
-                                                <label class="checkbox">
-                                                    <input type="radio" name="radio41">
-                                                    <span class="ck_icon"></span>
-                                                    <span class="circle_num">X</span>
-                                                </label>
+                                                <div class="item_inline_list justify_center">
+                                                    <div class="item check_item input_group">
+                                                        <label class="checkbox">
+                                                            <input type="radio" name="radio41">
+                                                            <span class="ck_icon"></span>
+                                                            <span class="ox">O</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="item check_item input_group">
+                                                        <label class="checkbox">
+                                                            <input type="radio" name="radio41">
+                                                            <span class="ck_icon"></span>
+                                                            <span class="ox">X</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td rowspan="2">
                                                 <div class="file_photo">
@@ -3447,16 +3467,22 @@
                                         <tr>
                                             <th rowspan="2">바닥재시공</th>
                                             <td rowspan="2">
-                                                <label class="checkbox inline">
-                                                    <input type="radio" name="radio42">
-                                                    <span class="ck_icon"></span>
-                                                    <span class="text">O</span>
-                                                </label>
-                                                <label class="checkbox">
-                                                    <input type="radio" name="radio42">
-                                                    <span class="ck_icon"></span>
-                                                    <span class="text">X</span>
-                                                </label>
+                                                <div class="item_inline_list justify_center">
+                                                    <div class="item check_item input_group">
+                                                        <label class="checkbox">
+                                                            <input type="radio" name="radio42">
+                                                            <span class="ck_icon"></span>
+                                                            <span class="ox">O</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="item check_item input_group">
+                                                        <label class="checkbox">
+                                                            <input type="radio" name="radio42">
+                                                            <span class="ck_icon"></span>
+                                                            <span class="ox">X</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td rowspan="2">
                                                 <div class="file_photo">
@@ -3555,7 +3581,7 @@
                                 <table>
                                     <colgroup>
                                         <col>
-                                        <col style="width:40rem;">
+                                        <col style="width:50rem;">
                                     </colgroup>
                                     <tbody>
                                         <tr>
@@ -3629,7 +3655,7 @@
                                 <table>
                                     <colgroup>
                                         <col>
-                                        <col style="width:40rem;">
+                                        <col style="width:50rem;">
                                     </colgroup>
                                     <tbody>
                                         <tr>
@@ -3787,7 +3813,7 @@
                                 <table>
                                     <colgroup>
                                         <col>
-                                        <col style="width:40rem;">
+                                        <col style="width:50rem;">
                                     </colgroup>
                                     <tbody>
                                         <tr>
@@ -4264,6 +4290,15 @@
                                                 방충망만 교체
                                             </label>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <th>생활환경 지원</th>
+                                        <td colspan="7">거주 생활환경 개선 스티커 배포 및 교육 지원</td>
+                                    </tr>
+                                    <tr>
+                                        <th>정리정돈 지원</th>
+                                        <th>청소</th>
+                                        <td colspan="6">거주 청소서비스 지원</td>
                                     </tr>
                                     <tr>
                                         <th rowspan="4">환경성질환 지원</th>
