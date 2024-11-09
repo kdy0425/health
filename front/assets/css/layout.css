@@ -252,7 +252,9 @@
 
 #content{padding-bottom:8rem;padding-top:10rem;}
 #content.sm_wrap{padding-top:18rem;}
+#content.xs_wrap{padding-top:16.4rem;}
 @media screen and (max-width:900px) {
     #content{padding-bottom:4rem;padding-top:6.4rem;}
     #content.sm_wrap{padding-top:10.4rem;}
+    #content.xs_wrap{padding-top:9.4rem;}
 }
