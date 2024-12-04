@@ -1164,5 +1164,83 @@ background-image: url("data:image/svg+xml,%3Csvg id='svg2' xmlns='http://www.w3.
     .terms_page .terms_list .list .item a{font-size:1.4rem;}
 }
 
+.health_info{background-color: #F3FAFF;padding:2.4rem;text-align: center;}
+.health_info .title{position: relative;border-radius: 0.8rem;border:2px dashed #98B8CF;padding:2rem;text-align: center;font-family: "Paperlogy";}
+.health_info .title h4{color:#3486E7;font-size:3.2rem;font-weight:700;}
+.health_info .title p{color:#555;font-size:1.9rem;margin-top:0.3rem;}
+.health_info .title p strong{font-weight:600;}
+.health_info .title:after{content:"";position: absolute;left:50%;bottom:-3.6rem;width:1px;height:3.6rem;border-left:2px dashed #98B8CF;}
+
+.health_info .cannot_duplicate{position: relative;z-index:5;display:block;width:calc(50% + 1.4rem);padding:3.4rem 0;margin:0 auto;}
+.health_info .cannot_duplicate span{display: inline-block;position: relative;z-index: 5;font-family: "Paperlogy";font-size:1.9rem;font-weight:600;padding:0.7rem 1.6rem;color:#fff;background-color: #E14A4A;border-radius: 3rem;}
+.health_info .cannot_duplicate:before{content:"";position: absolute;left:0;top:50%;margin-top:-1px;width:100%;border-top:2px dashed #98B8CF;}
+.health_info .health_content{display: flex;text-align: left;gap:2.4rem;}
+.health_info .health_content .box{position: relative;flex:1 1;display: flex;flex-direction: column;padding:2.2rem;background-color: #fff;border-radius:0.8rem;border:2px solid transparent;}
+.health_info .health_content .box:before{content:"";position: absolute;left:50%;top:-5.4rem;margin-left:-1px;width:1px;height:5.4rem;border-right:2px dashed #98B8CF;}
+.health_info .health_content .box .box_tit{background-color: #ddd;font-size:2.5rem;font-weight:700;padding:1rem;text-align: center;margin-bottom:3rem;border-radius: 0.4rem;font-family: "Paperlogy";}
+.health_info .health_content .box .box_cnt{padding-bottom:3.2rem;}
+.health_info .health_content .box .box_cnt .info{}
+.health_info .health_content .box .box_cnt .info + .info{margin-top:2.4rem;}
+.health_info .health_content .box .box_cnt .tit{margin-bottom:0.8rem;position:relative;padding-left:1.2rem;color:#2D2D2D;font-size:2.1rem;font-weight:600;font-family: "Paperlogy";}
+.health_info .health_content .box .box_cnt .tit:before{content:"";position: absolute;left:0;top:50%;margin-top:-0.8rem;width:0.4rem;height:1.8rem;border-radius:2rem;background-color: #ccc;}
+.health_info .health_content .box .box_cnt .cnt{}
+.health_info .health_content .box .box_cnt .cnt p{color:#555;font-size:1.9rem;}
+.health_info .health_content .box .box_cnt .cnt p + p{margin-top:0.8rem;}
+.health_info .health_content .box .box_strong{margin-top:2.4rem;padding:1rem;text-align: center;color:#2D2D2D;font-size:1.7rem;border-radius: 0.8rem;background-color: #ddd;word-break: keep-all;}
+.health_info .health_content .box .box_strong strong{font-weight: 600;}
+.health_info .health_content .box .box_link{margin-top:auto;display: block;text-align: center;font-size:1.7rem;font-weight:600;padding:1.5rem;border-radius: 0.4rem;background-color: #ddd;}
+
+.health_info .health_content .box.consulting .box_tit{color:#407ADF;background-color:#F1F6FE}
+.health_info .health_content .box.consulting .box_cnt .tit:before{background-color: #407ADF;}
+.health_info .health_content .box.consulting .box_link{color:#407ADF;background-color: #F1F6FE;}
+.health_info .health_content .box.consulting:hover{border:2px solid #407ADF;box-shadow: 8px 8px 16px rgba(38, 124, 230, 0.15);box-shadow: 8px 8px 16px color(display-p3 0.251 0.478 0.875 / 0.15);}
+.health_info .health_content .box.consulting .box_link:hover{background-color: #407ADF;color:#fff;}
+
+.health_info .health_content .box.service .box_tit{color:#5961CC;background-color:#F4F5FF}
+.health_info .health_content .box.service .box_cnt .tit:before{background-color: #5961CC;}
+.health_info .health_content .box.service .box_link{color:#5961CC;background-color: #F4F5FF;}
+.health_info .health_content .box.service .box_strong{background-color:#F4F5FF; }
+.health_info .health_content .box.service .box_strong strong{color:#5961CC;}
+.health_info .health_content .box.service:hover{border:2px solid #5961CC;box-shadow: 8px 8px 16px rgba(87, 97, 211, 0.15);box-shadow: 8px 8px 16px color(display-p3 0.349 0.380 0.800 / 0.15);}
+.health_info .health_content .box.service .box_link:hover{background-color: #5961CC;color:#fff;}
+
+@media screen and (max-width:1150px) {
+    .health_info{padding:2rem;}
+    .health_info .title{padding:1.6rem;word-break: keep-all;}
+    .health_info .title h4{font-size:2.4rem;}
+    .health_info .title p{font-size:1.5rem;}
+    .health_info .title:after{bottom:-3rem;height:3rem;}
+
+    .health_info .cannot_duplicate{width:calc(50% + 1.4rem);padding:2rem 0;}
+    .health_info .cannot_duplicate span{font-size:1.5rem;padding:0.7rem 1.6rem;}
+    .health_info .cannot_duplicate:before{display: none;}
+    .health_info .health_content{display: block;}
+    .health_info .health_content .box{padding:1.8rem;}
+    .health_info .health_content .box + .box{margin-top:3rem;}
+    .health_info .health_content .box:before{top:-3rem;height:3rem;}
+    .health_info .health_content .box .box_tit{font-size:2rem;padding:0.8rem;margin-bottom:2rem;}
+    .health_info .health_content .box .box_cnt{padding-bottom:2rem;}
+    .health_info .health_content .box .box_cnt .info + .info{margin-top:1.8rem;}
+    .health_info .health_content .box .box_cnt .tit{font-size:1.7rem;}
+    .health_info .health_content .box .box_cnt .tit:before{margin-top:-0.8rem;height:1.6rem;}
+    .health_info .health_content .box .box_cnt .cnt p{font-size:1.4rem;}
+    .health_info .health_content .box .box_cnt .cnt p + p{margin-top:0.5rem;}
+    .health_info .health_content .box .box_strong{margin-top:2rem;font-size:1.5rem;}
+    .health_info .health_content .box .box_link{font-size:1.5rem;padding:1.2rem;}
+
+    .health_info .health_content .box.consulting .box_tit{color:#407ADF;background-color:#F1F6FE}
+    .health_info .health_content .box.consulting .box_cnt .tit:before{background-color: #407ADF;}
+    .health_info .health_content .box.consulting .box_link{color:#407ADF;background-color: #F1F6FE;}
+    .health_info .health_content .box.consulting:hover{border:2px solid #407ADF;box-shadow: 8px 8px 16px rgba(38, 124, 230, 0.15);box-shadow: 8px 8px 16px color(display-p3 0.251 0.478 0.875 / 0.15);}
+    .health_info .health_content .box.consulting .box_link:hover{background-color: #407ADF;color:#fff;}
+
+    .health_info .health_content .box.service .box_tit{color:#5961CC;background-color:#F4F5FF}
+    .health_info .health_content .box.service .box_cnt .tit:before{background-color: #5961CC;}
+    .health_info .health_content .box.service .box_link{color:#5961CC;background-color: #F4F5FF;}
+    .health_info .health_content .box.service .box_strong{background-color:#F4F5FF; }
+    .health_info .health_content .box.service .box_strong strong{color:#5961CC;}
+    .health_info .health_content .box.service:hover{border:2px solid #5961CC;box-shadow: 8px 8px 16px rgba(87, 97, 211, 0.15);box-shadow: 8px 8px 16px color(display-p3 0.349 0.380 0.800 / 0.15);}
+    .health_info .health_content .box.service .box_link:hover{background-color: #5961CC;color:#fff;}
+}
 
 
