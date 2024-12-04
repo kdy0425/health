@@ -166,7 +166,7 @@
                                         <li>
                                             <a href="javascript:;">물품·서비스</a>
                                             <ul>
-                                                <li><a href="javascript:;">환경보건이용권 안내</a></li>
+                                                <li><a href="javascript:;">상품·서비스 지원 안내</a></li>
                                                 <li><a href="javascript:;">이용권 신청</a></li>
                                                 <li><a href="javascript:;">이용권 신청결과 조회</a></li>
                                                 <li><a href="javascript:;">환경보건이용권 환경성 질환 진료비 차감 안내</a></li>
@@ -224,10 +224,6 @@
         <div class="container">
             <div class="main_title">
                 <h2><strong>환경보건이용권</strong> 서비스를<br class="v_mobile_inline"/> 한눈에 확인하세요!</h2>
-                <p>환경성질환 취약계층을 위한 실내환경개선, 진료지원과 같은 서비스를 신청하세요.</p>
-                <a href="javascript:;" class="mt_mall_link">
-                    <span>온라인몰<br/>바로가기</span>
-                </a>
             </div>
 
             <div class="main_boxes">
@@ -272,8 +268,8 @@
                                 </div>
                                 <div class="service">
                                     <div class="title">
-                                        <h4>실내 환경 진단·컨설팅</h4>
-                                        <p>진단·컨설팅을 통해 관리 방안을 안내해드립니다.</p>
+                                        <h4>실내환경 진단·컨설팅</h4>
+                                        <p>진단·컨설팅 관리방안을 제공하는 이용권입니다.</p>
                                     </div>
                                     <div class="items">
                                         <div class="item">
@@ -311,12 +307,12 @@
                             <div class="bg"><div></div></div>
                         </a>
                         <div class="r">
-                            <a href="javascript:;" class="box mall">
+                            <!-- <a href="javascript:;" class="box mall">
                                 <div class="box_title">
                                     <h3>온라인몰 바로가기</h3>
                                     <p>환경보건이용권과 연계된<br class="v_mobile_inline"/> 온라인몰입니다.</p>
                                 </div>
-                            </a>
+                            </a> -->
                             <a href="javascript:;" class="box faq">
                                 <div class="box_title">
                                     <h3>자주하는 질문</h3>
@@ -331,22 +327,32 @@
                             </a>
                         </div>
                     </div>
-                    <div class="box cs">
-                        <div class="box_title">
-                            <h3>환경보건이용권 콜센터</h3>
-                        </div>
-                        <div class="tel">
-                            <span class="v_pc">1566-8467</span>
-                            <a href="tel:1566-8467" class="v_mobile">1566-8467</a>
-                        </div>
-                        <div class="info">
-                            <div><span>평일</span><span class="time">09:00 ~ 18:00</span><span>(주말 및 공휴일 휴무)</span></div>
-                            <div><span>점심시간</span><span class="time">12:00 ~ 13:00</span></div>
-                        </div>
-                        <div class="links">
-                            <a href="javascript:;">공지사항</a>
-                            <a href="javascript:;">자료실</a>
-                            <a href="javascript:;">부정사용신고</a>
+                    <div class="box_row">
+                        <a href="javascript:;" class="box mall">
+                            <div class="box_title">
+                                <h3>온라인몰 바로가기</h3>
+                                <p>환경성질환예방 상품 및 서비스를<br/> 자유롭게 구매하세요!</p>
+                            </div>
+                            <span class="go">바로가기</span>
+                            <div class="bg"><div></div></div>
+                        </a>
+                        <div class="box cs">
+                            <div class="box_title">
+                                <h3>환경보건이용권 콜센터</h3>
+                            </div>
+                            <div class="tel">
+                                <span class="v_pc">1566-8467</span>
+                                <a href="tel:1566-8467" class="v_mobile">1566-8467</a>
+                            </div>
+                            <div class="info">
+                                <div><span>평일</span><span class="time">09:00 ~ 18:00</span><span>(주말 및 공휴일 휴무)</span></div>
+                                <div><span>점심시간</span><span class="time">12:00 ~ 13:00</span></div>
+                            </div>
+                            <div class="links">
+                                <a href="javascript:;">공지사항</a>
+                                <a href="javascript:;">자료실</a>
+                                <a href="javascript:;">부정사용신고</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -404,6 +410,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const box3 = document.querySelector('.box.faq');
   const box4 = document.querySelector('.box.notice');
   const box5 = document.querySelector('.box.cs');
+  const box6 = document.querySelector('.box.mall');
 
   setTimeout(() => {
     if (box1) box1.classList.add('fade-in');
@@ -421,7 +428,14 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
     if (box5) box5.classList.add('fade-in');
   }, 800);
+
+  setTimeout(() => {
+    if (box6) box6.classList.add('fade-in');
+  }, 800);
 });
+
+
+
 </script>
 </body>
 </html>
