@@ -1186,7 +1186,7 @@ background-image: url("data:image/svg+xml,%3Csvg id='svg2' xmlns='http://www.w3.
 .health_info .health_content .box .box_cnt .cnt{}
 .health_info .health_content .box .box_cnt .cnt p{color:#555;font-size:1.9rem;}
 .health_info .health_content .box .box_cnt .cnt p + p{margin-top:0.8rem;}
-.health_info .health_content .box .box_strong{margin-top:2.4rem;padding:1rem;text-align: center;color:#2D2D2D;font-size:1.7rem;border-radius: 0.8rem;background-color: #ddd;word-break: keep-all;}
+.health_info .health_content .box .box_strong{margin-top:2.4rem;padding:1.2rem;text-align: center;color:#2D2D2D;font-size:1.7rem;border-radius: 0.8rem;background-color: #ddd;word-break: keep-all;font-family: "Paperlogy";}
 .health_info .health_content .box .box_strong strong{font-weight: 600;}
 .health_info .health_content .box .box_link{margin-top:auto;display: block;text-align: center;font-size:1.7rem;font-weight:600;padding:1.5rem;border-radius: 0.4rem;background-color: #ddd;}
 
@@ -1194,7 +1194,7 @@ background-image: url("data:image/svg+xml,%3Csvg id='svg2' xmlns='http://www.w3.
 .health_info .health_content .box.consulting .box_cnt .tit:before{background-color: #407ADF;}
 .health_info .health_content .box.consulting .box_link{color:#407ADF;background-color: #F1F6FE;}
 .health_info .health_content .box.consulting:hover{border:2px solid #407ADF;box-shadow: 8px 8px 16px rgba(38, 124, 230, 0.15);box-shadow: 8px 8px 16px color(display-p3 0.251 0.478 0.875 / 0.15);}
-.health_info .health_content .box.consulting .box_link:hover{background-color: #407ADF;color:#fff;}
+.health_info .health_content .box.consulting:hover .box_link{background-color: #407ADF;color:#fff;}
 
 .health_info .health_content .box.service .box_tit{color:#5961CC;background-color:#F4F5FF}
 .health_info .health_content .box.service .box_cnt .tit:before{background-color: #5961CC;}
@@ -1202,7 +1202,7 @@ background-image: url("data:image/svg+xml,%3Csvg id='svg2' xmlns='http://www.w3.
 .health_info .health_content .box.service .box_strong{background-color:#F4F5FF; }
 .health_info .health_content .box.service .box_strong strong{color:#5961CC;}
 .health_info .health_content .box.service:hover{border:2px solid #5961CC;box-shadow: 8px 8px 16px rgba(87, 97, 211, 0.15);box-shadow: 8px 8px 16px color(display-p3 0.349 0.380 0.800 / 0.15);}
-.health_info .health_content .box.service .box_link:hover{background-color: #5961CC;color:#fff;}
+.health_info .health_content .box.service:hover .box_link{background-color: #5961CC;color:#fff;}
 
 @media screen and (max-width:1150px) {
     .health_info{padding:2rem;}
@@ -1226,21 +1226,6 @@ background-image: url("data:image/svg+xml,%3Csvg id='svg2' xmlns='http://www.w3.
     .health_info .health_content .box .box_cnt .cnt p{font-size:1.4rem;}
     .health_info .health_content .box .box_cnt .cnt p + p{margin-top:0.5rem;}
     .health_info .health_content .box .box_strong{margin-top:2rem;font-size:1.5rem;}
-    .health_info .health_content .box .box_link{font-size:1.5rem;padding:1.2rem;}
-
-    .health_info .health_content .box.consulting .box_tit{color:#407ADF;background-color:#F1F6FE}
-    .health_info .health_content .box.consulting .box_cnt .tit:before{background-color: #407ADF;}
-    .health_info .health_content .box.consulting .box_link{color:#407ADF;background-color: #F1F6FE;}
-    .health_info .health_content .box.consulting:hover{border:2px solid #407ADF;box-shadow: 8px 8px 16px rgba(38, 124, 230, 0.15);box-shadow: 8px 8px 16px color(display-p3 0.251 0.478 0.875 / 0.15);}
-    .health_info .health_content .box.consulting .box_link:hover{background-color: #407ADF;color:#fff;}
-
-    .health_info .health_content .box.service .box_tit{color:#5961CC;background-color:#F4F5FF}
-    .health_info .health_content .box.service .box_cnt .tit:before{background-color: #5961CC;}
-    .health_info .health_content .box.service .box_link{color:#5961CC;background-color: #F4F5FF;}
-    .health_info .health_content .box.service .box_strong{background-color:#F4F5FF; }
-    .health_info .health_content .box.service .box_strong strong{color:#5961CC;}
-    .health_info .health_content .box.service:hover{border:2px solid #5961CC;box-shadow: 8px 8px 16px rgba(87, 97, 211, 0.15);box-shadow: 8px 8px 16px color(display-p3 0.349 0.380 0.800 / 0.15);}
-    .health_info .health_content .box.service .box_link:hover{background-color: #5961CC;color:#fff;}
 }
 
 
