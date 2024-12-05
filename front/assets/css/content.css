@@ -1226,6 +1226,11 @@ background-image: url("data:image/svg+xml,%3Csvg id='svg2' xmlns='http://www.w3.
     .health_info .health_content .box .box_cnt .cnt p{font-size:1.4rem;}
     .health_info .health_content .box .box_cnt .cnt p + p{margin-top:0.5rem;}
     .health_info .health_content .box .box_strong{margin-top:2rem;font-size:1.5rem;}
+
+    .health_info .health_content .box.consulting .box_link{background-color: #407ADF;color:#fff;}
+    .health_info .health_content .box.service .box_link{background-color: #5961CC;color:#fff;}
+    
+
 }
 
 
