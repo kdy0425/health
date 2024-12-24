@@ -172,33 +172,38 @@
     <!-- footer -->
     <div id="footer">
         <div class="ft_inner">
-            <div class="ft_links">
-                <div class="item"><a href="javascript:;"><strong>개인정보처리방침</strong></a></div>
-                <div class="item"><a href="javascript:;">저작권정책</a></div>
-                <div class="item"><a href="javascript:;">이메일무단수집거부</a></div>
-                <div class="item"><a href="javascript:;">운영·관리 방침</a></div>
-            </div>
-            <div class="ft_info">
-                <div class="item address">(우)03367 서울시 은평구 진흥로 215 한국환경산업기술원</div>
-                <div class="item">대표연락처 TEL : <span class="v_pc">02-2284-1000</span><a href="tel:02-2284-1000" class="v_mobile_inline">02-2284-1000</a></div>
-                <div class="item">FAX : 02-2284-1000</div>
-            </div>
+            <dl class="ft_links">
+                <dt class="sound_only">유틸리티 메뉴</dt>
+                <dd class="item"><a href="javascript:;"><strong>개인정보처리방침</strong></a></dd>
+                <dd class="item"><a href="javascript:;">저작권정책</a></dd>
+                <dd class="item"><a href="javascript:;">이메일무단수집거부</a></dd>
+                <dd class="item"><a href="javascript:;">운영·관리 방침</a></dd>
+            </dl>
+            <ul class="ft_info">
+                <li class="item address">(우)03367 서울시 은평구 진흥로 215 한국환경산업기술원</li>
+                <li class="item">대표연락처 TEL : <span class="v_pc">02-2284-1000</span><a href="tel:02-2284-1000" class="v_mobile_inline">02-2284-1000</a></li>
+                <li class="item">FAX : 02-2284-1000</li>
+            </ul>
             <div class="ft_copy">COPYRIGHT ⓒ 2018 KEITI. ALL RIGHTS RESERVED.</div>
             <div class="ft_company">
                 <div class="item">
                     <img src="../../assets/images/common/me.svg" alt="환경부">
                 </div>
                 <div class="item">
-                    <img src="../../assets/images/common/keiti.svg" alt="KEITI">
+                    <img src="../../assets/images/common/keiti.svg" alt="KEITI 한국환경산업기술원">
                 </div>
             </div>
             <div class="ft_family">
-                <select name="" id="" onchange="openSite(this)">
-                    <option value="">관련사이트 바로가기</option>
-                    <option value="https://naver.com">사이트명1</option>
-                    <option value="https://google.com">사이트명2</option>
-                    <option value="https://daum.net">사이트명3</option>
-                </select>
+                <label class="sound_only" for="ft_family_site">관련사이트 바로가기</label>
+                <div class="input">
+                    <select name="" id="ft_family_site">
+                        <option value="">관련사이트 바로가기</option>
+                        <option value="https://naver.com">사이트명1</option>
+                        <option value="https://google.com">사이트명2</option>
+                        <option value="https://daum.net">사이트명3</option>
+                    </select>
+                </div>
+                <button type="button" title="이동(새창)" class="btn btn_dark btn_lg" onclick="openSite();">이동</button>
             </div>
         </div>
     </div>
