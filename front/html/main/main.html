@@ -28,11 +28,15 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
         <div class="hd_inner">
-            <h1 id="logo"><a href="javascript:;"><img src="../../assets/images/common/logo.png" alt="환경보건이용권"></a></h1>
+            <h1 id="logo"><a href="javascript:;" title="메인페이지 바로가기"><img src="../../assets/images/common/logo.png" alt="환경보건이용권"></a></h1>
             <div id="nav">
                 <ul>
                     <li><a href="javascript:;">환경보건이용권</a>
@@ -120,29 +124,33 @@
                     <a href="javascript:;" class="icon logout">로그아웃</a>
                 </div>
                 <div class="hd_search">
-                    <button type="button" class="search_btn search_open">검색 열기</button>
+                    <button type="button" class="search_btn search_open" aria-expanded="false">검색 열기</button>
                     <div class="search_content">
                         <div class="search_inner">
                             <form action="">
-                                <div class="design_select lg">
-                                    <select name="" id="">
-                                        <option value="전체">전체</option>
-                                        <option value="옵션명1">옵션명1</option>
-                                        <option value="옵션명2">옵션명2</option>
-                                        <option value="ww">옵션명3</option>
-                                        <option value="ee">옵션명4</option>
-                                        <option value="qq">옵션명5</option>
-                                    </select>
-                                </div>
-                                <input type="text" class="lg" placeholder="검색어를 입력하세요.">
-                                <button type="button" class="search_submit">검색</button>
+                                <fieldset>
+                                    <legend class="sound_only">통합검색</legend>
+                                    <div class="design_select lg">
+                                        <label for="hd_search_option" class="sound_only">검색옵션</label>
+                                        <select name="" id="hd_search_option">
+                                            <option value="전체">전체</option>
+                                            <option value="옵션명1">옵션명1</option>
+                                            <option value="옵션명2">옵션명2</option>
+                                            <option value="ww">옵션명3</option>
+                                            <option value="ee">옵션명4</option>
+                                            <option value="qq">옵션명5</option>
+                                        </select>
+                                    </div>
+                                    <label for="hd_search_input" class="sound_only">검색어 입력</label>
+                                    <input type="text" id="hd_search_input" class="lg" placeholder="검색어를 입력하세요.">
+                                    <button type="button" class="search_submit">검색</button>
+                                </fieldset>
                             </form>
                         </div>
                     </div>
-                    <button type="button" class="search_btn hd_btn_close">검색 닫기</button>
                 </div>
                 <div class="hd_navall">
-                    <button type="button" class="navall_btn navall_open">전체메뉴 열기</button>
+                    <button type="button" class="navall_btn navall_open" aria-expanded="false">전체메뉴 열기</button>
                     <div class="navall_content" data-simplebar>
                         <div class="nav_links_mobile">
                             <div class="item">
@@ -159,6 +167,7 @@
                             </div> -->
                         </div>
                         <div class="navall_inner">
+                            <span class="sound_only">전체메뉴</span>
                             <ul class="navall_ul">
                                 <li>
                                     <a href="javascript:;">환경보건이용권</a>
@@ -212,7 +221,6 @@
                             </ul>
                         </div>
                     </div>
-                    <button type="button" class="navall_btn hd_btn_close">전체메뉴 닫기</button>
                 </div>
             </div>
         </div>
@@ -220,8 +228,8 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="main_content">
-        <div class="container">
+    <div class="main_content" role="main">
+        <div id="content" class="container">
             <div class="main_title">
                 <h2><strong>환경보건이용권</strong> 서비스를<br class="v_mobile_inline"/> 한눈에 확인하세요!</h2>
             </div>
@@ -233,7 +241,7 @@
                             <div class="box_title">
                                 <h3>환경보건이용권</h3>
                             </div>
-                            <div class="use_service">
+                            <div class="use_service" role="region" aria-label="환경보건이용권 서비스 안내">
                                 <div class="service">
                                     <div class="title">
                                         <h4>물품·서비스</h4>
@@ -242,25 +250,25 @@
                                     <div class="items">
                                         <div class="item">
                                             <a href="javascript:;">
-                                                <img src="../../assets/images/content/use_service_info.svg">
+                                                <img src="../../assets/images/content/use_service_info.svg" aria-hidden="true">
                                                 이용권안내
                                             </a>
                                         </div>
                                         <div class="item">
                                             <a href="javascript:;">
-                                                <img src="../../assets/images/content/use_service_pply.svg">
+                                                <img src="../../assets/images/content/use_service_pply.svg" aria-hidden="true">
                                                 이용권 신청
                                             </a>
                                         </div>
                                         <div class="item">
                                             <a href="javascript:;">
-                                                <img src="../../assets/images/content/use_service_result.svg">
+                                                <img src="../../assets/images/content/use_service_result.svg" aria-hidden="true">
                                                 신청결과 조회
                                             </a>
                                         </div>
                                         <div class="item">
                                             <a href="javascript:;">
-                                                <img src="../../assets/images/content/use_service_mall.svg">
+                                                <img src="../../assets/images/content/use_service_mall.svg" aria-hidden="true">
                                                 온라인몰 안내
                                             </a>
                                         </div>
@@ -274,19 +282,19 @@
                                     <div class="items">
                                         <div class="item">
                                             <a href="javascript:;">
-                                                <img src="../../assets/images/content/use_service_info.svg">
+                                                <img src="../../assets/images/content/use_service_info.svg" aria-hidden="true">
                                                 사업 안내
                                             </a>
                                         </div>
                                         <div class="item">
                                             <a href="javascript:;">
-                                                <img src="../../assets/images/content/use_service_pply.svg">
+                                                <img src="../../assets/images/content/use_service_pply.svg" aria-hidden="true">
                                                 사업 신청
                                             </a>
                                         </div>
                                         <div class="item">
                                             <a href="javascript:;">
-                                                <img src="../../assets/images/content/use_service_result.svg">
+                                                <img src="../../assets/images/content/use_service_result.svg" aria-hidden="true">
                                                 신청결과 조회
                                             </a>
                                         </div>
@@ -342,9 +350,9 @@
                             </div>
                             <div class="tel">
                                 <span class="v_pc">1566-8467</span>
-                                <a href="tel:1566-8467" class="v_mobile">1566-8467</a>
+                                <a href="tel:1566-8467" aria-label="환경보건이용권 콜센터 전화걸기 1566-8467" class="v_mobile">1566-8467</a>
                             </div>
-                            <div class="info">
+                            <div class="info" role="group" aria-label="콜센터 운영시간 안내">
                                 <div><span>평일</span><span class="time">09:00 ~ 18:00</span><span>(주말 및 공휴일 휴무)</span></div>
                                 <div><span>점심시간</span><span class="time">12:00 ~ 13:00</span></div>
                             </div>
@@ -364,33 +372,38 @@
     <!-- footer -->
     <div id="footer">
         <div class="ft_inner">
-            <div class="ft_links">
-                <div class="item"><a href="javascript:;"><strong>개인정보처리방침</strong></a></div>
-                <div class="item"><a href="javascript:;">저작권정책</a></div>
-                <div class="item"><a href="javascript:;">이메일무단수집거부</a></div>
-                <div class="item"><a href="javascript:;">운영·관리 방침</a></div>
-            </div>
-            <div class="ft_info">
-                <div class="item address">(우)03367 서울시 은평구 진흥로 215 한국환경산업기술원</div>
-                <div class="item">대표연락처 TEL : <span class="v_pc">02-2284-1000</span><a href="tel:02-2284-1000" class="v_mobile_inline">02-2284-1000</a></div>
-                <div class="item">FAX : 02-2284-1000</div>
-            </div>
+            <dl class="ft_links">
+                <dt class="sound_only">유틸리티 메뉴</dt>
+                <dd class="item"><a href="javascript:;"><strong>개인정보처리방침</strong></a></dd>
+                <dd class="item"><a href="javascript:;">저작권정책</a></dd>
+                <dd class="item"><a href="javascript:;">이메일무단수집거부</a></dd>
+                <dd class="item"><a href="javascript:;">운영·관리 방침</a></dd>
+            </dl>
+            <ul class="ft_info">
+                <li class="item address">(우)03367 서울시 은평구 진흥로 215 한국환경산업기술원</li>
+                <li class="item">대표연락처 TEL : <span class="v_pc">02-2284-1000</span><a href="tel:02-2284-1000" class="v_mobile_inline">02-2284-1000</a></li>
+                <li class="item">FAX : 02-2284-1000</li>
+            </ul>
             <div class="ft_copy">COPYRIGHT ⓒ 2018 KEITI. ALL RIGHTS RESERVED.</div>
             <div class="ft_company">
                 <div class="item">
                     <img src="../../assets/images/common/me.svg" alt="환경부">
                 </div>
                 <div class="item">
-                    <img src="../../assets/images/common/keiti.svg" alt="KEITI">
+                    <img src="../../assets/images/common/keiti.svg" alt="KEITI 한국환경산업기술원">
                 </div>
             </div>
             <div class="ft_family">
-                <select name="" id="" onchange="openSite(this)">
-                    <option value="">관련사이트 바로가기</option>
-                    <option value="https://naver.com">사이트명1</option>
-                    <option value="https://google.com">사이트명2</option>
-                    <option value="https://daum.net">사이트명3</option>
-                </select>
+                <label class="sound_only" for="ft_family_site">관련사이트 바로가기</label>
+                <div class="input">
+                    <select name="" id="ft_family_site">
+                        <option value="">관련사이트 바로가기</option>
+                        <option value="https://naver.com">사이트명1</option>
+                        <option value="https://google.com">사이트명2</option>
+                        <option value="https://daum.net">사이트명3</option>
+                    </select>
+                </div>
+                <button type="button" title="이동(새창)" class="btn btn_dark btn_lg" onclick="openSite();">이동</button>
             </div>
         </div>
     </div>

@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,16 +64,16 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>환경보건이용권</h2>
                 <div class="aside_nav">
                     <ul>
                         <li class="item active">
-                            <button type="button">물품·서비스</button>
-                            <ul style="display: block;">
-                                <li><a href="javascript:;" class="active"><span>상품·서비스 지원 안내</span></a></li>
+                            <button type="button" aria-expanded="true">물품·서비스</button>
+                            <ul style="display: block;" role="menu">
+                                <li><a href="javascript:;" class="active" aria-current="page"><span>상품·서비스 지원 안내</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청 결과조회</span></a></li>
                                 <li><a href="javascript:;"><span>환경보건이용권 진료비 차감 안내</span></a></li>
@@ -79,8 +83,8 @@
                             </ul>
                         </li>
                         <li class="item">
-                            <button type="button">실내 환경 진단·컨설팅</button>
-                            <ul>
+                            <button type="button" aria-expanded="false">실내 환경 진단·컨설팅</button>
+                            <ul role="menu">
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 안내</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청결과 조회</span></a></li>
@@ -90,13 +94,13 @@
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">환경보건이용권</a></div>
-                    <div class="item"><a href="javascript:;">물품·서비스</a></div>
-                    <div class="item"><a href="javascript:;">상품·서비스 지원 안내</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">환경보건이용권</a></li>
+                    <li class="item"><a href="javascript:;">물품·서비스</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">상품·서비스 지원 안내</a></li>
+                </ol>
                 
                 <div class="page_title">
                     <h3>상품·서비스 지원 안내</h3>
@@ -104,27 +108,28 @@
 
                 <div class="design_content">
                     <div class="design_section">
-                        <h5 class="bline_title">이용권 신청 안내</h5>
+                        <h4 class="bline_title">이용권 신청 안내</h4>
                         <div class="info_table">
                             <div class="table">
                                 <table>
+                                    <caption class="sound_only">이용권 신청 안내 정보 - 신청기간, 신청대상, 포인트 사용기간, 혜택내용으로 이루어진 표</caption>
                                     <colgroup>
                                         <col style="width:22rem;">
                                         <col>
                                     </colgroup>
                                     <tbody>
                                         <tr>
-                                            <th>
-                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.734" y="5.58" width="20.8" height="19.067" rx="2" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5"/><path d="M4.773 10.78h20.059M11.234 3.846v3.649M19.484 3.846v3.649" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.18 27.425c-3.352 0-6.078-2.7-6.078-6.02 0-3.322 2.726-6.022 6.078-6.022 3.352 0 6.078 2.7 6.078 6.021 0 3.32-2.726 6.021-6.078 6.021Z" fill="#fff" stroke="#2D2D2D" style="fill:#fff;fill-opacity:1;stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.117 19.084v2.809l1.93 1.204" fill="#fff" style="fill:#fff;fill-opacity:1"/><path d="M21.117 19.084v2.809l1.93 1.204" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <th scope="row">
+                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4.734" y="5.58" width="20.8" height="19.067" rx="2" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5"/><path d="M4.773 10.78h20.059M11.234 3.846v3.649M19.484 3.846v3.649" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.18 27.425c-3.352 0-6.078-2.7-6.078-6.02 0-3.322 2.726-6.022 6.078-6.022 3.352 0 6.078 2.7 6.078 6.021 0 3.32-2.726 6.021-6.078 6.021Z" fill="#fff" stroke="#2D2D2D" style="fill:#fff;fill-opacity:1;stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.117 19.084v2.809l1.93 1.204" fill="#fff" style="fill:#fff;fill-opacity:1"/><path d="M21.117 19.084v2.809l1.93 1.204" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>신청기간
                                             </th>
-                                            <td>
+                                            <td >
                                                 2025. 05. 01(목) ~ 2025. 05. 31(토)
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>
-                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.822 4.713H6.178C4.423 4.713 3 6.177 3 7.983v15.992c0 1.807 1.423 3.271 3.178 3.271h19.644c1.755 0 3.178-1.464 3.178-3.27V7.983c0-1.807-1.423-3.271-3.178-3.271Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.773 20.693H8.148c-.262 0-.476-.265-.476-.594v-1.514c0-.179.064-.348.175-.46.064-.067 1.623-1.615 4.113-1.615s4.049 1.552 4.113 1.615a.653.653 0 0 1 .175.46V20.1c0 .329-.214.594-.476.594Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.08 15.417a2.596 2.596 0 1 0-4.234-3.005 2.596 2.596 0 0 0 4.234 3.005ZM19.57 12.36h4.368M19.57 16.01h4.368M19.57 19.658h4.368" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <th scope="row">
+                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M25.822 4.713H6.178C4.423 4.713 3 6.177 3 7.983v15.992c0 1.807 1.423 3.271 3.178 3.271h19.644c1.755 0 3.178-1.464 3.178-3.27V7.983c0-1.807-1.423-3.271-3.178-3.271Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.773 20.693H8.148c-.262 0-.476-.265-.476-.594v-1.514c0-.179.064-.348.175-.46.064-.067 1.623-1.615 4.113-1.615s4.049 1.552 4.113 1.615a.653.653 0 0 1 .175.46V20.1c0 .329-.214.594-.476.594Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.08 15.417a2.596 2.596 0 1 0-4.234-3.005 2.596 2.596 0 0 0 4.234 3.005ZM19.57 12.36h4.368M19.57 16.01h4.368M19.57 19.658h4.368" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>신청대상
                                             </th>
                                             <td>
@@ -133,8 +138,8 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>
-                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.733" y="5.58" width="20.8" height="19.067" rx="2" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5"/><path d="M4.774 10.78h20.059M11.232 3.846v3.649M19.48 3.846v3.649" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.182 27.425c-3.352 0-6.078-2.7-6.078-6.02 0-3.322 2.726-6.022 6.078-6.022 3.352 0 6.078 2.7 6.078 6.021 0 3.32-2.726 6.021-6.078 6.021Z" fill="#fff" stroke="#2D2D2D" style="fill:#fff;fill-opacity:1;stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.116 19.084v2.809l1.93 1.204" fill="#fff" style="fill:#fff;fill-opacity:1"/><path d="M21.116 19.084v2.809l1.93 1.204" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <th scope="row">
+                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4.733" y="5.58" width="20.8" height="19.067" rx="2" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5"/><path d="M4.774 10.78h20.059M11.232 3.846v3.649M19.48 3.846v3.649" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.182 27.425c-3.352 0-6.078-2.7-6.078-6.02 0-3.322 2.726-6.022 6.078-6.022 3.352 0 6.078 2.7 6.078 6.021 0 3.32-2.726 6.021-6.078 6.021Z" fill="#fff" stroke="#2D2D2D" style="fill:#fff;fill-opacity:1;stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.116 19.084v2.809l1.93 1.204" fill="#fff" style="fill:#fff;fill-opacity:1"/><path d="M21.116 19.084v2.809l1.93 1.204" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>포인트 사용기간
                                             </th>
                                             <td>
@@ -142,8 +147,8 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>
-                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.164 23.232a5.363 5.363 0 0 1-5.363-5.364c0-2.963 2.4-5.364 5.363-5.364.494 0 .968.072 1.42.196V7.748a1 1 0 0 0-1-1h-3.438v.987c0 .609-.493 1.102-1.102 1.102H8.977c-.61 0-1.103-.493-1.103-1.102v-.987H4.437a1 1 0 0 0-1 1v17.844a1 1 0 0 0 1 1h16.15a1 1 0 0 0 1-1v-2.559a5.366 5.366 0 0 1-1.42.196l-.003.003Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.04 4.71H8.975c-.61 0-1.103.495-1.103 1.103v1.924c0 .61.494 1.103 1.103 1.103h7.067c.609 0 1.102-.494 1.102-1.103V5.813c0-.608-.493-1.102-1.102-1.102Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.156 23.24a5.364 5.364 0 1 0 0-10.728 5.364 5.364 0 0 0 0 10.727Z" fill="#fff" stroke="#2D2D2D" style="fill:#fff;fill-opacity:1;stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="m23.946 21.672 4.187 4.19" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <th scope="row">
+                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.164 23.232a5.363 5.363 0 0 1-5.363-5.364c0-2.963 2.4-5.364 5.363-5.364.494 0 .968.072 1.42.196V7.748a1 1 0 0 0-1-1h-3.438v.987c0 .609-.493 1.102-1.102 1.102H8.977c-.61 0-1.103-.493-1.103-1.102v-.987H4.437a1 1 0 0 0-1 1v17.844a1 1 0 0 0 1 1h16.15a1 1 0 0 0 1-1v-2.559a5.366 5.366 0 0 1-1.42.196l-.003.003Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.04 4.71H8.975c-.61 0-1.103.495-1.103 1.103v1.924c0 .61.494 1.103 1.103 1.103h7.067c.609 0 1.102-.494 1.102-1.103V5.813c0-.608-.493-1.102-1.102-1.102Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.156 23.24a5.364 5.364 0 1 0 0-10.728 5.364 5.364 0 0 0 0 10.727Z" fill="#fff" stroke="#2D2D2D" style="fill:#fff;fill-opacity:1;stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="m23.946 21.672 4.187 4.19" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>혜택 내용
                                             </th>
                                             <td>
@@ -157,21 +162,21 @@
                     </div>
 
                     <div class="design_section">
-                        <h5 class="bline_title">상품·서비스 이용 절차</h5>
-                        <div class="info_step">
-                            <div class="item">
+                        <h4 class="bline_title">상품·서비스 이용 절차</h4>
+                        <ol class="info_step">
+                            <li class="item">
                                 <div class="tit">STEP 1</div>
                                 <div class="cnt">
                                     이용권 신청 및 결과 확인
                                 </div>
-                            </div>
-                            <div class="item">
+                            </li>
+                            <li class="item">
                                 <div class="tit">STEP 2</div>
                                 <div class="cnt">
                                     온라인몰 접속 및 포인트 사용
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
                     </div>
 
                 </div>

@@ -29,6 +29,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -61,27 +65,27 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>환경보건이용권</h2>
                 <div class="aside_nav">
                     <ul>
                         <li class="item active">
-                            <button type="button">물품·서비스</button>
-                            <ul style="display: block;">
+                            <button type="button" aria-expanded="true">물품·서비스</button>
+                            <ul style="display: block;" role="menu">
                                 <li><a href="javascript:;"><span>환경보건이용권 안내</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청 결과조회</span></a></li>
                                 <li><a href="javascript:;"><span>환경보건이용권 진료비 차감 안내</span></a></li>
-                                <li><a href="javascript:;" class="active"><span>진료비 지원 신청</span></a></li>
+                                <li><a href="javascript:;" class="active" aria-current="page"><span>진료비 지원 신청</span></a></li>
                                 <li><a href="javascript:;"><span>진료비 지원 신청 결과조회</span></a></li>
                                 <li><a href="javascript:;"><span>온라인몰 안내</span></a></li>
                             </ul>
                         </li>
                         <li class="item">
-                            <button type="button">실내 환경 진단·컨설팅</button>
-                            <ul>
+                            <button type="button" aria-expanded="false">실내 환경 진단·컨설팅</button>
+                            <ul role="menu">
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 안내</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청결과 조회</span></a></li>
@@ -91,13 +95,13 @@
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">환경보건이용권</a></div>
-                    <div class="item"><a href="javascript:;">물품·서비스</a></div>
-                    <div class="item"><a href="javascript:;">진료비 지원 신청</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">환경보건이용권</a></li>
+                    <li class="item"><a href="javascript:;">물품·서비스</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">진료비 지원 신청</a></li>
+                </ol>
 
                 <div class="page_title">
                     <h3>진료비 지원 신청</h3>
@@ -119,193 +123,203 @@
 
                 <form>
                 <div class="form form_type2">
-                    <div class="form_title">
-                        <div class="l">
-                            <h4>진료비 지급 계좌 정보 입력</h4>
-                            <p class="sub text_red">* 본인명의의 계좌만 신청가능합니다.</p>
+                    <fieldset>
+                        <div class="form_title">
+                            <div class="l">
+                                <h4><legend>진료비 지급 계좌 정보 입력</legend></h4>
+                                <p class="sub text_red">* 본인명의의 계좌만 신청가능합니다.</p>
+                            </div>
+                            <div class="r">
+                                <button type="button" class="btn btn_md btn_dark_line">
+                                    <span>본인계좌 인증</span>
+                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                            </div>
                         </div>
-                        <div class="r">
-                            <button type="button" class="btn btn_md btn_dark_line">
-                                <span>본인계좌 인증</span>
-                                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </button>
+                        <div class="table">
+                            <table>
+                                <caption class="sound_only">진료비 지급 계좌 정보 입력 폼</caption>
+                                <colgroup>
+                                    <col style="width:180px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><label for="bank_select">은행 <span class="form_required">필수</span></label></th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input size_lg">
+                                                    <select name="" id="bank_select">
+                                                        <option value="국민은행">국민은행</option>
+                                                        <option value="우리은행">우리은행</option>
+                                                        <option value="기업은행">기업은행</option>
+                                                        <option value="농협은행">농협은행</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="account_number">계좌번호 <span class="form_required">필수</span></label></th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="tel" id="account_number" placeholder="계좌번호를 입력해 주세요.">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                    <div class="table">
-                        <table>
-                            <colgroup>
-                                <col style="width:180px">
-                                <col>
-                            </colgroup>
-                            <tbody>
-                                <tr>
-                                    <th>은행 <span class="form_required">필수</span></th>
-                                    <td>
-                                        <div class="input_group">
-                                            <div class="input size_lg">
-                                                <select name="" id="">
-                                                    <option value="국민은행">국민은행</option>
-                                                    <option value="우리은행">우리은행</option>
-                                                    <option value="기업은행">기업은행</option>
-                                                    <option value="농협은행">농협은행</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="account_number">계좌번호 <span class="form_required">필수</span></label></th>
-                                    <td>
-                                        <div class="input_group">
-                                            <div class="input">
-                                                <input type="tel" id="account_number" placeholder="계좌번호를 입력해 주세요.">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    </fieldset>
                 </div>
 
                 <div class="form form_type2">
-                    <div class="form_title">
-                        <h4>진료비 신청 정보 입력</h4>
-                        <div class="r">
-                            <button type="button" class="btn btn_md btn_dark_line" onclick="addApplicant();">
-                                <svg width="12" height="12" fill="none" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                <span>진료내역 추가</span>
-                            </button>
+                    <fieldset>
+                        <div class="form_title">
+                            <h4><legend>진료비 신청 정보 입력</legend></h4>
+                            <div class="r">
+                                <button type="button" class="btn btn_md btn_dark_line" onclick="addApplicant();" aria-label="진료내역 추가">
+                                    <svg width="12" height="12" fill="none" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                                    <span>진료내역 추가</span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="add_wrap">
-                        <div class="add_item">
-                            <div class="form_intitle">
-                                <div class="title">진료내역 1</div>
-                                <div class="r">
-                                    <button type="button" class="btn btn_sm btn_gray_line" onclick="removeApplicant(event)">
-                                        <span>삭제</span>
-                                        <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.83 8.485 3.171 2.83M8.83 2.83 3.171 8.485" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                    </button>
+
+                        <!-- 진료비 신청 정보 추가, 삭제 업데이트 알림 -->
+                        <div id="form_update" class="sound_only" aria-live="polite"></div>
+
+                        <div class="add_wrap">
+                            <div class="add_item">
+                                <div class="form_intitle">
+                                    <div class="title">진료내역 1</div>
+                                    <div class="r">
+                                        <button type="button" class="btn btn_sm btn_gray_line" onclick="removeApplicant(event)" aria-label="진료내역 1 삭제">
+                                            <span>삭제</span>
+                                            <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.83 8.485 3.171 2.83M8.83 2.83 3.171 8.485" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="table">
+                                    <table>
+                                        <caption class="sound_only">진료내역 1의 진료비 신청 정보 입력 폼</caption>
+                                        <colgroup>
+                                            <col style="width:180px">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">신청자 대상유형 <span class="form_required">필수</span></th>
+                                                <td>
+                                                    <label class="checkbox inline">
+                                                        <input type="radio" name="apply_type1">
+                                                        <span class="ck_icon"></span>
+                                                        기초생활수급자 어린이
+                                                    </label>
+                                                    <label class="checkbox inline">
+                                                        <input type="radio" name="apply_type1">
+                                                        <span class="ck_icon"></span>
+                                                        차상위계층 어린이
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><label for="apply_date1">진료일자 <span class="form_required">필수</span></label></th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_lg">
+                                                            <input type="text" id="apply_date1" class="datepicker" placeholder="YYYY-MM-DD">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><label for="apply_code1">상병코드 <span class="form_required">필수</span></label></th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_lg">
+                                                            <select name="" id="apply_code1">
+                                                                <option value="1">아토피(L20)/1</option>
+                                                                <option value="2">아토피(L20)/2</option>
+                                                                <option value="3">아토피(L20)/3</option>
+                                                                <option value="4">아토피(L20)/4</option>
+                                                            </select>
+                                                        </div>
+                                                        <button type="button" class="btn btn_md btn_submit_line modal_open" data-target="#code_popup" aria-haspopup="dialog">인정코드 상세보기</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><label for="file_name1_1">처방전 또는 진료확인서</label></th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_lg file_area" role="region" aria-label="파일을 드래그하여 업로드하거나 파일업로드 버튼을을 눌러 파일을 선택하세요.">
+                                                            <input type="text" id="file_name1_1" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
+                                                        </div>
+                                                        <label class="btn btn_md btn_dark_line file_btn" for="file_multiple1_1" aria-label="처방전 또는 진료확인서 업로드">
+                                                            <!-- 추가된 파일들 input file multiple로 저장 -->
+                                                            <input type="file" id="file_multiple1_1" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
+                                                            파일업로드
+                                                        </label>
+                                                    </div>
+                                                    <div class="add_list add_files" style="display:none;"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><label for="file_name1_2">진료비 영수증</label></th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_lg file_area" role="region" aria-label="파일을 드래그하여 업로드하거나 파일업로드 버튼을을 눌러 파일을 선택하세요.">
+                                                            <input type="text" id="file_name1_2" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
+                                                        </div>
+                                                        <label class="btn btn_md btn_dark_line file_btn" for="file_multiple1_2" aria-label="진료비 영수증 업로드">
+                                                            <!-- 추가된 파일들 input file multiple로 저장 -->
+                                                            <input type="file" id="file_multiple1_2" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
+                                                            파일업로드
+                                                        </label>
+                                                    </div>
+                                                    <div class="add_list add_files" style="display:none;"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><label for="file_name1_3">진료비 세부내역서</label></th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_lg file_area" role="region" aria-label="파일을 드래그하여 업로드하거나 파일업로드 버튼을을 눌러 파일을 선택하세요.">
+                                                            <input type="text" id="file_name1_3" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
+                                                        </div>
+                                                        <label class="btn btn_md btn_dark_line file_btn" for="file_multiple1_3" aria-label="진료비 세부내역서 업로드">
+                                                            <!-- 추가된 파일들 input file multiple로 저장 -->
+                                                            <input type="file" id="file_multiple1_3" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
+                                                            파일업로드
+                                                        </label>
+                                                    </div>
+                                                    <div class="add_list add_files" style="display:none;"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><label for="file_name1_4">악제비 영수증</label></th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_lg file_area" role="region" aria-label="파일을 드래그하여 업로드하거나 파일업로드 버튼을을 눌러 파일을 선택하세요.">
+                                                            <input type="text" id="file_name1_4" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
+                                                        </div>
+                                                        <label class="btn btn_md btn_dark_line file_btn" for="file_multiple1_4" aria-label="악제비 영수증 업로드">
+                                                            <!-- 추가된 파일들 input file multiple로 저장 -->
+                                                            <input type="file" id="file_multiple1_4" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
+                                                            파일업로드
+                                                        </label>
+                                                    </div>
+                                                    <div class="add_list add_files" style="display:none;"></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <div class="table">
-                                <table>
-                                    <colgroup>
-                                        <col style="width:180px">
-                                        <col>
-                                    </colgroup>
-                                    <tbody>
-                                        <tr>
-                                            <th>신청자 대상유형 <span class="form_required">필수</span></th>
-                                            <td>
-                                                <label class="checkbox inline">
-                                                    <input type="radio" name="apply_type1">
-                                                    <span class="ck_icon"></span>
-                                                    기초생활수급자 어린이
-                                                </label>
-                                                <label class="checkbox inline">
-                                                    <input type="radio" name="apply_type1">
-                                                    <span class="ck_icon"></span>
-                                                    차상위계층 어린이
-                                                </label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><label for="apply_date1">진료일자 <span class="form_required">필수</span></label></th>
-                                            <td>
-                                                <div class="input_group">
-                                                    <div class="input size_lg">
-                                                        <input type="text" id="apply_date1" class="datepicker" placeholder="YYYY-MM-DD">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><label for="apply_code1">상병코드 <span class="form_required">필수</span></label></th>
-                                            <td>
-                                                <div class="input_group">
-                                                    <div class="input size_lg">
-                                                        <select name="" id="apply_code1">
-                                                            <option value="1">아토피(L20)/1</option>
-                                                            <option value="2">아토피(L20)/2</option>
-                                                            <option value="3">아토피(L20)/3</option>
-                                                            <option value="4">아토피(L20)/4</option>
-                                                        </select>
-                                                    </div>
-                                                    <button type="button" class="btn btn_md btn_submit_line" onclick="openLayer('#code_popup')">인정코드 상세보기</button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><label for="file_multiple1_1">처방전 또는 진료확인서</label></th>
-                                            <td>
-                                                <div class="input_group">
-                                                    <div class="input size_lg file_area">
-                                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
-                                                    </div>
-                                                    <label class="btn btn_md btn_dark_line file_btn">
-                                                        <!-- 추가된 파일들 input file multiple로 저장 -->
-                                                        <input type="file" id="file_multiple1_1" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
-                                                        파일업로드
-                                                    </label>
-                                                </div>
-                                                <div class="add_list add_files" style="display:none;"></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><label for="file_multiple1_2">진료비 영수증</label></th>
-                                            <td>
-                                                <div class="input_group">
-                                                    <div class="input size_lg file_area">
-                                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
-                                                    </div>
-                                                    <label class="btn btn_md btn_dark_line file_btn">
-                                                        <!-- 추가된 파일들 input file multiple로 저장 -->
-                                                        <input type="file" id="file_multiple1_2" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
-                                                        파일업로드
-                                                    </label>
-                                                </div>
-                                                <div class="add_list add_files" style="display:none;"></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><label for="file_multiple1_3">진료비 세부내역서</label></th>
-                                            <td>
-                                                <div class="input_group">
-                                                    <div class="input size_lg file_area">
-                                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
-                                                    </div>
-                                                    <label class="btn btn_md btn_dark_line file_btn">
-                                                        <!-- 추가된 파일들 input file multiple로 저장 -->
-                                                        <input type="file" id="file_multiple1_3" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
-                                                        파일업로드
-                                                    </label>
-                                                </div>
-                                                <div class="add_list add_files" style="display:none;"></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><label for="file_multiple1_4">악제비 영수증</label></th>
-                                            <td>
-                                                <div class="input_group">
-                                                    <div class="input size_lg file_area">
-                                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
-                                                    </div>
-                                                    <label class="btn btn_md btn_dark_line file_btn">
-                                                        <!-- 추가된 파일들 input file multiple로 저장 -->
-                                                        <input type="file" id="file_multiple1_4" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
-                                                        파일업로드
-                                                    </label>
-                                                </div>
-                                                <div class="add_list add_files" style="display:none;"></div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
-                    </div>
+                    </fieldset>
                 </div>
 
                 <div class="form_btns">
@@ -357,20 +371,20 @@
 
 
 <!-- 진료비 지원 신청 시 주의사항 -->
-<div id="apply_popup" class="layer_popup" style="display: flex;">
-    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;">
+<div id="apply_popup" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;" role="document">
         <div class="layer_header">
-            <div class="layer_title">진료비 지원 신청 시 주의사항</div>
-            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+            <h4 class="layer_title">진료비 지원 신청 시 주의사항</h4>
+            <button type="button" class="layer_close modal_close">팝업 닫기</button>
         </div>
-        <div class="layer_body" data-simplebar>
+        <div class="layer_body">
             <div class="layer_content">
                 <div class="check_texts">
                     <div class="check_item">
                         <div class="text"><p>아토피(L20), 천식(J45~J46), 비염(J30) 등 환경성 질환으로 진료받은 진료비, 약제비만 지원 가능합니다.</p></div>
                         <div class="check">
-                            <label class="checkbox">
-                                <input type="checkbox">
+                            <label class="checkbox" for="apply_radio1">
+                                <input type="checkbox" id="apply_radio1">
                                 <span class="ck_icon"></span>
                                 확인하였습니다.
                             </label>
@@ -379,8 +393,8 @@
                     <div class="check_item">
                         <div class="text"><p>증빙자료(처방전 또는 진료확인서/진료비 영수증/진료비 세부내역서/약제비 영수증) 중 한 개 이상 필수로 업로드 하셔야 신청 가능합니다.</p></div>
                         <div class="check">
-                            <label class="checkbox">
-                                <input type="checkbox">
+                            <label class="checkbox" for="apply_radio2">
+                                <input type="checkbox" id="apply_radio2">
                                 <span class="ck_icon"></span>
                                 확인하였습니다.
                             </label>
@@ -392,8 +406,8 @@
                             <p class="text_red">※ 제증명료(진료확인서, 소견서 발급 비용 등), 특실(입원비) 등 환경성진료와 관련없는 항목은 제외됩니다.</p>
                         </div>
                         <div class="check">
-                            <label class="checkbox">
-                                <input type="checkbox">
+                            <label class="checkbox" for="apply_radio3">
+                                <input type="checkbox" id="apply_radio3">
                                 <span class="ck_icon"></span>
                                 확인하였습니다.
                             </label>
@@ -403,27 +417,33 @@
             </div>
             <div class="form_btns">
                 <button type="button" class="btn btn_md btn_submit">확인</button>
-                <button type="button" class="btn btn_md btn_gray_line" onclick="closeLayer(this)">닫기</button>
+                <button type="button" class="btn btn_md btn_gray_line modal_close">팝업 닫기</button>
             </div>
         </div>
     </div>
-    <span class="layer_bg" onclick="closeLayer(this)"></span>
+    <span class="layer_bg modal_close"></span>
 </div>
 <!-- //인정코드 상세보기 -->
-
+<script>
+//진료비 지원 신청 시 주의사항 팝업 열기
+document.addEventListener('DOMContentLoaded', () => {
+    openLayer('#apply_popup');
+});
+</script>
 
 <!-- 인정코드 상세보기 -->
-<div id="code_popup" class="layer_popup">
-    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;">
+<div id="code_popup" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;" role="document">
         <div class="layer_header">
-            <div class="layer_title">인정코드 상세보기</div>
-            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+            <h5 class="layer_title">인정코드 상세보기</h5>
+            <button type="button" class="layer_close modal_close">팝업 닫기</button>
         </div>
         <div class="layer_body">
             <div class="layer_content">
                 <div class="form form_type4">
                     <div class="table">
                         <table>
+                            <caption class="sound_only">인정코드 정보 표</caption>
                             <colgroup>
                                 <col style="width:33.3333%">
                                 <col style="width:33.3333%">
@@ -431,9 +451,9 @@
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th>아토피</th>
-                                    <th>천식</th>
-                                    <th>비염</th>
+                                    <th scope="col">아토피</th>
+                                    <th scope="col">천식</th>
+                                    <th scope="col">비염</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -449,11 +469,11 @@
             </div>
             <div class="form_btns">
                 <button type="button" class="btn btn_md btn_submit">확인</button>
-                <button type="button" class="btn btn_md btn_gray_line">닫기</button>
+                <button type="button" class="btn btn_md btn_gray_line modal_close">닫기</button>
             </div>
         </div>
     </div>
-    <span class="layer_bg" onclick="closeLayer(this)"></span>
+    <span class="layer_bg modal_close"></span>
 </div>
 <!-- //인정코드 상세보기 -->
 
@@ -471,7 +491,7 @@ function addApplicant() {
             <div class="form_intitle">
                 <div class="title">진료내역 ${applicantCount}</div>
                 <div class="r">
-                    <button type="button" class="btn btn_sm btn_gray_line" onclick="removeApplicant(event)">
+                    <button type="button" class="btn btn_sm btn_gray_line" onclick="removeApplicant(event)" aria-label="진료내역 ${applicantCount} 삭제">
                         <span>삭제</span>
                         <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.83 8.485 3.171 2.83M8.83 2.83 3.171 8.485" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
                     </button>
@@ -479,13 +499,14 @@ function addApplicant() {
             </div>
             <div class="table">
                 <table>
+                    <caption class="sound_only">진료내역 ${applicantCount}의 진료비 신청 정보 입력 폼</caption>
                     <colgroup>
                         <col style="width:180px">
                         <col>
                     </colgroup>
                     <tbody>
                         <tr>
-                            <th>신청자 대상유형 <span class="form_required">필수</span></th>
+                            <th scope="row">신청자 대상유형 <span class="form_required">필수</span></th>
                             <td>
                                 <label class="checkbox inline">
                                     <input type="radio" name="apply_type${applicantCount}">
@@ -500,7 +521,7 @@ function addApplicant() {
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="apply_date${applicantCount}">진료일자 <span class="form_required">필수</span></label></th>
+                            <th scope="row"><label for="apply_date${applicantCount}">진료일자 <span class="form_required">필수</span></label></th>
                             <td>
                                 <div class="input_group">
                                     <div class="input size_lg">
@@ -510,7 +531,7 @@ function addApplicant() {
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="apply_code${applicantCount}">상병코드 <span class="form_required">필수</span></label></th>
+                            <th scope="row"><label for="apply_code${applicantCount}">상병코드 <span class="form_required">필수</span></label></th>
                             <td>
                                 <div class="input_group">
                                     <div class="input size_lg">
@@ -521,18 +542,18 @@ function addApplicant() {
                                             <option value="4">아토피(L20)/4</option>
                                         </select>
                                     </div>
-                                    <button type="button" class="btn btn_md btn_submit_line" onclick="openLayer('#code_popup')">인정코드 상세보기</button>
+                                    <button type="button" class="btn btn_md btn_submit_line" aria-haspopup="dialog" onclick="openLayer('#code_popup', this)">인정코드 상세보기</button>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="file_multiple${applicantCount}_1">처방전 또는 진료확인서</label></th>
+                            <th scope="row"><label for="file_name${applicantCount}_1">처방전 또는 진료확인서</label></th>
                             <td>
                                 <div class="input_group">
-                                    <div class="input size_lg file_area">
-                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
+                                    <div class="input size_lg file_area" role="region" aria-label="파일을 드래그하여 업로드하거나 파일업로드 버튼을을 눌러 파일을 선택하세요.">
+                                        <input type="text" id="file_name${applicantCount}_1" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                     </div>
-                                    <label class="btn btn_md btn_dark_line file_btn">
+                                    <label class="btn btn_md btn_dark_line file_btn" for="file_multiple${applicantCount}_1" aria-label="처방전 또는 진료확인서 업로드">
                                         <!-- 추가된 파일들 input file multiple로 저장 -->
                                         <input type="file" id="file_multiple${applicantCount}_1" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
                                         파일업로드
@@ -542,15 +563,15 @@ function addApplicant() {
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="file_multiple${applicantCount}_2">진료비 영수증</label></th>
+                            <th scope="row"><label for="file_name${applicantCount}_2">진료비 영수증</label></th>
                             <td>
                                 <div class="input_group">
-                                    <div class="input size_lg file_area">
-                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
+                                    <div class="input size_lg file_area" role="region" aria-label="파일을 드래그하여 업로드하거나 파일업로드 버튼을을 눌러 파일을 선택하세요.">
+                                        <input type="text" id="file_name${applicantCount}_2" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                     </div>
-                                    <label class="btn btn_md btn_dark_line file_btn">
+                                    <label class="btn btn_md btn_dark_line file_btn" for="file_multiple${applicantCount}_2" aria-label="진료비 영수증 업로드">
                                         <!-- 추가된 파일들 input file multiple로 저장 -->
-                                        <input type="file" id="file_multiple${applicantCount}_1" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
+                                        <input type="file" id="file_multiple${applicantCount}_2" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
                                         파일업로드
                                     </label>
                                 </div>
@@ -558,15 +579,15 @@ function addApplicant() {
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="file_multiple${applicantCount}_3">진료비 세부내역서</label></th>
+                            <th scope="row"><label for="file_name${applicantCount}_3">진료비 세부내역서</label></th>
                             <td>
                                 <div class="input_group">
-                                    <div class="input size_lg file_area">
-                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
+                                    <div class="input size_lg file_area" role="region" aria-label="파일을 드래그하여 업로드하거나 파일업로드 버튼을을 눌러 파일을 선택하세요.">
+                                        <input type="text" id="file_name${applicantCount}_3" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                     </div>
-                                    <label class="btn btn_md btn_dark_line file_btn">
+                                    <label class="btn btn_md btn_dark_line file_btn" for="file_multiple${applicantCount}_3" aria-label="진료비 세부내역서 업로드">
                                         <!-- 추가된 파일들 input file multiple로 저장 -->
-                                        <input type="file" id="file_multiple${applicantCount}_1" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
+                                        <input type="file" id="file_multiple${applicantCount}_3" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
                                         파일업로드
                                     </label>
                                 </div>
@@ -574,15 +595,15 @@ function addApplicant() {
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="file_multiple${applicantCount}_4">악제비 영수증</label></th>
+                            <th scope="row"><label for="file_name${applicantCount}_4">악제비 영수증</label></th>
                             <td>
                                 <div class="input_group">
-                                    <div class="input size_lg file_area">
-                                        <input type="text" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
+                                    <div class="input size_lg file_area" role="region" aria-label="파일을 드래그하여 업로드하거나 파일업로드 버튼을을 눌러 파일을 선택하세요.">
+                                        <input type="text" id="file_name${applicantCount}_4" class="white file_count" readonly placeholder="파일을 가져다 놓거나 버튼을 눌러주세요.">
                                     </div>
-                                    <label class="btn btn_md btn_dark_line file_btn">
+                                    <label class="btn btn_md btn_dark_line file_btn" for="file_multiple${applicantCount}_4" aria-label="악제비 영수증 업로드">
                                         <!-- 추가된 파일들 input file multiple로 저장 -->
-                                        <input type="file" id="file_multiple${applicantCount}_1" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
+                                        <input type="file" id="file_multiple${applicantCount}_4" class="file_input" file-type="pdf hwp doc docx xls xlsx ppt ptx txt png jpg jpeg gif" multiple>
                                         파일업로드
                                     </label>
                                 </div>
@@ -595,8 +616,17 @@ function addApplicant() {
         </div>
     `
 
+    const formUpdate = document.querySelector('#form_update');
+    formUpdate.textContent = `진료비 신청 정보 입력 항목이 1개 추가 되었습니다. 현재 총 ${applicantCount}개`;
+    
     addWrap.insertAdjacentHTML('beforeend', newApplicant);
-    fileUpload()
+    fileUpload();//파일업로드 초기화
+
+    //데이트픽커 초기화화
+    document.querySelectorAll('.datepicker').forEach(datepicker => {
+        initializeLitepicker(datepicker);
+    });
+
 }
 
 
@@ -609,6 +639,9 @@ function removeApplicant(event) {
     const targetItem = event.target.closest('.add_item');
     targetItem.remove();
     reindexApplicants();
+    
+    const formUpdate = document.querySelector('#form_update');
+    formUpdate.textContent = `진료비 신청 정보 입력 항목이 1개 삭제 되었습니다.  현재 총 ${applicantCount}개`;
 }
 
 // 신청자 번호 input label 업데이트

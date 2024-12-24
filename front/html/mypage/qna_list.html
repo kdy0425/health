@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,7 +64,7 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>마이페이지</h2>
@@ -73,7 +77,7 @@
                             <a href="javascript:;">이용내역 조회</a>
                         </li>
                         <li class="item active">
-                            <a href="javascript:;" class="active">나의 문의내역</a>
+                            <a href="javascript:;" class="active" aria-current="page">나의 문의내역</a>
                         </li>
                         <li class="item">
                             <a href="javascript:;">만족도 설문조사</a>
@@ -82,12 +86,12 @@
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">마이페이지</a></div>
-                    <div class="item"><a href="javascript:;">나의 문의내역</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">마이페이지</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">나의 문의내역</a></li>
+                </ol>
 
                 <div class="page_title">
                     <h3>나의 문의내역</h3>
@@ -102,16 +106,21 @@
 
                 <div class="board_search">
                     <form action="">
-                        <select name="" id="">
-                            <option value="all">전체</option>
-                            <option value="subject">제목</option>
-                            <option value="content">내용</option>
-                            <option value="subject&content">제목+내용</option>
-                        </select>
-                        <div class="input">
-                            <input type="text" placeholder="검색어를 입력하세요.">
-                            <button type="button">검색</button>
-                        </div>
+                        <fieldset>
+                            <legend class="sound_only">문의내역 검색</legend>
+                            <label for="search_select" class="sound_only">검색 조건</label>
+                            <select name="" id="search_select">
+                                <option value="all">전체</option>
+                                <option value="subject">제목</option>
+                                <option value="content">내용</option>
+                                <option value="subject&content">제목+내용</option>
+                            </select>
+                            <div class="input">
+                                <label for="search_input" class="sound_only">공지사항 검색</label>
+                                <input type="text" id="search_input" placeholder="검색어를 입력하세요.">
+                                <button type="button">검색</button>
+                            </div>
+                        </fieldset>
                     </form>
                 </div>
 
@@ -129,9 +138,14 @@
                             </button> -->
                         </div>
                     </div>
+
+                    <!-- 접근성 카테고리 선택, 페이징 변경시 알림 메세지 -->
+                    <div id="form_update" class="sound_only" aria-live="polite"></div>
+
                     <div class="list_table">
                         <div class="table table_lg">
                             <table>
+                                <caption class="sound_only">나의 문의내역 목록 - 번호, 제목, 진행상태, 등록일, 조회수를 나타내는 표</caption>
                                 <colgroup>
                                     <col style="width:100px;">
                                     <col>
@@ -141,11 +155,11 @@
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th>번호</th>
-                                        <th>제목</th>
-                                        <th>진행상태</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
+                                        <th scope="row">번호</th>
+                                        <th scope="row">제목</th>
+                                        <th scope="row">진행상태</th>
+                                        <th scope="row">등록일</th>
+                                        <th scope="row">조회수</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -269,18 +283,52 @@
                     </div>
 
                     <div class="paging">
-                        <a href="javascript:;" class="pg first disabled"></a>
-                        <a href="javascript:;" class="pg prev disabled"></a>
-                        <a href="javascript:;" class="pg first"></a>
-                        <a href="javascript:;" class="pg prev "></a>
-                        <a href="javascript:;">1</a>
-                        <a href="javascript:;" class="active">2</a>
-                        <a href="javascript:;">3</a>
-                        <a href="javascript:;" class="pg next"></a>
-                        <a href="javascript:;" class="pg end"></a>
-                        <a href="javascript:;" class="pg next disabled"></a>
-                        <a href="javascript:;" class="pg end disabled"></a>
+                        <a href="javascript:;" id="paging_first" class="pg first">첫번재 페이지</a>
+                        <a href="javascript:;" id="paging_prev" class="pg prev ">이전 페이지</a>
+                        <a href="javascript:;" id="paging_1">1</a>
+                        <a href="javascript:;" id="paging_3" class="active" title="선택됨">2</a>
+                        <a href="javascript:;" id="paging_3">3</a>
+                        <a href="javascript:;" id="paging_4">4</a>
+                        <a href="javascript:;" id="paging_5">5</a>
+                        <a href="javascript:;" id="paging_next" class="pg next">다음 페이지</a>
+                        <a href="javascript:;" id="paging_last" class="pg end">마지막 페이지</a>
                     </div>
+                    <script>
+                        //적용 완료 후 확인해야 할 사항 : 
+                        //1.탭을 사용하여 focus를 페이징 버튼에 올리고 엔터를 함
+                        //2.목록이 갱신됨
+                        //3.포커스가 클릭했던 버튼에 계속 유지됨.
+                        //4.#form_update에 업데이트된 메세지가 맞는지 확인
+                        let lastFocusedPagingButton = null; // 마지막으로 클릭한 페이징 버튼을 저장
+
+                        document.addEventListener('click', (event) => {
+                            const button = event.target.closest('.paging a');
+                            if (!button) return;
+
+                            lastFocusedPagingButton = button; // 클릭한 버튼을 저장
+
+                            const pageId = button.textContent.trim(); // 버튼의 텍스트 내용 가져오기
+                            updateList(pageId);
+                        });
+
+                        function updateList(pageText) {
+                            ////페이징 클릭 후 리스트 갱신 스크립트
+                            alert(`페이지 ${pageText} 목록 갱신`);
+                            ////페이징 클릭 후 리스트 갱신 스크립트
+
+                            ////갱신 성공 후
+                            // 웹 접근성 알림
+                            const formUpdate = document.getElementById('form_update');
+                            if (formUpdate) {
+                                formUpdate.textContent = `${pageText} 페이지로 목록이 갱신되었습니다.`;
+                            }
+
+                            // 저장된 버튼에 포커스 복원
+                            if (lastFocusedPagingButton) {
+                                lastFocusedPagingButton.focus();
+                            }
+                        }
+                    </script>
                 </div>
 
             </div>

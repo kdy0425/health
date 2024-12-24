@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,7 +64,7 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div class="container">
             <div class="search_wrap">
                 <div class="center_title">
@@ -68,23 +72,31 @@
                 </div>
                 <div class="board_search">
                     <form action="">
-                        <select name="" id="">
-                            <option value="all">전체</option>
-                            <option value="subject">제목</option>
-                            <option value="content">내용</option>
-                            <option value="subject&content">제목+내용</option>
-                        </select>
-                        <div class="input">
-                            <input type="text" placeholder="검색어를 입력하세요.">
-                            <button type="button">검색</button>
-                        </div>
+                        <fieldset>
+                            <legend class="sound_only">통합검색</legend>
+                            <label for="search_select" class="sound_only">검색 조건</label>
+                            <select name="" id="search_select">
+                                <option value="all">전체</option>
+                                <option value="subject">제목</option>
+                                <option value="content">내용</option>
+                                <option value="subject&content">제목+내용</option>
+                            </select>
+                            <div class="input">
+                                <label for="search_input" class="sound_only">공지사항 검색</label>
+                                <input type="text" id="search_input" placeholder="검색어를 입력하세요.">
+                                <button type="button" title="검색하기">검색</button>
+                            </div>
+                        </fieldset>
                     </form>
                 </div>
 
                 <div class="search_result">“<strong>환경보건이용권</strong>”에 대한 <strong>총 9개</strong>의 검색결과가 있습니다.</div>
 
+                <!-- 접근성 카테고리 선택, 페이징 변경시 알림 메세지 -->
+                <div id="form_update" class="sound_only" aria-live="polite"></div>
+
                 <div class="tap_type2 tap_control">
-                    <a href="javascript:;" class="on">
+                    <a href="javascript:;" class="on" title="선택됨">
                         <span>전체(100건)</span>
                     </a>
                     <a href="javascript:;">
@@ -116,25 +128,7 @@
                 <div class="result_wrap">
                     <div class="result_group">
                         <div class="title">
-                            <div class="group_tit">환경보건이용권 <strong>3건</strong></div>
-                            <div class="r">
-                                <!-- <button type="button" class="btn btn_md btn_submit_line v_pc">
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                    <span>Button</span>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                </button>
-                                <button type="button" class="btn btn_sm btn_submit_line v_mobile_inline_flex">
-                                    <span>Button</span>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4.5 9 3-3-3-3" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.83 8.485 3.171 2.83M8.83 2.83 3.171 8.485" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 6h-7M6 2.5v7" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                </button> -->
-                                <button type="button" class="btn btn_md btn_submit_line">
-                                    <span>더보기</span>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                </button>
-                            </div>
+                            <h3 class="group_tit">환경보건이용권 <strong>3건</strong></h3>
                         </div>
                         <div class="result_list">
                             <div class="item">
@@ -149,10 +143,16 @@
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                     </div>
-                                    <div class="info">
-                                        <span>등록일 : 2024-09-04</span>
-                                        <span>조회수 : 56</span>
-                                    </div>
+                                    <dl class="info">
+                                        <div>
+                                            <dt>등록일 : </dt>
+                                            <dd>2024-09-04</dd>
+                                        </div>
+                                        <div>
+                                            <dt>조회수 : </dt>
+                                            <dd>56</dd>
+                                        </div>
+                                    </dl>
                                 </a>
                             </div>
                             <div class="item">
@@ -163,10 +163,16 @@
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                     </div>
-                                    <div class="info">
-                                        <span>등록일 : 2024-09-04</span>
-                                        <span>조회수 : 56</span>
-                                    </div>
+                                    <dl class="info">
+                                        <div>
+                                            <dt>등록일 : </dt>
+                                            <dd>2024-09-04</dd>
+                                        </div>
+                                        <div>
+                                            <dt>조회수 : </dt>
+                                            <dd>56</dd>
+                                        </div>
+                                    </dl>
                                 </a>
                             </div>
                             <div class="item">
@@ -177,36 +183,30 @@
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                     </div>
-                                    <div class="info">
-                                        <span>등록일 : 2024-09-04</span>
-                                        <span>조회수 : 56</span>
-                                    </div>
+                                    <dl class="info">
+                                        <div>
+                                            <dt>등록일 : </dt>
+                                            <dd>2024-09-04</dd>
+                                        </div>
+                                        <div>
+                                            <dt>조회수 : </dt>
+                                            <dd>56</dd>
+                                        </div>
+                                    </dl>
                                 </a>
                             </div>
+                        </div>
+                        <div class="form_btns">
+                            <button type="button" class="btn btn_xl btn_submit_line">
+                                <span>더보기</span>
+                                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </button>
                         </div>
                     </div>
 
                     <div class="result_group">
                         <div class="title">
-                            <div class="group_tit">환경보건이용권 <strong>3건</strong></div>
-                            <div class="r">
-                                <!-- <button type="button" class="btn btn_md btn_submit_line v_pc">
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 4 6l4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                    <span>Button</span>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                </button>
-                                <button type="button" class="btn btn_sm btn_submit_line v_mobile_inline_flex">
-                                    <span>Button</span>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4.5 9 3-3-3-3" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.83 8.485 3.171 2.83M8.83 2.83 3.171 8.485" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 6h-7M6 2.5v7" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                </button> -->
-                                <button type="button" class="btn btn_md btn_submit_line">
-                                    <span>더보기</span>
-                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                </button>
-                            </div>
+                            <h3 class="group_tit">환경보건이용권 <strong>3건</strong></h3>
                         </div>
                         <div class="result_list">
                             <div class="item">
@@ -217,10 +217,16 @@
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                     </div>
-                                    <div class="info">
-                                        <span>등록일 : 2024-09-04</span>
-                                        <span>조회수 : 56</span>
-                                    </div>
+                                    <dl class="info">
+                                        <div>
+                                            <dt>등록일 : </dt>
+                                            <dd>2024-09-04</dd>
+                                        </div>
+                                        <div>
+                                            <dt>조회수 : </dt>
+                                            <dd>56</dd>
+                                        </div>
+                                    </dl>
                                 </a>
                             </div>
                             <div class="item">
@@ -231,10 +237,16 @@
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                     </div>
-                                    <div class="info">
-                                        <span>등록일 : 2024-09-04</span>
-                                        <span>조회수 : 56</span>
-                                    </div>
+                                    <dl class="info">
+                                        <div>
+                                            <dt>등록일 : </dt>
+                                            <dd>2024-09-04</dd>
+                                        </div>
+                                        <div>
+                                            <dt>조회수 : </dt>
+                                            <dd>56</dd>
+                                        </div>
+                                    </dl>
                                 </a>
                             </div>
                             <div class="item">
@@ -245,12 +257,24 @@
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                         환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다. 환경 취약계층을 대상으로 <strong>환경보건이용권</strong>을 제공하는 사업입니다.
                                     </div>
-                                    <div class="info">
-                                        <span>등록일 : 2024-09-04</span>
-                                        <span>조회수 : 56</span>
-                                    </div>
+                                    <dl class="info">
+                                        <div>
+                                            <dt>등록일 : </dt>
+                                            <dd>2024-09-04</dd>
+                                        </div>
+                                        <div>
+                                            <dt>조회수 : </dt>
+                                            <dd>56</dd>
+                                        </div>
+                                    </dl>
                                 </a>
                             </div>
+                        </div>
+                        <div class="form_btns">
+                            <button type="button" class="btn btn_xl btn_submit_line">
+                                <span>더보기</span>
+                                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4 2 4 4-4 4" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </button>
                         </div>
                     </div>
                 </div>

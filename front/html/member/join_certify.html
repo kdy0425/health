@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,8 +64,8 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content sm_wrap">
-        <div class="container_sm">
+    <div class="sub_content sm_wrap">
+        <div id="content" class="container_sm">
             <div class="center_title">
                 <h2>회원가입</h2>
             </div>
@@ -69,9 +73,9 @@
             <div class="sub_title">
                 <h3>약관동의 및 본인인증</h3>
                 <div class="page_step">
-                    <span class="active">1</span>
-                    <span>2</span>
-                    <span>3</span>
+                    <span class="active"><span class="sound_only">총 3페이지 중 </span>1<span class="sound_only">번째 페이지</span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
 
@@ -88,36 +92,60 @@
 
                 <div class="terms_wrap label_control">
                     <div class="terms_all">
-                        <label class="checkbox">
-                            <input type="checkbox" class="check_all">
+                        <label class="checkbox" for="term_check_all">
+                            <input type="checkbox" id="term_check_all" class="check_all">
                             <span class="ck_icon"></span>
                             <strong>전체 약관에 동의합니다.</strong>
                         </label>
                     </div>
                     <div class="terms_list">
                         <div class="terms">
-                            <label class="checkbox">
-                                <input type="checkbox">
+                            <label class="checkbox" for="term_check1">
+                                <input type="checkbox" id="term_check1">
                                 <span class="ck_icon"></span>
                                 <span class="text_submit">(필수)</span> 이용약관에 동의합니다.
                             </label>
-                            <button type="button" class="terms_open" onclick="openLayer('#terms_popup');termsContent('1')">약관보기</button>
+                            <button 
+                                type="button" 
+                                class="modal_open terms_open" 
+                                onclick="termsContent('1')" 
+                                data-target="#terms_popup" 
+                                aria-haspopup="dialog" 
+                                aria-label="이용약관 약관 보기">
+                                약관보기
+                            </button>
                         </div>
                         <div class="terms">
-                            <label class="checkbox">
-                                <input type="checkbox">
+                            <label class="checkbox" for="term_check2">
+                                <input type="checkbox" id="term_check2">
                                 <span class="ck_icon"></span>
                                 <span class="text_submit">(필수)</span> 개인정보 수집 및 필수에 동의합니다.
                             </label>
-                            <button type="button" class="terms_open" onclick="openLayer('#terms_popup');termsContent('2')">약관보기</button>
+                            <button 
+                                type="button" 
+                                class="modal_open terms_open" 
+                                onclick="termsContent('2')" 
+                                data-target="#terms_popup" 
+                                aria-haspopup="dialog" 
+                                aria-label="개인정보 수집 및 필수 약관 보기">
+                                약관보기
+                            </button>
                         </div>
                         <div class="terms">
-                            <label class="checkbox">
-                                <input type="checkbox">
+                            <label class="checkbox" for="term_check3">
+                                <input type="checkbox" for="term_check3">
                                 <span class="ck_icon"></span>
                                 <span class="text_submit">(선택)</span> 홍보·설문조사 관련 개인정보 수집 및 이용 동의합니다.
                             </label>
-                            <button type="button" class="terms_open" onclick="openLayer('#terms_popup');termsContent('3')">약관보기</button>
+                            <button 
+                                type="button" 
+                                class="modal_open terms_open" 
+                                onclick="termsContent('3')" 
+                                data-target="#terms_popup" 
+                                aria-haspopup="dialog" 
+                                aria-label="홍보·설문조사 관련 개인정보 수집 및 이용">
+                                약관보기
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -130,18 +158,21 @@
                 </div>
 
                 <div class="tap_type1 tap_fit">
-                    <label>
-                        <input type="radio" name="find_password_type" value="1" checked>
+                    <label for="certify_radio1">
+                        <input type="radio" id="certify_radio1" name="find_password_type" value="1" checked>
                         <strong><span>공동인증서</span></strong>
                     </label>
-                    <label>
-                        <input type="radio" name="find_password_type" value="2">
+                    <label for="certify_radio2">
+                        <input type="radio" id="certify_radio2" name="find_password_type" value="2">
                         <strong><span>간편인증</span></strong>
                     </label>
                 </div>
 
+                <!-- 공동인증서, 간편인증 선택시 폼변경 업데이트 알림 -->
+                <div id="form_update" class="sound_only" aria-live="polite"></div>
+
                 <div class="form_content">
-                    <div class="form_item find_password_type1" style="display: none;">
+                    <div class="form_item find_password_type1" aria-hidden="false">
                         <label for="mb_name" class="form_tit">이름</label>
                         <div class="content">
                             <div class="input_group">
@@ -152,7 +183,7 @@
                         </div>
                     </div>
 
-                    <div class="form_item find_password_type1" style="display: none;">
+                    <div class="form_item find_password_type1" aria-hidden="false">
                         <label for="mb_jumin_first" class="form_tit">주민등록번호</label>
                         <div class="content">
                             <div class="input_group">
@@ -160,6 +191,7 @@
                                     <input type="tel" id="mb_jumin_first" class="tel_first" placeholder="주민번호 앞자리" maxlength="6">
                                 </div>
                                 <div class="input">
+                                    <label class="sound_only" for="mb_jumin_second">주민번호 뒷자리</label>
                                     <input type="tel" id="mb_jumin_second" class="tel_second" placeholder="뒷자리" maxlength="9">
                                 </div>
                             </div>
@@ -215,16 +247,18 @@
 
 
 <!-- 이용약관 -->
-<div id="terms_popup" class="layer_popup">
-    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;">
+<div id="terms_popup" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;" role="document">
         <div class="layer_header">
-            <div class="layer_title">이용약관</div>
-            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+            <h5 class="layer_title">이용약관</h5>
+            <button type="button" class="layer_close modal_close">팝업 닫기</button>
         </div>
         <div class="layer_body">
             <div class="layer_content">
                 <p class="text">회원가입을 위해서 아래의 이용약관 안내를 읽고 동의해 주시기 바랍니다.</p>
-                <div class="terms_layer_content" data-simplebar>
+
+                <!-- 웹접근성 - 스크롤 해야하는 커스텀 스크롤바에는 simplebar-tabindex 를 함께 넣어주세요.  -->
+                <div class="terms_layer_content" data-simplebar simplebar-tabindex>
                     <strong>제 1장 총칙</strong>
                     <b>제 1조(목적)</b>
                     <p>이 약관은 한국환경산업기술원(이하 ‘기술원‘)이 운영하는 환경보건이용권 서비스(이하 ‘서비스‘)를 이용하는 고객(이하 ‘회원‘)과 ‘기술원’이 ‘서비스의 이용에 관한 사항을 전기통신사업법 및 동법 시행령과 ‘개인정보처리방침＇에서 정하는 바를 준수하고 약정하는 것을 목적으로 합니다.</p>
@@ -234,11 +268,11 @@
             </div>
             <div class="form_btns">
                 <button type="button" class="btn btn_md btn_submit">확인</button>
-                <button type="button" class="btn btn_md btn_gray_line">닫기</button>
+                <button type="button" class="btn btn_md btn_gray_line modal_close">닫기</button>
             </div>
         </div>
     </div>
-    <span class="layer_bg" onclick="closeLayer(this)"></span>
+    <span class="layer_bg modal_close"></span>
 </div>
 <!-- //이용약관 -->
 
@@ -268,21 +302,16 @@ function termsContent(type){
 const radioButtons = document.querySelectorAll('input[name="find_password_type"]');
 function updateFormVisibility() {
     const selectedValue = document.querySelector('input[name="find_password_type"]:checked').value;
-
     const formItems = document.querySelectorAll('.form_item');
-    formItems.forEach(function(item) {
-        if (item.classList.contains('find_password_type1') || item.classList.contains('find_password_type2')) {
-            item.style.display = 'none';
-        }
+    formItems.forEach(function (item) {
+        const isTarget = item.classList.contains(`find_password_type${selectedValue}`);
+        item.style.display = isTarget ? 'block' : 'none';
+        item.setAttribute('aria-hidden', !isTarget);
     });
-
-    const activeFormItems = document.querySelectorAll(`.find_password_type${selectedValue}`);
-    activeFormItems.forEach(function(item) {
-        item.style.display = 'block';
-    });
+    const formUpdate = document.querySelector('#form_update');
+    formUpdate.textContent = `폼 내용이 ${selectedValue === "1" ? "공동인증서" : "간편인증"} 인증 타입에 맞게 업데이트되었습니다.`;
 }
-updateFormVisibility();
-radioButtons.forEach(function(radio) {
+radioButtons.forEach(function (radio) {
     radio.addEventListener('change', updateFormVisibility);
 });
 </script>

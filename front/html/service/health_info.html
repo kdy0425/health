@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,15 +64,15 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>환경보건이용권</h2>
                 <div class="aside_nav">
                     <ul>
                         <li class="item active">
-                            <button type="button">물품·서비스</button>
-                            <ul style="display: block;">
+                            <button type="button" aria-expanded="true">물품·서비스</button>
+                            <ul style="display: block;" role="menu">
                                 <li><a href="javascript:;"><span>환경보건이용권 안내</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청 결과조회</span></a></li>
@@ -76,12 +80,12 @@
                                 <li><a href="javascript:;"><span>진료비 지원 신청</span></a></li>
                                 <li><a href="javascript:;"><span>진료비 지원 신청 결과조회</span></a></li>
                                 <li><a href="javascript:;"><span>온라인몰 안내</span></a></li>
-                                <li><a href="javascript:;" class="active"><span>환경보건이용권 안내</span></a></li>
+                                <li><a href="javascript:;" class="active" aria-current="page"><span>환경보건이용권 안내</span></a></li>
                             </ul>
                         </li>
                         <li class="item">
-                            <button type="button">실내 환경 진단·컨설팅</button>
-                            <ul>
+                            <button type="button" aria-expanded="false">실내 환경 진단·컨설팅</button>
+                            <ul role="menu">
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 안내</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청결과 조회</span></a></li>
@@ -91,70 +95,74 @@
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">환경보건이용권</a></div>
-                    <div class="item"><a href="javascript:;">물품·서비스</a></div>
-                    <div class="item"><a href="javascript:;">환경보건이용권 안내</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">환경보건이용권</a></li>
+                    <li class="item"><a href="javascript:;">물품·서비스</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">환경보건이용권 안내</a></li>
+                </ol>
                 
                 <div class="page_title">
                     <h3>환경보건이용권 안내</h3>
                 </div>
 
                 <div class="design_content">
-                    <div class="health_info">
-                        <div class="title">
+                    <ul class="health_info">
+                        <li class="title">
                             <h4>환경보건이용권</h4>
                             <p>
                                 환경보건이용권은 
                                 <strong>실내환경 진단·컨설팅과 상품·서비스 지원 중</strong> 
                                 <strong class="text_red">1가지만 선택이 가능합니다.</strong>
                             </p>
-                        </div>
+                        </li>
                         <div class="cannot_duplicate">
                             <span>중복선택 불가</span>
                         </div>
-                        <div class="health_content">
-                            <a href="javascript:;" class="box consulting">
-                                <div class="box_tit">실내환경 진단·컨설팅</div>
-                                <div class="box_cnt">
-                                    <div class="info">
-                                        <div class="tit">실내환경 진단·컨설팅이란?</div>
-                                        <div class="cnt">
-                                            <p>환경유해인자 노출에 민감한 취약계층 가구를 중심으로 거주공간의 환경유해인자를 측정하여 맞춤형 관리방안을 제공하는 이용권입니다.</p>
+                        <ul class="health_content">
+                            <li>
+                                <a href="javascript:;" class="box consulting" aria-label="실내환경 진단·컨설팅 자세히 보기">
+                                    <h5 class="box_tit">실내환경 진단·컨설팅</h5>
+                                    <div class="box_cnt">
+                                        <dl class="info">
+                                            <dt class="tit">실내환경 진단·컨설팅이란?</dt>
+                                            <dd class="cnt">
+                                                <p>환경유해인자 노출에 민감한 취약계층 가구를 중심으로 거주공간의 환경유해인자를 측정하여 맞춤형 관리방안을 제공하는 이용권입니다.</p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="box_link">자세히 보기</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="box service" aria-label="상품·서비스 지원 자세히 보기">
+                                    <h5 class="box_tit">상품·서비스 지원</h5>
+                                    <div class="box_cnt">
+                                        <div class="info">
+                                            <div class="tit">상품(온라인) 지원이란?</div>
+                                            <div class="cnt">
+                                                <p>환경보건이용권 전용 온라인몰로서, 당해 연도 환경보건이용권 선정자를 위해 운영되고 있습니다.</p>
+                                                <p>포인트몰에서는 환경성질환예방 상품·서비스를 일반 쇼핑몰처럼 빠르게 구매,취소,교환,환불을 할 수 있습니다.<br/>
+                                                    (단, 포인트 초과 금액은 본인 부담 결제 필요)</p>
+                                            </div>
+                                        </div>
+                                        <dl class="info">
+                                            <dt class="tit">진료비 지원이란?</dt>
+                                            <dd class="cnt">
+                                                <p>아토피(L20), 천식(J45~J46), 비염(J30) 환경성 질환이 있으신 분들만 지원 가능합니다. 환경보건이용권 포인트를 이용해 진료비를 지원받을 수 있습니다.</p>
+                                            </dd>
+                                        </dl>
+                                        <div class="box_strong">
+                                            상품(온라인)과 진료비 서비스 지원은<br class="v_pc"/>
+                                            <strong>총합 1인당 10만 포인트 내로 지원 가능</strong>합니다.
                                         </div>
                                     </div>
-                                </div>
-                                <div class="box_link">자세히 보기</div>
-                            </a>
-                            <a href="javascript:;" class="box service">
-                                <div class="box_tit">상품·서비스 지원</div>
-                                <div class="box_cnt">
-                                    <div class="info">
-                                        <div class="tit">상품(온라인) 지원이란?</div>
-                                        <div class="cnt">
-                                            <p>환경보건이용권 전용 온라인몰로서, 당해 연도 환경보건이용권 선정자를 위해 운영되고 있습니다.</p>
-                                            <p>포인트몰에서는 환경성질환예방 상품·서비스를 일반 쇼핑몰처럼 빠르게 구매,취소,교환,환불을 할 수 있습니다.<br/>
-                                                (단, 포인트 초과 금액은 본인 부담 결제 필요)</p>
-                                        </div>
-                                    </div>
-                                    <div class="info">
-                                        <div class="tit">진료비 지원이란?</div>
-                                        <div class="cnt">
-                                            <p>아토피(L20), 천식(J45~J46), 비염(J30) 환경성 질환이 있으신 분들만 지원 가능합니다. 환경보건이용권 포인트를 이용해 진료비를 지원받을 수 있습니다.</p>
-                                        </div>
-                                    </div>
-                                    <div class="box_strong">
-                                        상품(온라인)과 진료비 서비스 지원은<br class="v_pc"/>
-                                        <strong>총합 1인당 10만 포인트 내로 지원 가능</strong>합니다.
-                                    </div>
-                                </div>
-                                <div class="box_link">자세히 보기</div>
-                            </a>
-                        </div>
-                    </div>
+                                    <div class="box_link">자세히 보기</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </ul>
                 </div>
             </div>
         </div>

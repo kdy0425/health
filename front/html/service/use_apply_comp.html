@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,17 +64,17 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>환경보건이용권</h2>
                 <div class="aside_nav">
                     <ul>
                         <li class="item active">
-                            <button type="button">물품·서비스</button>
-                            <ul style="display: block;">
+                            <button type="button" aria-expanded="true">물품·서비스</button>
+                            <ul style="display: block;" role="menu">
                                 <li><a href="javascript:;"><span>환경보건이용권 안내</span></a></li>
-                                <li><a href="javascript:;" class="active"><span>이용권 신청</span></a></li>
+                                <li><a href="javascript:;" class="active" aria-current="page"><span>이용권 신청</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청 결과조회</span></a></li>
                                 <li><a href="javascript:;"><span>환경보건이용권 진료비 차감 안내</span></a></li>
                                 <li><a href="javascript:;"><span>진료비 지원 신청</span></a></li>
@@ -79,8 +83,8 @@
                             </ul>
                         </li>
                         <li class="item">
-                            <button type="button">실내 환경 진단·컨설팅</button>
-                            <ul>
+                            <button type="button" aria-expanded="false">실내 환경 진단·컨설팅</button>
+                            <ul role="menu">
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 안내</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청결과 조회</span></a></li>
@@ -90,21 +94,21 @@
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">환경보건이용권</a></div>
-                    <div class="item"><a href="javascript:;">물품·서비스</a></div>
-                    <div class="item"><a href="javascript:;">이용권 신청</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">환경보건이용권</a></li>
+                    <li class="item"><a href="javascript:;">물품·서비스</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">이용권 신청</a></li>
+                </ol>
 
                 <div class="page_title">
                     <h3>이용권 신청</h3>
                 </div>
 
                 <div class="title_center_box">
-                    <svg class="icon_comp" width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="1.5" width="45" height="45" rx="22.5" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="3"/><path d="M34 17 20.838 31 14 22.98" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <div class="title">환경보건이용권 신청이 완료되었습니다.</div>
+                    <svg class="icon_comp" width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1.5" y="1.5" width="45" height="45" rx="22.5" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="3"/><path d="M34 17 20.838 31 14 22.98" stroke="#3486E7" style="stroke:color(display-p3 .2039 .5255 .9059);stroke-opacity:1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <h4 class="title">환경보건이용권 신청이 완료되었습니다.</h4>
                     <p>아래 신청결과 조회 버튼을 클릭하여 상세 정보를 확인하세요.</p>
                 </div>
 

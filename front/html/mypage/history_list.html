@@ -30,6 +30,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -62,7 +66,7 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>마이페이지</h2>
@@ -72,7 +76,7 @@
                             <a href="javascript:;">회원정보수정</a>
                         </li>
                         <li class="item active">
-                            <a href="javascript:;" class="active">이용내역 조회</a>
+                            <a href="javascript:;" class="active" aria-current="page">이용내역 조회</a>
                         </li>
                         <li class="item">
                             <a href="javascript:;">나의 문의내역</a>
@@ -84,12 +88,12 @@
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">마이페이지</a></div>
-                    <div class="item"><a href="javascript:;">이용내역 조회</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">마이페이지</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">이용내역 조회</a></li>
+                </ol>
 
                 <div class="page_title">
                     <h3>이용내역 조회</h3>
@@ -99,128 +103,150 @@
                     <div class="title">
                         <h4>Test12님의 포인트 현황</h4>
                         <div class="r">
-                            <div class="input size_lg">
-                                <select name="" id="">
-                                    <option value="">신청자 구분</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </div>
+                            <fieldset>
+                                <legend class="sound_only">신청자 변경 폼</legend>
+                                <div class="input_group">
+                                    <div class="input size_lg">
+                                        <label for="point_sort" class="sound_only">신청자 구분 선택</label>
+                                        <select name="" id="point_sort">
+                                            <option value="">신청자 구분</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                    <button type="button" class="btn btn_md btn_submit_line">
+                                        변경
+                                    </button>
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
-                    <div class="point_list">
+                    <dl class="point_list">
                         <div class="item">
-                            <div class="tit">지급</div>
-                            <div class="cnt"><strong>100,000</strong> P</div>
+                            <dt class="tit">지급</dt>
+                            <dd class="cnt"><strong>100,000</strong> P</dd>
                         </div>
                         <div class="item">
-                            <div class="tit">사용</div>
-                            <div class="cnt"><strong>100,000</strong> P</div>
+                            <dt class="tit">사용</dt>
+                            <dd class="cnt"><strong>100,000</strong> P</dd>
                         </div>
                         <div class="item">
-                            <div class="tit">잔액</div>
-                            <div class="cnt"><strong>100,000</strong> P</div>
+                            <dt class="tit">잔액</dt>
+                            <dd class="cnt"><strong>100,000</strong> P</dd>
                         </div>
-                    </div>
+                    </dl>
                 </div>
 
                 <div class="form form_type2">
-                    <div class="form_title">
-                        <h4>이용내역 조회</h4>
-                        <div class="r">
-                            <button type="button" class="btn btn_md btn_submit v_pc">
+                    <fieldset>
+                        <legend class="sound_only">이용내역 조회</legend>
+                        <div class="form_title">
+                            <h4>이용내역 조회</h4>
+                        </div>
+                        <div class="table">
+                            <table>
+                                <caption class="sound_only">이용내역 조회 검색 표</caption>
+                                <colgroup>
+                                    <col style="width:180px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="col"><label for="history_date_start">조회기간 <span class="sound_only">시작일</span></label></th>
+                                        <td>
+                                            <div class="input_group search_date">
+                                                <div class="search_inputs">
+                                                    <div class="input size_md">
+                                                        <input type="text" id="history_date_start" class="datepicker" placeholder="YYYY-MM-DD">
+                                                    </div>
+                                                    <div class="input size_md">
+                                                        <label for="history_date_end" class="sound_only">조회기간 종료일</label>
+                                                        <input type="text" id="history_date_end" class="datepicker" placeholder="YYYY-MM-DD">
+                                                    </div>
+                                                </div>
+                                                <div class="input search_btns tap_control">
+                                                    <button type="button" class="btn btn_md btn_gray_line">1개월</button>
+                                                    <button type="button" class="btn btn_md btn_gray_line">3개월</button>
+                                                    <button type="button" class="btn btn_md btn_gray_line">6개월</button>
+                                                    <button type="button" class="btn btn_md btn_dark">12개월</button>
+                                                </div>
+                                            </div>
+                                            <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                const startDateInput = document.getElementById('history_date_start');
+                                                const endDateInput = document.getElementById('history_date_end');
+                                                const buttons = document.querySelectorAll('.search_btns button');
+
+                                                function formatDate(date) {
+                                                    const year = date.getFullYear();
+                                                    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+                                                    const day = ('0' + date.getDate()).slice(-2);
+                                                    return `${year}-${month}-${day}`;
+                                                }
+
+                                                function setDateRange(months) {
+                                                    const currentDate = new Date();
+                                                    const startDate = new Date(currentDate);
+                                                    startDate.setMonth(startDate.getMonth() - months);
+
+                                                    startDateInput.value = formatDate(startDate);
+                                                    endDateInput.value = formatDate(currentDate);
+                                                }
+
+                                                buttons.forEach(button => {
+                                                    button.addEventListener('click', function() {
+                                                        const months = parseInt(this.textContent);
+                                                        setDateRange(months);
+                                                    });
+                                                });
+                                            });
+                                            </script>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col"><label for="history_content">내용</label></th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" id="history_content">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- 모바일 버튼 -->
+                        <div class="form_btns file_btn v_mobile_flex">
+                            <button type="button" class="btn btn_md btn_submit">
                                 <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.998 11.997a4.998 4.998 0 1 0 0-9.996 4.998 4.998 0 0 0 0 9.996ZM14 13.999 11.001 11" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                                 <span>조회하기</span>
                             </button>
                         </div>
-                    </div>
-                    <div class="table">
-                        <table>
-                            <colgroup>
-                                <col style="width:180px">
-                                <col>
-                            </colgroup>
-                            <tbody>
-                                <tr>
-                                    <th><label for="history_date_start">조회기간</label></th>
-                                    <td>
-                                        <div class="input_group search_date">
-                                            <div class="search_inputs">
-                                                <div class="input size_md">
-                                                    <input type="text" id="history_date_start" class="datepicker" placeholder="YYYY-MM-DD">
-                                                </div>
-                                                <div class="input size_md">
-                                                    <input type="text" id="history_date_end" class="datepicker" placeholder="YYYY-MM-DD">
-                                                </div>
-                                            </div>
-                                            <div class="input search_btns tap_control">
-                                                <button type="button" class="btn btn_md btn_gray_line">1개월</button>
-                                                <button type="button" class="btn btn_md btn_gray_line">3개월</button>
-                                                <button type="button" class="btn btn_md btn_gray_line">6개월</button>
-                                                <button type="button" class="btn btn_md btn_dark">12개월</button>
-                                            </div>
-                                        </div>
-                                        <script>
-                                        document.addEventListener('DOMContentLoaded', function() {
-                                            const startDateInput = document.getElementById('history_date_start');
-                                            const endDateInput = document.getElementById('history_date_end');
-                                            const buttons = document.querySelectorAll('.search_btns button');
 
-                                            function formatDate(date) {
-                                                const year = date.getFullYear();
-                                                const month = ('0' + (date.getMonth() + 1)).slice(-2);
-                                                const day = ('0' + date.getDate()).slice(-2);
-                                                return `${year}-${month}-${day}`;
-                                            }
-
-                                            function setDateRange(months) {
-                                                const currentDate = new Date();
-                                                const startDate = new Date(currentDate);
-                                                startDate.setMonth(startDate.getMonth() - months);
-
-                                                startDateInput.value = formatDate(startDate);
-                                                endDateInput.value = formatDate(currentDate);
-                                            }
-
-                                            buttons.forEach(button => {
-                                                button.addEventListener('click', function() {
-                                                    const months = parseInt(this.textContent);
-                                                    setDateRange(months);
-                                                });
-                                            });
-                                        });
-                                        </script>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="history_content">내용</label></th>
-                                    <td>
-                                        <div class="input_group">
-                                            <div class="input">
-                                                <input type="text" id="history_content">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="form_btns file_btn v_mobile_flex">
-                        <button type="button" class="btn btn_md btn_submit">
-                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.998 11.997a4.998 4.998 0 1 0 0-9.996 4.998 4.998 0 0 0 0 9.996ZM14 13.999 11.001 11" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                            <span>조회하기</span>
-                        </button>
-                    </div>
+                        <!-- 피시 버튼 -->
+                        <div class="list_rbtns  v_pc">
+                            <button type="button" class="btn btn_md btn_submit">
+                                <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.998 11.997a4.998 4.998 0 1 0 0-9.996 4.998 4.998 0 0 0 0 9.996ZM14 13.999 11.001 11" stroke="#fff" style="stroke:#fff;stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                <span>조회하기</span>
+                            </button>
+                        </div>
+                    </fieldset>
                 </div>
 
                 <div class="form list_wrap">
                     <div class="list_top">
                         <div class="total">총 <strong>5</strong>건</div>
                     </div>
+                    <!-- 접근성 카테고리 선택, 페이징 변경시 알림 메세지 -->
+                    <div id="form_update" class="sound_only" aria-live="polite"></div>
+
                     <div class="list_table">
                         <div class="table table_lg">
                             <table>
+                                <caption class="sound_only">이용내역 목록 - 포인트 사용일자, 세부내용, 사용 포인트, 잔여 포인트를 나타내는 표</caption>
                                 <colgroup>
                                     <col style="width:200px;">
                                     <col>
@@ -229,10 +255,10 @@
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th>포인트 사용일자</th>
-                                        <th>세부내용</th>
-                                        <th>사용 포인트</th>
-                                        <th>잔여 포인트</th>
+                                        <th scope="row">포인트 사용일자</th>
+                                        <th scope="row">세부내용</th>
+                                        <th scope="row">사용 포인트</th>
+                                        <th scope="row">잔여 포인트</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -266,18 +292,52 @@
                     </div>
 
                     <div class="paging">
-                        <a href="javascript:;" class="pg first disabled"></a>
-                        <a href="javascript:;" class="pg prev disabled"></a>
-                        <a href="javascript:;" class="pg first"></a>
-                        <a href="javascript:;" class="pg prev "></a>
-                        <a href="javascript:;">1</a>
-                        <a href="javascript:;" class="active">2</a>
-                        <a href="javascript:;">3</a>
-                        <a href="javascript:;" class="pg next"></a>
-                        <a href="javascript:;" class="pg end"></a>
-                        <a href="javascript:;" class="pg next disabled"></a>
-                        <a href="javascript:;" class="pg end disabled"></a>
+                        <a href="javascript:;" id="paging_first" class="pg first">첫번재 페이지</a>
+                        <a href="javascript:;" id="paging_prev" class="pg prev ">이전 페이지</a>
+                        <a href="javascript:;" id="paging_1">1</a>
+                        <a href="javascript:;" id="paging_3" class="active" title="선택됨">2</a>
+                        <a href="javascript:;" id="paging_3">3</a>
+                        <a href="javascript:;" id="paging_4">4</a>
+                        <a href="javascript:;" id="paging_5">5</a>
+                        <a href="javascript:;" id="paging_next" class="pg next">다음 페이지</a>
+                        <a href="javascript:;" id="paging_last" class="pg end">마지막 페이지</a>
                     </div>
+                    <script>
+                        //적용 완료 후 확인해야 할 사항 : 
+                        //1.탭을 사용하여 focus를 페이징 버튼에 올리고 엔터를 함
+                        //2.목록이 갱신됨
+                        //3.포커스가 클릭했던 버튼에 계속 유지됨.
+                        //4.#form_update에 업데이트된 메세지가 맞는지 확인
+                        let lastFocusedPagingButton = null; // 마지막으로 클릭한 페이징 버튼을 저장
+
+                        document.addEventListener('click', (event) => {
+                            const button = event.target.closest('.paging a');
+                            if (!button) return;
+
+                            lastFocusedPagingButton = button; // 클릭한 버튼을 저장
+
+                            const pageId = button.textContent.trim(); // 버튼의 텍스트 내용 가져오기
+                            updateList(pageId);
+                        });
+
+                        function updateList(pageText) {
+                            ////페이징 클릭 후 리스트 갱신 스크립트
+                            alert(`페이지 ${pageText} 목록 갱신`);
+                            ////페이징 클릭 후 리스트 갱신 스크립트
+
+                            ////갱신 성공 후
+                            // 웹 접근성 알림
+                            const formUpdate = document.getElementById('form_update');
+                            if (formUpdate) {
+                                formUpdate.textContent = `${pageText} 페이지로 목록이 갱신되었습니다.`;
+                            }
+
+                            // 저장된 버튼에 포커스 복원
+                            if (lastFocusedPagingButton) {
+                                lastFocusedPagingButton.focus();
+                            }
+                        }
+                    </script>
                 </div>
 
             </div>

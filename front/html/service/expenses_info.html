@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,27 +64,27 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>환경보건이용권</h2>
                 <div class="aside_nav">
                     <ul>
                         <li class="item active">
-                            <button type="button">물품·서비스</button>
-                            <ul style="display: block;">
+                            <button type="button" aria-expanded="true">물품·서비스</button>
+                            <ul style="display: block;" role="menu">
                                 <li><a href="javascript:;"><span>환경보건이용권 안내</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청 결과조회</span></a></li>
-                                <li><a href="javascript:;" class="active"><span>환경보건이용권 진료비 차감 안내</span></a></li>
+                                <li><a href="javascript:;" class="active" aria-current="page"><span>환경보건이용권 진료비 차감 안내</span></a></li>
                                 <li><a href="javascript:;"><span>진료비 지원 신청</span></a></li>
                                 <li><a href="javascript:;"><span>진료비 지원 신청 결과조회</span></a></li>
                                 <li><a href="javascript:;"><span>온라인몰 안내</span></a></li>
                             </ul>
                         </li>
                         <li class="item">
-                            <button type="button">실내 환경 진단·컨설팅</button>
-                            <ul>
+                            <button type="button" aria-expanded="false">실내 환경 진단·컨설팅</button>
+                            <ul role="menu">
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 안내</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청결과 조회</span></a></li>
@@ -90,13 +94,13 @@
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">환경보건이용권</a></div>
-                    <div class="item"><a href="javascript:;">물품·서비스</a></div>
-                    <div class="item"><a href="javascript:;">환경보건이용권 환경성질환 진료비 차감 안내</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">환경보건이용권</a></li>
+                    <li class="item"><a href="javascript:;">물품·서비스</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">환경보건이용권 환경성질환 진료비 차감 안내</a></li>
+                </ol>
 
                 <div class="page_title">
                     <h3>환경보건이용권 환경성질환 진료비 차감 안내</h3>
@@ -110,18 +114,19 @@
                     </div>
                     
                     <div class="design_section">
-                        <h5 class="bline_title">이용권 신청 안내</h5>
+                        <h4 class="bline_title">이용권 신청 안내</h4>
                         <div class="info_table font_lg">
                             <div class="table">
                                 <table>
+                                    <caption class="sound_only">이용권 신청 안내 정보 표</caption>
                                     <colgroup>
                                         <col style="width:22rem;">
                                         <col>
                                     </colgroup>
                                     <tbody>
                                         <tr>
-                                            <th>
-                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.734" y="5.58" width="20.8" height="19.067" rx="2" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5"/><path d="M4.773 10.78h20.059M11.234 3.846v3.649M19.484 3.846v3.649" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.18 27.425c-3.352 0-6.078-2.7-6.078-6.02 0-3.322 2.726-6.022 6.078-6.022 3.352 0 6.078 2.7 6.078 6.021 0 3.32-2.726 6.021-6.078 6.021Z" fill="#fff" stroke="#2D2D2D" style="fill:#fff;fill-opacity:1;stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.117 19.084v2.809l1.93 1.204" fill="#fff" style="fill:#fff;fill-opacity:1"/><path d="M21.117 19.084v2.809l1.93 1.204" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <th scope="row">
+                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4.734" y="5.58" width="20.8" height="19.067" rx="2" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5"/><path d="M4.773 10.78h20.059M11.234 3.846v3.649M19.484 3.846v3.649" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.18 27.425c-3.352 0-6.078-2.7-6.078-6.02 0-3.322 2.726-6.022 6.078-6.022 3.352 0 6.078 2.7 6.078 6.021 0 3.32-2.726 6.021-6.078 6.021Z" fill="#fff" stroke="#2D2D2D" style="fill:#fff;fill-opacity:1;stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.117 19.084v2.809l1.93 1.204" fill="#fff" style="fill:#fff;fill-opacity:1"/><path d="M21.117 19.084v2.809l1.93 1.204" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>신청기간
                                             </th>
                                             <td>
@@ -129,8 +134,8 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>
-                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.822 4.713H6.178C4.423 4.713 3 6.177 3 7.983v15.992c0 1.807 1.423 3.271 3.178 3.271h19.644c1.755 0 3.178-1.464 3.178-3.27V7.983c0-1.807-1.423-3.271-3.178-3.271Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.773 20.693H8.148c-.262 0-.476-.265-.476-.594v-1.514c0-.179.064-.348.175-.46.064-.067 1.623-1.615 4.113-1.615s4.049 1.552 4.113 1.615a.653.653 0 0 1 .175.46V20.1c0 .329-.214.594-.476.594Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.078 15.417a2.596 2.596 0 1 0-4.234-3.005 2.596 2.596 0 0 0 4.234 3.005ZM19.572 12.36h4.368M19.572 16.01h4.368M19.572 19.658h4.368" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <th scope="row">
+                                                <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M25.822 4.713H6.178C4.423 4.713 3 6.177 3 7.983v15.992c0 1.807 1.423 3.271 3.178 3.271h19.644c1.755 0 3.178-1.464 3.178-3.27V7.983c0-1.807-1.423-3.271-3.178-3.271Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.773 20.693H8.148c-.262 0-.476-.265-.476-.594v-1.514c0-.179.064-.348.175-.46.064-.067 1.623-1.615 4.113-1.615s4.049 1.552 4.113 1.615a.653.653 0 0 1 .175.46V20.1c0 .329-.214.594-.476.594Z" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.078 15.417a2.596 2.596 0 1 0-4.234-3.005 2.596 2.596 0 0 0 4.234 3.005ZM19.572 12.36h4.368M19.572 16.01h4.368M19.572 19.658h4.368" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>신청대상
                                             </th>
                                             <td>
@@ -138,8 +143,8 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>
-                                                <svg width="32" height="33" viewbox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.925 22.676A9.236 9.236 0 0 1 7 13.734c0-5.1 4.133-9.234 9.234-9.234 5.1 0 9.234 4.133 9.234 9.234 0 4.35-3.01 8-7.059 8.975M20.37 22.71h-8.277a.827.827 0 0 0-.827.828v3.313c0 .457.37.828.827.828h8.277c.457 0 .828-.37.828-.828v-3.313a.827.827 0 0 0-.828-.827ZM17.777 27.959c0 .85-.691 1.54-1.54 1.54-.85 0-1.54-.69-1.54-1.54" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.89 13.16c0-2.574-2.079-4.668-4.631-4.668" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <th scope="row">
+                                                <svg width="32" height="33" viewbox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13.925 22.676A9.236 9.236 0 0 1 7 13.734c0-5.1 4.133-9.234 9.234-9.234 5.1 0 9.234 4.133 9.234 9.234 0 4.35-3.01 8-7.059 8.975M20.37 22.71h-8.277a.827.827 0 0 0-.827.828v3.313c0 .457.37.828.827.828h8.277c.457 0 .828-.37.828-.828v-3.313a.827.827 0 0 0-.828-.827ZM17.777 27.959c0 .85-.691 1.54-1.54 1.54-.85 0-1.54-.69-1.54-1.54" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.89 13.16c0-2.574-2.079-4.668-4.631-4.668" stroke="#2D2D2D" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>주의사항
                                             </th>
                                             <td>
@@ -155,67 +160,67 @@
                     </div>
 
                     <div class="design_section">
-                        <h5 class="bline_title">신청 절차</h5>
-                        <div class="info_step">
-                            <div class="item">
+                        <h4 class="bline_title">신청 절차</h4>
+                        <ol class="info_step">
+                            <li class="item">
                                 <div class="tit">STEP 1</div>
                                 <div class="cnt">
                                     병원·약국 진료
                                 </div>
-                            </div>
-                            <div class="item">
+                            </li>
+                            <li class="item">
                                 <div class="tit">STEP 2</div>
                                 <div class="cnt">
                                     진료비 지원 신청<br/> (증빙자료 첨부)
                                 </div>
-                            </div>
-                            <div class="item">
+                            </li>
+                            <li class="item">
                                 <div class="tit">STEP 3</div>
                                 <div class="cnt">
                                     증빙자료 검토<br/> (상병코드확인)
                                 </div>
-                            </div>
-                            <div class="item">
+                            </li>
+                            <li class="item">
                                 <div class="tit">STEP 4</div>
                                 <div class="cnt">
                                     진료비지급<br/> (포인트차감)
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
                     </div>
 
                     <div class="design_section">
-                        <h5 class="bline_title">증빙자료 예시</h5>
+                        <h4 class="bline_title">증빙자료 예시</h4>
                         <div class="info_images">
                             <div class="item">
                                 <div class="tit">처방전</div>
-                                <button class="thumb" type="button" 
+                                <button class="thumb modal_open" type="button" data-target="#sample_popup" aria-haspopup="dialog" aria-label="처방전 원본 이미지 모달창 열기"
                                 onclick="openSample(this,'처방전', '../../assets/images/content/info_images1_origin.jpg');">
-                                    <img src="../../assets/images/content/info_images1.jpg" alt="">
+                                    <img src="../../assets/images/content/info_images1.jpg" alt="증빙자료 미리보기 이미지">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
                             </div>
                             <div class="item">
                                 <div class="tit">진료확인서</div>
-                                <button class="thumb" type="button" 
+                                <button class="thumb modal_open" type="button" data-target="#sample_popup" aria-haspopup="dialog" aria-label="진료확인서 원본 이미지 모달창 열기"
                                 onclick="openSample(this,'진료확인서', '../../assets/images/content/info_images2_origin.jpg');">
-                                    <img src="../../assets/images/content/info_images2.jpg" alt="">
+                                    <img src="../../assets/images/content/info_images2.jpg" alt="진료확인서 미리보기 이미지">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
                             </div>
                             <div class="item">
                                 <div class="tit">진료비영수증</div>
-                                <button class="thumb" type="button" 
+                                <button class="thumb modal_open" type="button" data-target="#sample_popup" aria-haspopup="dialog" aria-label="진료비영수증 원본 이미지 모달창 열기"
                                 onclick="openSample(this,'진료비영수증', '../../assets/images/content/info_images3_origin.jpg');">
-                                    <img src="../../assets/images/content/info_images3.jpg" alt="">
+                                    <img src="../../assets/images/content/info_images3.jpg" alt="진료비영수증 미리보기 이미지">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
                             </div>
                             <div class="item">
                                 <div class="tit">진료비 납입확인서</div>
-                                <button class="thumb" type="button" 
+                                <button class="thumb modal_open" type="button" data-target="#sample_popup" aria-label="진료비 납입확인서 원본 이미지 모달창 열기"
                                 onclick="openSample(this,'진료비 납입확인서', '../../assets/images/content/info_images4_origin.jpg');">
-                                    <img src="../../assets/images/content/info_images4.jpg" alt="">
+                                    <img src="../../assets/images/content/info_images4.jpg" alt="진료비 납입확인서 미리보기 이미지">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
                             </div>
@@ -266,26 +271,26 @@
 </div>
 
 
-
 <!-- 증빙자료 원본 보기 -->
-<div id="sample_popup" class="layer_popup">
-    <div class="layer_box" style="max-width:calc(100% - 3rem);width: auto;min-width:30rem">
+<div id="sample_popup" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width: auto;min-width:30rem" role="document">
         <div class="layer_header">
-            <div class="layer_title" id="sample_title"></div>
-            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+            <h5 class="layer_title" id="sample_title"></h5>
+            <button type="button" class="layer_close modal_close">팝업 닫기</button>
         </div>
-        <div class="layer_body" data-simplebar>
+        <!-- 웹접근성 - 스크롤 해야하는 커스텀 스크롤바에는 simplebar-tabindex 를 함께 넣어주세요.  -->
+        <div class="layer_body" data-simplebar simplebar-tabindex>
             <div class="layer_content">
                 <div class="preview_image">
                     <img src="" alt="">
                 </div>
             </div>
             <div class="form_btns">
-                <button type="button" class="btn btn_md btn_gray_line" onclick="closeLayer(this)">닫기</button>
+                <button type="button" class="btn btn_md btn_gray_line modal_close">팝업 닫기</button>
             </div>
         </div>
     </div>
-    <span class="layer_bg" onclick="closeLayer(this)"></span>
+    <span class="layer_bg modal_close"></span>
 </div>
 <!-- //증빙자료 원본 보기 -->
 
@@ -343,8 +348,8 @@ async function openSample(button, titleValue, imageUrl) {
     
     adjustLayerBoxWidth(layerBox, originalSize.width);
 
-    document.querySelector('#sample_popup').style.display = 'flex';
-    document.querySelector('html').classList.add('scroll_hidden');
+    //document.querySelector('#sample_popup').style.display = 'flex';
+    //document.querySelector('html').classList.add('scroll_hidden');
 	const windowHeight = window.innerHeight;
 
     layerBodyScroll.scrollTop = 0;//스크롤 상단으로 초기화

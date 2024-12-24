@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,14 +64,14 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>마이페이지</h2>
                 <div class="aside_nav">
                     <ul>
                         <li class="item active">
-                            <a href="javascript:;" class="active">회원정보수정</a>
+                            <a href="javascript:;" class="active" aria-current="page">회원정보수정</a>
                         </li>
                         <li class="item">
                             <a href="javascript:;">이용내역 조회</a>
@@ -82,12 +86,12 @@
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">마이페이지</a></div>
-                    <div class="item"><a href="javascript:;">회원정보수정</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">마이페이지</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">회원정보수정</a></li>
+                </ol>
 
                 <div class="page_title">
                     <h3>회원정보수정</h3>
@@ -100,69 +104,86 @@
                     </div>
                     <div class="table">
                         <table>
+                            <caption class="sound_only">회원정보수정 기본정보 표</caption>
                             <colgroup>
                                 <col style="width:180px">
                                 <col>
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th>성별</th>
+                                    <th scope="col">성별</th>
                                     <td>
-                                        <label class="checkbox inline">
-                                            <input type="radio" name="mb_gender" checked>
+                                        <label class="checkbox inline" for="gender1">
+                                            <input type="radio" id="gender1" name="mb_gender" checked>
                                             <span class="ck_icon"></span>
                                             남자
                                         </label>
-                                        <label class="checkbox inline">
-                                            <input type="radio" name="mb_gender">
+                                        <label class="checkbox inline" for="gender2">
+                                            <input type="radio" id="gender2" name="mb_gender">
                                             <span class="ck_icon"></span>
                                             여자
                                         </label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>이름</th>
+                                    <th scope="col">이름</th>
                                     <td>홍길동</td>
                                 </tr>
                                 <tr>
-                                    <th>아이디</th>
+                                    <th scope="col">아이디</th>
                                     <td>test01</td>
                                 </tr>
                                 <tr>
-                                    <th>비밀번호</th>
+                                    <th scope="col">비밀번호</th>
                                     <td>
                                         <div class="input_group">
-                                            <button type="button" class="btn btn_md btn_submit_line" onclick="openLayer('#password_popup')">비밀번호 변경하기</button>
+                                            <button 
+                                                type="button" 
+                                                class="btn btn_md btn_submit_line modal_open" 
+                                                data-target="#password_change" 
+                                                aria-haspopup="dialog" 
+                                                aria-label="비밀번호 변경폼 열기">
+                                                비밀번호 변경하기
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>생년월일</th>
+                                    <th scope="col">생년월일</th>
                                     <td>19551212</td>
                                 </tr>
                                 <tr>
-                                    <th><label for="adsZip">신청자 주소 <span class="form_required">필수</span></label></th>
+                                    <th scope="col"><label for="adsZip">신청자 주소 <span class="form_required">필수</span></label></th>
                                     <td>
                                         <div class="input_group">
                                             <div class="input size_lg">
-                                                <input type="text" id="adsZip" placeholder="우편번호 찾기" value="06052" readonly onclick="openLayer('#address_layer');sample2_execDaumPostcode()">
+                                                <input type="text" id="adsZip" placeholder="우편번호" value="06052" readonly>
                                             </div>
-                                            <button type="button" class="btn btn_md btn_submit_line" onclick="openLayer('#address_layer');sample2_execDaumPostcode()">주소 검색</button>
+                                            <button 
+                                                type="button" 
+                                                class="btn btn_md btn_submit_line modal_open" 
+                                                data-target="#address_layer" 
+                                                aria-haspopup="dialog" 
+                                                aria-label="주소 검색 열기">
+                                                주소 검색
+                                            </button>
                                         </div>
                                         <div class="input_group">
                                             <div class="input">
-                                                <input type="text" id="adsInput" value="강남구 논현로 706 트라이언소프트" readonly onclick="openLayer('#address_layer');sample2_execDaumPostcode()">
+                                                <label for="adsInput" class="sound_only">도로명주소</label>
+                                                <input type="text" id="adsInput" value="강남구 논현로 706 트라이언소프트" readonly>
                                             </div>
                                         </div>
                                         <div class="input_group">
                                             <div class="input">
+                                                <label for="adsDetailInput" class="sound_only">상세주소</label>
                                                 <input type="text" id="adsDetailInput" value="아이캐슬빌딩" placeholder="나머지 주소를 입력해 주세요.">
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th><label for="mb_email">이메일 <span class="form_required">필수</span></label></th>
+                                    <th scope="col"><label for="mb_email">이메일 <span class="form_required">필수</span></label></th>
                                     <td>
                                         <div class="input_group">
                                             <div class="input">
@@ -172,7 +193,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th><label for="phone_first">휴대폰번호 <span class="form_required">필수</span></label></th>
+                                    <th scope="col"><label for="phone_first">휴대폰번호 <span class="form_required">필수</span></label></th>
                                     <td>
                                         <div class="input_group">
                                             <div class="input size_sm">
@@ -180,55 +201,57 @@
                                             </div>
                                             <span class="dash">-</span>
                                             <div class="input size_sm">
-                                                <input type="tel" class="tel_second" maxlength="4" value="1234">
+                                                <label for="phone_second" class="sound_only">신청자 휴대폰번호 중간 4자리</label>
+                                                <input type="tel" id="phone_second" class="tel_second" maxlength="4" value="1234">
                                             </div>
                                             <span class="dash">-</span>
                                             <div class="input size_sm">
-                                                <input type="tel" class="tel_third" maxlength="4" value="1234">
+                                                <label for="phone_third" class="sound_only">신청자 휴대폰번호 마지막 4자리</label>
+                                                <input type="tel" id="phone_third" class="tel_third" maxlength="4" value="1234">
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>수신동의</th>
+                                    <th scope="col">수신동의</th>
                                     <td>
-                                        <label class="checkbox inline">
-                                            <input type="checkbox" checked>
+                                        <label class="checkbox inline" for="agree_sms">
+                                            <input type="checkbox" id="agree_sms">
                                             <span class="ck_icon"></span>
                                             문자메시지(SMS)
                                         </label>
-                                        <label class="checkbox inline">
-                                            <input type="checkbox">
+                                        <label class="checkbox inline" for="agree_email">
+                                            <input type="checkbox" id="agree_email">
                                             <span class="ck_icon"></span>
                                             전자우편주소(E-mail)
                                         </label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>개인정보 수집 및 이용동의</th>
+                                    <th scope="col">개인정보 수집 및 이용동의</th>
                                     <td>
                                         <div class="input_group group_row">
                                             <div class="input_tit">개인정보 수집 및 이용동의(선택)</div>
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="term1_agree" checked>
+                                            <label class="checkbox inline" for="terms1_1">
+                                                <input type="radio" name="term1_agree" id="terms1_1" checked>
                                                 <span class="ck_icon"></span>
                                                 동의함
                                             </label>
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="term1_agree">
+                                            <label class="checkbox inline" for="terms1_2">
+                                                <input type="radio" name="term1_agree" id="terms1_2">
                                                 <span class="ck_icon"></span>
                                                 동의하지 않음
                                             </label>
                                         </div>
                                         <div class="input_group group_row">
                                             <div class="input_tit">홍보·설문조사 관련 개인정보 수집 및 이용 동의(선택)</div>
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="term2_agree" checked>
+                                            <label class="checkbox inline" for="terms2_1">
+                                                <input type="radio" name="term2_agree" id="terms2_1" checked>
                                                 <span class="ck_icon"></span>
                                                 동의함
                                             </label>
-                                            <label class="checkbox inline">
-                                                <input type="radio" name="term2_agree">
+                                            <label class="checkbox inline" for="terms2_2">
+                                                <input type="radio" name="term2_agree" id="terms2_2">
                                                 <span class="ck_icon"></span>
                                                 동의하지 않음
                                             </label>
@@ -236,7 +259,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>회원탈퇴</th>
+                                    <th scope="col">회원탈퇴</th>
                                     <td>
                                         <div class="input_group">
                                             <button type="button" class="btn btn_md btn_gray_line">회원탈퇴하기</button>
@@ -297,11 +320,11 @@
 
 
 <!-- 비밀번호 변경 -->
-<div id="password_change" class="layer_popup" style="display: flex;">
-    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;">
+<div id="password_change" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;" role="document">
         <div class="layer_header">
-            <div class="layer_title">비밀번호 변경</div>
-            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+            <h5 class="layer_title">비밀번호 변경</h5>
+            <button type="button" class="layer_close modal_close">팝업 닫기</button>
         </div>
         <div class="layer_body">
             <div class="layer_content">
@@ -335,28 +358,31 @@
                 </div>
             </div>
             <div class="form_btns">
-                <button type="button" class="btn btn_md btn_submit">확인</button>
-                <button type="button" class="btn btn_md btn_gray_line">닫기</button>
+                <button type="button" class="btn btn_md btn_submit modal_close">확인</button>
+                <button type="button" class="btn btn_md btn_gray_line modal_close">닫기</button>
             </div>
         </div>
     </div>
-    <span class="layer_bg" onclick="closeLayer(this)"></span>
+    <span class="layer_bg modal_close"></span>
 </div>
 <!-- //비밀번호 변경 -->
 
 <!-- 주소 -->
-<div id="address_layer" class="layer_popup">
-    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;">
+<div id="address_layer" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;" role="document">
         <div class="layer_header">
-            <div class="layer_title">주소검색</div>
-            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+            <h5 class="layer_title">주소 검색</h5>
+            <button type="button" class="layer_close modal_close">팝업 닫기</button>
         </div>
-        <div class="layer_body" data-simplebar>
+        <div class="layer_body">
             <div id="daumAdressLayer">
+            </div>
+            <div class="form_btns">
+                <button type="button" class="btn btn_md btn_gray_line modal_close">닫기</button>
             </div>
         </div>
     </div>
-    <span class="layer_bg" onclick="closeLayer(this)"></span>
+    <span class="layer_bg modal_close"></span>
 </div>
 <!-- //주소 -->
 
@@ -397,6 +423,8 @@ function sample2_execDaumPostcode() {
         maxSuggestItems : 5
     }).embed(element_layer);
 }
+sample2_execDaumPostcode()
+
 </script>
 </body>
 </html>

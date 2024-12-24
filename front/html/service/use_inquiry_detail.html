@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,18 +64,18 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>환경보건이용권</h2>
                 <div class="aside_nav">
                     <ul>
                         <li class="item active">
-                            <button type="button">물품·서비스</button>
-                            <ul style="display: block;">
+                            <button type="button" aria-expanded="true">물품·서비스</button>
+                            <ul style="display: block;" role="menu">
                                 <li><a href="javascript:;"><span>환경보건이용권 안내</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청</span></a></li>
-                                <li><a href="javascript:;" class="active"><span>이용권 신청 결과조회</span></a></li>
+                                <li><a href="javascript:;" class="active" aria-current="page"><span>이용권 신청 결과조회</span></a></li>
                                 <li><a href="javascript:;"><span>환경보건이용권 진료비 차감 안내</span></a></li>
                                 <li><a href="javascript:;"><span>진료비 지원 신청</span></a></li>
                                 <li><a href="javascript:;"><span>진료비 지원 신청 결과조회</span></a></li>
@@ -79,8 +83,8 @@
                             </ul>
                         </li>
                         <li class="item">
-                            <button type="button">실내 환경 진단·컨설팅</button>
-                            <ul>
+                            <button type="button" aria-expanded="false">실내 환경 진단·컨설팅</button>
+                            <ul role="menu">
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 안내</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청결과 조회</span></a></li>
@@ -90,14 +94,14 @@
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">환경보건이용권</a></div>
-                    <div class="item"><a href="javascript:;">물품·서비스</a></div>
-                    <div class="item"><a href="javascript:;">이용권 신청 결과조회</a></div>
-                    <div class="item"><a href="javascript:;">이용권 상세조회</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">환경보건이용권</a></li>
+                    <li class="item"><a href="javascript:;">물품·서비스</a></li>
+                    <li class="item"><a href="javascript:;">이용권 신청 결과조회</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">이용권 상세조회</a></li>
+                </ol>
                 
                 <div class="page_title">
                     <h3>이용권 상세조회</h3>
@@ -109,37 +113,38 @@
                     </div>
                     <div class="table">
                         <table>
+                            <caption class="sound_only">이용권 신청서 정보 표</caption>
                             <colgroup>
                                 <col style="width:180px">
                                 <col>
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th>대리인</th>
+                                    <th scope="row">대리인</th>
                                     <td>홍길동</td>
                                 </tr>
                                 <tr>
-                                    <th>대리인 주민등록번호</th>
+                                    <th scope="row">대리인 주민등록번호</th>
                                     <td>000000-000000</td>
                                 </tr>
                                 <tr>
-                                    <th>신청자 주소</th>
+                                    <th scope="row">신청자 주소</th>
                                     <td>강남구 논현로706 트라이언소프트</td>
                                 </tr>
                                 <tr>
-                                    <th>신청자 휴대전화번호</th>
+                                    <th scope="row">신청자 휴대전화번호</th>
                                     <td>000-0000-0000</td>
                                 </tr>
                                 <tr>
-                                    <th>신청자 집전화번호</th>
+                                    <th scope="row">신청자 집전화번호</th>
                                     <td>02-000-0000</td>
                                 </tr>
                                 <tr>
-                                    <th>신청자 이메일 주소</th>
+                                    <th scope="row">신청자 이메일 주소</th>
                                     <td>test12@trionsoft.com</td>
                                 </tr>
                                 <tr>
-                                    <th>신청자 통지방법</th>
+                                    <th scope="row">신청자 통지방법</th>
                                     <td>문자메시지</td>
                                 </tr>
                             </tbody>
@@ -153,25 +158,26 @@
                     </div>
                     <div class="table">
                         <table>
+                            <caption class="sound_only">신청자 목록 1번의 정보 표</caption>
                             <colgroup>
                                 <col style="width:180px">
                                 <col>
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th>신청자 대상유형</th>
+                                    <th scope="row">신청자 대상유형</th>
                                     <td>기초생활수급자 어린이</td>
                                 </tr>
                                 <tr>
-                                    <th>대리인과의 관계</th>
+                                    <th scope="row">대리인과의 관계</th>
                                     <td>부</td>
                                 </tr>
                                 <tr>
-                                    <th>신청자 이름</th>
+                                    <th scope="row">신청자 이름</th>
                                     <td>홍길동</td>
                                 </tr>
                                 <tr>
-                                    <th>신청자 휴대전화번호</th>
+                                    <th scope="row">신청자 휴대전화번호</th>
                                     <td>000-0000-0000</td>
                                 </tr>
                             </tbody>
@@ -185,25 +191,26 @@
                     </div>
                     <div class="table">
                         <table>
+                            <caption class="sound_only">신청자 목록 2번의 정보 표</caption>
                             <colgroup>
                                 <col style="width:180px">
                                 <col>
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th>신청자 대상유형</th>
+                                    <th scope="row">신청자 대상유형</th>
                                     <td>기초생활수급자 어린이</td>
                                 </tr>
                                 <tr>
-                                    <th>대리인과의 관계</th>
+                                    <th scope="row">대리인과의 관계</th>
                                     <td>부</td>
                                 </tr>
                                 <tr>
-                                    <th>신청자 이름</th>
+                                    <th scope="row">신청자 이름</th>
                                     <td>홍길동</td>
                                 </tr>
                                 <tr>
-                                    <th>신청자 휴대전화번호</th>
+                                    <th scope="row">신청자 휴대전화번호</th>
                                     <td>000-0000-0000</td>
                                 </tr>
                             </tbody>

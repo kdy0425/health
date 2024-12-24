@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,7 +64,7 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>마이페이지</h2>
@@ -76,18 +80,18 @@
                             <a href="javascript:;">나의 문의내역</a>
                         </li>
                         <li class="item active">
-                            <a href="javascript:;" class="active">만족도 설문조사</a>
+                            <a href="javascript:;" class="active" aria-current="page">만족도 설문조사</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">마이페이지</a></div>
-                    <div class="item"><a href="javascript:;">만족도 설문조사</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">마이페이지</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">만족도 설문조사</a></li>
+                </ol>
 
                 <div class="page_title">
                     <h3>만족도 설문조사</h3>
@@ -98,138 +102,161 @@
                     <div class="bv_top">
                         <div class="subject">
                             <h4>2025 상반기 환경보건이용권 설문조사</h4>
-                            <div class="info">
-                                <span>참여기간 : 2024-09-04 ~ 2024-10-30 </span>
-                            </div>
+                            <dl class="info">
+                                <dt class="sound_only">설문 정보</dt>
+                                <dd>참여기간 : 2024-09-04 ~ 2024-10-30 </dd>
+                            </dl>
                         </div>
                         <div class="bv_top_btns">
                             <div class="item">
-                                <button type="button" class="btn btn_share" title="SNS 공유하기" onclick="toggleSlideItem(this, '', 0)">공유하기</button>
-                                <div class="share_list" style="display: none;" slide-content="">
-                                    <div class="share_item"><a href="javascript:;" class="kakao">카카오<br>공유하기</a></div>
-                                    <div class="share_item"><a href="javascript:;" class="facebook">페이스북<br>공유하기</a></div>
-                                    <div class="share_item"><a href="javascript:;" class="twitter">트위터<br>공유하기</a></div>
-                                    <div class="share_item"><a href="javascript:;" class="telegram">텔레그램<br>공유하기</a></div>
-                                    <div class="share_item"><a href="javascript:;" class="url" onclick="copyUrl('https://naver.com/123')">url<br>복사하기</a></div>
+                                <button type="button" class="btn btn_share modal_open" data-target="#sns_share" aria-haspopup="dialog" title="SNS 공유하기">SNS 공유하기</button>
+                                <!-- SNS 공유하기 -->
+                                <div id="sns_share" class="layer_popup" role="dialog">
+                                    <div class="layer_box" style="max-width:calc(100% - 3rem);width:45rem;" role="document">
+                                        <div class="layer_header">
+                                            <h5 class="layer_title">SNS 공유하기</h5>
+                                            <button type="button" class="layer_close modal_close">팝업 닫기</button>
+                                        </div>
+                                        <div class="layer_body">
+                                            <div class="layer_content">
+                                                <div class="share_list">
+                                                    <div class="share_item"><a href="javascript:;" class="kakao">카카오<br>공유하기</a></div>
+                                                    <div class="share_item"><a href="javascript:;" class="facebook">페이스북<br>공유하기</a></div>
+                                                    <div class="share_item"><a href="javascript:;" class="twitter">트위터<br>공유하기</a></div>
+                                                    <div class="share_item"><a href="javascript:;" class="telegram">텔레그램<br>공유하기</a></div>
+                                                    <div class="share_item"><a href="javascript:;" class="url" onclick="copyUrl('https://naver.com/123')">url<br>복사하기</a></div>
+                                                </div>
+                                            </div>
+                                            <div class="form_btns">
+                                                <button type="button" class="btn btn_md btn_gray_line modal_close">닫기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="layer_bg modal_close"></span>
                                 </div>
+                                <!-- //SNS 공유하기 -->
                             </div>
                         </div>
+
                     </div>
                     <div class="form survey_form">
                         <div class="survey_form_inner">
-                            <div class="item">
-                                <div class="question"><span class="num">01</span><span class="subject">환경보건이용권 사업에 대해 어떻게 평가하십니까?</span></div>
-                                <div class="answer">
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio1">
-                                        <span class="ck_icon"></span>
-                                        매우 좋음
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio1">
-                                        <span class="ck_icon"></span>
-                                        좋음
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio1">
-                                        <span class="ck_icon"></span>
-                                        보통
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio1">
-                                        <span class="ck_icon"></span>
-                                        나쁨
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio1">
-                                        <span class="ck_icon"></span>
-                                        매우 나쁨
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="question"><span class="num">02</span><span class="subject">환경보건이용권 신청 접근성에 대해 어떻게 평가하십니까?</span></div>
-                                <div class="answer">
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio2">
-                                        <span class="ck_icon"></span>
-                                        매우 좋음
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio2">
-                                        <span class="ck_icon"></span>
-                                        좋음
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio2">
-                                        <span class="ck_icon"></span>
-                                        보통
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio2">
-                                        <span class="ck_icon"></span>
-                                        나쁨
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio2">
-                                        <span class="ck_icon"></span>
-                                        매우 나쁨
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="question"><span class="num">03</span><span class="subject">환경보건이용권 홈페이지에 대해 어떻게 평가하십니까?</span></div>
-                                <div class="answer">
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio3">
-                                        <span class="ck_icon"></span>
-                                        매우 좋음
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio3">
-                                        <span class="ck_icon"></span>
-                                        좋음
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio3">
-                                        <span class="ck_icon"></span>
-                                        보통
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio3">
-                                        <span class="ck_icon"></span>
-                                        나쁨
-                                    </label>
-                                    <label class="checkbox inline">
-                                        <input type="radio" name="answer_radio3">
-                                        <span class="ck_icon"></span>
-                                        매우 나쁨
-                                    </label>
-                                    <div class="input_group etc">
-                                        <label class="checkbox">
-                                            <input type="radio" name="answer_radio3">
+                            <ol>
+                                <li class="item">
+                                    <div class="question"><span class="num">01</span><span class="subject">환경보건이용권 사업에 대해 어떻게 평가하십니까?</span></div>
+                                    <div class="answer">
+                                        <label class="checkbox inline" for="answer_radio1_1">
+                                            <input type="radio" name="answer_radio1" id="answer_radio1_1">
                                             <span class="ck_icon"></span>
-                                            기타
+                                            매우 좋음
                                         </label>
-                                        <div class="input size_lg">
-                                            <input type="text" placeholder="기타 의견을 작성해 주세요.">
-                                        </div>
+                                        <label class="checkbox inline" for="answer_radio1_2">
+                                            <input type="radio" name="answer_radio1" id="answer_radio1_2">
+                                            <span class="ck_icon"></span>
+                                            좋음
+                                        </label>
+                                        <label class="checkbox inline" for="answer_radio1_3">
+                                            <input type="radio" name="answer_radio1" id="answer_radio1_3">
+                                            <span class="ck_icon"></span>
+                                            보통
+                                        </label>
+                                        <label class="checkbox inline" for="answer_radio1_4">
+                                            <input type="radio" name="answer_radio1" id="answer_radio1_4">
+                                            <span class="ck_icon"></span>
+                                            나쁨
+                                        </label>
+                                        <label class="checkbox inline" for="answer_radio1_5">
+                                            <input type="radio" name="answer_radio1" id="answer_radio1_5">
+                                            <span class="ck_icon"></span>
+                                            매우 나쁨
+                                        </label>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
 
-                            <div class="item">
-                                <div class="question"><span class="num">04</span><span class="subject">추가로 요청 할 내용이 있다면 적어주세요.</span></div>
-                                <div class="answer">
-                                    <div class="input_group">
-                                        <div class="input answer_textarea">
-                                            <textarea name="" id="" placeholder="홈페이지에 대한 의견을 편하게 작성해 주세요."></textarea>
+                                <li class="item">
+                                    <div class="question"><span class="num">02</span><span class="subject">환경보건이용권 신청 접근성에 대해 어떻게 평가하십니까?</span></div>
+                                    <div class="answer">
+                                        <label class="checkbox inline" for="answer_radio2_1">
+                                            <input type="radio" name="answer_radio2" id="answer_radio2_1">
+                                            <span class="ck_icon"></span>
+                                            매우 좋음
+                                        </label>
+                                        <label class="checkbox inline" for="answer_radio2_2">
+                                            <input type="radio" name="answer_radio2" id="answer_radio2_2">
+                                            <span class="ck_icon"></span>
+                                            좋음
+                                        </label>
+                                        <label class="checkbox inline" for="answer_radio2_3">
+                                            <input type="radio" name="answer_radio2" id="answer_radio2_3">
+                                            <span class="ck_icon"></span>
+                                            보통
+                                        </label>
+                                        <label class="checkbox inline" for="answer_radio2_4">
+                                            <input type="radio" name="answer_radio2" id="answer_radio2_4">
+                                            <span class="ck_icon"></span>
+                                            나쁨
+                                        </label>
+                                        <label class="checkbox inline" for="answer_radio2_5">
+                                            <input type="radio" name="answer_radio2" id="answer_radio2_5">
+                                            <span class="ck_icon"></span>
+                                            매우 나쁨
+                                        </label>
+                                    </div>
+                                </li>
+
+                                <li class="item">
+                                    <div class="question"><span class="num">03</span><span class="subject">환경보건이용권 홈페이지에 대해 어떻게 평가하십니까?</span></div>
+                                    <div class="answer">
+                                        <label class="checkbox inline" for="answer_radio3_1">
+                                            <input type="radio" name="answer_radio3" id="answer_radio3_1">
+                                            <span class="ck_icon"></span>
+                                            매우 좋음
+                                        </label>
+                                        <label class="checkbox inline" for="answer_radio3_2">
+                                            <input type="radio" name="answer_radio3" id="answer_radio3_2">
+                                            <span class="ck_icon"></span>
+                                            좋음
+                                        </label>
+                                        <label class="checkbox inline" for="answer_radio3_3">
+                                            <input type="radio" name="answer_radio3" id="answer_radio3_3">
+                                            <span class="ck_icon"></span>
+                                            보통
+                                        </label>
+                                        <label class="checkbox inline" for="answer_radio3_4">
+                                            <input type="radio" name="answer_radio3" id="answer_radio3_4">
+                                            <span class="ck_icon"></span>
+                                            나쁨
+                                        </label>
+                                        <label class="checkbox inline" for="answer_radio3_5">
+                                            <input type="radio" name="answer_radio3" id="answer_radio3_5">
+                                            <span class="ck_icon"></span>
+                                            매우 나쁨
+                                        </label>
+                                        <div class="input_group etc">
+                                            <label class="checkbox" for="answer_radio3_6">
+                                                <input type="radio" name="answer_radio3" id="answer_radio3_6">
+                                                <span class="ck_icon"></span>
+                                                기타
+                                            </label>
+                                            <div class="input size_lg">
+                                                <label for="answer_radio3_6_input" class="sound_only">기타 의견 작성</label>
+                                                <input type="text" id="answer_radio3_6_input" placeholder="기타 의견을 작성해 주세요.">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+
+                                <li class="item">
+                                    <div class="question"><span class="num">04</span><label class="subject" for="answer_item4">추가로 요청 할 내용이 있다면 적어주세요.</label></div>
+                                    <div class="answer">
+                                        <div class="input_group">
+                                            <div class="input answer_textarea">
+                                                <textarea name="" id="answer_item4" placeholder="홈페이지에 대한 의견을 편하게 작성해 주세요."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
                             <div class="form_btns">
                                 <button type="button" class="btn btn_xl btn_submit">제출하기</button>
                             </div>

@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,17 +64,17 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>환경보건이용권</h2>
                 <div class="aside_nav">
                     <ul>
                         <li class="item active">
-                            <button type="button">물품·서비스</button>
-                            <ul style="display: block;">
+                            <button type="button" aria-expanded="true">물품·서비스</button>
+                            <ul style="display: block;" role="menu">
                                 <li><a href="javascript:;"><span>환경보건이용권 안내</span></a></li>
-                                <li><a href="javascript:;" class="active"><span>이용권 신청</span></a></li>
+                                <li><a href="javascript:;" class="active" aria-current="page"><span>이용권 신청</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청 결과조회</span></a></li>
                                 <li><a href="javascript:;"><span>환경보건이용권 진료비 차감 안내</span></a></li>
                                 <li><a href="javascript:;"><span>진료비 지원 신청</span></a></li>
@@ -79,8 +83,8 @@
                             </ul>
                         </li>
                         <li class="item">
-                            <button type="button">실내 환경 진단·컨설팅</button>
-                            <ul>
+                            <button type="button" aria-expanded="false">실내 환경 진단·컨설팅</button>
+                            <ul role="menu">
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 안내</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청결과 조회</span></a></li>
@@ -90,13 +94,13 @@
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">환경보건이용권</a></div>
-                    <div class="item"><a href="javascript:;">물품·서비스</a></div>
-                    <div class="item"><a href="javascript:;">이용권 신청</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">환경보건이용권</a></li>
+                    <li class="item"><a href="javascript:;">물품·서비스</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">이용권 신청</a></li>
+                </ol>
 
                 <div class="page_title">
                     <h3>이용권 신청</h3>
@@ -110,223 +114,247 @@
 
                 <form>
                 <div class="form form_type2">
-                    <div class="form_title">
-                        <h4>이용권 신청서</h4>
-                    </div>
-                    <div class="table">
-                        <table>
-                            <colgroup>
-                                <col style="width:180px">
-                                <col>
-                            </colgroup>
-                            <tbody>
-                                <tr>
-                                    <th><label for="mb_name">대리인 <span class="form_required">필수</span></label></th>
-                                    <td>
-                                        <div class="input_group">
-                                            <div class="input size_lg">
-                                                <input type="text" id="mb_name" value="홍길동" readonly>
+                    <fieldset>
+                        <div class="form_title">
+                            <h4><legend>이용권 신청서</legend></h4>
+                        </div>
+                        <div class="table">
+                            <table>
+                                <caption class="sound_only">이용권 신청서 - 대리인, 대리인 주민등록번호, 신청자 주소, 신청자 휴대전화번호, 신청자 집전화번호, 신청자 이메일 주소, 신청자 통지방법으로 이루이진 폼</caption>
+                                <colgroup>
+                                    <col style="width:180px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><label for="mb_name">대리인 <span class="form_required">필수</span></label></th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input size_lg">
+                                                    <input type="text" id="mb_name" value="홍길동" readonly>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="mb_jumin_first">대리인 주민등록번호 <span class="form_required">필수</span></label></th>
-                                    <td>
-                                        <div class="input_group">
-                                            <div class="input size_md">
-                                                <input type="tel" id="mb_jumin_first" class="tel_first" placeholder="주민번호 앞자리" maxlength="6">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="mb_jumin_first">대리인 주민등록번호<span class="sound_only">앞자리</span> <span class="form_required">필수</span></label></th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input size_md">
+                                                    <input type="tel" id="mb_jumin_first" class="tel_first" placeholder="주민번호 앞자리" maxlength="6">
+                                                </div>
+                                                <span class="dash">-</span>
+                                                <div class="input size_md">
+                                                    <label class="sound_only" for="mb_jumin_second">대리인 주민등록번호 뒷자리</label>
+                                                    <input type="tel" id="mb_jumin_second" class="tel_second" placeholder="뒷자리" maxlength="9">
+                                                </div>
                                             </div>
-                                            <span class="dash">-</span>
-                                            <div class="input size_md">
-                                                <input type="tel" id="mb_jumin_second" class="tel_second" placeholder="뒷자리" maxlength="9">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="adsZip">신청자 주소<span class="sound_only">우편번호</span> <span class="form_required">필수</span></label></th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input size_lg">
+                                                    <input type="text" id="adsZip" placeholder="우편번호 찾기" readonly>
+                                                </div>
+                                                <button 
+                                                    type="button" 
+                                                    class="btn btn_md btn_submit_line modal_open" 
+                                                    data-target="#address_layer" 
+                                                    aria-haspopup="dialog" 
+                                                    aria-label="주소 검색 열기">
+                                                    주소 검색
+                                                </button>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="adsZip">신청자 주소 <span class="form_required">필수</span></label></th>
-                                    <td>
-                                        <div class="input_group">
-                                            <div class="input size_lg">
-                                                <input type="text" id="adsZip" class="white" placeholder="우편번호 찾기" readonly onclick="openLayer('#address_layer');sample2_execDaumPostcode()">
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <label for="adsInput" class="sound_only">신청자 주소 도로명명주소</label>
+                                                    <input type="text" id="adsInput" readonly>
+                                                </div>
                                             </div>
-                                            <button type="button" class="btn btn_md btn_submit_line" onclick="openLayer('#address_layer');sample2_execDaumPostcode()">주소 검색</button>
-                                        </div>
-                                        <div class="input_group">
-                                            <div class="input">
-                                                <input type="text" id="adsInput" readonly onclick="openLayer('#address_layer');sample2_execDaumPostcode()">
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <label for="adsDetailInput" class="sound_only">상세주소</label>
+                                                    <input type="text" id="adsDetailInput" placeholder="나머지 주소를 입력해 주세요.">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="input_group">
-                                            <div class="input">
-                                                <input type="text" id="adsDetailInput" placeholder="나머지 주소를 입력해 주세요.">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="phone_first">신청자 휴대전화번호 <span class="sound_only">앞 3자리</span></label></th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input size_sm">
+                                                    <input type="tel" id="phone_first" class="tel_first" maxlength="3">
+                                                </div>
+                                                <span class="dash">-</span>
+                                                <div class="input size_sm">
+                                                    <label for="phone_second" class="sound_only">신청자 휴대폰번호 중간 4자리</label>
+                                                    <input type="tel" id="phone_second" class="tel_second" maxlength="4">
+                                                </div>
+                                                <span class="dash">-</span>
+                                                <div class="input size_sm">
+                                                    <label for="phone_third" class="sound_only">신청자 휴대폰번호 마지막 4자리</label>
+                                                    <input type="tel" id="phone_third" class="tel_third" maxlength="4">
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="phone_first">신청자 휴대폰번호</label></th>
-                                    <td>
-                                        <div class="input_group">
-                                            <div class="input size_sm">
-                                                <input type="tel" id="phone_first" class="tel_first" maxlength="3">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="tel_home_first">신청자 집전화번호 <span class="sound_only">앞 3자리</span></label></th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input size_sm">
+                                                    <input type="tel" id="tel_home_first" class="tel_first" maxlength="3">
+                                                </div>
+                                                <span class="dash">-</span>
+                                                <div class="input size_sm">
+                                                    <label for="tel_home_second" class="sound_only">신청자 집전화번호 마지막 4자리</label>
+                                                    <input type="tel" id="tel_home_second" class="tel_second" maxlength="4">
+                                                </div>
+                                                <span class="dash">-</span>
+                                                <div class="input size_sm">
+                                                    <label for="tel_home_third" class="sound_only">신청자 집전화번호 마지막 4자리</label>
+                                                    <input type="tel" id="tel_home_third" class="tel_third" maxlength="4">
+                                                </div>
                                             </div>
-                                            <span class="dash">-</span>
-                                            <div class="input size_sm">
-                                                <input type="tel" class="tel_second" maxlength="4">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="mb_email">신청자 이메일 주소</label></th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="email" id="mb_email" placeholder="이메일 주소를 입력해 주세요.">
+                                                </div>
                                             </div>
-                                            <span class="dash">-</span>
-                                            <div class="input size_sm">
-                                                <input type="tel" class="tel_third" maxlength="4">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="tel_first">신청자 휴대폰번호</label></th>
-                                    <td>
-                                        <div class="input_group">
-                                            <div class="input size_sm">
-                                                <input type="tel" id="tel_first" class="tel_first" maxlength="3">
-                                            </div>
-                                            <span class="dash">-</span>
-                                            <div class="input size_sm">
-                                                <input type="tel" class="tel_second" maxlength="4">
-                                            </div>
-                                            <span class="dash">-</span>
-                                            <div class="input size_sm">
-                                                <input type="tel" class="tel_third" maxlength="4">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="mb_email">신청자 이메일 주소</label></th>
-                                    <td>
-                                        <div class="input_group">
-                                            <div class="input">
-                                                <input type="email" id="mb_email" placeholder="이메일 주소를 입력해 주세요.">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>신청자 통지방법</th>
-                                    <td>
-                                        <label class="checkbox inline">
-                                            <input type="checkbox">
-                                            <span class="ck_icon"></span>
-                                            문자메시지
-                                        </label>
-                                        <label class="checkbox inline">
-                                            <input type="checkbox">
-                                            <span class="ck_icon"></span>
-                                            전자우편주소(E-mail)
-                                        </label>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">신청자 통지방법</th>
+                                        <td>
+                                            <label class="checkbox inline" for="agree_sms">
+                                                <input type="checkbox" id="agree_sms">
+                                                <span class="ck_icon"></span>
+                                                문자메시지
+                                            </label>
+                                            <label class="checkbox inline" for="agree_email">
+                                                <input type="checkbox" id="agree_email">
+                                                <span class="ck_icon"></span>
+                                                전자우편주소(E-mail)
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
                 </div>
 
                 <div class="form form_type2">
-                    <div class="form_title">
-                        <h4>신청자 목록</h4>
-                        <div class="r">
-                            <!-- <button type="button" class="btn btn_md btn_dark_line v_pc" onclick="addApplicant();">
-                                <svg width="12" height="12" fill="none" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                <span>신청자 추가</span>
-                            </button>
-                            <button type="button" class="btn btn_sm btn_dark_line v_mobile_inline_flex" onclick="addApplicant();">
-                                <span>신청자 추가</span>
-                                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 6h-7M6 2.5v7" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                            </button> -->
-                            <button type="button" class="btn btn_md btn_dark_line" onclick="addApplicant();">
-                                <svg width="12" height="12" fill="none" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                <span>신청자 추가</span>
-                            </button>
+                    <fieldset>
+                        <div class="form_title">
+                            <h4><legend>신청자 목록</legend></h4>
+                            <div class="r">
+                                <!-- <button type="button" class="btn btn_md btn_dark_line v_pc" onclick="addApplicant();">
+                                    <svg width="12" height="12" fill="none" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                                    <span>신청자 추가</span>
+                                </button>
+                                <button type="button" class="btn btn_sm btn_dark_line v_mobile_inline_flex" onclick="addApplicant();">
+                                    <span>신청자 추가</span>
+                                    <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 6h-7M6 2.5v7" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                                </button> -->
+                                <button type="button" class="btn btn_md btn_dark_line" onclick="addApplicant();" aria-label="신청자 추가">
+                                    <svg width="12" height="12" fill="none" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M11 5.999H1M6 .999v10" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                                    <span>신청자 추가</span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="add_wrap">
-                        <div class="add_item">
-                            <div class="form_intitle">
-                                <div class="title">신청자 1</div>
-                                <div class="r">
-                                    <button type="button" class="btn btn_sm btn_gray_line" onclick="removeApplicant(event)">
-                                        <span>삭제</span>
-                                        <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.83 8.485 3.171 2.83M8.83 2.83 3.171 8.485" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                    </button>
+
+                        <!-- 신청자 목록 추가, 삭제 업데이트 알림 -->
+                        <div id="form_update" class="sound_only" aria-live="polite"></div>
+
+                        <div class="add_wrap" aria-live="polite">
+                            <div class="add_item">
+                                <div class="form_intitle">
+                                    <div class="title">신청자 1</div>
+                                    <div class="r">
+                                        <button type="button" class="btn btn_sm btn_gray_line" onclick="removeApplicant(event)" aria-label="신청자 삭제">
+                                            <span>삭제</span>
+                                            <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.83 8.485 3.171 2.83M8.83 2.83 3.171 8.485" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="table">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:180px">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">신청자 대상유형 <span class="form_required">필수</span></th>
+                                                <td>
+                                                    <label class="checkbox inline" for="apply_notice1_1">
+                                                        <input type="radio" name="apply_notice1" id="apply_notice1_1">
+                                                        <span class="ck_icon"></span>
+                                                        기초생활수급자 어린이
+                                                    </label>
+                                                    <label class="checkbox inline" for="apply_notice1_2">
+                                                        <input type="radio" name="apply_notice1" id="apply_notice1_2">
+                                                        <span class="ck_icon"></span>
+                                                        차상위계층 어린이
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><label for="apply_rel1">대리인과의 관계 <span class="form_required">필수</span></label></th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_lg">
+                                                            <select name="" id="apply_rel1">
+                                                                <option value="">부/모/자녀</option>
+                                                                <option value="부">부</option>
+                                                                <option value="모">모</option>
+                                                                <option value="자녀">자녀</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><label for="apply_name1">신청자 이름 <span class="form_required">필수</span></label></th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_lg">
+                                                            <input type="text" id="apply_name1" placeholder="이름을 입력해 주세요.">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><label for="apply_jumin1">신청자 주민등록번호 <span class="sound_only">앞 6자리</span> <span class="form_required">필수</span></label></th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_md">
+                                                            <input type="text" id="apply_jumin1" class="tel_first" maxlength="6">
+                                                        </div>
+                                                        <span class="dash">-</span>
+                                                        <div class="input size_md">
+                                                            <label for="apply_jumin1_2" class="sound_only">신청자 주민등록번호 뒤 7자리</label>
+                                                            <input type="text" id="apply_jumin1_2" class="tel_second" maxlength="7">
+                                                        </div>
+                                                        <button type="button" class="btn btn_md btn_submit_line">자격 검증</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <div class="table">
-                                <table>
-                                    <colgroup>
-                                        <col style="width:180px">
-                                        <col>
-                                    </colgroup>
-                                    <tbody>
-                                        <tr>
-                                            <th>신청자 대상유형 <span class="form_required">필수</span></th>
-                                            <td>
-                                                <label class="checkbox inline">
-                                                    <input type="radio" name="apply_notice1">
-                                                    <span class="ck_icon"></span>
-                                                    기초생활수급자 어린이
-                                                </label>
-                                                <label class="checkbox inline">
-                                                    <input type="radio" name="apply_notice1">
-                                                    <span class="ck_icon"></span>
-                                                    차상위계층 어린이
-                                                </label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>대리인과의 관계 <span class="form_required">필수</span></th>
-                                            <td>
-                                                <div class="input_group">
-                                                    <div class="input size_lg">
-                                                        <select name="" id="apply_rel1">
-                                                            <option value="">부/모/자녀</option>
-                                                            <option value="부">부</option>
-                                                            <option value="모">모</option>
-                                                            <option value="자녀">자녀</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><label for="apply_name1">신청자 이름 <span class="form_required">필수</span></label></th>
-                                            <td>
-                                                <div class="input_group">
-                                                    <div class="input size_lg">
-                                                        <input type="text" id="apply_name1" placeholder="이름을 입력해 주세요.">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><label for="apply_jumin1">신청자 주민등록번호 <span class="form_required">필수</span></label></th>
-                                            <td>
-                                                <div class="input_group">
-                                                    <div class="input size_md">
-                                                        <input type="text" id="apply_jumin1" class="tel_first" maxlength="6">
-                                                    </div>
-                                                    <span class="dash">-</span>
-                                                    <div class="input size_md">
-                                                        <input type="text" id="apply_jumin1_2" class="tel_second" maxlength="7">
-                                                    </div>
-                                                    <button type="button" class="btn btn_md btn_submit_line">자격 검증</button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
-                    </div>
+                    </fieldset>
                 </div>
 
                 <div class="form_btns">
@@ -377,20 +405,22 @@
 </div>
 
 
-
 <!-- 주소 -->
-<div id="address_layer" class="layer_popup">
-    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;">
+<div id="address_layer" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;" role="document">
         <div class="layer_header">
-            <div class="layer_title">주소 검색</div>
-            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+            <h5 class="layer_title">주소 검색</h5>
+            <button type="button" class="layer_close modal_close">팝업 닫기</button>
         </div>
-        <div class="layer_body" data-simplebar>
+        <div class="layer_body">
             <div id="daumAdressLayer">
+            </div>
+            <div class="form_btns">
+                <button type="button" class="btn btn_md btn_gray_line modal_close">닫기</button>
             </div>
         </div>
     </div>
-    <span class="layer_bg" onclick="closeLayer(this)"></span>
+    <span class="layer_bg modal_close"></span>
 </div>
 <!-- //주소 -->
 
@@ -432,7 +462,7 @@ function sample2_execDaumPostcode() {
         maxSuggestItems : 5
     }).embed(element_layer);
 }
-
+sample2_execDaumPostcode()
 
 
 const addWrap = document.querySelector('.add_wrap');
@@ -446,7 +476,7 @@ function addApplicant() {
         <div class="form_intitle">
             <div class="title">신청자 ${applicantCount}</div>
             <div class="r">
-                <button type="button" class="btn btn_sm btn_gray_line" onclick="removeApplicant(event)">
+                <button type="button" class="btn btn_sm btn_gray_line" onclick="removeApplicant(event)" aria-label="신청자 삭제">
                     <span>삭제</span>
                     <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.83 8.485 3.171 2.83M8.83 2.83 3.171 8.485" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round"></path></svg>
                 </button>
@@ -460,22 +490,22 @@ function addApplicant() {
                 </colgroup>
                 <tbody>
                     <tr>
-                        <th>신청자 대상유형 <span class="form_required">필수</span></th>
+                        <th scope="row">신청자 대상유형 <span class="form_required">필수</span></th>
                         <td>
-                            <label class="checkbox inline">
-                                <input type="radio" name="apply_notice${applicantCount}">
+                            <label class="checkbox inline" for="apply_notice${applicantCount}_1">
+                                <input type="radio" name="apply_notice${applicantCount}" id="apply_notice${applicantCount}_1">
                                 <span class="ck_icon"></span>
                                 <strong>기초생활수급자 어린이</strong>
                             </label>
-                            <label class="checkbox inline">
-                                <input type="radio" name="apply_notice${applicantCount}">
+                            <label class="checkbox inline" for="apply_notice${applicantCount}_2" for="apply_notice${applicantCount}_2">
+                                <input type="radio" name="apply_notice${applicantCount}" id="apply_notice${applicantCount}_2">
                                 <span class="ck_icon"></span>
                                 <strong>차상위계층 어린이</strong>
                             </label>
                         </td>
                     </tr>
                     <tr>
-                        <th>대리인과의 관계 <span class="form_required">필수</span></th>
+                        <th scope="row"><label for="apply_rel${applicantCount}">대리인과의 관계 <span class="form_required">필수</span></label></th>
                         <td>
                             <div class="input_group">
                                 <div class="input size_lg">
@@ -490,7 +520,7 @@ function addApplicant() {
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="apply_name${applicantCount}">신청자 이름 <span class="form_required">필수</span></label></th>
+                        <th scope="row"><label for="apply_name${applicantCount}">신청자 이름 <span class="form_required">필수</span></label></th>
                         <td>
                             <div class="input_group">
                                 <div class="input size_lg">
@@ -500,7 +530,7 @@ function addApplicant() {
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="apply_jumin${applicantCount}">신청자 주민등록번호 <span class="form_required">필수</span></label></th>
+                        <th scope="row"><label for="apply_jumin${applicantCount}">신청자 주민등록번호 <span class="sound_only">앞 6자리</span> <span class="form_required">필수</span></label></th>
                         <td>
                             <div class="input_group">
                                 <div class="input size_md">
@@ -508,6 +538,7 @@ function addApplicant() {
                                 </div>
                                 <span class="dash">-</span>
                                 <div class="input size_md">
+                                     <label for="apply_jumin${applicantCount}_2" class="sound_only">신청자 주민등록번호 뒤 7자리</label>
                                     <input type="text" id="apply_jumin${applicantCount}_2" class="tel_second" maxlength="7">
                                 </div>
                                 <button type="button" class="btn btn_md btn_submit_line">자격 검증</button>
@@ -521,6 +552,9 @@ function addApplicant() {
 
     addWrap.insertAdjacentHTML('beforeend', newApplicant);
     telFocus()//common.js 주민번호 앞번호 입력 후 다음 번호로 포커스 활성화
+
+    const formUpdate = document.querySelector('#form_update');
+    formUpdate.textContent = `신청자 입력 항목이 1개 추가가 되었습니다. 현재 총 ${applicantCount}개`;
 }
 
 
@@ -533,6 +567,9 @@ function removeApplicant(event) {
     const targetItem = event.target.closest('.add_item');
     targetItem.remove();
     reindexApplicants();
+
+    const formUpdate = document.querySelector('#form_update');
+    formUpdate.textContent = `신청자 입력 항목이 1개 삭제 되었습니다. 현재 총 ${applicantCount}개`;
 }
 
 // 신청자 번호 input label 업데이트

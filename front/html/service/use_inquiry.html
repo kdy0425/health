@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,18 +64,18 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content">
+    <div class="sub_content">
         <div id="aside_wrap">
             <div id="aside">
                 <h2>환경보건이용권</h2>
                 <div class="aside_nav">
                     <ul>
                         <li class="item active">
-                            <button type="button">물품·서비스</button>
-                            <ul style="display: block;">
+                            <button type="button" aria-expanded="true">물품·서비스</button>
+                            <ul style="display: block;" role="menu">
                                 <li><a href="javascript:;"><span>환경보건이용권 안내</span></a></li>
                                 <li><a href="javascript:;"><span>이용권 신청</span></a></li>
-                                <li><a href="javascript:;" class="active"><span>이용권 신청 결과조회</span></a></li>
+                                <li><a href="javascript:;" class="active" aria-current="page"><span>이용권 신청 결과조회</span></a></li>
                                 <li><a href="javascript:;"><span>환경보건이용권 진료비 차감 안내</span></a></li>
                                 <li><a href="javascript:;"><span>진료비 지원 신청</span></a></li>
                                 <li><a href="javascript:;"><span>진료비 지원 신청 결과조회</span></a></li>
@@ -79,8 +83,8 @@
                             </ul>
                         </li>
                         <li class="item">
-                            <button type="button">실내 환경 진단·컨설팅</button>
-                            <ul>
+                            <button type="button" aria-expanded="false">실내 환경 진단·컨설팅</button>
+                            <ul role="menu">
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 안내</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청</span></a></li>
                                 <li><a href="javascript:;"><span>실내 환경 진단·컨설팅 신청결과 조회</span></a></li>
@@ -90,13 +94,13 @@
                 </div>
             </div>
 
-            <div id="aside_content">
-                <div class="location">
-                    <div class="item"><a href="javascript:;" class="home">홈으로</a></div>
-                    <div class="item"><a href="javascript:;">환경보건이용권</a></div>
-                    <div class="item"><a href="javascript:;">물품·서비스</a></div>
-                    <div class="item"><a href="javascript:;">이용권 신청 결과조회</a></div>
-                </div>
+            <div id="content" class="aside_content">
+                <ol class="location" aria-label="breadcrumb">
+                    <li class="item"><a href="javascript:;" class="home">홈으로</a></li>
+                    <li class="item"><a href="javascript:;">환경보건이용권</a></li>
+                    <li class="item"><a href="javascript:;">물품·서비스</a></li>
+                    <li class="item"><a href="javascript:;" aria-current="page">이용권 신청 결과조회</a></li>
+                </ol>
 
                 <div class="page_title">
                     <h3>이용권 신청 결과조회</h3>
@@ -121,49 +125,56 @@
                 </div>
 
                 <div class="dot_info">
-                    <table>
-                        <colgroup>
-                            <col style="width:98px;">
-                            <col>
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th><span>신청자 이름</span></th>
-                                <td>홍길동</td>
-                            </tr>
-                            <tr>
-                                <th><span>휴대폰 번호</span></th>
-                                <td>010-0000-0000</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="inner">
+                        <table>
+                            <caption class="sound_only">신청자 정보 이름 표 </caption>
+                            <colgroup>
+                                <col style="width:98px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><span>신청자 이름</span></th>
+                                    <td>홍길동</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><span>휴대폰 번호</span></th>
+                                    <td>010-0000-0000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="list_wrap">
                     <div class="list_top">
                         <div class="total">총 <strong>6</strong>건</div>
                     </div>
-                    <div class="list_grid">
-                        <div class="grid_item">
+
+                    <!-- 접근성 카테고리 선택, 페이징 변경시 알림 메세지 -->
+                    <div id="form_update" class="sound_only" aria-live="polite"></div>
+
+                    <ul class="list_grid">
+                        <li class="grid_item">
                             <div class="top">
                                 <div class="subject blue">신청완료/선정</div>
                             </div>
-                            <div class="info">
+                            <dl class="info">
                                 <div class="item">
-                                    <div class="tit">신청년도</div>
-                                    <div class="cnt"><span>2024</span><span>내용 텍스트</span></div>
+                                    <dt class="tit">신청년도</dt>
+                                    <dd class="cnt"><span>2024</span><span>내용 텍스트</span></dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">사업명</div>
-                                    <div class="cnt">2024 상반기 환경보건이용권</div>
+                                    <dt class="tit">사업명</dt>
+                                    <dd class="cnt">2024 상반기 환경보건이용권</dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">신청자이름</div>
-                                    <div class="cnt">홍길동</div>
+                                    <dt class="tit">신청자이름</dt>
+                                    <dd class="cnt">홍길동</dd>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="grid_item">
+                            </dl>
+                        </li>
+                        <li class="grid_item">
                             <div class="top">
                                 <div class="subject">신청대기/임시저장</div>
                                 <button type="button" class="btn btn_sm btn_dark_line btn_detail">
@@ -171,112 +182,146 @@
                                     <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4.5 9 3-3-3-3" stroke="#555" style="stroke:color(display-p3 .3333 .3333 .3333);stroke-opacity:1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                                 </button>
                             </div>
-                            <div class="info">
+                            <dl class="info">
                                 <div class="item">
-                                    <div class="tit">신청년도</div>
-                                    <div class="cnt"><span>2024</span><span>내용 텍스트</span></div>
+                                    <dt class="tit">신청년도</dt>
+                                    <dd class="cnt"><span>2024</span><span>내용 텍스트</span></dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">사업명</div>
-                                    <div class="cnt">2024 상반기 환경보건이용권</div>
+                                    <dt class="tit">사업명</dt>
+                                    <dd class="cnt">2024 상반기 환경보건이용권</dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">신청자이름</div>
-                                    <div class="cnt">홍길동</div>
+                                    <dt class="tit">신청자이름</dt>
+                                    <dd class="cnt">홍길동</dd>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="grid_item">
+                            </dl>
+                        </li>
+                        <li class="grid_item">
                             <div class="top">
                                 <div class="subject blue">신청완료/선정</div>
                             </div>
-                            <div class="info">
+                            <dl class="info">
                                 <div class="item">
-                                    <div class="tit">신청년도</div>
-                                    <div class="cnt"><span>2024</span><span>내용 텍스트</span></div>
+                                    <dt class="tit">신청년도</dt>
+                                    <dd class="cnt"><span>2024</span><span>내용 텍스트</span></dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">사업명</div>
-                                    <div class="cnt">2024 상반기 환경보건이용권</div>
+                                    <dt class="tit">사업명</dt>
+                                    <dd class="cnt">2024 상반기 환경보건이용권</dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">신청자이름</div>
-                                    <div class="cnt">홍길동</div>
+                                    <dt class="tit">신청자이름</dt>
+                                    <dd class="cnt">홍길동</dd>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="grid_item">
+                            </dl>
+                        </li>
+                        <li class="grid_item">
                             <div class="top">
                                 <div class="subject gray">신청완료/비선정</div>
                             </div>
-                            <div class="info">
+                            <dl class="info">
                                 <div class="item">
-                                    <div class="tit">신청년도</div>
-                                    <div class="cnt"><span>2024</span><span>내용 텍스트</span></div>
+                                    <dt class="tit">신청년도</dt>
+                                    <dd class="cnt"><span>2024</span><span>내용 텍스트</span></dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">사업명</div>
-                                    <div class="cnt">2024 상반기 환경보건이용권</div>
+                                    <dt class="tit">사업명</dt>
+                                    <dd class="cnt">2024 상반기 환경보건이용권</dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">신청자이름</div>
-                                    <div class="cnt">홍길동</div>
+                                    <dt class="tit">신청자이름</dt>
+                                    <dd class="cnt">홍길동</dd>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="grid_item">
+                            </dl>
+                        </li>
+                        <li class="grid_item">
                             <div class="top">
                                 <div class="subject blue">신청완료/선정</div>
                             </div>
-                            <div class="info">
+                            <dl class="info">
                                 <div class="item">
-                                    <div class="tit">신청년도</div>
-                                    <div class="cnt"><span>2024</span><span>내용 텍스트</span></div>
+                                    <dt class="tit">신청년도</dt>
+                                    <dd class="cnt"><span>2024</span><span>내용 텍스트</span></dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">사업명</div>
-                                    <div class="cnt">2024 상반기 환경보건이용권</div>
+                                    <dt class="tit">사업명</dt>
+                                    <dd class="cnt">2024 상반기 환경보건이용권</dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">신청자이름</div>
-                                    <div class="cnt">홍길동</div>
+                                    <dt class="tit">신청자이름</dt>
+                                    <dd class="cnt">홍길동</dd>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="grid_item">
+                            </dl>
+                        </li>
+                        <li class="grid_item">
                             <div class="top">
                                 <div class="subject gray">신청완료/비선정</div>
                             </div>
-                            <div class="info">
+                            <dl class="info">
                                 <div class="item">
-                                    <div class="tit">신청년도</div>
-                                    <div class="cnt"><span>2024</span><span>내용 텍스트</span></div>
+                                    <dt class="tit">신청년도</dt>
+                                    <dd class="cnt"><span>2024</span><span>내용 텍스트</span></dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">사업명</div>
-                                    <div class="cnt">2024 상반기 환경보건이용권</div>
+                                    <dt class="tit">사업명</dt>
+                                    <dd class="cnt">2024 상반기 환경보건이용권</dd>
                                 </div>
                                 <div class="item">
-                                    <div class="tit">신청자이름</div>
-                                    <div class="cnt">홍길동</div>
+                                    <dt class="tit">신청자이름</dt>
+                                    <dd class="cnt">홍길동</dd>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            </dl>
+                        </li>
+                    </ul>
 
                     <div class="paging">
-                        <a href="javascript:;" class="pg first disabled"></a>
-                        <a href="javascript:;" class="pg prev disabled"></a>
-                        <a href="javascript:;" class="pg first"></a>
-                        <a href="javascript:;" class="pg prev "></a>
-                        <a href="javascript:;">1</a>
-                        <a href="javascript:;" class="active">2</a>
-                        <a href="javascript:;">3</a>
-                        <a href="javascript:;" class="pg next"></a>
-                        <a href="javascript:;" class="pg end"></a>
-                        <a href="javascript:;" class="pg next disabled"></a>
-                        <a href="javascript:;" class="pg end disabled"></a>
+                        <a href="javascript:;" id="paging_first" class="pg first">첫번재 페이지</a>
+                        <a href="javascript:;" id="paging_prev" class="pg prev ">이전 페이지</a>
+                        <a href="javascript:;" id="paging_1">1</a>
+                        <a href="javascript:;" id="paging_3" class="active" title="선택됨">2</a>
+                        <a href="javascript:;" id="paging_3">3</a>
+                        <a href="javascript:;" id="paging_4">4</a>
+                        <a href="javascript:;" id="paging_5">5</a>
+                        <a href="javascript:;" id="paging_next" class="pg next">다음 페이지</a>
+                        <a href="javascript:;" id="paging_last" class="pg end">마지막 페이지</a>
                     </div>
+                    <script>
+                        //적용 완료 후 확인해야 할 사항 : 
+                        //1.탭을 사용하여 focus를 페이징 버튼에 올리고 엔터를 함
+                        //2.목록이 갱신됨
+                        //3.포커스가 클릭했던 버튼에 계속 유지됨.
+                        //4.#form_update에 업데이트된 메세지가 맞는지 확인
+                        let lastFocusedPagingButton = null; // 마지막으로 클릭한 페이징 버튼을 저장
+
+                        document.addEventListener('click', (event) => {
+                            const button = event.target.closest('.paging a');
+                            if (!button) return;
+
+                            lastFocusedPagingButton = button; // 클릭한 버튼을 저장
+
+                            const pageId = button.textContent.trim(); // 버튼의 텍스트 내용 가져오기
+                            updateList(pageId);
+                        });
+
+                        function updateList(pageText) {
+                            ////페이징 클릭 후 리스트 갱신 스크립트
+                            alert(`페이지 ${pageText} 목록 갱신`);
+                            ////페이징 클릭 후 리스트 갱신 스크립트
+
+                            ////갱신 성공 후
+                            // 웹 접근성 알림
+                            const formUpdate = document.getElementById('form_update');
+                            if (formUpdate) {
+                                formUpdate.textContent = `${pageText} 페이지로 목록이 갱신되었습니다.`;
+                            }
+
+                            // 저장된 버튼에 포커스 복원
+                            if (lastFocusedPagingButton) {
+                                lastFocusedPagingButton.focus();
+                            }
+                        }
+                    </script>
                 </div>
 
             </div>

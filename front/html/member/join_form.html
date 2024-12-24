@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,8 +64,8 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content sm_wrap">
-        <div class="container_sm">
+    <div class="sub_content sm_wrap">
+        <div id="content" class="container_sm">
             <div class="center_title">
                 <h2>회원가입</h2>
             </div>
@@ -69,9 +73,9 @@
             <div class="sub_title">
                 <h3>회원정보 입력</h3>
                 <div class="page_step">
-                    <span>1</span>
-                    <span class="active">2</span>
-                    <span>3</span>
+                    <span></span>
+                    <span class="active"><span class="sound_only">총 3페이지 중 </span>2<span class="sound_only">번째 페이지</span></span>
+                    <span></span>
                 </div>
             </div>
 
@@ -85,13 +89,13 @@
                     <div class="form_item">
                         <div class="form_tit">성별 <span class="form_required">필수</span></div>
                         <div class="content">
-                            <label class="checkbox inline">
-                                <input type="radio" name="mb_gender">
+                            <label class="checkbox inline" for="mb_gender1">
+                                <input type="radio" id="mb_gender1" name="mb_gender">
                                 <span class="ck_icon"></span>
                                 남자
                             </label>
-                            <label class="checkbox inline">
-                                <input type="radio" name="mb_gender">
+                            <label class="checkbox inline" for="mb_gender2">
+                                <input type="radio" id="mb_gender2" name="mb_gender">
                                 <span class="ck_icon"></span>
                                 여자
                             </label>
@@ -144,7 +148,7 @@
                     </div>
 
                     <div class="form_item">
-                        <label for="mb_birth" class="form_tit">생년월일 <span class="form_required">필수</span></label>
+                        <label for="mb_birth" class="form_tit">생년월일 <span class="sound_only">앞 8자리</span> <span class="form_required">필수</span></label>
                         <div class="content">
                             <div class="input_group">
                                 <div class="input">
@@ -155,19 +159,28 @@
                     </div>
 
                     <div class="form_item">
-                        <label for="adsInput" class="form_tit">주소 <span class="form_required">필수</span></label>
+                        <label for="adsInput" class="form_tit">주소 <span class="sound_only">우편번호</span> <span class="form_required">필수</span></label>
                         <div class="content">
                             <div class="input_group">
                                 <div class="input zip">
-                                    <input type="text" id="adsZip" class="white" placeholder="우편번호" readonly onclick="openLayer('#address_layer');sample2_execDaumPostcode()">
+                                    <input type="text" id="adsZip" placeholder="우편번호" readonly>
                                 </div>
                                 <div class="input">
-                                    <input type="text" id="adsInput" class="white" readonly onclick="openLayer('#address_layer');sample2_execDaumPostcode()">
+                                    <label for="adsInput" class="sound_only">도로명주소</label>
+                                    <input type="text" id="adsInput" readonly>
                                 </div>
-                                <button type="button" class="btn btn_lg btn_submit_line" onclick="openLayer('#address_layer');sample2_execDaumPostcode()">주소검색</button>
+                                <button 
+                                    type="button" 
+                                    class="btn btn_lg btn_submit_line modal_open" 
+                                    data-target="#address_layer" 
+                                    aria-haspopup="dialog" 
+                                    aria-label="주소검색 열기">
+                                    주소검색
+                                </button>
                             </div>
                             <div class="input_group">
                                 <div class="input">
+                                    <label for="adsDetailInput" class="sound_only">상세주소</label>
                                     <input type="text" id="adsDetailInput" placeholder="상세주소">
                                 </div>
                             </div>
@@ -199,13 +212,13 @@
                     <div class="form_item">
                         <div class="form_tit">수신동의 <span class="form_required">필수</span></div>
                         <div class="content">
-                            <label class="checkbox inline">
-                                <input type="checkbox">
+                            <label class="checkbox inline" for="agree_sms">
+                                <input type="checkbox" id="agree_sms">
                                 <span class="ck_icon"></span>
                                 SMS
                             </label>
-                            <label class="checkbox inline">
-                                <input type="checkbox">
+                            <label class="checkbox inline" for="agree_email">
+                                <input type="checkbox" id="agree_email">
                                 <span class="ck_icon"></span>
                                 이메일
                             </label>
@@ -261,22 +274,23 @@
 
 
 <!-- 주소 -->
-<div id="address_layer" class="layer_popup">
-    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;">
+<div id="address_layer" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width:50rem;" role="document">
         <div class="layer_header">
-            <div class="layer_title">주소검색</div>
-            <button type="button" class="layer_close" onclick="closeLayer(this)">팝업 닫기</button>
+            <h5 class="layer_title">주소 검색</h5>
+            <button type="button" class="layer_close modal_close">팝업 닫기</button>
         </div>
-        <div class="layer_body" data-simplebar>
+        <div class="layer_body">
             <div id="daumAdressLayer">
+            </div>
+            <div class="form_btns">
+                <button type="button" class="btn btn_md btn_gray_line modal_close">닫기</button>
             </div>
         </div>
     </div>
-    <span class="layer_bg" onclick="closeLayer(this)"></span>
+    <span class="layer_bg modal_close"></span>
 </div>
 <!-- //주소 -->
-
-
 
 <script src="../../assets/js/common.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -314,6 +328,8 @@ function sample2_execDaumPostcode() {
         maxSuggestItems : 5
     }).embed(element_layer);
 }
+sample2_execDaumPostcode()
+
 </script>
 </body>
 </html>

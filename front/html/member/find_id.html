@@ -28,6 +28,10 @@
 <body>
 
 <div id="layout">
+    <div id="skip_to_container">
+		<a href="#content" id="contentMove">본문 바로가기</a>
+		<a href="#nav">주메뉴 바로가기</a>
+	</div>
 
     <!-- header -->
     <div id="header">
@@ -60,8 +64,8 @@
     <!-- //header -->
 
     <!-- content -->
-    <div id="content" class="sub_content sm_wrap">
-        <div class="container_sm">
+    <div class="sub_content sm_wrap">
+        <div id="content" class="container_sm">
             <div class="center_title">
                 <h2>아이디 찾기</h2>
                 <p>아이디가 생각나지 않으세요? 정보를 입력하여 아이디를 찾아보세요.</p>
@@ -90,11 +94,11 @@
                         </div>
                     </div>
                     <div class="form_item">
-                        <label for="mb_birth" class="form_tit">휴대폰 번호</label>
+                        <label for="mb_phone" class="form_tit">휴대폰 번호</label>
                         <div class="content">
                             <div class="input_group">
                                 <div class="input">
-                                    <input type="tel" id="mb_birth" placeholder="-없이 휴대폰 번호 입력" maxlength="11">
+                                    <input type="tel" id="mb_phone" placeholder="-없이 휴대폰 번호 입력" maxlength="11">
                                 </div>
                             </div>
                         </div>
