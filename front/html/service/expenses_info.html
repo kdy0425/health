@@ -194,32 +194,28 @@
                         <div class="info_images">
                             <div class="item">
                                 <div class="tit">처방전</div>
-                                <button class="thumb modal_open" type="button" data-target="#sample_popup" aria-haspopup="dialog" aria-label="처방전 원본 이미지 모달창 열기"
-                                onclick="openSample(this,'처방전', '../../assets/images/content/info_images1_origin.jpg');">
+                                <button class="thumb modal_open" type="button" data-target="#sample_popup1" aria-haspopup="dialog" aria-label="처방전 원본 이미지 모달창 열기">
                                     <img src="../../assets/images/content/info_images1.jpg" alt="증빙자료 미리보기 이미지">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
                             </div>
                             <div class="item">
                                 <div class="tit">진료확인서</div>
-                                <button class="thumb modal_open" type="button" data-target="#sample_popup" aria-haspopup="dialog" aria-label="진료확인서 원본 이미지 모달창 열기"
-                                onclick="openSample(this,'진료확인서', '../../assets/images/content/info_images2_origin.jpg');">
+                                <button class="thumb modal_open" type="button" data-target="#sample_popup2" aria-haspopup="dialog" aria-label="진료확인서 원본 이미지 모달창 열기">
                                     <img src="../../assets/images/content/info_images2.jpg" alt="진료확인서 미리보기 이미지">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
                             </div>
                             <div class="item">
                                 <div class="tit">진료비영수증</div>
-                                <button class="thumb modal_open" type="button" data-target="#sample_popup" aria-haspopup="dialog" aria-label="진료비영수증 원본 이미지 모달창 열기"
-                                onclick="openSample(this,'진료비영수증', '../../assets/images/content/info_images3_origin.jpg');">
+                                <button class="thumb modal_open" type="button" data-target="#sample_popup3" aria-haspopup="dialog" aria-label="진료비영수증 원본 이미지 모달창 열기">
                                     <img src="../../assets/images/content/info_images3.jpg" alt="진료비영수증 미리보기 이미지">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
                             </div>
                             <div class="item">
                                 <div class="tit">진료비 납입확인서</div>
-                                <button class="thumb modal_open" type="button" data-target="#sample_popup" aria-label="진료비 납입확인서 원본 이미지 모달창 열기"
-                                onclick="openSample(this,'진료비 납입확인서', '../../assets/images/content/info_images4_origin.jpg');">
+                                <button class="thumb modal_open" type="button" data-target="#sample_popup4" aria-haspopup="dialog" aria-label="진료비 납입확인서 원본 이미지 모달창 열기">
                                     <img src="../../assets/images/content/info_images4.jpg" alt="진료비 납입확인서 미리보기 이미지">
                                     <span class="sound_only">증빙자료 원본 보기</span>
                                 </button>
@@ -276,18 +272,166 @@
 </div>
 
 
-<!-- 증빙자료 원본 보기 -->
-<div id="sample_popup" class="layer_popup" role="dialog">
-    <div class="layer_box" style="max-width:calc(100% - 3rem);width: auto;min-width:30rem" role="document">
+<!-- 처방전 증빙자료 예시 -->
+<div id="sample_popup1" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width: 854px;min-width:30rem" role="document">
         <div class="layer_header">
-            <h5 class="layer_title" id="sample_title"></h5>
+            <h5 class="layer_title" id="sample_title">처방전 증빙자료 예시</h5>
             <button type="button" class="layer_close modal_close">팝업 닫기</button>
         </div>
         <!-- 웹접근성 - 스크롤 해야하는 커스텀 스크롤바에는 simplebar-tabindex 를 함께 넣어주세요.  -->
         <div class="layer_body" data-simplebar simplebar-tabindex>
             <div class="layer_content">
                 <div class="preview_image">
-                    <img src="" alt="">
+                    <img src="../../assets/images/content/info_images1_origin.jpg" alt="처방전 양식" aria-describedby="sample_popup_detail1">
+                </div>
+                <div id="sample_popup_detail1" class="sound_only">
+                    <div>
+                        <p>의료보험 시행규칙 [별지 제9호서식] <개정 2018. 9. 27.></p>
+                        <h6>처방전</h6>
+                        <div>
+                            [ ]건강보험 [ ]의료급여 [ ]산업재해보험 [ ]자동차보험 [ ]기타( )
+                        </div>
+                        <p>*[ ]에는 해당되는 곳에 체크 표시를 합니다.</p>
+                    </div>
+                    <table>
+                        <caption>처방전 정보 작성 상세 표</caption>
+                        <tr>
+                            <th scope="row">요양기관기호:</th>
+                            <td colspan="4"></td>
+                        </tr>
+                
+                        <tr>
+                            <th scope="row">발급 연월일 및 번호</th>
+                            <td colspan="2">년 월 일 - 제 호</td>
+                            <th scope="row" rowspan="3">의료기관</th>
+                            <th scope="row">명칭</th>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" rowspan="2">환자</th>
+                            <td>성명</td>
+                            <th scope="row">전화번호</th>
+                            <td colspan="2">() -</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주민등록번호</th>
+                            <td colspan="2">-</td>
+                            <th scope="row">팩스번호</th>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" rowspan="2">질변분류기호</th>
+                            <td rowspan="2" colspan="2"></td>
+                            <th scope="row" rowspan="2">처방 의료인의 성명</th>
+                            <td rowspan="2">(서명 또는 날인)</td>
+                            <th scope="row">면허종류</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">면허번호</th>
+                            <td>제 호</td>
+                        </tr>
+                    </table>
+                    <p>* 환자가 요구하면 질병분류기호를 적지 않습니다.</p>
+                    <table>
+                        <caption>처방 의약품 상세 정보 - 처방 의약품의 명칭 및 코드, 1회 투약량, 1일 투여횟수, 총 투약일수, 본인 부담률 구분코드, 용법으로 이루어진 정보 작성 표</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="2">처방 의약품의 명칭 및 코드</th>
+                                <th scope="col">1회 투약량</th>
+                                <th scope="col">1일 투여횟수</th>
+                                <th scope="col">총 투약일수</th>
+                                <th scope="col">본인부담률 구분코드</th>
+                                <th scope="col">용법</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td rowspan="7" scope="colgroup">매식(전, 간, 후) 시 분 복용</td>
+                            </tr>
+                            <tr><td colspan="2"></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td colspan="2"></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td colspan="2"></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td colspan="2"></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td colspan="2"></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td colspan="2"></td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="6">주사제 처방명세([]원 내 조제, []원 외 처방)</th>
+                                <th scope="col">조제시 참고사항</th>
+                                <th scope="col">본인부담 구분기호</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td rowspan="2"></td>
+                                <td rowspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>사용기간</td>
+                                <td>발급일부터 ( )일간</td>
+                                <td colspan="6">사용기간 내에 약국에 제출하여야 합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <h7>의약품 조제 명세</h7>
+                        <table>
+                            <caption>의약품 조제 명세 상세 정보 작성 표</caption>
+                            <tr>
+                                <th rowspan="5" scope="rowgroup">조제명세</th>
+                                <th scope="row">조제기관의 명칭</th>
+                                <td></td>
+                                <td rowspan="2" scope="rowgroup">처방의 변경,수정,확인,대체 시 그 내용 등</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">조제약사</th>
+                                <td>성명 (서명 또는 인)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">조제량(조제일수)</th>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">조제년월일</th>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h7>항목설명</h7>
+                        <ol>
+                            <li>1. 본인부담률 구분코드: "국민건강보험법 시행령" 별표2 제4호 및 제6조에 따른 약제를 처방한 경우 본인이 부담할 비율의 구분에 해당하는 구분코드를 적습니다.
+                                <p>(구분코드)</p>
+                                <ul>
+                                    <li>A: 100분의 50 본인부담, B: 100분의 80 본인부담, D: 100분의 30 본인부담</li>
+                                    <li>U: 건강보험(의료급여) 100분의 100본인부담, V: 보훈 등 100분의100 본인부담, W: 비급여(보훈만 해당)</li>
+                                </ul>
+                            </li>
+                            <li>2. 본인부담 구비기준: "본인일부부담금 산정특례에 관한 기준" 등 보건복지부장관이 정하여 고시하는 본인부담산정특례 대상 특정기호 등을 적습니다.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
             <div class="form_btns">
@@ -297,74 +441,783 @@
     </div>
     <span class="layer_bg modal_close"></span>
 </div>
-<!-- //증빙자료 원본 보기 -->
+<!-- //처방전 증빙자료 예시 -->
 
+<!-- 진료확인서 증빙자료 예시 -->
+<div id="sample_popup2" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width: 854px;min-width:30rem" role="document">
+        <div class="layer_header">
+            <h5 class="layer_title" id="sample_title">진료확인서 증빙자료 예시</h5>
+            <button type="button" class="layer_close modal_close">팝업 닫기</button>
+        </div>
+        <!-- 웹접근성 - 스크롤 해야하는 커스텀 스크롤바에는 simplebar-tabindex 를 함께 넣어주세요.  -->
+        <div class="layer_body" data-simplebar simplebar-tabindex>
+            <div class="layer_content">
+                <div class="preview_image">
+                    <img src="../../assets/images/content/info_images2_origin.jpg" alt="진료확인서 양식" aria-describedby="sample_popup_detail2">
+                </div>
+                <div id="sample_popup_detail2" class="sound_only">
+                    <div>
+                        <p>국민건강보험 요양급여의 기준에 관한 [별지 제6호서식] <개정 2024. 7. 18.></p>
+                        <h6>[ ]외래 [ ]입원 ([ ]퇴원 [ ]중간) 진료비 계산서·영수증</h6>
+                        <table>
+                            <caption>진료비 계산서·영수증 정보 작성 표</caption>
+                            <tbody>
+                                <tr>
+                                    <th scope="col" colspan="3">환자등록번호</th>
+                                    <th scope="col">환자 성명</th>
+                                    <th scope="col" colspan="3">진료기간</th>
+                                    <th scope="col" colspan="3">야간(공휴일)진료</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"></td>
+                                    <td></td>
+                                    <td colspan="3">. . .부터 . . .까지</td>
+                                    <td colspan="3">[]야간 []공휴일일</td>
+                                </tr>
+                                <tr>
+                                    <th scope="col" colspan="3">진료과목</th>
+                                    <th scope="col">질병문(DRG)번호</th>
+                                    <th scope="col">병실</th>
+                                    <th scope="col" colspan="2">환자구분</th>
+                                    <th scope="col" colspan="3">영수증번호(연월~일련번호)</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"></td>
+                                    <td colspan="3"></td>
+                                    <td></td>
+                                    <td colspan="2"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="col" colspan="3" rowspan="3">항목</th>
+                                    <th scope="col" colspan="3">급여</th>
+                                    <th scope="col" rowspan="3">비급여</th>
+                                    <th scope="col" colspan="3">금액산정내용</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col" colspan="2">일부 본인부담담</th>
+                                    <th scope="col" rowspan="2">전액 본인부담</th>
+                                    <th scope="row" colspan="2" rowspan="2">1 진료비 총액 (1+2+3+4)</th>
+                                    <td rowspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="col">본인부담금</th>
+                                    <th scope="col">공단부담금</th>
+                                </tr>
+                                <tr>
+                                    <th scope="row" rowspan="18">기본항목</th>
+                                    <th scope="row" colspan="2">진찰료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th scope="row" colspan="2" rowspan="2">2 공단부담 총액 (2+5)</th>
+                                    <td rowspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" rowspan="3">입원료</th>
+                                    <th scope="row">1인실</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2,3인실</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th scope="col" colspan="2" rowspan="2">3 환자부담 총액 (1~5)+3+4</th>
+                                    <td rowspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4인실 이상</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">식대</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th scope="row" colspan="2" rowspan="2">9 이미 납부한 금액</th>
+                                    <td rowspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" rowspan="2">투약 및 조제료</th>
+                                    <th scope="row">행위료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">약품비</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th colspan="2" rowspan="2">10 납구 할 금액 (6-9)</th>
+                                    <td rowspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" rowspan="2">주사료</th>
+                                    <th scope="row">행위료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">약품비</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th rowspan="4" scope="row">10 납부한 금액</th>
+                                    <th scope="row">카드</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">마취료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th scope="row">현금영수증</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">처치 및 수술료료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th scope="row">현금금</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">검사료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th scope="row">합계</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">영상진단료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th scope="row" colspan="2">납부하지 않음 금액 (10~11)</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">방사선치료료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th scope="row" colspan="2">현금영수증()</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">치료재료대</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th scope="row" colspan="2">신분확인번호</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">재활 및 물리치료료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <th scope="row" colspan="2">현금영수증 승인번호</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">정신료법료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td colspan="3" rowspan="16">* 요양기관 임의활용공간</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">전혈 및 혈액성분제제료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" rowspan="6">선택항목</th>
+                                    <th scope="row" colspan="2">CT진단료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">MRI진단료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">PET진단료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">초음파 진단료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">보철, 교정료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">제증명수수료</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="3">선별급여</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="3">65세 이상 등 정액</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="3">정액수가(요양병원)</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="3">정액수가(완화의료)</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="3">질병군 포괄수가</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="3">기타</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="3">합계</th>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="3">상한액 초과금</th>
+                                    <td>4</td>
+                                    <td colspan="3">-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="3">요양기관 종류</th>
+                                    <td colspan="7">[]의원급·보건기관, []병원급, []종합변원, []상급종합병원</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="3">사업자등록번호</th>
+                                    <td colspan="2"></td>
+                                    <th scope="row">상호</th>
+                                    <td colspan="2"></td>
+                                    <th scope="row">전화번호</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="3">사업장 소재지</th>
+                                    <td colspan="3"></td>
+                                    <th scope="row">대표자</th>
+                                    <td colspan="3">[인]</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="10">년 월 일</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="5" scope="col">항목별 설명</th>
+                                    <th colspan="5" scope="col">일반사항 안내</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <ol>
+                                            <li>1. 일부 본인부담: 일반적으로 다음과 같이 본인부담률을 적용하나, 요양기관 지역, 요양기관의 종별, 환자
+                                                자격, 선별급여(국민건강보험법」 제41조의4에 따른 요양급여) 여부, 병실종류 등에 따라 달라질 수 있습니다.
+                                                <ul>
+                                                    <li> - 외래 본인부담률: 요양기관 종별에 따라 30%~60%(의료급여 수급권자 종별 및 의료급여기관 유형
+                                                        등에 따라 0원~ 2500원, 0% ~ 15%) 등</li>
+                                                    <li> -입원 본인부담률: 20%(의료급여 수급권자 종별 및 의료급여기관 유형 등에 따라 0% ~ 10%) 등</li>
+                                                </ul>
+                                                ※식대: 50%(의료급여는 20%) / CT-MRI - PET: 외래 본인부담률(의료급여는 입원 본인부담률과 동일)/
+                                                선별급여(「국민건강보험법」 제41조의4에 따른 요양급여): 보건복지부장관이 고시한 항목별 본인부담률
+                                                (50%, 80%, 90%)
+                                                ※ 상급종합병원 입원료 2인실 50% 3인실 40%, 4인실 30% / 병원급 의료기관(치과병원 제외) 입원 2인실 40%, 3인실 30%
+                                               </li>
+                                            <li> 2. 전액 본인부담: 「국민건강보험법 시행규칙」 별표 6 또는 「의료급여법 시행규칙」 별표 1의2에 따라
+                                                적용되는 항목으로 건강보험(의료급여)에서 금액을 정하고 있으나 진료비 전액을 환자 본인이 부담합니다.</li>
+                                            <li>3. 상한액 초과금: 「국민건강보험법 시행령」 별표 3 제1호에 따른 본인부담상한액의 최고 금액을 초과하는
+                                            본인부담금이 발생한 경우[단, 「의료법」 제3조제2항제3호라목에 따른 요양병원(「장애인복지법」 제58조제1항
+                                            제4호에 따른 장애인 의료재활시설로서 「의료법」 제3조의2의 요건을 갖춘 의료기관인 요양병원은 제외)에
+                                            입원한 기간이 같은 연도에 120일을 초과하는 경우는 제외], 공단이 부담하는 초과분 중 사전 정산하는
+                                            금액을 말합니다.
+                                            ※전액 본인부담 및 선별급여(「국민건강보험법」 제41조의4에 따른 요양급여)의 본인부담금 등은 본인부담
+                                            상한액 산정시 제외합니다.</li>
+                                            <li> 4. 질병군 포괄수가"란 「국민건강보험법 시행령」 제21조제3항제2호 및 「국민건강보험 요양급여의 기준에
+                                                관한 규칙」 제8조제3항에 따라 보건복지부장관이 고시한 질병군 입원진료에 대하여 해당 입원진료와 관련
+                                                되는 여러 의료행위를 하나의 행위로 정하여 요양급여비용을 결정한 것을 말합니다. 다만, 해당 질병군의
+                                                입원진료와 관련되는 의료행위라도 비급여대상이나 이송처치료 등 포괄수가에서 제외되는 항목은 위 표의
+                                                기본항목 및 선택항목에 합산하여 표기됩니다.</li>
+                                        </ol>
+                                    </td>
+                                    <td colspan="5">
+                                        <ol>
+                                            <li>1. 이 계산서·영수증에 대한 세부
+                                                내용은 요양기관에 요구하여 제공
+                                                받을 수 있습니다.
+                                                </li>
+                                            <li>2. 「국민건강보험법」 제48조 또는
+                                                「의료급여법」 제11조의3에
+                                                따라 환자가 전액 부담한 비용과
+                                                비급여로 부담한 비용의 타당성
+                                                여부를 건강보험심사평가원(
+                                                1644-2000, 홈페이지: www.hira.
+                                                or.kr)에 확인 요청하실 수 있습니다.</li>
+                                            <li>3. 계산서·영수증은 「소득세법」
+                                                에 따른 의료비 공제신청 또는
+                                                「조세특례제한법」에 따른 현금
+                                                영수증 공제신청(현금영수증 승인
+                                                번호가 적힌 경우만 해당합니다)
+                                                에 사용할 수 있습니다. 다만,
+                                                지출증빙용으로 발급된 "현금
+                                                영수증(지출증빙)"은 공제신청에
+                                                사용할 수 없습니다.
+                                                (현금영수증 문의 126 인터넷
+                                                홈페이지: http://현금영수증.kr)</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="10">주(註): 1. 진료항목 중 선택항목은 요양기관의 특성에 따라 추가 또는 생략할 수 있으며, 야간(공휴일)진료 시 진료비가 가산될 수 있습니다.
+                                        2. 환자가 「위기 임신 및 보호출산 지원과 아동 보호에 관한 특별법」 제2조제3호에 따른 비식별화된 가명을 부여받은 경우에는 환자의 성명
+                                        대신 가명을 기재할 수 있습니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        210mmX297mm[백상지 80g/m2]
+                    </div>
+                </div>
+            </div>
+            <div class="form_btns">
+                <button type="button" class="btn btn_md btn_gray_line modal_close">팝업 닫기</button>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg modal_close"></span>
+</div>
+<!-- //진료확인서 증빙자료 예시 -->
+
+<!-- 진료비영수증 증빙자료 예시 -->
+<div id="sample_popup3" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width: 854px;min-width:30rem" role="document">
+        <div class="layer_header">
+            <h5 class="layer_title" id="sample_title">진료비영수증 증빙자료 예시</h5>
+            <button type="button" class="layer_close modal_close">팝업 닫기</button>
+        </div>
+        <!-- 웹접근성 - 스크롤 해야하는 커스텀 스크롤바에는 simplebar-tabindex 를 함께 넣어주세요.  -->
+        <div class="layer_body" data-simplebar simplebar-tabindex>
+            <div class="layer_content">
+                <div class="preview_image">
+                    <img src="../../assets/images/content/info_images3_origin.jpg" alt="진료비영수증 양식" aria-describedby="sample_popup_detail3">
+                </div>
+                <div id="sample_popup_detail3" class="sound_only">
+                    <div>
+                        <p>[별지 제1호 서식] 진료비 세부산정내역 서식 (제2조제1항 관련)</p>
+                        <h6>진료비 세부산정내역</h6>
+                    </div>
+                    <table>
+                        <caption>진료비 세부산정내역 정보 기입 표1</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">환자등록번호</th>
+                                <th scope="col">환자성명</th>
+                                <th scope="col">진료기간</th>
+                                <th scope="col">병실</th>
+                                <th scope="col">환자구분</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <caption>진료비 세부산정내역 정보 기입 표2</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" rowspan="3">항목</th>
+                                <th scope="col" rowspan="3">일자</th>
+                                <th scope="col" rowspan="3">코드</th>
+                                <th scope="col" rowspan="3">명칭</th>
+                                <th scope="col" rowspan="3">금액</th>
+                                <th scope="col" rowspan="3">횟수</th>
+                                <th scope="col" rowspan="3">일수</th>
+                                <th scope="col" rowspan="3">총액</th>
+                                <th scope="col" colspan="3">급여</th>
+                                <th scope="col" rowspan="3">비급여</th>
+                            </tr>
+                            <tr>
+                                <th scope="col" colspan="2">일부본인부담</th>
+                                <th scope="col" rowspan="2">전액본인부담</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">본인부담금</th>
+                                <th scope="col">공단부담금</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">계</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">끝수처리 조정금액</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">합계</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="12">
+                                    <p>신청인 (환자와의 관계: ) 의 요청에 따라 진료비 계산서·영수증 세부산정내역을 발급합니다.</p>
+                                    <p>년 월 일</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="3">요양기관 명칭</th>
+                                <td colspan="3"></td>
+                                <th scope="row" colspan="3">대표자</th>
+                                <td colspan="3">[인]</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <h7>일반사항 안내</h7>
+                        <ol>
+                            <li>1. 진료비 계산서·영수증의 세부내역서는 환자의 구체적인 처방 내역 등이 확인되므로 원칙적으로 환자 본인 외에 발급을 금합니다.
+                                다만, 본 세부내역서 발급에 대해 별도로 환자 본인으로부터 위임을 받은 것이 확인된 자 또는 법정대리인에겐 발급이 가능합니다.</li>
+                            <li>2. 비고란은 세부산정내역을 발부하는 영수증번호 등 요양기관이 필요한 경우 추가 기재하는 공간으로 활용할 수 있습니다.</li>
+                            <li> 3. 동 서식에 명시된 항목은 「국민건강보험 요양급여의 기준에 관한 규칙」 제7조제3항에 따라 필수 기재되어야 합니다.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="form_btns">
+                <button type="button" class="btn btn_md btn_gray_line modal_close">팝업 닫기</button>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg modal_close"></span>
+</div>
+<!-- //진료비영수증 증빙자료 예시 -->
+
+<!-- 진료비 납입확인서 증빙자료 예시 -->
+<div id="sample_popup4" class="layer_popup" role="dialog">
+    <div class="layer_box" style="max-width:calc(100% - 3rem);width: 854px;min-width:30rem" role="document">
+        <div class="layer_header">
+            <h5 class="layer_title" id="sample_title">진료비 납입확인서 증빙자료 예시</h5>
+            <button type="button" class="layer_close modal_close">팝업 닫기</button>
+        </div>
+        <!-- 웹접근성 - 스크롤 해야하는 커스텀 스크롤바에는 simplebar-tabindex 를 함께 넣어주세요.  -->
+        <div class="layer_body" data-simplebar simplebar-tabindex>
+            <div class="layer_content">
+                <div class="preview_image">
+                    <img src="../../assets/images/content/info_images4_origin.jpg" alt="진료비 납입확인서 양식" aria-describedby="sample_popup_detail4">
+                </div>
+                <div id="sample_popup_detail4" class="sound_only">
+                    <div>
+                        <p>국민겅강보험 요양급여의 기준에 관한 규칙 [별지 제10호서식] <개정 2024.7.18></p>
+                        <h6>약제비 계산서·영수증</h6>
+                    </div>
+                    <table>
+                        <caption>약제비 계산서·영수증 정보 기입 표</caption>
+                        <tbody>
+                            <tr>
+                                <th scope="col" colspan="2">영수증번호 (연월-일련번호)</th>
+                                <th scope="col" colspan="3"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">환자 성명</th>
+                                <th scope="col">조제일</th>
+                                <th scope="col">투약일수</th>
+                                <th scope="col" colspan="2">야간(공휴일)조제</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td colspan="2">[]야간, []공휴일</td>
+                            </tr>
+                            <tr>
+                                <th scope="col">항목</th>
+                                <th scope="col" colspan="3">급여</th>
+                                <th scope="col">비급여</th>
+                            </tr>
+                            <tr>
+                                <th scope="col" colspan="2">일부 본인부담</th>
+                                <th scope="col" rowspan="2">전액 본인부담</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">본인부담금</th>
+                                <th scope="col">공단부담금</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">약품비</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">조제기본료</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">복약지도료</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">조제료</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">관리료</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">선별 급여</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">65세 이상 등 정액</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">기타</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">합계</th>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" rowspan="2">5 약제비 총액(1+2+3+4)</th>
+                                <td></td>
+                                <th scope="row" rowspan="4">납부한 금액</th>
+                                <th scope="row">카드</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th scope="row">현금영수증</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" rowspan="2">6 환자부담 총액 (5-2)</th>
+                                <td></td>
+                                <th scope="row">현금</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th scope="row">합계</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="3">현금영수증()</th>
+                                <td colspan="2" rowspan="3">*요양기관 임의활용공간</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">신분확인번호</th>
+                                <td colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">현금영수증 승인번호</th>
+                                <td colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">처방한 요양기관</th>
+                                <td colspan="4">
+                                    []의원급·보건기관, []병원급, []종합병원, []상급종합병원
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사업자등록번호</th>
+                                <td></td>
+                                <th scope="row">상호</th>
+                                <td colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사업장 소재지</th>
+                                <td colspan="4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">전화번호</th>
+                                <td></td>
+                                <th scope="row">대표자</th>
+                                <td colspan="2">[인]</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">년 월 일</td>
+                            </tr>
+                            <tr>
+                                <th scope="col" colspan="2">항목별 설명</th>
+                                <th scope="col" colspan="3">일반사항 안내</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <ol>
+                                        <li>1. 일부 본인부담: 일반적으로 본인부담률은 요양
+                                            기관의 종별에 따라 30% 50% (의료급여
+                                            500원)이나, 환자 자격 등에 따라 달라질 수
+                                            있습니다.
+                                            ※선별급여(「국민건강보험법」 제41조의4에 따른
+                                            요양급여)에는 보건복지부장관이 고시한 본인
+                                            부담률이 적용됩니다.</li>
+                                        <li>2. 전액 본인부담: 「국민건강보험법 시행규칙」
+                                            별표 6 또는 「의료급여법 시행규칙」 별표 1의2에
+                                            따라 적용되는 항목으로 건강보험에서 금액을
+                                            정하고 있으나 진료비 전액을 환자 본인이 부담
+                                            합니다.</li>
+                                    </ol>
+                                </td>
+                                <td colspan="3">
+                                    <ol>
+                                        <li>1. 야간(공휴일)조제 등 이 계산서·영수증에 대한 세부내용은 요양기관에 요구하여 제
+                                            공받을 수 있습니다.</li>
+                                        <li>2. 「국민건강보험법」 제48조 또는 「의료급여법」 제11조의3에 따라 환자가 전액 부담
+                                            한 비용과 비급여로 부담한 비용의 타당성 여부를 건강보험심사평가원(
+                                            1644-2000, 홈페이지: www.hira.or.kr)에 확인 요청하실 수 있습니다.</li>
+                                        <li>3. 계산서·영수증은 「소득세법」에 따른 의료비 공제신청 또는 「조세특례제한법」에
+                                            따른 현금영수증 공제신청(현금영수증 승인번호가 적힌 경우만 해당합니다)에 사용할
+                                            수 있습니다. 다만, 지출증빙용으로 발급된 "현금영수증(지출증빙)"은 공제신청에 사용할
+                                            수 없습니다. (현금영수증 문의 126 인터넷 홈페이지: http://현금영수증.kr)</li>
+                                    </ol>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    주: 환자가 「위기 임신 및 보호출산 지원과 아동 보호에 관한 특별법」 제2조제3호에 따른 비식별화된 가명을 부여받은 경우에는 환자의 성명 대신 가명을 기재할 수 있습니다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form_btns">
+                <button type="button" class="btn btn_md btn_gray_line modal_close">팝업 닫기</button>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg modal_close"></span>
+</div>
+<!-- //진료비 납입확인서 증빙자료 예시 -->
 
 <script src="../../assets/js/common.js"></script>
-<script>
-function adjustLayerBoxWidth(imageElement, layerBox) {
-    const img = new Image();
-    img.src = imageElement.src;
-    
-    img.onload = function() {
-        const imageWidth = this.width;
-        const newWidth = imageWidth + 48;
-        const maxWidth = window.innerWidth - 48;
-        const finalWidth = Math.min(newWidth, maxWidth);
-        
-        layerBox.style.width = `${finalWidth}px`;
-    };
-}
-
-// 이미지 URL에서 원본 크기 구하기
-function getOriginalImageSize(imageUrl) {
-    return new Promise((resolve) => {
-        const img = new Image();
-        img.onload = function() {
-            resolve({
-                width: this.naturalWidth,
-                height: this.naturalHeight
-            });
-        };
-        img.src = imageUrl;
-    });
-}
-
-function adjustLayerBoxWidth(layerBox, width) {
-    const newWidth = width + 48;
-    const maxWidth = window.innerWidth - 48;
-    const finalWidth = Math.min(newWidth, maxWidth);
-    
-    layerBox.style.width = `${finalWidth}px`;
-}
-
-async function openSample(button, titleValue, imageUrl) {
-    const popupTitle = document.getElementById('sample_title');
-    const popup = document.getElementById('sample_popup');
-    const previewImage = popup.querySelector('.preview_image img');
-    const layerBox = popup.querySelector('.layer_box');
-    const layerBodyScroll = popup.querySelector('.layer_body .simplebar-content-wrapper');
-
-    popupTitle.textContent = titleValue + ' 증빙자료 예시';
-    const originalSize = await getOriginalImageSize(imageUrl);
-    
-    previewImage.src = imageUrl;
-    previewImage.alt = titleValue;
-    
-    adjustLayerBoxWidth(layerBox, originalSize.width);
-
-    //document.querySelector('#sample_popup').style.display = 'flex';
-    //document.querySelector('html').classList.add('scroll_hidden');
-	const windowHeight = window.innerHeight;
-
-    layerBodyScroll.scrollTop = 0;//스크롤 상단으로 초기화
-	if (layerBox.offsetHeight >= (windowHeight - 25)) {
-		layerBox.setAttribute('data-simplebar', '');
-		new SimpleBar(layerBox);
-	} else {
-		layerBox.removeAttribute('data-simplebar');
-	}
-}
-</script>
 </body>
 </html>
