@@ -167,6 +167,7 @@ let slideToggle = (target, duration = 500) => {
             }
 
             closeSearch();
+            window.scrollTo(0, 0);
         });
     });
 
