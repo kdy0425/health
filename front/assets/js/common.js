@@ -89,6 +89,13 @@ let slideToggle = (target, duration = 500) => {
         // 전체 메뉴 상태 초기화
         closeNavall();
         window.scrollTo(0, 0);
+
+        var scrollbarWidth = getScrollbarWidth();
+        var scrollY = window.scrollY;
+        document.body.style.position = 'static';
+        document.body.style.top = '0';
+        document.body.style.width = 'auto';
+        document.body.style.paddingRight = '0';
     }
 
     // 닫기 기능 (검색)
@@ -135,6 +142,12 @@ let slideToggle = (target, duration = 500) => {
         }
         if (!event.target.closest('.hd_navall') && !event.target.classList.contains('navall_btn')) {
             closeNavall();
+            var scrollbarWidth = getScrollbarWidth();
+            var scrollY = window.scrollY;
+            document.body.style.position = 'static';
+            document.body.style.top = '0';
+            document.body.style.width = 'auto';
+            document.body.style.paddingRight = '0';
         }
     }
 
@@ -168,6 +181,13 @@ let slideToggle = (target, duration = 500) => {
 
             closeSearch();
             window.scrollTo(0, 0);
+
+            var scrollbarWidth = getScrollbarWidth();
+            var scrollY = window.scrollY;
+            document.body.style.position = isExpanded ? 'static' : 'fixed';
+            document.body.style.top = isExpanded ? '0' : `-${scrollY}px`; ;
+            document.body.style.width = isExpanded ? 'auto' : '100%';
+            document.body.style.paddingRight = isExpanded ? '0' : `${scrollbarWidth}px`; ;
         });
     });
 
@@ -188,6 +208,21 @@ let slideToggle = (target, duration = 500) => {
 })();
 
 
+// 스크롤바 너비 계산 함수
+function getScrollbarWidth() {
+    const outer = document.createElement('div');
+    outer.style.visibility = 'hidden';
+    outer.style.overflow = 'scroll';
+    document.body.appendChild(outer);
+
+    const inner = document.createElement('div');
+    outer.appendChild(inner);
+
+    const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+    outer.parentNode.removeChild(outer);
+
+    return scrollbarWidth;
+}
 
 //커스텀 selectbox
 const applyChoicesToSelect = (element) => {
