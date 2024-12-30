@@ -217,7 +217,7 @@
 .ft_family .choices__inner{background-color: #555;border:1px solid #555;color:#fff;font-size:15px;min-height:48px;padding-top:12px;padding-bottom:12px;}
 .ft_family .choices{position: relative;z-index: 5;}
 .ft_family .choices:focus-visible{z-index: 50;}
-.ft_family button{position: relative;z-index: 5;white-space: nowrap;}
+.ft_family button{position: relative;z-index: 5;white-space: nowrap;font-family: "Paperlogy";font-size:1.4rem;font-weight: 600;}
 .ft_family button:focus-visible{z-index: 50;}
 .ft_family .choices__placeholder{opacity: 1;}
 .ft_family .choices[data-type*="select-one"]::after{width:1.6rem;height:1.6rem;background-image: url("data:image/svg+xml,%0A%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m3 6 5 5 5-5' stroke='%23fff' style='stroke:%23fff;stroke-opacity:1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");}
