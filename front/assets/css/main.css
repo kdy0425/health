@@ -18,9 +18,9 @@
 
 .main_boxes .box.use{background: rgb(55,131,229);background: linear-gradient(126deg, rgba(55,131,229,1) 0%, rgba(100,85,196,1) 100%);overflow: hidden;}
 .main_boxes .box.guide{width:min(42%, 33.2rem);background-color: #ffea79;padding:3.6rem;}
-.main_boxes .box.faq{background-color: #f3faff;padding:3.5rem;}
-.main_boxes .box.notice{margin-top:2.4rem;background-color: #f8f8f8;padding:3.5rem;}
-.main_boxes .box.cs{background-color: #21bba6;padding:3.4rem 4.8rem 3.6rem;color:#fff;height: 30rem;}
+.main_boxes .box.faq{background-color: #f3faff;padding:3.6rem;}
+.main_boxes .box.notice{margin-top:2.4rem;background-color: #f8f8f8;padding:3.6rem;}
+.main_boxes .box.cs{background-color: #21bba6;padding:3.6rem;color:#fff;height: 30rem;}
 .main_boxes .box.mall{width:min(42%, 33.2rem);background-color: #4487D7;padding:3.6rem;}
 
 .main_boxes .box.use .use_inner{height: 100%;;padding:3.6rem 3.6rem 5.4rem;position: relative;}
