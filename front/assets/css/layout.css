@@ -9,7 +9,7 @@
 #header .hd_inner{display:flex;align-items: center;height: 10rem;max-width:140rem;margin:0 auto;}
 #header #logo{}
 #header #logo a,
-#header #logo img{display: block;max-width:15.7rem;}
+#header #logo img{display: block;max-width:21.2rem;}
 #header #nav{margin-left:auto;margin-right:1.4rem;}
 #header #nav > ul{display: flex;align-items: center;}
 #header #nav > ul > li{}
@@ -141,7 +141,7 @@
 }
 @media screen and (max-width:1150px) {
     #header .hd_inner{padding:0 1.6rem;height: 6.4rem;}
-    #header #logo img{width:12rem;}
+    #header #logo img{width:14.5rem;}
     #header #nav{display:none;}
     #header #hd_btns{right:auto;top:auto;margin-top:0;margin-left:auto;}
     .hd_lang.v_pc{display: none;}
