@@ -25,7 +25,7 @@
 
 .main_boxes .box.use .use_inner{height: 100%;;padding:3.6rem 3.6rem 5.4rem;position: relative;}
 .main_boxes .box.use .box_title h3{font-size:3.2rem;color:#fff;}
-.main_boxes .use_service > div{margin-top:2.4rem;background-color: #fff;padding:2.4rem;border-radius: 1.6rem;}
+.main_boxes .use_service > div{margin-top:2.4rem;background-color: #fff;padding:2.4rem 2.4rem 3rem;border-radius: 1.6rem;}
 .main_boxes .use_service .title{word-break: keep-all;}
 .main_boxes .use_service .title h4{font-weight:700;font-size:2.1rem;color:#407ADF;}
 .main_boxes .use_service .title p{margin-top:0.8rem;font-size:1.5rem;color:#1D1D1D;}
@@ -218,7 +218,8 @@ animation: possibleMove 2.5s ease-in-out infinite;}
     .main_boxes .use_service .items .item + .item{margin-top:0.8rem;}
     .main_boxes .use_service .items .item a{display: flex;align-items: center;}
     .main_boxes .use_service .items .item a .icon{margin:0 1.6rem 0 0;border-radius:0;width:4.8rem;height:4.8rem;}
-    .main_boxes .use_service .items .item a .icon img{width: 3rem;}
+    .main_boxes .use_service .items .item a .icon img,
+    .main_boxes .use_service .items .item a .icon svg{width: 3rem;}
     .main_boxes .use_service .items .item a span{position: static;padding:0;}
     .main_boxes .use_service .items .item a span:after{display:block;right:1.6rem;width:1.8rem;height:1.8rem;background-size: contain;margin-top:-0.9rem;}
     .main_boxes .use_service .items .item a:hover .icon{box-shadow: none !important;}
