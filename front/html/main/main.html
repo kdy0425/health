@@ -260,16 +260,16 @@
                             <div class="use_service" role="region" aria-label="환경보건이용권 서비스 안내">
                                 <div class="service">
                                     <div class="title">
-                                        <h4>실내환경 컨설팅</h4>
-                                        <p>환경성질환 예방을 위한 실내환경 유해인자 진단·관리방안을 제공합니다.</p>
+                                        <h4>상품·서비스·진료비 지원</h4>
+                                        <p>환경성질환 예방을 위한 상품, 서비스, 진료비를 지원합니다.</p>
                                     </div>
                                     <div class="items">
                                         <div class="item">
                                             <a href="javascript:;">
                                                 <div class="icon">
-                                                    <img src="../../assets/images/content/use_consulting_business.svg" aria-hidden="true">
+                                                    <img src="../../assets/images/content/use_consulting_info.svg" aria-hidden="true">
                                                 </div>
-                                                <span>컨설팅 안내</span>
+                                                <span>상품·서비스 안내</span>
                                             </a>
                                         </div>
                                         <div class="item possible"><!-- 신청가능인 경우만 possible 클래스 부여 -->
@@ -277,7 +277,7 @@
                                                 <div class="icon">
                                                     <img src="../../assets/images/content/use_consulting_pply.svg" aria-hidden="true">
                                                 </div>
-                                                <span>컨설팅 신청</span>
+                                                <span>이용권 신청</span>
                                                 <strong><em>신청가능</em></strong>
                                             </a>
                                         </div>
@@ -300,20 +300,28 @@
                                                 <span>신청결과 조회</span>
                                             </a>
                                         </div>
+                                        <div class="item">
+                                            <a href="javascript:;">
+                                                <div class="icon">
+                                                    <img src="../../assets/images/content/use_consulting_mall.svg" aria-hidden="true">
+                                                </div>
+                                                <span>온라인몰 안내</span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="consulting">
                                     <div class="title">
-                                        <h4>상품·서비스/진료비지원</h4>
-                                        <p>환경성질환 예방을 위한 상품, 서비스, 진료비를 지원합니다.</p>
+                                        <h4>실내환경 컨설팅</h4>
+                                        <p>환경성질환 예방을 위한 실내환경 유해인자 진단·관리방안을 제공합니다.</p>
                                     </div>
                                     <div class="items">
                                         <div class="item">
                                             <a href="javascript:;">
                                                 <div class="icon">
-                                                    <img src="../../assets/images/content/use_service_business.svg" aria-hidden="true">
+                                                    <img src="../../assets/images/content/use_service_info.svg" aria-hidden="true">
                                                 </div>
-                                                <span>상품·서비스 안내</span>
+                                                <span>컨설팅 안내</span>
                                             </a>
                                         </div>
                                         <div class="item possible"><!-- 신청가능인 경우만 possible 클래스 부여 -->
@@ -321,7 +329,7 @@
                                                 <div class="icon">
                                                     <img src="../../assets/images/content/use_service_pply.svg" aria-hidden="true">
                                                 </div>
-                                                <span>이용권 신청</span>
+                                                <span>컨설팅 신청</span>
                                                 <strong><em>신청가능</em></strong>
                                             </a>
                                         </div>
@@ -342,14 +350,6 @@
                                                     </svg>
                                                 </div>
                                                 <span>신청결과 조회</span>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="javascript:;">
-                                                <div class="icon">
-                                                    <img src="../../assets/images/content/use_service_mall.svg" aria-hidden="true">
-                                                </div>
-                                                <span>온라인몰 안내</span>
                                             </a>
                                         </div>
                                     </div>
@@ -390,14 +390,22 @@
                         </div>
                     </div>
                     <div class="box_row">
-                        <a href="javascript:;" class="box mall">
-                            <div class="box_title">
-                                <h3>온라인몰 바로가기</h3>
-                                <p>환경성질환예방 상품 및 서비스를<br/> 자유롭게 구매하세요!</p>
-                            </div>
-                            <span class="go">바로가기</span>
-                            <div class="bg"><div></div></div>
-                        </a>
+                        <div class="l">
+                            <a href="javascript:;" class="box point">
+                                <div class="box_title">
+                                    <h3>포인트 전환</h3>
+                                </div>
+                                <span class="go">바로가기</span>
+                                <div class="bg"><div></div></div>
+                            </a>
+                            <a href="javascript:;" class="box mall">
+                                <div class="box_title">
+                                    <h3>온라인몰</h3>
+                                </div>
+                                <span class="go">바로가기</span>
+                                <div class="bg"><div></div></div>
+                            </a>
+                        </div>
                         <div class="box cs">
                             <div class="box_title">
                                 <h3>환경보건이용권 콜센터</h3>
@@ -477,7 +485,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const box3 = document.querySelector('.box.faq');
   const box4 = document.querySelector('.box.notice');
   const box5 = document.querySelector('.box.cs');
-  const box6 = document.querySelector('.box.mall');
+  const box6 = document.querySelector('.box.point');
+  const box7 = document.querySelector('.box.mall');
 
   setTimeout(() => {
     if (box1) box1.classList.add('fade-in');
@@ -498,6 +507,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setTimeout(() => {
     if (box6) box6.classList.add('fade-in');
+    if (box7) box7.classList.add('fade-in');
   }, 800);
 });
 
