@@ -91,7 +91,7 @@ input[type="radio"]:focus-visible + .ck_icon{outline: 3px dotted red !important;
 fieldset{border:0;margin:0;padding:0;}
 .text_submit{color:#3486E7 !important;}
 .text_red{color:#E14A4A !important;}
-.ct_text{font-size:1.2rem;margin-top:0.6rem;word-break: keep-all;}
+.ct_text{font-size:1.3rem;margin-top:0.6rem;letter-spacing:-0.03em;word-break: keep-all;}
 input[type="text"],
 input[type="password"],
 input[type="tel"],
