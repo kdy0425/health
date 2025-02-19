@@ -4,6 +4,7 @@
 .main_title{position: relative;z-index: 10;padding:4.8rem 0;text-align: center;word-break: keep-all;}
 .main_title h2{color:#1D1D1D;font-size:4rem;font-weight:700;}
 .main_title h2 strong{color:#3486E7;}
+.main_title p{color:#2D2D2D;font-size:1.7rem;font-weight:600;margin-top:0.5rem;}
 
 .main_boxes{display: flex;position: relative;z-index: 10;}
 .main_boxes > .l{width:min(40.65%, 56.9rem);}
@@ -156,7 +157,8 @@ animation: possibleMove 2.5s ease-in-out infinite;}
 }
 @media screen and (max-width:1440px) {
     .main_title h2{font-size:3rem;}
-   
+    .main_title p{font-size:1.4rem;}
+
     .main_boxes .box .box_title h3{font-size:2.2rem;}
     .main_boxes .box.guide{padding:2.6rem;}
     .main_boxes .box.faq{padding:2.6rem;}

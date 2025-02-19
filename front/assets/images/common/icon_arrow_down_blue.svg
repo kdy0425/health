@@ -1,2 +1,8 @@
-
-<svg width="12" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="12" height="13"><path fill="#D9D9D9" style="fill:color(display-p3 .851 .851 .851);fill-opacity:1" d="M0 .5h12v12H0z"/></mask><g mask="url(#a)"><path d="m1 4.5 5 5 5-5" stroke="#3486E7" style="stroke:color(display-p3 .1765 .1765 .1765);stroke-opacity:1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_15_2661" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="12" height="13">
+<rect y="0.5" width="12" height="12" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_15_2661)">
+<path d="M1 4.5L6 9.5L11 4.5" stroke="#3486E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
