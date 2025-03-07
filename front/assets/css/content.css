@@ -944,7 +944,7 @@ background-image: url("data:image/svg+xml,%3Csvg id='svg2' xmlns='http://www.w3.
 .point_services .item{flex:1 1;text-align: center;color:#555;font-size:1.7rem;}
 .point_services .item + .item{margin-left:2.6rem;}
 .point_services .item .icon{}
-.point_services .item .icon svg{}
+.point_services .item .icon img{max-width:10rem;}
 .point_services .item .tit{font-weight:600;margin-top:1.4rem;}
 .point_services .item .cnt{margin-top:0.6rem;}
 
@@ -1031,7 +1031,7 @@ background-image: url("data:image/svg+xml,%3Csvg id='svg2' xmlns='http://www.w3.
     .mall_point_deatil p{font-size:1.6rem;}
     .point_services{margin-top:2rem;display: grid;grid-template-columns: repeat(3,1fr);gap:2rem 0.5rem;}
     .point_services .item{font-size:1.4rem;min-width:33.3333%;}
-    .point_services .item .icon svg{width:80%;max-width: 8rem;height:80%;max-height: 8rem;}
+    .point_services .item .icon img{width:80%;max-width: 8rem;height:80%;max-height: 8rem;}
     .point_services .item .tit{margin-top:1rem;}
     .point_services .item .cnt{margin-top:0.3rem;}
 }
