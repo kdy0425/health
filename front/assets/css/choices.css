@@ -32,7 +32,7 @@
 }
 .choices[data-type*="select-one"] .choices__input {
     display: block;
-    width: 100%;
+    width: 100%; 
     padding: 10px;
     border-bottom: 1px solid #D8D8D8;
     background-color: #fff;
