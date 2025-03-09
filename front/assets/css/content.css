@@ -707,7 +707,7 @@
     .board_view .bv_top .bv_top_btns > .item > .btn{width:3.4rem;height:3.4rem;}
     .board_view .bv_top .bv_top_btns > .item > .btn.btn_share{background-size:1.6rem;}
     .board_view .bv_top .bv_top_btns > .item > .btn.btn_print{background-size:1.6rem;}
-}
+} 
 .share_list{display: flex;justify-content: space-around;}
 .share_list .share_item{}
 .share_list .share_item + .share_item{}
