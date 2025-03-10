@@ -49,6 +49,39 @@
 		<a href="#nav">주메뉴 바로가기</a>
 	</div>
 
+    <!-- 팝업창 -->
+    <div id="popup_layer" class="notice_pop_layer layer_popup" role="dialog">
+        <div class="popup_box">
+            <div class="popup_slide" style="max-width:42rem;" role="document">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../../assets/images/dummy/popup_image1.jpg"></div>
+                        <div class="swiper-slide"><img src="../../assets/images/dummy/popup_image1.jpg"></div>
+                        <div class="swiper-slide"><img src="../../assets/images/dummy/popup_image1.jpg"></div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="popup_btns">
+                <button type="button" class="btn">확인</button>
+                <button type="button" class="btn modal_close">닫기</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var swiper = new Swiper(".swiper-container", {
+            slidesPerView: "auto",centeredSlides: true,
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            openLayer('#popup_layer');
+        });
+    </script>
+    <!-- //팝업창 -->
+
+    
     <!-- header -->
     <div id="header">
         <div class="hd_inner">

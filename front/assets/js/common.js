@@ -140,7 +140,7 @@ let slideToggle = (target, duration = 500) => {
         if (!event.target.closest('.hd_search') && !event.target.classList.contains('search_btn')) {
             closeSearch();
         }
-        if (!event.target.closest('.hd_navall') && !event.target.classList.contains('navall_btn')) {
+        if (!event.target.closest('.hd_navall') && !event.target.classList.contains('navall_btn') && !event.target.closest('.layer_popup')) {
             closeNavall();
             var scrollbarWidth = getScrollbarWidth();
             var scrollY = window.scrollY;
