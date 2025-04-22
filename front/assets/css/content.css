@@ -1003,6 +1003,7 @@ background-image: url("data:image/svg+xml,%3Csvg id='svg2' xmlns='http://www.w3.
 .info_table .table table tbody td ol{}
 .info_table .table table tbody td ol > li{}
 .info_table .table table tbody td ol > li + li{margin-top:1.6rem;}
+.info_table .table table tbody td ol.between_lg > li + li{margin-top:3rem;}
 .info_table .table table tbody td p + p{margin-top:5px;}
 .info_table .table table tbody td .dash_li{margin-top:2px;font-size:17px;padding-left:22px;text-indent:-12px;}
 .info_table .table table tbody td .dash_star{margin-top:2px;font-size:17px;padding-left:24px;text-indent:-15px;color: #717171;}
@@ -1357,4 +1358,24 @@ background-image: url("data:image/svg+xml,%3Csvg id='svg2' xmlns='http://www.w3.
 
     .health_info .health_content .box.consulting .box_link{background-color: #407ADF;color:#fff;}
     .health_info .health_content .box.service .box_link{background-color: #5961CC;color:#fff;}
+}
+
+
+.image_list{margin-top:1.6rem;}
+.image_list .row{display: flex;align-items: center;padding:1.6rem;background-color: #F0F0F0;border-radius: 0.8rem;}
+.image_list .row + .row{margin-top:1.6rem;}
+.image_list .item + .item{margin-left:1.6rem;}
+.image_list .item{flex: 1 1;border-radius: 0.8rem;overflow: hidden;position: relative;}
+.image_list .item .desc{position: absolute;left:0;top:0;color:#fff;padding:0.6rem 1.6rem;background-color: #2D2D2D;font-size:1.7rem;font-weight:600;border-radius:0 0 0.8rem 0;}
+.image_list .item img{width: 100%;}
+.image_list .item.gray .desc{background-color:#717171 ;}
+.image_list .item.blue .desc{background-color: #3486E7;}
+.image_list .item.blue:after{content:"";position:absolute;left:0;top:0;width:100%;height:100%;border:4px solid #3486E7;border-radius:0.8rem;}
+.image_list .arrow{margin:0 0.8rem;width: 2.4rem;height: 2.4rem;background-position: center center;background-repeat: no-repeat;background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.2929 11.2929L8.70711 2.70711C8.07714 2.07714 7 2.52331 7 3.41421L7 20.5858C7 21.4767 8.07715 21.9229 8.70711 21.2929L17.2929 12.7071C17.6834 12.3166 17.6834 11.6834 17.2929 11.2929Z' fill='%238E8E8E'/%3E%3C/svg%3E%0A");}
+@media screen and (max-width:600px) {
+    .image_list .row{display: block;}
+    .image_list .item + .item{margin-top:1.6rem;margin-left:0;}
+    .image_list .item .desc{padding:0.5rem 1.4rem;font-size:1.5rem;}
+    .image_list .arrow{transform: rotate(90deg);display: block;margin: 0 auto;}
+
 }
