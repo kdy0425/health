@@ -478,9 +478,9 @@
 .popup_body{border-radius:1.6rem;overflow: hidden;font-family: "Paperlogy";}
 .popup_body .popup_slide{position: relative;}
 .popup_body .popup_slide .swiper-pagination{height:0.6rem;bottom:1.2rem !important;top:auto !important}
-.popup_body .popup_slide .swiper-pagination .swiper-pagination-bullet{width:0.6rem;height:0.6rem;border-radius:50%;margin:0 0.2rem !important;}
-.popup_body .popup_slide .swiper-pagination .swiper-pagination-bullet-active{background-color: #3486E7;}
-.popup_body .popup_content{}
+.popup_body .popup_slide .swiper-pagination .swiper-pagination-bullet{width:0.6rem;height:0.6rem;border-radius:50%;margin:0 0.2rem !important;background-color: rgba(0,0,0,.3);opacity: 1;}
+.popup_body .popup_slide .swiper-pagination .swiper-pagination-bullet-active{background-color: #fff;}
+.popup_body .popup_content{max-height: calc(100vh - 8rem);overflow-y:auto;overflow-x: hidden;}
 .popup_btns{display: flex;}
 .popup_btns button{flex:1 1;border:0;background-color: #fff;height: 5.2rem;color:#2D2D2D;font-size:1.5rem;font-weight: 600;}
 .popup_btns button + button{border-left:1px solid #D8D8D8;}
@@ -540,6 +540,60 @@
 .popup_type3 .title .blue{color:#3C4B98;}
 .popup_type3 .title .green{color:#4289A8;}
 .popup_type3 .title .red{color:#E14A4A;}
+
+.popup_type3{background: linear-gradient(180deg, #F6FEFF 0%, #C1DAE0 126.5%), linear-gradient(0deg, #DDEBFF, #DDEBFF), #F6F7FB;word-break: keep-all;}
+.popup_type3 .popup_type3_inner{padding:3.6rem 3rem 2.6rem;background-position: right 38px top 6px;background-repeat: no-repeat;background-image: url('../images/content/popup_type3.png');}
+.popup_type3 .title{font-size:3.4rem;font-weight:700;margin-bottom:2.2rem;letter-spacing: -1px;line-height: 1.2;}
+.popup_type3 .title span{display: block;}
+.popup_type3 .title .black{color:#2d2d2d;}
+.popup_type3 .title .blue{color:#3C4B98;}
+.popup_type3 .title .green{color:#4289A8;}
+.popup_type3 .title .red{color:#E14A4A;}
+
+.popup_type4{}
+.popup_type4 *{font-family: 'Paperlogy';}
+.popup_type4 .popup_type4_inner{padding:36px 30px 46px;background-color: #EEEFF8;letter-spacing: -0.05rem;word-break: keep-all;}
+.popup_type4 .title{color: #2B61C2;font-weight: 800;margin-bottom:3rem;font-size:4rem;line-height: 1.2;position: relative;}
+.popup_type4 .title strong{color:#5146C8;font-weight: 800;}
+.popup_type4 .title:after{content:"";position: absolute;right:0;top:-10px;width:189px;height:158px;background-position: center center;background-repeat: no-repeat;background-size: contain;background-image: url('../images/content/popup_type4.png');}
+
+.popup_type4 .info_content{margin-top:2.2rem;border-radius: 10px;overflow: hidden;}
+.popup_type4 .info_content .tit{font-size:2.5rem;font-weight: 700;color:#fff;background: linear-gradient(90.82deg, #2864C1 0%, #5146C8 77.58%);padding:13px;text-align: center;}
+.popup_type4 .info_content .tit span{display: inline-block;padding-left:27px;background-position: left center;background-repeat: no-repeat;background-image: url("data:image/svg+xml,%3Csvg width='17' height='12' viewBox='0 0 17 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.37974 4.11753L0.288508 5.2224C-0.0961783 5.61189 -0.0961788 6.23831 0.288508 6.6278L5.14609 11.5461C5.52928 11.9341 6.15267 11.9435 6.54744 11.5673L15.7105 2.83549C16.1154 2.44966 16.1251 1.80677 15.7321 1.40885L14.6343 0.297357C14.2538 -0.0879456 13.6357 -0.100308 13.24 0.26947L5.83633 7.18908L2.80271 4.11753C2.4112 3.72113 1.77124 3.72113 1.37974 4.11753Z' fill='white'/%3E%3C/svg%3E%0A");}
+
+.popup_type4 .info_content .cnt{background-color:#fff;padding:2rem;}
+.popup_type4 .info_content .cnt table{width: 100%;border-collapse:separate;border-spacing: 1px;background-color: #B2B2CA;text-align: center;}
+.popup_type4 .info_content .cnt table thead th{background-color: #ECEDF4;color:#2D2D2D;font-size:1.6rem;font-weight: 700;padding:10px 5px;height:45px;vertical-align: middle;white-space: nowrap;}
+.popup_type4 .info_content .cnt table tbody th{background-color: #EBEFFF;color:#2D2D2D;font-size:1.8rem;font-weight: 600;padding:10px 5px;height:45px;vertical-align: middle;white-space: nowrap;}
+.popup_type4 .info_content .cnt table tbody th span{font-weight: 500;}
+.popup_type4 .info_content .cnt table tbody td{color:#2D2D2D;font-size:1.7rem;font-weight:600;background-color: #fff;padding:10px 5px;height:45px;vertical-align: middle;white-space: nowrap;}
+.popup_type4 .info_content .cnt table tbody td.black{color:#2d2d2d;}
+.popup_type4 .info_content .cnt table tbody td.blue{color:#244B88;}
+.popup_type4 .info_content .cnt table tbody td.purple{color:#402EFF;}
+.popup_type4 .info_content .cnt table tbody td strong{font-weight:700;}
+.popup_type4 .info_texts{margin-top:1.2rem;padding:2rem;font-weight:500;font-size:1.5rem;background-color: #fff;border-radius: 10px;}
+.popup_type4 .info_texts ul{display: flex;flex-direction: column;gap:0.5rem;}
+.popup_type4 .info_texts ul li{color:#2d2d2d;padding-left:1.2rem;position: relative;}
+.popup_type4 .info_texts ul li:before{content:"";display: block;position: absolute;left:0;top:0.8rem;width:0.4rem;height:0.4rem;background-color: #2d2d2d;border-radius:50%;}
+.popup_type4 .info_texts ul li a{color:#402EFF;font-weight:600;text-decoration: underline;}
+.popup_type4 .info_texts ul li a:hover{color:#2e1edb;}
+
+@media screen and (max-width: 760px) {
+    .popup_type4 .popup_type4_inner{padding:24px 20px 36px;}
+    .popup_type4 .title{margin-bottom:2rem;font-size:3rem;}
+    .popup_type4 .title:after{display: none;}
+    .popup_type4 .info_content{margin-top:1.6rem;}
+    .popup_type4 .info_content .tit{font-size:2rem;padding:10px;}
+    .popup_type4 .info_content .tit span{padding-left:22px;}
+    .popup_type4 .info_content .cnt{padding:1.4rem;overflow-y:auto;overflow-x:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior:contain;}
+    .popup_type4 .info_content .cnt table thead th{font-size:1.4rem;padding:8px;height:40px;}
+    .popup_type4 .info_content .cnt table tbody th{font-size:1.5rem;padding:8px;height:40px;}
+    .popup_type4 .info_content .cnt table tbody td{font-size:1.45rem;padding:8px;height:40px;}
+    .popup_type4 .info_texts{margin-top:1rem;padding:1.4rem;font-size:1.35rem;}
+    .popup_type4 .info_texts ul li{padding-left:1rem;}
+    .popup_type4 .info_texts ul li:before{top:0.65rem;}
+}
+
 @media screen and (max-width:480px) {
     .layer_notice .popup_content > div{min-height:32rem;}
     .popup_btns button{height: 4.6rem;font-size:1.4rem;}
