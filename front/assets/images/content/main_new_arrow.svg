@@ -1,0 +1,10 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<mask id="main-new-arrow-cutout" x="0" y="0" width="24" height="24" maskUnits="userSpaceOnUse" mask-type="luminance">
+<rect width="24" height="24" fill="white"/>
+<path d="M16 14V8H10M16 8L8 16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</mask>
+</defs>
+<circle cx="12" cy="12" r="12" fill="#2D2D2D" mask="url(#main-new-arrow-cutout)"/>
+</svg>
+
