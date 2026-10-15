@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>진단 컨설팅 사업 운영 관리 | 환경보건이용권 관리자</title>
+    <link rel="stylesheet" href="../../assets/css/normalize.css" />
+    <link rel="stylesheet" href="../../assets/css/pretendard.css" />
+    <link rel="stylesheet" href="../../assets/css/responsive.css" />
+  </head>
+  <body class="page-operation-list page-list nav-current-consulting">
+    <div id="wrap">
+      <a class="skip-nav" href="#content">본문 바로가기</a>
+      <header class="app-header"></header>
+      <main id="container">
+        <div class="page-title"><h2>진단 컨설팅 사업 운영 관리</h2></div>
+        <div id="content">
+          <section class="search-box" aria-label="검색 조건">
+            <form class="search-panel">
+              <div class="search-grid">
+                <div>
+                  <label class="field-label" for="businessType">사업분류</label>
+                  <select class="select-input" id="businessType">
+                    <option>2026 실내환경 진단·컨설팅</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="field-label" for="progress">진행상태</label>
+                  <select class="select-input" id="progress">
+                    <option>==전체==</option>
+                  </select>
+                </div>
+                <div>
+                  <span class="field-label">지역</span>
+                  <div class="search-region">
+                    <select class="select-input" aria-label="시·도">
+                      <option>==시·도==</option>
+                    </select>
+                    <select class="select-input" aria-label="시·군·구" disabled>
+                      <option>==시·군·구==</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <span class="field-label">검색조건</span>
+                  <div class="search-keyword">
+                    <select class="select-input" aria-label="검색조건">
+                      <option>신청인 아이디</option>
+                    </select>
+                    <input class="text-input" type="search" placeholder="검색어를 입력하세요." aria-label="검색어" />
+                  </div>
+                </div>
+              </div>
+              <button class="search-submit" type="submit">
+                <span class="search-submit__icon" aria-hidden="true">
+                  <img src="../../assets/images/figma/search.svg" alt="" />
+                </span>
+                검색
+              </button>
+            </form>
+            <button class="search-toggle js-search-toggle" type="button" aria-expanded="true">상세검색 닫기</button>
+          </section>
+
+          <section class="page-content" aria-label="운영 관리 목록">
+            <div class="list-toolbar">
+              <p class="list-count">
+                전체 :
+                <strong>3</strong>
+                건
+              </p>
+            </div>
+            <div class="selection-bar">
+              <label class="choice">
+                <input class="js-check-all" type="checkbox" />
+                전체선택
+              </label>
+              <button class="btn btn--outline" type="button">컨설턴트 등록</button>
+            </div>
+            <div class="record-list">
+              <article class="record-card">
+                <label class="record-card__check choice">
+                  <input class="js-row-check" type="checkbox" />
+                  <span class="sr-only">3번 선택</span>
+                </label>
+                <dl class="record-grid">
+                  <div class="record-item">
+                    <dt>번호</dt>
+                    <dd>3</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>접수번호</dt>
+                    <dd><a href="household_survey_register.html">202454541111</a></dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>대리인</dt>
+                    <dd>홍아름</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>신청자</dt>
+                    <dd>홍길동, 홍길순, 홍미나, 홍미동, 홍지나, 홍아름</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>지역</dt>
+                    <dd>강남구</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>방문예정일시</dt>
+                    <dd>2026-04-16 08:00</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>컨설턴트</dt>
+                    <dd class="record-item__action-value">
+                      <span>이현승(컨설팅담당자 업무용)(keitiC)</span>
+                      <button class="record-item__action" type="button" aria-label="3번 컨설턴트 삭제">
+                        <img src="../../assets/images/figma/consultant_delete.svg" alt="" />
+                      </button>
+                    </dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>진행상태</dt>
+                    <dd>컨설팅 신청</dd>
+                  </div>
+                </dl>
+              </article>
+              <article class="record-card">
+                <label class="record-card__check choice">
+                  <input class="js-row-check" type="checkbox" />
+                  <span class="sr-only">2번 선택</span>
+                </label>
+                <dl class="record-grid">
+                  <div class="record-item">
+                    <dt>번호</dt>
+                    <dd>2</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>접수번호</dt>
+                    <dd><a href="household_survey_register.html">202454541111</a></dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>대리인</dt>
+                    <dd>홍아름</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>신청자</dt>
+                    <dd>홍길동, 홍길순, 홍미나, 홍미동, 홍지나, 홍아름</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>지역</dt>
+                    <dd>강남구</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>방문예정일시</dt>
+                    <dd>2026-04-16 08:00</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>컨설턴트</dt>
+                    <dd class="record-item__action-value">
+                      <span>이현승(컨설팅담당자 업무용)(keitiC)</span>
+                      <button class="record-item__action" type="button" aria-label="2번 컨설턴트 삭제">
+                        <img src="../../assets/images/figma/consultant_delete.svg" alt="" />
+                      </button>
+                    </dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>진행상태</dt>
+                    <dd>컨설팅 신청</dd>
+                  </div>
+                </dl>
+              </article>
+              <article class="record-card">
+                <label class="record-card__check choice">
+                  <input class="js-row-check" type="checkbox" />
+                  <span class="sr-only">1번 선택</span>
+                </label>
+                <dl class="record-grid">
+                  <div class="record-item">
+                    <dt>번호</dt>
+                    <dd>1</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>접수번호</dt>
+                    <dd><a href="household_survey_register.html">202454541111</a></dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>대리인</dt>
+                    <dd>홍아름</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>신청자</dt>
+                    <dd>홍길동, 홍길순, 홍미나, 홍미동, 홍지나, 홍아름</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>지역</dt>
+                    <dd>강남구</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>방문예정일시</dt>
+                    <dd>2026-04-16 08:00</dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>컨설턴트</dt>
+                    <dd class="record-item__action-value">
+                      <span>이현승(컨설팅담당자 업무용)(keitiC)</span>
+                      <button class="record-item__action" type="button" aria-label="1번 컨설턴트 삭제">
+                        <img src="../../assets/images/figma/consultant_delete.svg" alt="" />
+                      </button>
+                    </dd>
+                  </div>
+                  <div class="record-item">
+                    <dt>진행상태</dt>
+                    <dd>컨설팅 신청</dd>
+                  </div>
+                </dl>
+              </article>
+            </div>
+            <nav class="pagination" aria-label="페이지 이동">
+              <a class="pagination__control" href="#" aria-label="이전 페이지">
+                <img src="../../assets/images/figma/pagination_prev.svg" alt="" />
+              </a>
+              <a class="is-active" href="#" aria-current="page">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <span class="pagination__ellipsis" aria-hidden="true">
+                <img src="../../assets/images/figma/pagination_ellipsis.svg" alt="" />
+              </span>
+              <a href="#">10</a>
+              <a class="pagination__control" href="#" aria-label="다음 페이지">
+                <img src="../../assets/images/figma/pagination_next.svg" alt="" />
+              </a>
+            </nav>
+          </section>
+        </div>
+      </main>
+      <footer class="app-footer"></footer>
+    </div>
+    <script src="../../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../../assets/js/jquery-ui.min.js"></script>
+    <script src="../../assets/js/simplebar.min.js"></script>
+    <script src="../../assets/js/swiper.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/pikaday.js"></script>
+    <script src="../../assets/js/inputmask.js"></script>
+    <script src="../../assets/js/toastify-js.js"></script>
+    <script src="../../assets/js/responsive.js"></script>
+  </body>
+</html>

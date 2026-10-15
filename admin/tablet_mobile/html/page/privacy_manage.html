@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>개인정보 관리 | 환경보건이용권 관리자</title>
+    <link rel="stylesheet" href="../../assets/css/normalize.css" />
+    <link rel="stylesheet" href="../../assets/css/pretendard.css" />
+    <link rel="stylesheet" href="../../assets/css/responsive.css" />
+  </head>
+  <body class="page-privacy nav-current-system">
+    <div id="wrap">
+      <a class="skip-nav" href="#content">본문 바로가기</a>
+      <header class="app-header"></header>
+      <main id="container">
+        <div class="page-title"><h2>개인정보 관리</h2></div>
+        <div class="page-content" id="content">
+          <form>
+            <section class="form-section">
+              <h3 class="form-section__title">회원정보 수정</h3>
+              <div class="detail-list">
+                <div class="detail-row">
+                  <label class="detail-row__label" for="authority">권한</label>
+                  <div class="detail-row__value">
+                    <input class="text-input" id="authority" type="text" value="컨설턴트" disabled />
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <label class="detail-row__label" for="memberId">아이디</label>
+                  <div class="detail-row__value">
+                    <input class="text-input" id="memberId" type="text" value="abcd1234" disabled />
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <label class="detail-row__label" for="organization">소속</label>
+                  <div class="detail-row__value">
+                    <input class="text-input" id="organization" value="트라이언소프트" type="text" />
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <label class="detail-row__label" for="memberName">이름</label>
+                  <div class="detail-row__value">
+                    <input class="text-input" id="memberName" value="홍길동(컨설턴트테스트)" type="text" />
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <label class="detail-row__label" for="phone">전화번호</label>
+                  <div class="detail-row__value">
+                    <input class="text-input" id="phone" value="010-1234-5678" type="tel" />
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <label class="detail-row__label" for="email">이메일</label>
+                  <div class="detail-row__value">
+                    <input class="text-input" id="email" value="abcd@abcd.efg" type="email" />
+                  </div>
+                </div>
+              </div>
+              <div class="button-group"><button class="btn btn--primary" type="submit">수정</button></div>
+            </section>
+          </form>
+
+          <form>
+            <section class="form-section">
+              <h3 class="form-section__title">비밀번호 변경</h3>
+              <p class="privacy-guide">비밀번호는 8자 이상으로 영문/숫자/특수기호를 1개 이상씩 조합하여야 합니다.</p>
+              <div class="detail-list">
+                <div class="detail-row detail-row--wide">
+                  <label class="detail-row__label" for="currentPassword">현재 비밀번호</label>
+                  <div class="detail-row__value">
+                    <input class="text-input" id="currentPassword" type="password" autocomplete="current-password" />
+                  </div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <label class="detail-row__label" for="newPassword">새 비밀번호</label>
+                  <div class="detail-row__value">
+                    <input class="text-input" id="newPassword" type="password" autocomplete="new-password" />
+                  </div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <label class="detail-row__label" for="confirmPassword">새 비밀번호 확인</label>
+                  <div class="detail-row__value">
+                    <input class="text-input" id="confirmPassword" type="password" autocomplete="new-password" />
+                  </div>
+                </div>
+              </div>
+              <div class="button-group"><button class="btn btn--primary" type="submit">수정</button></div>
+            </section>
+          </form>
+        </div>
+      </main>
+      <footer class="app-footer"></footer>
+    </div>
+    <script src="../../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../../assets/js/jquery-ui.min.js"></script>
+    <script src="../../assets/js/simplebar.min.js"></script>
+    <script src="../../assets/js/swiper.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/pikaday.js"></script>
+    <script src="../../assets/js/inputmask.js"></script>
+    <script src="../../assets/js/toastify-js.js"></script>
+    <script src="../../assets/js/responsive.js"></script>
+  </body>
+</html>

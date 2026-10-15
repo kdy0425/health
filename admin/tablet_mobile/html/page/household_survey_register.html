@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>가구점검 설문지 작성 | 환경보건이용권 관리자</title>
+    <link rel="stylesheet" href="../../assets/css/normalize.css" />
+    <link rel="stylesheet" href="../../assets/css/pretendard.css" />
+    <link rel="stylesheet" href="../../assets/css/pikaday.css" />
+    <link rel="stylesheet" href="../../assets/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../../assets/css/responsive.css" />
+  </head>
+  <body class="page-survey page-flow nav-current-consulting">
+    <div id="wrap">
+      <a class="skip-nav" href="#content">본문 바로가기</a>
+      <header class="app-header"></header>
+      <main id="container">
+        <div class="page-title"><h2>진단 컨설팅 사업 운영 관리</h2></div>
+        <div class="page-content" id="content">
+          <select class="select-input project-select" aria-label="사업 선택">
+            <option>진단 컨설팅</option>
+          </select>
+          <nav class="page-tabs" aria-label="진단 컨설팅 작성 단계">
+            <a class="is-active" href="household_survey_register.html" aria-current="page">가구점검 설문지 작성</a>
+            <a href="field_inspection_register.html">현장점검표 작성</a>
+            <a href="photo_manage.html">사진 관리</a>
+            <a href="#">점검결과 보고서</a>
+          </nav>
+          <div class="section-divider"></div>
+
+          <form>
+            <section class="form-section">
+              <h3 class="form-section__title">신청자(어린이) 기본 정보</h3>
+              <div class="detail-list">
+                <div class="detail-row">
+                  <div class="detail-row__label">접수번호</div>
+                  <div class="detail-row__value">202454541111</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-row__label">컨설턴트</div>
+                  <div class="detail-row__value">홍길동(컨설턴트테스트)</div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <div class="detail-row__label">방문여부</div>
+                  <div class="detail-row__value detail-row__value--stack">
+                    <div class="visit-controls">
+                      <label class="choice">
+                        <input type="radio" name="visit" checked />
+                        방문
+                      </label>
+                      <label class="choice">
+                        <input type="radio" name="visit" />
+                        유선
+                      </label>
+                      <label class="choice">
+                        <input type="radio" name="visit" />
+                        컨설팅 제외
+                      </label>
+                      <input
+                        class="text-input"
+                        id="excludeReason"
+                        type="text"
+                        placeholder="컨설팅 제외 사유"
+                        aria-label="컨설팅 제외 사유"
+                        disabled
+                      />
+                    </div>
+                    <p class="required-message">필수 입력 항목입니다.</p>
+                  </div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <div class="detail-row__label">방문예정일시</div>
+                  <div class="detail-row__value detail-row__value--stack">
+                    <div class="input-with-unit--two">
+                      <input
+                        class="text-input date-input datepicker"
+                        type="text"
+                        placeholder="YYYY-MM-DD"
+                        aria-label="방문예정일"
+                      />
+                      <input
+                        class="text-input time-input input_time"
+                        type="text"
+                        placeholder="hh:mm"
+                        aria-label="방문예정시간"
+                      />
+                    </div>
+                    <p class="required-message">필수 입력 항목입니다.</p>
+                  </div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <div class="detail-row__label">방문일시</div>
+                  <div class="detail-row__value detail-row__value--stack">
+                    <div class="input-with-unit--two">
+                      <input
+                        class="text-input date-input datepicker"
+                        type="text"
+                        placeholder="YYYY-MM-DD"
+                        aria-label="방문일"
+                      />
+                      <input
+                        class="text-input time-input input_time"
+                        type="text"
+                        placeholder="hh:mm"
+                        aria-label="방문시간"
+                      />
+                    </div>
+                    <p class="required-message">필수 입력 항목입니다.</p>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-row__label">신청자 이름</div>
+                  <div class="detail-row__value">홍미나</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-row__label">대리인과의 관계</div>
+                  <div class="detail-row__value">자녀</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-row__label">성별</div>
+                  <div class="detail-row__value">여</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-row__label">연령</div>
+                  <div class="detail-row__value">12세</div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <div class="detail-row__label">주소</div>
+                  <div class="detail-row__value">(06044)서울특별시 강남구 강남대로 566(논현동) 5층 111111</div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <label class="detail-row__label" for="changedAddress">주소지(변경)</label>
+                  <div class="detail-row__value">
+                    <textarea class="textarea-input changed-address" id="changedAddress"></textarea>
+                  </div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <div class="detail-row__label">연락처</div>
+                  <div class="detail-row__value contact-fields">
+                    <input
+                      class="text-input"
+                      id="homePhone"
+                      type="tel"
+                      placeholder="집전화 번호"
+                      aria-label="집전화 번호"
+                    />
+                    <input
+                      class="text-input"
+                      type="tel"
+                      placeholder="휴대전화 번호"
+                      aria-label="휴대전화 번호"
+                    />
+                  </div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <div class="detail-row__label">
+                    응답자 정보
+                    <span class="footnote-mark">1)</span>
+                  </div>
+                  <div class="detail-row__value respondent-fields">
+                    <input class="text-input" type="text" placeholder="이름" aria-label="응답자 이름" />
+                    <input class="text-input" type="text" placeholder="신청자와의 관계" aria-label="신청자와의 관계" />
+                  </div>
+                </div>
+              </div>
+              <p class="respondent-help">
+                <span>1)</span>
+                <span>신청자와 설문 응답자가 다를 경우만 작성</span>
+              </p>
+            </section>
+
+            <section class="question-section">
+              <h3 class="question-section__title">Ⅰ. 가구 일반현황 조사</h3>
+              <div class="detail-list">
+                <div class="detail-row">
+                  <label class="detail-row__label" for="residentCount">총 거주자</label>
+                  <div class="detail-row__value input-with-unit">
+                    <select class="select-input" id="residentCount">
+                      <option value="">선택</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                    <span>명</span>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <label class="detail-row__label" for="childCount">13세 미만 어린이</label>
+                  <div class="detail-row__value input-with-unit">
+                    <select class="select-input" id="childCount">
+                      <option value="">선택</option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                    <span>명</span>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <label class="detail-row__label" for="diseaseChildCount">환경성질환 어린이</label>
+                  <div class="detail-row__value input-with-unit">
+                    <select class="select-input" id="diseaseChildCount">
+                      <option value="">선택</option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                    <span>명</span>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-row__label">환경성질환</div>
+                  <div class="detail-row__value choice-list">
+                    <label class="choice">
+                      <input type="checkbox" />
+                      아토피
+                    </label>
+                    <label class="choice">
+                      <input type="checkbox" />
+                      비염
+                    </label>
+                    <label class="choice">
+                      <input type="checkbox" />
+                      천식
+                    </label>
+                  </div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <div class="detail-row__label">거주 형태</div>
+                  <div class="detail-row__value choice-list housing-controls">
+                    <label class="choice">
+                      <input type="radio" name="housing" value="detached" checked />
+                      단독주택
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="housing" value="apartment" />
+                      아파트
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="housing" value="country-house" />
+                      전원주택
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="housing" value="multi-family" />
+                      다세대 주택
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="housing" value="other" />
+                      기타(유형기입)
+                    </label>
+                    <input
+                      class="text-input"
+                      id="housingOther"
+                      name="housingOther"
+                      type="text"
+                      placeholder="기타 형태를 입력하세요."
+                      aria-label="기타 거주 형태"
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <label class="detail-row__label" for="floor">거주층수</label>
+                  <div class="detail-row__value">
+                    <select class="select-input" id="floorSelect" aria-label="거주층수">
+                      <option value="">선택</option>
+                      <option value="">1층</option>
+                      <option value="">2층</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <label class="detail-row__label" for="buildYear">건축년도</label>
+                  <div class="detail-row__value input-with-unit">
+                    <input class="text-input" id="buildYear" type="text" inputmode="numeric" />
+                    <span>년</span>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-row__label">거주 공사</div>
+                  <div class="detail-row__value choice-list">
+                    <label class="choice">
+                      <input type="radio" name="construction" />
+                      유
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="construction" />
+                      무
+                    </label>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-row__label">리모델링</div>
+                  <div class="detail-row__value choice-list">
+                    <label class="choice">
+                      <input type="radio" name="remodel" />
+                      유
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="remodel" />
+                      무
+                    </label>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <label class="detail-row__label" for="indoorArea">실내 면적</label>
+                  <div class="detail-row__value input-with-unit">
+                    <input class="text-input" id="indoorArea" type="text" inputmode="decimal" />
+                    <span>평</span>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <label class="detail-row__label" for="childSpace">어린이 생활공간 위치</label>
+                  <div class="detail-row__value input-with-unit">
+                    <input class="text-input" id="childSpace" type="text" />
+                    <span>평</span>
+                  </div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <label class="detail-row__label" for="pet">반려 동물</label>
+                  <div class="detail-row__value">
+                    <select class="select-input" id="pet">
+                      <option value="">선택</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="question-section">
+              <h3 class="question-section__title">Ⅱ. 가구 실내환경 현황 및 개선에 관한 설문</h3>
+              <article class="question-card">
+                <p class="question-card__title">
+                  <span class="question-card__number">1.</span>
+                  대상 가구의 하루 평균 환기 시간은 어느 정도입니까?
+                </p>
+                <div class="question-card__body choice-list">
+                  <label class="choice">
+                    <input type="radio" name="ventilation" />
+                    ① 일 30분 이하
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="ventilation" />
+                    ② 일 30분 ~ 1시간 이하
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="ventilation" />
+                    ③ 일 1시간 ~ 3시간 이하
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="ventilation" />
+                    ④ 일 3시간 ~ 5시간 이하
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="ventilation" />
+                    ⑤ 일 5시간 이상
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="ventilation" />
+                    <span>⑥ 하지 않음 <b>(☞Q2로 이동)</b></span>
+                  </label>
+                </div>
+              </article>
+              <article class="question-card">
+                <p class="question-card__title">
+                  <span class="question-card__number">1-1.</span>
+                  평소 어떤 방법으로 환기를 하십니까?(중복응답 가능)
+                </p>
+                <div class="question-card__body question-options">
+                  <label class="choice">
+                    <input type="checkbox" />
+                    ① 자연환기(문 또는 창문 개방)
+                  </label>
+                  <label class="choice">
+                    <input type="checkbox" />
+                    ② 기계환기(팬, 환기설비, 서큘레이터)
+                  </label>
+                  <div class="choice-input-row">
+                    <label class="choice">
+                      <input id="ventilationEtc" type="checkbox" />
+                      ③ 기타
+                    </label>
+                    <input
+                      class="text-input"
+                      id="ventilationEtcText"
+                      type="text"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </article>
+              <article class="question-card" hidden>
+                <p class="question-card__title">
+                  7. 귀댁의 실내 구조 및 벽과 바닥에 사용된 마감 자재에 대해 아래 보기를 참고하여 작성해 주십시오.
+                </p>
+                <div class="question-card__body">
+                  <section class="room-card">
+                    <div class="room-card__header">
+                      <span>방</span>
+                      <label class="room-card__count">
+                        개수
+                        <select class="select-input">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="material-fields">
+                      <div class="material-field">
+                        <label>바닥면</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>벽면</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>천장</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>기타</label>
+                        <input class="text-input" type="text" />
+                      </div>
+                    </div>
+                  </section>
+                  <section class="room-card">
+                    <div class="room-card__header">
+                      <span>화장실</span>
+                      <label class="room-card__count">
+                        개수
+                        <select class="select-input">
+                          <option>1</option>
+                          <option>2</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="material-fields">
+                      <div class="material-field">
+                        <label>바닥면</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>벽면</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>천장</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>기타</label>
+                        <input class="text-input" type="text" />
+                      </div>
+                    </div>
+                  </section>
+                  <section class="room-card">
+                    <div class="room-card__header">
+                      <span>거실</span>
+                      <label class="room-card__count">
+                        개수
+                        <select class="select-input">
+                          <option>1</option>
+                          <option>2</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="material-fields">
+                      <div class="material-field">
+                        <label>바닥면</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>벽면</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>천장</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>기타</label>
+                        <input class="text-input" type="text" />
+                      </div>
+                    </div>
+                  </section>
+                  <section class="room-card">
+                    <div class="room-card__header">
+                      <span>주방</span>
+                      <label class="room-card__count">
+                        개수
+                        <select class="select-input">
+                          <option>1</option>
+                          <option>2</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="material-fields">
+                      <div class="material-field">
+                        <label>바닥면</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>벽면</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>천장</label>
+                        <select class="select-input">
+                          <option>선택</option>
+                        </select>
+                      </div>
+                      <div class="material-field">
+                        <label>기타</label>
+                        <input class="text-input" type="text" />
+                      </div>
+                    </div>
+                  </section>
+                  <aside class="material-guide">
+                    <h4>사용 마감자재 작성 보기</h4>
+                    <dl>
+                      <dt>바닥면</dt>
+                      <dd>방, 거실, 주방 · 1) PVC 장판　2) 타일류　3) 기타</dd>
+                      <dd>화장실 · 1) 타일류　2) 마루　3) 시멘트　4) PVC장판　5) 기타</dd>
+                      <dt>벽면</dt>
+                      <dd>방, 거실, 주방 · 1) 합지벽지　2) 천연벽지　3) 실크벽지　4) 페인트　5) 타일류　6) 기타</dd>
+                      <dd>화장실 · 1) 페인트　2) 타일류　3) 시멘트　4) 판넬　5) 기타</dd>
+                      <dt>천장</dt>
+                      <dd>방, 거실, 주방 · 1) 합지벽지　2) 천연벽지　3) 실크벽지　4) 페인트　5) 기타</dd>
+                      <dd>화장실 · 1) 플라스틱PVC　2) 페인트　3) 타일류　4) 벽지　5) 기타</dd>
+                    </dl>
+                  </aside>
+                </div>
+              </article>
+              <article class="question-card question-card--mold">
+                <p class="question-card__title">
+                  <span class="question-card__number">11.</span>
+                  실내에서 곰팡이 또는 누수(벽, 천장 등) 흔적이 관찰되십니까?(직접 확인 필요)
+                </p>
+                <div class="question-card__body question-card__body--subgroups">
+                  <div class="survey-subgroup">
+                    <div class="survey-subgroup__title">곰팡이 발생 정도</div>
+                    <div class="choice-list survey-subgroup__choices">
+                      <label class="choice">
+                        <input type="radio" name="moldLevel" />
+                        ① 없음
+                      </label>
+                      <label class="choice">
+                        <input type="radio" name="moldLevel" />
+                        ② 경미
+                      </label>
+                      <label class="choice">
+                        <input type="radio" name="moldLevel" />
+                        ③ 심각
+                      </label>
+                    </div>
+                  </div>
+                  <div class="survey-subgroup">
+                    <div class="survey-subgroup__title">곰팡이 발생 위치</div>
+                    <div class="choice-list survey-subgroup__choices">
+                      <label class="choice">
+                        <input type="checkbox" />
+                        ① 천장
+                      </label>
+                      <label class="choice">
+                        <input type="checkbox" />
+                        ② 벽면
+                      </label>
+                      <label class="choice">
+                        <input type="checkbox" />
+                        ③ 바닥
+                      </label>
+                      <label class="choice">
+                        <input type="checkbox" />
+                        ④ 기타
+                      </label>
+                    </div>
+                  </div>
+                  <div class="survey-subgroup">
+                    <div class="survey-subgroup__title">누수(결로) 흔적</div>
+                    <div class="choice-list survey-subgroup__choices">
+                      <label class="choice">
+                        <input type="radio" name="leak" value="yes" />
+                        ① 있다
+                      </label>
+                      <label class="choice">
+                        <input type="radio" name="leak" value="no" />
+                        ② 없다
+                      </label>
+                    </div>
+                  </div>
+                  <div class="survey-subgroup">
+                    <div class="survey-subgroup__title">
+                      <span>누수 수리 여부</span>
+                      <span>누수(결로) 흔적 “있다”에 체크한 경우에 답변</span>
+                    </div>
+                    <div class="choice-list survey-subgroup__choices">
+                      <label class="choice">
+                        <input type="radio" name="leakRepair" disabled />
+                        ① 누수 수리됨
+                      </label>
+                      <label class="choice">
+                        <input type="radio" name="leakRepair" disabled />
+                        ② 누수 수리 예정
+                      </label>
+                      <label class="choice">
+                        <input type="radio" name="leakRepair" disabled />
+                        ③ 누수 수리 안됨
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="question-card question-card--preferences">
+                <p class="question-card__title">
+                  <span class="question-card__number">11.</span>
+                  아래의 항목 중 하나의 서비스를 선택할 수 있다면, 어떤 서비스를 가장 선호하십니까?(가구 응답)
+                </p>
+                <div class="preference-row">
+                  <div class="preference-row__title">① 벽지, 장판 교체(방 1칸)</div>
+                  <div class="preference-row__choices">
+                    <div class="preference-rank">
+                      <label class="choice">
+                        <input type="radio" name="wallpaper" value="needed" />
+                        필요
+                      </label>
+                      <span>(</span>
+                      <input
+                        class="text-input"
+                        type="text"
+                        inputmode="numeric"
+                        aria-label="벽지 장판 교체 순위"
+                        readonly
+                      />
+                      <span>)순위,</span>
+                    </div>
+                    <label class="choice preference-none">
+                      <input type="radio" name="wallpaper" value="not-needed" />
+                      필요 없음
+                    </label>
+                  </div>
+                </div>
+                <div class="preference-row">
+                  <div class="preference-row__title">② 보일러 교체</div>
+                  <div class="preference-row__choices">
+                    <div class="preference-rank">
+                      <label class="choice">
+                        <input type="radio" name="boiler" value="needed" />
+                        필요
+                      </label>
+                      <span>(</span>
+                      <input
+                        class="text-input"
+                        type="text"
+                        inputmode="numeric"
+                        aria-label="보일러 교체 순위"
+                        readonly
+                      />
+                      <span>)순위,</span>
+                    </div>
+                    <label class="choice preference-none">
+                      <input type="radio" name="boiler" value="not-needed" />
+                      필요 없음
+                    </label>
+                  </div>
+                </div>
+                <div class="preference-row">
+                  <div class="preference-row__title">③ 청소 서비스</div>
+                  <div class="preference-row__choices">
+                    <div class="preference-rank">
+                      <label class="choice">
+                        <input type="radio" name="cleaning" value="needed" />
+                        필요
+                      </label>
+                      <span>(</span>
+                      <input
+                        class="text-input"
+                        type="text"
+                        inputmode="numeric"
+                        aria-label="청소 서비스 순위"
+                        readonly
+                      />
+                      <span>)순위,</span>
+                    </div>
+                    <label class="choice preference-none">
+                      <input type="radio" name="cleaning" value="not-needed" />
+                      필요 없음
+                    </label>
+                  </div>
+                </div>
+                <div class="preference-row">
+                  <div class="preference-row__title">④ 공기청정기(렌탈)</div>
+                  <div class="preference-row__choices">
+                    <div class="preference-rank">
+                      <label class="choice">
+                        <input type="radio" name="airCleaner" value="needed" />
+                        필요
+                      </label>
+                      <span>(</span>
+                      <input class="text-input" type="text" inputmode="numeric" aria-label="공기청정기 순위" readonly />
+                      <span>)순위,</span>
+                    </div>
+                    <label class="choice preference-none">
+                      <input type="radio" name="airCleaner" value="not-needed" />
+                      필요 없음
+                    </label>
+                  </div>
+                </div>
+              </article>
+              <article class="question-card question-card--quality">
+                <p class="question-card__title">
+                  <span class="question-card__number">14.</span>
+                  실내환경 양호도
+                </p>
+                <div class="question-card__body choice-list">
+                  <label class="choice">
+                    <input type="radio" name="quality" />
+                    ① 좋음 - 벽지, 장판 손상과 오염, 냄새, 곰팡이가 전혀 없는 상태
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="quality" />
+                    ② 보통 - 경미한 생활오염 확인되며, 곰팡이 없거나 경미한 정도
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="quality" />
+                    ③ 나쁨
+                  </label>
+                </div>
+              </article>
+            </section>
+
+            <div class="button-group">
+              <a class="btn btn--secondary" href="consulting_operation_list.html">목록</a>
+              <button class="btn btn--light-blue" type="button">임시저장</button>
+              <button class="btn btn--primary" type="submit">등록</button>
+              <button class="btn btn--delete" type="button">삭제</button>
+            </div>
+          </form>
+        </div>
+      </main>
+      <footer class="app-footer"></footer>
+    </div>
+    <script src="../../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../../assets/js/pikaday.js"></script>
+    <script src="../../assets/js/moment.min.js"></script>
+    <script src="../../assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../assets/js/responsive.js"></script>
+    <script>
+      (function () {
+        "use strict";
+
+        document.querySelectorAll(".datepicker").forEach(function (pickerField) {
+          var picker = new Pikaday({
+            field: pickerField,
+            showDaysInNextAndPreviousMonths: true,
+            enableSelectionDaysInNextAndPreviousMonths: true,
+            showMonthAfterYear: true,
+            onSelect: function () {
+              var date = picker.getDate();
+              var year = date.getFullYear();
+              var month = String(date.getMonth() + 1).padStart(2, "0");
+              var day = String(date.getDate()).padStart(2, "0");
+              pickerField.value = year + "-" + month + "-" + day;
+            }
+          });
+        });
+
+        var housingRadios = document.querySelectorAll('input[name="housing"]');
+        var housingOther = document.getElementById("housingOther");
+
+        function syncHousingOther() {
+          var otherSelected = document.querySelector('input[name="housing"][value="other"]:checked') !== null;
+          housingOther.disabled = !otherSelected;
+          if (!otherSelected) housingOther.value = "";
+        }
+
+        housingRadios.forEach(function (radio) {
+          radio.addEventListener("change", syncHousingOther);
+        });
+        syncHousingOther();
+
+        var ventilationEtc = document.getElementById("ventilationEtc");
+        var ventilationEtcText = document.getElementById("ventilationEtcText");
+
+        function syncVentilationEtc() {
+          var isEnabled = ventilationEtc.checked;
+          ventilationEtcText.readOnly = !isEnabled;
+          if (!isEnabled) ventilationEtcText.value = "";
+        }
+
+        ventilationEtc.addEventListener("change", syncVentilationEtc);
+        syncVentilationEtc();
+
+        var leakRadios = document.querySelectorAll('input[name="leak"]');
+        var leakRepairRadios = document.querySelectorAll('input[name="leakRepair"]');
+
+        function syncLeakRepair() {
+          var leakExists = document.querySelector('input[name="leak"][value="yes"]:checked') !== null;
+
+          leakRepairRadios.forEach(function (radio) {
+            radio.disabled = !leakExists;
+            if (!leakExists) radio.checked = false;
+          });
+        }
+
+        leakRadios.forEach(function (radio) {
+          radio.addEventListener("change", syncLeakRepair);
+        });
+        syncLeakRepair();
+
+        document.querySelectorAll(".preference-row").forEach(function (row) {
+          var neededRadio = row.querySelector('input[type="radio"][value="needed"]');
+          var rankInput = row.querySelector(".preference-rank .text-input");
+
+          function syncPreferenceRank() {
+            var isEnabled = neededRadio.checked;
+            rankInput.readOnly = !isEnabled;
+            if (!isEnabled) rankInput.value = "";
+          }
+
+          row.querySelectorAll('input[type="radio"]').forEach(function (radio) {
+            radio.addEventListener("change", syncPreferenceRank);
+          });
+          syncPreferenceRank();
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>현장점검표 작성 | 환경보건이용권 관리자</title>
+    <link rel="stylesheet" href="../../assets/css/normalize.css" />
+    <link rel="stylesheet" href="../../assets/css/pretendard.css" />
+    <link rel="stylesheet" href="../../assets/css/responsive.css" />
+  </head>
+  <body class="page-inspection page-flow nav-current-consulting">
+    <div id="wrap">
+      <a class="skip-nav" href="#content">본문 바로가기</a>
+      <header class="app-header"></header>
+      <main id="container">
+        <div class="page-title"><h2>진단 컨설팅 사업 운영 관리</h2></div>
+        <div class="page-content" id="content">
+          <select class="select-input project-select" aria-label="사업 선택">
+            <option>진단 컨설팅</option>
+          </select>
+          <nav class="page-tabs" aria-label="진단 컨설팅 작성 단계">
+            <a href="household_survey_register.html">가구점검 설문지 작성</a>
+            <a class="is-active" href="field_inspection_register.html" aria-current="page">현장점검표 작성</a>
+            <a href="photo_manage.html">사진 관리</a>
+            <a href="#">점검결과 보고서</a>
+          </nav>
+          <div class="section-divider"></div>
+          <form>
+            <section class="form-section">
+              <h3 class="form-section__title">현장점검표 작성</h3>
+              <div class="detail-list">
+                <div class="detail-row">
+                  <div class="detail-row__label">접수번호</div>
+                  <div class="detail-row__value">202454541111</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-row__label">신청자</div>
+                  <div class="detail-row__value">홍길동</div>
+                </div>
+                <div class="detail-row detail-row--wide">
+                  <div class="detail-row__label">측정지역</div>
+                  <div class="detail-row__value choice-list">
+                    <label class="choice">
+                      <input type="radio" name="place" checked />
+                      거실
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="place" />
+                      안방
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="place" />
+                      아이 방
+                    </label>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-row__label">실내</div>
+                  <div class="detail-row__value climate-fields">
+                    <label class="climate-field">
+                      <span>(온도)</span>
+                      <span class="input-with-unit">
+                        <select class="select-input" aria-label="실내 온도">
+                          <option>25</option>
+                        </select>
+                        <span class="unit">℃</span>
+                      </span>
+                    </label>
+                    <label class="climate-field">
+                      <span>(습도)</span>
+                      <span class="input-with-unit">
+                        <select class="select-input" aria-label="실내 습도">
+                          <option>50</option>
+                        </select>
+                        <span class="unit">%</span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-row__label">실외</div>
+                  <div class="detail-row__value climate-fields">
+                    <label class="climate-field">
+                      <span>(온도)</span>
+                      <span class="input-with-unit">
+                        <select class="select-input" aria-label="실외 온도">
+                          <option>25</option>
+                        </select>
+                        <span class="unit">℃</span>
+                      </span>
+                    </label>
+                    <label class="climate-field">
+                      <span>(습도)</span>
+                      <span class="input-with-unit">
+                        <select class="select-input" aria-label="실외 습도">
+                          <option>50</option>
+                        </select>
+                        <span class="unit">%</span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="measurement-card">
+              <h4>1. 이산화탄소</h4>
+              <div class="measurement-grid">
+                <div class="measurement-field">
+                  <label for="co2Device">측정기기</label>
+                  <select class="select-input" id="co2Device">
+                    <option>EM300I</option>
+                  </select>
+                </div>
+                <div class="measurement-field">
+                  <label>권고기준</label>
+                  <div class="measurement-standard">1,000ppm 이하</div>
+                </div>
+                <div class="measurement-field">
+                  <label for="co2Value">측정값</label>
+                  <div class="measurement-values">
+                    <label class="measurement-value-row">
+                      <span>(ppm)</span>
+                      <input class="text-input" id="co2Value" type="text" inputmode="decimal" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="measurement-card">
+              <h4>6. 라돈(Rn)</h4>
+              <div class="measurement-grid">
+                <div class="measurement-field">
+                  <label for="radonDevice">측정기기</label>
+                  <select class="select-input" id="radonDevice">
+                    <option>EM300I</option>
+                  </select>
+                </div>
+                <div class="measurement-field">
+                  <label>권고기준</label>
+                  <div class="measurement-standard">148 Bq/㎥ 이하</div>
+                </div>
+                <div class="measurement-field">
+                  <label for="radonPci">측정값</label>
+                  <div class="measurement-values">
+                    <label class="measurement-value-row">
+                      <span>(pCi/L)</span>
+                      <input class="text-input" id="radonPci" type="text" inputmode="decimal" />
+                    </label>
+                    <label class="measurement-value-row">
+                      <span>(Bq/㎥)</span>
+                      <input class="text-input" id="radonBq" type="text" inputmode="decimal" value="148" disabled />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="measurement-card">
+              <h4>7. 집먼지진드기</h4>
+              <div class="measurement-grid">
+                <div class="measurement-field">
+                  <label for="miteDevice">측정기기</label>
+                  <select class="select-input" id="miteDevice">
+                    <option>BAROS-M</option>
+                  </select>
+                </div>
+                <div class="measurement-field">
+                  <label>권고기준</label>
+                  <div class="measurement-standard">100마리/㎡ 미만</div>
+                </div>
+                <div class="measurement-field">
+                  <label for="miteValue">측정값</label>
+                  <select class="select-input" id="miteValue">
+                    <option>0-20 마리 미만</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+
+            <div class="button-group">
+              <a class="btn btn--secondary" href="consulting_operation_list.html">목록</a>
+              <button class="btn btn--light-blue" type="button">임시저장</button>
+              <button class="btn btn--primary" type="submit">등록</button>
+            </div>
+          </form>
+        </div>
+      </main>
+      <footer class="app-footer"></footer>
+    </div>
+    <script src="../../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../../assets/js/jquery-ui.min.js"></script>
+    <script src="../../assets/js/simplebar.min.js"></script>
+    <script src="../../assets/js/swiper.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/pikaday.js"></script>
+    <script src="../../assets/js/inputmask.js"></script>
+    <script src="../../assets/js/toastify-js.js"></script>
+    <script src="../../assets/js/responsive.js"></script>
+  </body>
+</html>
